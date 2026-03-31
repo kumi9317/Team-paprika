@@ -1,2 +1,89 @@
 @use 'variables' as *;
 
+.main-visual {
+    width: 100%;             // 横幅いっぱい
+    height: calc(100vh - 80px); 
+    background-image: url("../img/Gemini_Generated_Image_ejppnqejppnqejpp.png"); // 画像のパス（自分のファイル名に合わせてね）
+    background-size: cover;    // 画像を隙間なく、比率を保って表示
+    background-position: center; // 画像の真ん中を基準にする
+    background-repeat: no-repeat; // 画像を繰り返さない
+}
+
+.header {
+    width: 100%;
+    height: 80px;
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
+    padding: 10px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &__inner {
+        width: 100%; // サイトの最大幅に合わせて調整してください
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between; // 左・中・右に分散
+        align-items: center; // 上下中央揃え
+    }
+
+    // 中央の情報エリア
+    &__info {
+        display: flex;
+        justify-content: space-around;
+        align-items: baseline;
+        gap: 30px;
+        font-family: $h2;
+        font-weight: bold;
+
+        .header__year {
+            font-size: 1.5rem;
+            font-family: $h2;
+        }
+        .header__date { 
+            display: flex;
+            font-size: 1.8rem;
+            align-items: baseline;
+            gap: 30px;
+            span { font-size: 1.25rem; margin: 0 4px; }
+        }
+        .header__time {
+            font-size: 1.75rem;
+        }
+        .header__place {
+            font-size: 1.75rem;
+            font-family: $h2;
+        }
+    }
+}
+
+// ハンバーガーメニュー（3本線）
+.hamburger {
+    width: 30px;
+    height: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+
+    span {
+        display: block;
+        width: 100%;
+        height: 3px;
+        background-color: #b03030; // 添付画像に近い赤色
+        border-radius: 2px;
+    }
+}
+
+// 入場料無料ボタン
+.btn-free {
+    display: inline-block;
+    background-color: #f0e640; // 黄色
+    color: #000;
+    padding: 8px 20px;
+    border-radius: 50px; // 丸み
+    text-decoration: none;
+    font-weight: bold;
+    border: 1px solid #000;
+    font-family:  $h2;
+}
