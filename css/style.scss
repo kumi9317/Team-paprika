@@ -4,11 +4,11 @@
 @use 'parts/_header.scss';
 
 // トップページ
-@use 'parts/_01main-visual.scss';
-@use 'parts/_02main-program.scss';
-@use 'parts/_03after-party.scss';
-@use 'parts/_04time-schedule.scss';
-@use 'parts/_05venue-map.scss';
-@use 'parts/_06access.scss';
-@use 'parts/_07suponsor.scss';
-@use 'parts/_08information.scss';
+@use 'parts/_main-visual.scss';
+@use 'parts/_main-program.scss';
+@use 'parts/_after-party.scss';
+@use 'parts/_time-schedule.scss';
+@use 'parts/_venue-map.scss';
+@use 'parts/_access.scss';
+@use 'parts/_sponsor.scss';
+@use 'parts/_information.scss';
