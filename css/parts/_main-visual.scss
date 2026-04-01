@@ -19,6 +19,10 @@
     justify-content: space-between;
     align-items: center;
 
+    position: sticky; // ★ 追従させる
+    top: 0;           // ★ 上端にくっつく位置を指定
+    z-index: 100;     // ★ 他のコンテンツ（写真など）より上に表示されるように
+
     &__inner {
         width: 100%; // サイトの最大幅に合わせて調整してください
         margin: 0 auto;
@@ -37,21 +41,21 @@
         font-weight: bold;
 
         .header__year {
-            font-size: 1.5rem;
+            font-size: 1.25rem;
             font-family: $h2;
         }
         .header__date { 
             display: flex;
-            font-size: 1.8rem;
+            font-size: 1.5rem;
             align-items: baseline;
-            gap: 30px;
-            span { font-size: 1.25rem; margin: 0 4px; }
+            gap: 15px;
+            span { font-size: 1rem; margin: 0 4px; }
         }
         .header__time {
-            font-size: 1.75rem;
+            font-size: 1.5rem;
         }
         .header__place {
-            font-size: 1.75rem;
+            font-size: 1.5rem;
             font-family: $h2;
         }
     }
@@ -83,7 +87,7 @@
     padding: 8px 20px;
     border-radius: 50px; // 丸み
     text-decoration: none;
-    font-weight: bold;
+    font-weight: 700;
     border: 1px solid #000;
     font-family:  $h2;
 }
