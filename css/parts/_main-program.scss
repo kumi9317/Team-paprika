@@ -1,1 +1,115 @@
 @use 'variables' as *;
+
+.main-event {
+    padding: 120px 0;
+    background-color: #f0f7ff; // 薄い水色の背景
+    overflow: hidden; // 写真の飛び出し対策 
+    // position: relative;
+    // z-index: -10;
+}
+
+.event-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    margin-bottom: 100px;
+
+    // 2つ目（偶数）のアイテムは左右を入れ替える
+    &:nth-child(even) {
+        flex-direction: row-reverse;
+    }
+
+    &__img-wrapper {
+        position: relative;
+        width: 45%;
+    }
+
+    &__photo {
+        position: relative;
+        width: 100%;
+        border: 10px solid #fff;
+        box-shadow: 4px 4px 10px 5px rgba(51, 51, 51, 0.5);
+        transform: rotate(-3deg); // 写真を少し傾ける
+        z-index: 2;
+    }
+
+    // テキストエリアの親
+    &__text-wrapper {
+        position: relative; // 影の基準にする
+        width: 35%;
+        z-index: 1;
+    }
+
+    // 青いドットの影
+    &__text-shadow {
+        position: absolute;
+        top: 30px;  // 影を下にずらす
+        left: 40px; // 影を右にずらす
+        width: 100%;
+        height: 100%;
+        background: transparent;
+        background-image: radial-gradient(#0A215D 4px, transparent 4px);
+        background-size: 12px 12px;
+        clip-path: polygon(20% 0%, 80% 0%, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 0% 80%, 0% 20%);
+        z-index: 10; // 本体より下
+    }
+
+    &__text {
+        width: 100%;
+        position: relative;
+        padding: 60px 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        background-color: #fff;
+        clip-path: polygon(20% 0%, 80% 0%, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 0% 80%, 0% 20%);
+        z-index: 10; // 影より上
+
+        &-inner {
+            position: relative;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 30;
+            
+            h3 {
+                font-size: 1.5rem;
+                color: $black;
+                margin-bottom: 15px;
+                font-family: $h3;
+            }
+            p {
+                font-size: 1rem;
+                color: $black;
+                line-height: 1.8;
+                margin-bottom: 20px;
+                font-family: $text;
+            }
+        
+        }
+    }
+}
+
+// 偶数番目のアイテムは、影を「左下」に出す
+.event-item:nth-child(even) {
+    .event-item__text-shadow {
+        left: -40px; 
+    }
+}
+
+
+// Moreボタン
+.more-btn {
+    display: inline-block;
+    padding: 5px 20px;
+    background-color: #d00;
+    color: #fff;
+    border-radius: 20px;
+    text-decoration: none;
+    font-size: 12px;
+    transition: 0.3s;
+    &:hover { opacity: 0.8; }
+}
