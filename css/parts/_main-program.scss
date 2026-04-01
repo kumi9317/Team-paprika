@@ -1,115 +1,357 @@
 @use 'variables' as *;
 
-.main-event {
-    padding: 120px 0;
+.main-program {
+    padding: 100px 0;
     background-color: #f0f7ff; // 薄い水色の背景
-    overflow: hidden; // 写真の飛び出し対策 
-    // position: relative;
-    // z-index: -10;
-}
-
-.event-item {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 40px;
-    margin-bottom: 100px;
-
-    // 2つ目（偶数）のアイテムは左右を入れ替える
-    &:nth-child(even) {
-        flex-direction: row-reverse;
+    /*---------------------
+      メインイベント
+    ---------------------*/
+    .main-event {
+        padding: 100px 0;
+        background-color: #f0f7ff; // 薄い水色の背景
+        overflow: hidden; // 写真の飛び出し対策 
     }
-
-    &__img-wrapper {
-        position: relative;
-        width: 45%;
-    }
-
-    &__photo {
-        position: relative;
-        width: 100%;
-        border: 10px solid #fff;
-        box-shadow: 4px 4px 10px 5px rgba(51, 51, 51, 0.5);
-        transform: rotate(-3deg); // 写真を少し傾ける
-        z-index: 2;
-    }
-
-    // テキストエリアの親
-    &__text-wrapper {
-        position: relative; // 影の基準にする
-        width: 35%;
-        z-index: 1;
-    }
-
-    // 青いドットの影
-    &__text-shadow {
-        position: absolute;
-        top: 30px;  // 影を下にずらす
-        left: 40px; // 影を右にずらす
-        width: 100%;
-        height: 100%;
-        background: transparent;
-        background-image: radial-gradient(#0A215D 4px, transparent 4px);
-        background-size: 12px 12px;
-        clip-path: polygon(20% 0%, 80% 0%, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 0% 80%, 0% 20%);
-        z-index: 10; // 本体より下
-    }
-
-    &__text {
-        width: 100%;
-        position: relative;
-        padding: 60px 40px;
+    
+    .event-item {
         display: flex;
         align-items: center;
         justify-content: center;
-        text-align: center;
-        background-color: #fff;
-        clip-path: polygon(20% 0%, 80% 0%, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 0% 80%, 0% 20%);
-        z-index: 10; // 影より上
-
-        &-inner {
+        margin-bottom: 180px;
+        max-width: 1000px;
+        margin-left: auto;
+        margin-right: auto;
+    
+        // 2つ目（偶数）のアイテムは左右を入れ替える
+        &:nth-child(even) {
+            flex-direction: row-reverse;
+            // 偶数番目は逆に食い込ませる
+            .event-item__img-wrapper { margin-left: -80px; margin-right: 0; }
+        }
+    
+        &__img-wrapper {
             position: relative;
-            top: 0;
-            left: 0;
+            width: 700px;
+            flex-shrink: 0; // 幅が縮まないように固定
+            margin-right: -100px; // ★ここがポイント！テキストの上に重ねる（ネガティブマージン）
+            z-index: 50; // ★テキスト(wrapper)より上に持ってくる
+        }
+    
+        &__photo {
+            position: relative;
+            width: 100%;
+            border: 10px solid #fff;
+            box-shadow: $shadow;
+            transform: rotate(2deg); // 写真を少し傾ける
+            z-index: 2;
+        }
+    
+        // テキストエリアの親
+        &__text-wrapper {
+            position: relative; // 影の基準にする
+            width: 380px;
+            transform: rotate(-2deg);
+            z-index: 10;
+        }
+    
+        // --- ここからが2番目（偶数番目）の個別設定 ---
+        &:nth-child(even) {
+            flex-direction: row-reverse;
+    
+            // 写真側の調整
+            .event-item__img-wrapper {
+                margin-left: -100px;
+                margin-right: 0;
+                
+                .event-item__photo {
+                    // ★2枚目だけ写真を「2度」に上書き
+                    transform: rotate(-2deg);
+                }
+            }
+    
+            // テキスト側の調整
+            .event-item__text-wrapper {
+                // ★2枚目だけテキストを「-2度」に上書き
+                transform: rotate(2deg);
+            }
+    
+            // ドットの影のズレ方向を調整
+            .event-item__text-shadow {
+                left: 40px; 
+                // 影は親（wrapper）と一緒に傾くので、個別のrotateは不要なことが多いですが、
+                // もし形が崩れるならここも調整してください
+            }
+        }
+    
+        // 青いドットの影
+        &__text-shadow {
+            position: absolute;
+            top: 20px;  // 影を下にずらす
+            left: -40px; // 影を右にずらす
             width: 100%;
             height: 100%;
-            z-index: 30;
+            background: transparent;
+            background-image: radial-gradient(#0A215D 4px, transparent 4px);
+            background-size: 12px 12px;
+            clip-path: polygon(20% 0%, 80% 0%, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 0% 80%, 0% 20%);
+            z-index: 5; // 本体より下
+        }
+    
+        &__text {
+            width: 100%;
+            position: relative;
+            padding: 100px 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background-color: #fff;
+            clip-path: polygon(20% 0%, 80% 0%, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 0% 80%, 0% 20%);
+            z-index: 10; // 影より上
+    
+            &-inner {
+                position: relative;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                z-index: 20;
+                text-align: left;
+                
+                h3 {
+                    font-size: 1.5rem;
+                    color: $black;
+                    margin-bottom: 15px;
+                    font-family: $h3;
+                }
+                p {
+                    font-size: 1rem;
+                    color: $black;
+                    line-height: 1.8;
+                    margin-bottom: 20px;
+                    font-family: $text;
+                }
             
-            h3 {
-                font-size: 1.5rem;
-                color: $black;
-                margin-bottom: 15px;
-                font-family: $h3;
             }
-            p {
-                font-size: 1rem;
-                color: $black;
-                line-height: 1.8;
-                margin-bottom: 20px;
-                font-family: $text;
-            }
-        
         }
     }
-}
-
-// 偶数番目のアイテムは、影を「左下」に出す
-.event-item:nth-child(even) {
-    .event-item__text-shadow {
-        left: -40px; 
+    
+    // Moreボタン
+    .more-btn {
+        display: inline-block;
+        padding: 5px 20px;
+        background-color: #d00;
+        color: #fff;
+        border-radius: 20px;
+        text-decoration: none;
+        font-size: 12px;
+        transition: 0.3s;
+        &:hover { opacity: 0.8; }
     }
-}
+    
+    /*---------------------
+      Pick Up イベント
+    ---------------------*/
+    
+    .pick-up {
+        padding: 100px 0;
+        position: relative;
+        overflow: hidden;
 
+        // あしらい画像の共通設定
+        &__deco {
+            position: absolute;
+            z-index: 1;         // コンテンツ（z-index: 2以上）の下に隠す
+            pointer-events: none; // 画像がリンクなどの邪魔をしないようにする
 
-// Moreボタン
-.more-btn {
-    display: inline-block;
-    padding: 5px 20px;
-    background-color: #d00;
-    color: #fff;
-    border-radius: 20px;
-    text-decoration: none;
-    font-size: 12px;
-    transition: 0.3s;
-    &:hover { opacity: 0.8; }
+            // 左側の大きな青い丸画像
+            &--left {
+                width: 800px;   // 画像の本来のサイズ、または表示したいサイズ
+                height: auto;
+                bottom: 0; // 下からのはみ出し具合
+                // 1. 基準を「画面の左端」から「画面の中央」に変更
+                right: 50%;
+                
+                // 2. 中央から左側に移動させる（マイナスの値を指定）
+                // 白い枠の半分（500px）付近を基準に調整します
+                // 枠に食い込ませたい場合は、-500px よりも絶対値を小さく（例: -450px）します
+                margin-right: 400px; 
+
+                // z-index は他のコンテンツの下（1）に設定
+                z-index: 3;
+            }
+
+            // 右上の水色の大きな丸画像
+            &--right {
+                width: 800px;
+                height: auto;
+                top: 30px;
+                
+                // 1. 基準を「画面の右端」から「画面の中央」に変更
+                right: auto; // 既存のright指定を打ち消し
+                left: 50%;   // 一旦画面の真ん中に置く
+
+                // 2. 「白い枠（max-width: 1000px）の半分」の分だけ右に移動させる
+                // 500px（枠の半分） + 任意のずらし量（例: 200px）
+                margin-left: 400px; 
+
+                // もしくは translate で指定する場合
+                // transform: translateX(200px); 
+
+                z-index: 3;
+            }
+        }
+    
+        &__container {
+            position: relative;
+            z-index: 2;
+            max-width: 1000px;
+            margin: 0 auto;
+            text-align: center;
+            .asirai01 {
+                width: 30%;
+                background-image: url("../img/asirai-lightblue"); // 画像のパス（自分のファイル名に合わせてね）
+                background-size: cover;    // 画像を隙間なく、比率を保って表示
+                background-position: center; // 画像の真ん中を基準にする
+                background-repeat: no-repeat; // 画像を繰り返さない
+                position: absolute;
+                top: 10px;
+                left: 0;
+                z-index: 30;
+            }
+        }
+    
+        &__grid {
+            background: #fff;
+            max-width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px 30px; // 縦 横の隙間
+            justify-content: center;
+            padding: 50px;
+            border-radius: 100px;
+            margin-top: 100px;
+            position: relative;
+            z-index: 5;
+
+            // 背景の薄いドット
+            &::before {
+                content: "";
+                position: absolute;
+                inset: 0;
+                // transform: translateX(-50%);
+                width: 100%;
+                height: 100%;
+                border-radius: 50px;
+                background: #fff;
+                background-image: radial-gradient(#eee 2px, transparent 2px);
+                background-size: 20px 20px;
+                z-index: 1;
+            }
+        }
+    
+        &__item {
+            width: calc(50% - 15px); // 2列表示
+            background: #fff;
+            box-shadow: $shadow;
+            border-radius: 5px; // 軽く角を丸く
+            overflow: hidden;
+            text-align: center;
+            position: relative;
+            z-index: 10;
+        }
+    
+        &__img-wrapper {
+            position: relative;
+            padding: 15px 15px 0; // 上左右に余白
+    
+            img {
+                width: 100%;
+                height: 400px;
+                display: block;
+                object-fit: cover;
+            }
+        }
+    
+        // 左上の丸ラベル
+        .label {
+            position: absolute;
+            top: -30px;
+            left: -45px;
+            width: 150px;
+            height: 120px;
+            border-radius: 50%;
+            border: 3px solid #fff;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end; // ★縦方向で「下」に寄せる
+            align-items: flex-start;   // ★横方向で「左」に寄せる
+            padding-right: 10px;
+            font-size: 0.9rem;
+            // font-weight: bold;
+            z-index: 5;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+
+            &__textblue {
+                position: absolute;
+                right: 15px;
+                bottom: 25px;
+            }
+
+            &__textorange {
+                position: absolute;
+                right: 30px;
+                bottom: 25px;
+            }
+    
+            span { font-size: 0.8rem; font-weight: normal; }
+            
+            &--blue { background-color: $blue;}
+            &--orange {background-color: $accent_orange;}
+        }
+    
+        &__content {
+            padding: 20px;
+            
+            .event-name {
+                font-size: 1.2rem;
+                font-weight: bold;
+                margin: 10px 0;
+                
+                &--blue { color: $blue; }
+                &--orange { color: $accent_orange; }
+            }
+            
+            .tag-list {
+                display: flex;
+                gap: 10px;
+                font-size: 10px;
+                color: #999;
+                list-style: none;
+                padding: 0;
+                flex-wrap: wrap;
+                li {
+                    white-space: nowrap;
+                    flex-shrink: 0;
+                }
+            }
+        }
+    }
+    
+    // Moreリンク
+    .more-link {
+        display: inline-block;
+        margin-top: 50px;
+        font-weight: bold;
+        color: #333;
+        text-decoration: none;
+        position: relative;
+        z-index: 2;
+        transition: color 0.3s ease, transform 0.3s ease;
+        &:hover {
+        color: $red;             // ★フォントカラーを赤に（変数の $red を使用）
+        transform: scale(1.1);   // ★1.1倍の大きさに拡大
+        }
+    }
+    
 }
