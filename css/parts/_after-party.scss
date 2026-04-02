@@ -1,1 +1,189 @@
 @use 'variables' as *;
+
+@use 'variables' as *;
+
+.after-party {
+  background-color: #fff;
+  padding: 100px 20px;
+  overflow: hidden;
+  position: relative; // 必須：あしらいの基準
+
+  // 背景のあしらい（オレンジと水色の丸）
+  &__deco-bg {
+    position: absolute;
+    pointer-events: none; // クリックを邪魔しない
+              // カード（z-index: 2以上）の下に配置
+    height: auto;
+
+    // 右端上のオレンジ
+    &--right {
+      width: 700px; // デザインに合わせて調整
+      top: -50px;
+      z-index: 3; 
+      
+      // 1. 画面中央を基準にする
+      left: 50%;
+      // 2. 中央から「カードの半分(500px)」＋「ずらし分」を右に寄せる
+      margin-left: 300px; 
+    }
+
+    // 左端下の水色
+    &--left {
+      width: 600px; // デザインに合わせて調整
+      height: auto;
+      bottom: -150px; // 下へのはみ出し具合
+      
+      // 1. 画面中央を基準にする
+      right: 50%;
+      // 2. 中央から「カードの半分(500px)」＋「ずらし分」を左に寄せる
+      margin-right: 250px; 
+    }
+  }
+
+  // 右上の花火アイコン
+  .after-party__deco {
+    position: absolute;
+    top: 200px; // オレンジのあしらい（-50px）とのバランスで調整
+    width: 200px;
+    z-index: 5; // オレンジ（z-index: 3）より上に配置
+
+    // 1. 基準を画面中央にする
+    left: 50%;
+
+    // 2. オレンジのあしらいの margin-left (250px) を基準に調整
+    // オレンジの左側に重ねたいので、250pxより少し小さい値を指定します
+    margin-left: 300px; 
+    
+    // もし右端基準のままだと画面幅でズレるので、right指定は削除するか auto にします
+    right: auto;
+  }
+
+  &__inner {
+    max-width: 1000px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2; // あしらいより上に
+  }
+
+  &__card {
+    background-color: $base;
+    border-radius: 100px;
+    padding: 80px 40px;
+    text-align: center;
+    position: relative;
+    z-index: 2; // ドット背景などを含むカード全体
+
+        // 背景の薄いドット
+        &::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            // transform: translateX(-50%);
+            width: 100%;
+            height: 100%;
+            border-radius: 50px;
+            background: $base;
+            background-image: radial-gradient(#fff 2px, transparent 2px);
+            background-size: 20px 20px;
+            // z-index: 0;
+        }
+
+        .after-party__wrapper {
+            width: 100%;
+            position: relative;
+            z-index: 3;
+
+
+            .sec__title {
+                margin-bottom: 80px;
+            }
+
+            // カッコを消して、cardの中に正しく入れ直しました
+            .after-party__lead {
+                font-size: 1.5rem;
+                font-family: $text;
+                line-height: 1.8;
+                color: #555;
+                margin-bottom: 40px;
+            }
+
+            // --- slickスライダー本体 ---
+            .after-party__slider {
+                width: 100%;
+                max-width: 800px;
+                margin: 0 auto;
+                padding-bottom: 60px; // 下のドットが入るスペース
+
+                // 各スライドアイテム
+                .after-party__slide-item {
+                    text-align: left;
+                    outline: none; // クリック時の枠線を消す
+                }
+
+                .after-party__image {
+                    width: 100%;
+                    aspect-ratio: 16 / 9;
+                    overflow: hidden;
+                    
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                    }
+                }
+
+                .after-party__caption {
+                    margin-top: 15px;
+                    font-family: $text;
+                    font-size: 1.5rem;
+                    color: #666;
+                    font-weight: bold;
+                }
+
+                // --- slickドットナビのカスタマイズ ---
+                .slick-dots {
+                    bottom: 0; // スライダーの下端からの位置
+                    
+                    li {
+                        margin: 0 5px;
+                        width: 12px;
+                        height: 12px;
+
+                        button {
+                            width: 12px;
+                            height: 12px;
+                            padding: 0;
+
+                            &::before {
+                                content: ""; // デフォルトの●を消す
+                                width: 10px;
+                                height: 10px;
+                                background: #ccc; // 通常時のドット色
+                                border-radius: 50%;
+                                opacity: 1;
+                            }
+                        }
+
+                        &.slick-active button::before {
+                            background: #007bff; // アクティブな時の色（デザインの青）
+                        }
+                    }
+                }
+            }
+        }
+    }   
+} 
+
+ // 帯画像の設定
+.after-party__bottom-obi {
+    width: 100%;
+    // height: 300px;
+    line-height: 0; // 画像の下にできる謎の隙間を消す
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; // 画面幅に合わせて綺麗に切り抜く
+        vertical-align: bottom;
+    }
+}
