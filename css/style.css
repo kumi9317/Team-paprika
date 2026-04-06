@@ -14,6 +14,15 @@
   font-weight: 800;
 }
 
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
 .main-visual {
   width: 100%;
   height: calc(100vh - 80px);
@@ -104,9 +113,6 @@
 .main-program {
   padding: 100px 0;
   background-color: #f0f7ff;
-  /*---------------------
-    メインイベント
-  ---------------------*/
 }
 .main-program .main-event {
   padding: 100px 0;
@@ -225,11 +231,6 @@
 .main-program .more-btn:hover {
   opacity: 0.8;
 }
-.main-program {
-  /*---------------------
-    Pick Up イベント
-  ---------------------*/
-}
 .main-program .pick-up {
   padding: 100px 0;
   position: relative;
@@ -318,7 +319,8 @@
   width: 100%;
   height: 400px;
   display: block;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .main-program .pick-up .label {
   position: absolute;
@@ -492,7 +494,8 @@
 .after-party__card .after-party__wrapper .after-party__slider .after-party__image img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .after-party__card .after-party__wrapper .after-party__slider .after-party__caption {
   margin-top: 15px;
@@ -533,6 +536,328 @@
 .after-party__bottom-obi img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   vertical-align: bottom;
+}
+
+.access {
+  font-style: normal;
+  background-color: #A2D4FF;
+  position: relative;
+  padding-block: 160px;
+}
+.access__card {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding-inline: 3%;
+  padding-top: 80px;
+  padding-bottom: 160px;
+  position: relative;
+}
+.access__card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50px;
+  background: #fff;
+  background-image: radial-gradient(#eee 2px, transparent 2px);
+  background-size: 20px 20px;
+}
+.access__wrapper {
+  position: relative;
+  z-index: 10;
+}
+.access__inner {
+  display: flex;
+  gap: 20px;
+}
+.access__inner iframe {
+  width: 60%;
+  height: 350px;
+}
+.access__inner dl {
+  width: 40%;
+  font-size: 10px;
+  font-style: normal;
+  font-family: "Zen Maru Gothic", sans-serif;
+  font-weight: medium;
+}
+.access__inner dl dt {
+  position: relative;
+  padding-left: 10px;
+  /* dtの前に黒四角を配置 */
+}
+.access__inner dl dt::before {
+  position: absolute;
+  content: "■";
+  left: 0;
+  color: #333; /* 記号の色 */
+}
+.access__inner dl dd {
+  margin-bottom: 15px;
+}
+.access h2 {
+  font-style: normal;
+  margin-bottom: 60px;
+}
+.access h3 {
+  font-style: normal;
+  margin-bottom: 10px;
+}
+.access__redcorn1 {
+  position: absolute;
+  top: 8%;
+  left: 33%;
+  z-index: 2;
+}
+.access__ashiraiblue {
+  position: absolute;
+  z-index: 2;
+  top: 5%;
+  right: 0;
+  width: auto;
+  height: 450px;
+}
+.access__car1 {
+  position: absolute;
+  z-index: 2;
+  top: 9%;
+  right: 10%;
+  width: 280px;
+}
+.access__redcorn2 {
+  position: absolute;
+  z-index: 2;
+  top: 12%;
+  right: 10%;
+  transform: rotate(-80deg);
+  width: 60px;
+}
+.access__redcorn3 {
+  position: absolute;
+  z-index: 2;
+  top: 18%;
+  right: 5%;
+  transform: rotate(-10deg);
+  width: 120px;
+}
+.access__car2 {
+  position: absolute;
+  z-index: 3;
+  bottom: 2%;
+  left: 9%;
+  width: 450px;
+}
+.access__car2parts1 {
+  position: absolute;
+  z-index: 2;
+  bottom: 120px;
+  left: 20px;
+}
+.access__car2parts2 {
+  position: absolute;
+  z-index: 2;
+  bottom: 13%;
+  left: 0%;
+  width: 230px;
+}
+.access__car2parts3 {
+  position: absolute;
+  z-index: 2;
+  bottom: 33%;
+  left: 3%;
+}
+.access__people {
+  position: absolute;
+  z-index: 2;
+  bottom: 6%;
+  right: 8%;
+}
+
+.faq {
+  background-color: #EDF4FB;
+  background-image: url(../img/access8.png);
+  background-position: center -10px;
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  border-radius: 0 0 50px 50px;
+  overflow: hidden;
+  padding-bottom: 200px;
+  position: relative;
+  z-index: 2;
+}
+.faq h2 {
+  padding-top: 500px;
+}
+.faq__q {
+  max-width: 1000px;
+  margin-inline: auto;
+  background-color: #C6E1FB;
+  cursor: pointer;
+  position: relative;
+  padding: 1.5em 5em 1.5em 3em;
+}
+.faq__q::before {
+  content: "Q";
+  position: absolute;
+  left: 1em;
+}
+.faq__q::after {
+  content: "";
+  position: absolute;
+  right: 4em;
+  top: 50%;
+  width: 30px;
+  height: 2px;
+  background-color: white;
+  transform: translateY(-50%);
+}
+.faq__q span {
+  position: absolute;
+  right: 4.8em;
+  top: 50%;
+  width: 3px;
+  height: 30px;
+  background-color: white;
+  transform: translateY(-50%);
+  transition: 0.3s;
+}
+.faq__q.active span {
+  opacity: 0;
+  transform: translateY(-50%) rotate(90deg);
+}
+.faq__q:nth-of-type(even) {
+  border-top: 1px solid #006DCC;
+  border-bottom: 1px solid #006DCC;
+}
+.faq__a {
+  max-width: 1000px;
+  margin-inline: auto;
+  display: none;
+  padding: 1.5em 5em 1.5em 3em;
+  position: relative;
+}
+.faq__a::before {
+  content: "A";
+  position: absolute;
+  left: 1em;
+  color: #ff8d8d;
+}
+
+.fixed-img {
+  width: 100%;
+  height: 50vh;
+  background-image: url(../img/fixed-img.png);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  margin-top: -50px;
+  position: relative;
+  z-index: 1;
+  margin-bottom: -50px;
+}
+
+.sponsor {
+  background-color: #fcfcfc;
+  padding-block: 150px;
+  border-radius: 50px 50px 0 0;
+  overflow: hidden;
+  position: relative;
+  z-index: 2;
+}
+.sponsor .sec__title {
+  /* 1. 文字色を白にする */
+  color: #ffffff;
+  /* 2. 文字の縁取り（外の線）を黒にする */
+  /* 指定方法: 太さ 色 */
+  -webkit-text-stroke: 1px #000000;
+}
+.sponsor .sec__title span {
+  -webkit-text-stroke: 0;
+}
+.sponsor__wrapper {
+  max-width: 1000px;
+  margin-inline: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 50px;
+}
+
+.footer {
+  width: 100%;
+  min-height: 100vh;
+  background-image: url(../img/footer-background.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.footer h2 {
+  padding-top: 100px;
+}
+.footer img {
+  width: 80px;
+}
+.footer__wrapper {
+  max-width: 800px;
+  margin-inline: auto;
+}
+.footer__wrapper p {
+  text-align: center;
+  margin-block: 40px;
+  font-size: 20px;
+}
+.footer__innerSNS {
+  display: flex;
+  justify-content: space-between;
+}
+.footer__innerSNS li a {
+  display: flex;
+  align-items: center;
+}
+.footer__innerSNS li a a {
+  display: inline-block;
+}
+.footer__innerSNS li a p {
+  margin-left: 20px;
+  font-weight: bold;
+}
+.footer__innerLINE {
+  display: flex;
+  justify-content: center;
+}
+.footer__innerLINE a {
+  display: flex;
+  align-items: center;
+  border: 1px solid black;
+  padding: 3px 60px;
+  border-radius: 20px;
+}
+.footer__innerLINE a p {
+  padding-right: 100px;
+  position: relative;
+}
+.footer__innerLINE a p::before {
+  position: absolute;
+  content: "→";
+  right: 45px;
+  top: 0px;
+}
+.footer__logo {
+  text-align: center;
+  margin-block: 80px;
+}
+.footer__logo img {
+  width: 400px;
+}
+.footer__copy {
+  background-color: rgba(0, 0, 0, 0.2);
+  padding-block: 2px;
+  text-align: center;
+}
+.footer__copy small {
+  color: white;
 }/*# sourceMappingURL=style.css.map */

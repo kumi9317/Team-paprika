@@ -3,9 +3,8 @@
 .main-program {
     padding: 100px 0;
     background-color: #f0f7ff; // 薄い水色の背景
-    /*---------------------
-      メインイベント
-    ---------------------*/
+
+    //メインイベント
     .main-event {
         padding: 100px 0;
         background-color: #f0f7ff; // 薄い水色の背景
@@ -148,9 +147,7 @@
         &:hover { opacity: 0.8; }
     }
     
-    /*---------------------
-      Pick Up イベント
-    ---------------------*/
+    //Pick Up イベント
     
     .pick-up {
         padding: 100px 0;
