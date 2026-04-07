@@ -1,1 +1,31 @@
-@use 'variables' as *;
+@use "variables" as *;
+.sponsor {
+  background-color: #fcfcfc;
+  padding-block: 150px;
+  border-radius: 50px 50px 0 0;
+  overflow: hidden;
+  // padding-bottom: 200px;
+  position: relative;
+  z-index: 2;
+
+  .sec__title {
+    /* 1. 文字色を白にする */
+    color: #ffffff;
+
+    /* 2. 文字の縁取り（外の線）を黒にする */
+    /* 指定方法: 太さ 色 */
+    -webkit-text-stroke: 1px #000000;
+
+      span {
+        -webkit-text-stroke: 0;
+      }
+  }
+  &__wrapper {
+    max-width: 1000px;
+    margin-inline: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 50px;
+  }
+}
