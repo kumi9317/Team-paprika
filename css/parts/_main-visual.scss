@@ -31,6 +31,17 @@
         align-items: center; // 上下中央揃え
     }
 
+    &__logo {
+        height: 60px; // ←ここでロゴの高さを決める
+
+        img {
+        height: 100%;
+        width: auto;
+        display: block; // ←余白対策で入れておくと良い
+        }
+    }
+   
+
     // 中央の情報エリア
     &__info {
         display: flex;
