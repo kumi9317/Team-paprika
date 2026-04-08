@@ -532,6 +532,8 @@ a {
 }
 .time-schedule .enjoy {
   overflow: visible;
+  position: relative;
+  z-index: 0;
 }
 .time-schedule .enjoy__inner {
   max-width: 1000px;
@@ -815,6 +817,29 @@ a {
   border-radius: 40px;
   padding: 80px;
   text-align: center;
+  position: relative;
+  z-index: 2;
+}
+.time-schedule .schedule__inner__deco, .time-schedule .map__inner__deco {
+  position: absolute;
+  z-index: 1;
+  pointer-events: none;
+}
+.time-schedule .schedule__inner__deco--right, .time-schedule .map__inner__deco--right {
+  width: 700px;
+  height: auto;
+  top: -150px;
+  right: auto;
+  left: 50%;
+  margin-left: 400px;
+}
+.time-schedule .schedule__inner__deco--left, .time-schedule .map__inner__deco--left {
+  width: 700px;
+  height: auto;
+  bottom: 0;
+  right: 50%;
+  margin-right: 400px;
+  z-index: 3;
 }
 .time-schedule .schedule__title, .time-schedule .map__title {
   margin-bottom: 40px;
