@@ -316,7 +316,8 @@ a {
   width: 100%;
   height: 400px;
   display: block;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .main-program .pick-up .label {
   position: absolute;
@@ -481,7 +482,8 @@ a {
 .after-party__card .after-party__wrapper .after-party__slider .after-party__image img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .after-party__card .after-party__wrapper .after-party__slider .after-party__caption {
   margin-top: 15px;
@@ -522,7 +524,8 @@ a {
 .after-party__bottom-obi img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   vertical-align: bottom;
 }
 
@@ -589,7 +592,8 @@ a {
   border: none;
   box-shadow: none;
   width: 180px;
-  object-fit: contain;
+  -o-object-fit: contain;
+     object-fit: contain;
   z-index: 5;
 }
 .time-schedule .enjoy__card__01 .enjoy__img--photo1 {
@@ -633,7 +637,8 @@ a {
   border: none;
   box-shadow: none;
   width: 180px;
-  object-fit: contain;
+  -o-object-fit: contain;
+     object-fit: contain;
   z-index: 5;
 }
 .time-schedule .enjoy__card__02 .enjoy__img--photo1 {
@@ -677,7 +682,8 @@ a {
   border: none;
   box-shadow: none;
   width: 180px;
-  object-fit: contain;
+  -o-object-fit: contain;
+     object-fit: contain;
   z-index: 5;
 }
 .time-schedule .enjoy__card__03 .enjoy__img--photo1 {
@@ -721,7 +727,8 @@ a {
   border: none;
   box-shadow: none;
   width: 180px;
-  object-fit: contain;
+  -o-object-fit: contain;
+     object-fit: contain;
   z-index: 5;
 }
 .time-schedule .enjoy__card__04 .enjoy__img--photo1 {
@@ -1319,8 +1326,6 @@ body {
   letter-spacing: -0.01em;
 }
 #display-100 .hero-image-box {
-#display-100 .hero-image-box {
-  width: 100%;
   margin-bottom: 30px;
 }
 #display-100 .hero-image-box img {
@@ -1427,13 +1432,4 @@ body {
   text-align: center;
   color: #666;
   margin-bottom: 30px;
-  object-fit: cover;
-  border-radius: 4px;
-}
-#display-100 .description-block {
-  margin-top: 20px;
-}
-#display-100 .description-block p {
-  margin-bottom: 1.5em;
-  line-height: 1.8;
 }/*# sourceMappingURL=style.css.map */
