@@ -8,55 +8,92 @@
 
 // --- Base Styles ---
 body {
-    background-color: #fff;
+    margin: 0;
+    padding: 0;
     font-family: $text; // variables.scssの $text を参照
     color: $black;
-    line-height: 1.8;
+    background-color: #FFFAF4;
     overflow-x: hidden;
+}
 
-    // 背景のドット模様
-    background-image: radial-gradient($light_blue 1px, transparent 1px);
-    background-size: 40px 40px;
+// 背景ドット (bg-dots) 
+.bg-dots {
+  position: fixed; // 画面全体に固定
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -2; // 一番奥
+  background-image: radial-gradient(#e0e0e0 1.5px, transparent 1.5px);
+  background-size: 30px 30px;
+  pointer-events: none;
 }
 
 // --- Header ---
 .event-header-fixed {
-    width: 100%;
-    height: 100px;
-    background: linear-gradient(to right, $black 50%, $red 50%);
-    @include flex-center;
-    justify-content: center;
+  width: 1000px;           // ブラウザの横幅いっぱいに広げる
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%); // 親要素(container)を無視して全幅表示
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  // 黒と赤のバイカラー。中央でパッキリ分かれるように設定
+  background: linear-gradient(to right, $black 50%, $red 50%);
+  margin: 60px 0;
+
+  .header-content {
     color: #fff;
-    margin-bottom: 60px;
+    text-align: center;
+    z-index: 1;
 
-    .header-content {
-        text-align: center;
-
-        .header-title {
-            font-family: $h2;
-            font-size: 32px;
-            font-weight: 900;
-            margin: 0;
-            letter-spacing: 0.05em;
-        }
-
-        .header-sub {
-            display: block;
-            font-family: $h1;
-            font-size: 14px;
-            letter-spacing: 0.1em;
-            transform: scaleY(0.9);
-        }
+    .header-title {
+      font-family: $h2;
+      font-size: 32px;
+      font-weight: 900;
+      margin: 0;
     }
-} 
+    .header-sub {
+      font-family: $h1;
+      font-size: 14px;
+      display: block;
+      letter-spacing: 0.1em;
+    }
+  }
+}
 
 // --- 全体レイアウト ---
 .container {
     max-width: 1000px;     // 幅を1000pxに設定
     margin: 0 auto;        // 左右中央寄せ
-    padding: 0 20px;       // スマホ表示などで端がくっつかないよう余白を追加
-    box-sizing: border-box; // パディングを含めた幅計算にする
+    padding: 40px 100px;    // スマホ表示などで端がくっつかないよう余白を追加
     position: relative;    // 背景装飾などの基準点にするため
+    overflow-x: hidden;    // 1000pxからはみ出した分を隠す
+
+    .bg-shape-orange {
+    position: absolute;
+    // --- 位置の調整 ---
+    top: -50px;        // 上からの位置
+    right: -320px;     // 右側に突き出す量（お好みで）
+
+    // --- サイズの調整 ---
+    width: 600px;      // 画像の横幅
+    height: 500px;     // 画像の高さ
+    
+    // --- 画像の読み込み ---
+    background-image: url('/img/ME-asirai01.png'); // 画像のパスを指定
+    background-size: contain;
+    background-repeat: no-repeat;
+    
+    // --- 見た目の調整 ---
+    opacity: 0.5;      // 透明度
+    z-index: -1;       // コンテンツの背面へ
+    pointer-events: none; // クリックを邪魔しない
+
+    // --- 角度の変更 (画像そのものを回転させる) ---
+    transform: rotate(-10deg); 
+    }
 }
 
 // --- Main Event Label (SVG装飾付き) ---
@@ -100,7 +137,6 @@ body {
         white-space: nowrap;
         // 日本語のベースラインを数字に合わせるための微調整
         line-height: 1.2;
-        margin-bottom: 6px; 
     }
 
     .number-100 {
@@ -135,9 +171,32 @@ body {
 }
 
 #display-100 {
+    // キャッチフレーズ全体の調整
+    .catchphrase-red {
+    // 1. フォントの設定：丸ゴシック `$text (Zen Maru Gothic)` を使用
+    font-family: $h3;
+    
+    // 2. 色の設定： variables.scssの $red (#d00) を使用
+    color: $red; 
+    
+    // 3. フォントサイズ・太さの設定（画像から推測して調整）
+    font-size: 20px; // デザインに合わせた少し大きめのサイズ
+    font-weight: 700; // しっかりとした太さ
+    
+    // 4. 余白（上下）の調整
+    // 上のタイトル（100台展示）との間隔
+    margin-top: 25px; 
+    // 下のメイン画像（Hero）との間隔
+    margin-bottom: 25px; 
+    
+    // その他：視覚的な調整
+    line-height: 1.4; // 1行に収まるよう、行間を少し詰める
+    letter-spacing: -0.01em; // わずかに字間を詰めて締まりを出す
+}
+
   // メインの大きな画像ボックス
     .hero-image-box {
-        width: 100%;
+        // width: 100%;
         margin-bottom: 30px; // 下のギャラリーとの間隔
 
         img {
@@ -167,14 +226,110 @@ body {
         }
     }
 
-    // 本文ブロックの微調整
+    // 本文を包むブロック
     .description-block {
-        margin-top: 20px;
-    
-        p {
-            margin-bottom: 1.5em;
-            line-height: 1.8;
-        }
+      max-width: 800px; // デザインに合わせ、少し幅を絞って可読性を高める
+      margin: 40px 0;   // ギャラリー画像との間隔
+
+    p {
+        font-family: $text;      // Zen Maru Gothic (丸ゴシック)
+        font-size: 16px;         // 標準的な読みやすいサイズ
+        line-height: 2.2;        // デザイン画像のような、かなり広めの行間
+        color: $black;           // variables.scssの黒
+        margin-bottom: 2em;      // 段落同士の間隔
+        text-align: justify;     // 両端を揃えて美しく見せる
+        letter-spacing: 0.03em;  // わずかに字間を広げて高級感を出す
     }
-    
-// （以下、他のセクションも同様に $変数 を使用して記述）
+
+    // 最初の一文字（イ）を大きくする設定
+    .drop-cap {
+        float: left;             // 文字を左に寄せて、本文を回り込ませる
+        font-family: $h2;        // 見出し用の力強いフォント (Chakra Petchなど)
+        font-size: 48px;         // 本文2〜2.5行分に相当するサイズ
+        font-weight: 800;        // かなり太めに
+        line-height: 1;          // 行間の影響を受けないように固定
+        margin-right: 12px;      // 本文との横方向の隙間
+        margin-top: 6px;         // 1行目の上端と微調整して合わせる
+        color: $black;
+        display: inline-block;
+    }
+}
+}
+
+
+
+
+#special-stage {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 60px 20px;
+
+  // --- 100台展示(3枚目)と同じスタイルのタイトル ---
+  .section-header {
+    display: flex;
+    align-items: center; // 文字と線を中央揃え
+    gap: 20px;
+    margin-bottom: 40px;
+
+    .title-wrap {
+      display: flex;
+      align-items: baseline;
+      gap: 15px;
+
+      .side-title-en {
+        font-family: $h2; // Chakra Petch
+        color: $red;
+        font-size: 32px;
+        font-weight: 800;
+        margin: 0;
+      }
+
+      .side-title-jp {
+        font-family: $text;
+        color: $red;
+        font-size: 18px;
+        font-weight: 700;
+        margin: 0;
+      }
+    }
+
+    // 右側に長く伸びる黒い線
+    .title-line {
+      flex: 1; // 残りの幅をすべて埋める
+      height: 2px;
+      background-color: $black;
+    }
+  }
+
+  // --- 下段の左右分割レイアウト ---
+  .split-layout {
+    display: flex;
+    justify-content: space-between;
+    gap: 50px;
+
+    .stage-left {
+      flex: 1; // 左側を広く
+      
+      .catchphrase-red-bold {
+        color: $red;
+        font-weight: 700;
+        margin-bottom: 20px;
+      }
+      
+      .full-width-img {
+        width: 100%;
+        margin-bottom: 30px;
+      }
+    }
+
+    .stage-right {
+      width: 300px; // サイドバーの幅を固定
+      
+      .cast-category {
+        text-align: center;
+        color: #666;
+        margin-bottom: 30px;
+      }
+    }
+  }
+}
