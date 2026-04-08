@@ -1,1 +1,98 @@
-@use 'variables' as *;
+@use "variables" as *;
+.faq {
+  background-color: $base_blue;
+  background-image: url(../img/access8.png);
+  background-position: center -10px;
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  border-radius: 0 0 50px 50px;
+  overflow: hidden;
+  padding-bottom: 200px;
+  position: relative;
+  z-index: 2;
+
+
+  h2 {
+    padding-top: 500px;
+  }
+  //Q
+  
+  &__q {
+  max-width: 1000px;
+  margin-inline: auto;
+  background-color: #C6E1FB;
+  cursor: pointer;
+  position: relative;
+  padding: 1.5em 5em 1.5em 3em;
+
+  &::before {
+    content: "Q";
+    position: absolute;
+    left: 1em;
+  }
+
+  //＋アイコン（横線） 
+  &::after {
+    content: "";
+    position: absolute;
+    right: 4em;
+    top: 50%;
+    width: 30px;
+    height: 2px;
+    background-color: #FFFF;
+    transform: translateY(-50%);
+  }
+
+  //縦線（＋の縦）
+  span {
+    position: absolute;
+    right: 4.8em;
+    top: 50%;
+    width: 3px;
+    height: 30px;
+    background-color: #FFFF;
+    transform: translateY(-50%);
+    transition: 0.3s;
+  }
+
+  // 開いたら縦線消す → −になる 
+  &.active span {
+    opacity: 0;
+    transform: translateY(-50%) rotate(90deg);
+  }
+
+  &:nth-of-type(even) {
+    border-top: 1px solid #006DCC;
+    border-bottom: 1px solid #006DCC;
+  }
+}
+
+  //A 
+  &__a {
+    max-width: 1000px;
+    margin-inline: auto;
+    display: none;
+    padding: 1.5em 5em 1.5em 3em;
+    position: relative;
+
+    &::before {
+      content: "A";
+      position: absolute;
+      left: 1em;
+      color: #ff8d8d;
+    }
+  }
+}
+
+.fixed-img {
+  width: 100%;
+  height: 50vh;
+  background-image: url(../img/fixed-img.png);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  margin-top: -50px; // ←角丸の分くらい
+  position: relative;
+  z-index: 1;
+  margin-bottom: -50px;
+}

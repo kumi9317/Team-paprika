@@ -132,7 +132,7 @@
             color: #333;
             font-size: 2rem;
             font-weight: bold;
-            padding: 30px 45px;
+            padding: 50px;
             border-radius: 30px 0 90px 0; // 特徴的な角丸
         }
 
@@ -173,76 +173,65 @@
 
     }
 
-    // 共通の変数（適宜書き換えてください）
-$red: #d92323; 
-$dot-bg: #f8f9fa;
+        // 共通の変数（適宜書き換えてください）
+    $red: #d92323; 
+    $dot-bg: #f8f9fa;
 
-.schedule, .map {
-    padding: 100px 0;
-    
-    &__inner {
-        max-width: 900px;
-        margin: 0 auto;
-        background-color: $dot-bg;
-        background-image: radial-gradient(#ccc 1px, transparent 1px);
-        background-size: 20px 20px; // ドットの細かさ
-        border-radius: 40px;
-        padding: 60px 40px;
-        text-align: center;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-    }
-
-    &__title {
-        font-family: $h2; // 以前のフォント指定
-        font-size: 2.5rem;
-        margin-bottom: 40px;
-        span {
-            display: block;
-            font-size: 1rem;
-            color: $red;
-            margin-top: 5px;
-        }
-    }
-
-    &__board {
-        background: #fff;
-        padding: 20px;
-        margin-bottom: 40px;
-        img {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
-    }
-
-    // 赤いボタン
-    &__btn {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        background-color: $red;
-        color: #fff;
-        text-decoration: none;
-        padding: 15px 50px;
-        border-radius: 5px;
-        font-weight: bold;
-        transition: 0.3s;
-        box-shadow: 0 4px 0 #900; // ボタンの立体感
-
-        &:hover {
-            transform: translateY(2px);
-            box-shadow: 0 2px 0 #900;
-            opacity: 0.9;
+    .schedule, .map {
+        padding: 100px 0;
+        position: relative;
+        overflow: hidden;
+        
+        &__inner {
+            max-width: 900px;
+            margin: 0 auto;
+            background: #fff;
+            background-image: radial-gradient(#eee 2px, transparent 2px);
+            background-size: 20px 20px;
+            border-radius: 40px;
+            padding: 80px;
+            text-align: center;
         }
 
-        &::after {
-            content: ''; // ここにPDF等のアイコン画像を背景で入れる
-            display: inline-block;
+        &__title {
+            margin-bottom: 40px;
+        }
+
+        &__board {
+            max-width: 100%;
+            padding: 0;
+            margin-bottom: 40px;
+            img {
+                width: 100%;
+                height: auto;
+                display: block;
+            }
+        }
+
+        // 赤いボタン
+        &__btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+            background-color: $red;
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 50px;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: 0.3s;
+            box-shadow: 0 4px 0 #900; // ボタンの立体感
+
+            &:hover {
+                transform: translateY(2px);
+                box-shadow: 0 2px 0 #900;
+                opacity: 0.9;
+            }
+        }
+        &__icon {
             width: 20px;
             height: 20px;
-            margin-left: 10px;
-            background: url('../img/icon-file.png') no-repeat center/contain;
         }
     }
-}
 }

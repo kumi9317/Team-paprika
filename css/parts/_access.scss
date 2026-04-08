@@ -1,1 +1,156 @@
 @use 'variables' as *;
+.access {
+  font-style: normal;
+  background-color: $light_blue;
+  position: relative;
+  padding-block: 160px;
+  
+  &__card {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding-inline:3%;
+    padding-top: 80px;
+    padding-bottom: 160px;
+    position: relative;
+
+      //背景のドット
+      &::before {
+        content: "";
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 50px;
+            background: #fff;
+            background-image: radial-gradient(#eee 2px, transparent 2px);
+            background-size: 20px 20px;
+      }
+  }
+
+  &__wrapper {
+    position: relative;
+    z-index: 10;
+  }
+
+  &__inner {
+    display: flex;
+    gap: 20px;
+
+      iframe {
+        width: 60%;
+        height: 350px;
+      }
+
+    dl {
+      width: 40%;
+      font-size: 10px;
+      font-style: normal;
+      font-family: "Zen Maru Gothic", sans-serif;
+      font-weight: medium;
+
+        dt {
+          position: relative;
+          padding-left: 10px;
+          /* dtの前に黒四角を配置 */
+            &::before {
+              position: absolute;
+              content: '■';
+              left: 0;
+              color: #333; /* 記号の色 */
+            }
+        }
+
+          dd {
+          margin-bottom: 15px;
+        }
+      }
+  }
+
+  h2 {
+    font-style: normal;
+    margin-bottom: 60px;
+  }
+
+  h3 {
+    font-style: normal;
+    margin-bottom: 10px;
+  }
+
+  // 下記、あしらい
+
+  //左上
+  &__redcorn1 {
+    position: absolute;
+    top: 8%;
+    left: 33%;
+    z-index: 2;
+  }
+  //右上
+  &__ashiraiblue {
+    position: absolute;
+    z-index: 2;
+    top: 5%;
+    right: 0;
+    width: auto;
+    height: 450px;
+  }
+  &__car1 {
+    position: absolute;
+    z-index: 2;
+    top: 9%;
+    right: 10%;
+    width: 280px;
+  }
+  &__redcorn2 {
+    position: absolute;
+    z-index: 2;
+    top: 12%;
+    right: 10%;
+    transform: rotate(-80deg);
+    width: 60px;
+  }
+  &__redcorn3 {
+    position: absolute;
+    z-index: 2;
+    top: 18%;
+    right: 5%;
+    transform: rotate(-10deg);
+    width: 120px;
+  }
+
+  //左下
+  &__car2 {
+    position: absolute;
+    z-index: 3;
+    bottom: 2%;
+    left: 9%;
+    width: 450px;
+  }
+  &__car2parts1 {
+    position: absolute;
+    z-index: 2;
+    bottom: 120px;
+    left: 20px;
+  }
+  &__car2parts2 {
+    position: absolute;
+    z-index: 2;
+    bottom: 13%;
+    left: 0%;
+    width: 230px;
+  }
+  &__car2parts3 {
+    position: absolute;
+    z-index: 2;
+    bottom: 33%;
+    left: 3%;
+  }
+
+  //右下
+  &__people {
+    position: absolute;
+    z-index: 2;
+    bottom: 6%;
+    right: 8%;
+  }
+}

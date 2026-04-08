@@ -1,0 +1,91 @@
+@use 'variables' as *;
+
+.footer {
+  width: 100%;
+  min-height: 100vh;
+  background-image: url(../img/footer-background.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+    h2 {
+      padding-top: 100px;
+    }
+  img {
+    width: 80px;
+  }
+  
+    &__wrapper {
+      max-width: 800px;
+      margin-inline: auto;
+
+        p {
+          text-align: center;
+          margin-block: 40px;
+          font-size: 20px;
+        }
+    }
+
+    &__innerSNS {
+          display: flex;
+          justify-content: space-between;
+
+            li a {
+              display: flex;
+              align-items: center;
+              
+                a {
+                  display: inline-block;
+                }
+
+                p {
+                  margin-left: 20px;
+                  font-weight: bold;
+                }
+            }
+        }
+
+    &__innerLINE {
+      display: flex;
+      justify-content: center;
+
+        a {
+        display: flex;
+        align-items: center;
+        border: 1px solid black;
+        padding: 3px 60px;
+        border-radius: 20px;
+        
+          p {
+            padding-right: 100px;
+            position: relative;
+
+              &::before {
+                position: absolute;
+                content: "→";
+                right: 45px;
+                top: 0px;
+              }
+          }
+      }
+    }
+
+    &__logo {
+      text-align: center;
+      margin-block: 80px;
+      img {
+        width: 400px;
+      }
+      
+    }
+
+    &__copy {
+      background-color: rgba(0, 0, 0, 0.2);
+      padding-block: 2px;
+      text-align: center;
+
+      small {
+        color: white;
+      }
+    }
+}
