@@ -316,7 +316,8 @@ a {
   width: 100%;
   height: 400px;
   display: block;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .main-program .pick-up .label {
   position: absolute;
@@ -481,7 +482,8 @@ a {
 .after-party__card .after-party__wrapper .after-party__slider .after-party__image img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .after-party__card .after-party__wrapper .after-party__slider .after-party__caption {
   margin-top: 15px;
@@ -522,7 +524,8 @@ a {
 .after-party__bottom-obi img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   vertical-align: bottom;
 }
 
@@ -591,7 +594,8 @@ a {
   border: none;
   box-shadow: none;
   width: 180px;
-  object-fit: contain;
+  -o-object-fit: contain;
+     object-fit: contain;
   z-index: 5;
 }
 .time-schedule .enjoy__card__01 .enjoy__img--photo1 {
@@ -635,7 +639,8 @@ a {
   border: none;
   box-shadow: none;
   width: 180px;
-  object-fit: contain;
+  -o-object-fit: contain;
+     object-fit: contain;
   z-index: 5;
 }
 .time-schedule .enjoy__card__02 .enjoy__img--photo1 {
@@ -679,7 +684,8 @@ a {
   border: none;
   box-shadow: none;
   width: 180px;
-  object-fit: contain;
+  -o-object-fit: contain;
+     object-fit: contain;
   z-index: 5;
 }
 .time-schedule .enjoy__card__03 .enjoy__img--photo1 {
@@ -723,7 +729,8 @@ a {
   border: none;
   box-shadow: none;
   width: 180px;
-  object-fit: contain;
+  -o-object-fit: contain;
+     object-fit: contain;
   z-index: 5;
 }
 .time-schedule .enjoy__card__04 .enjoy__img--photo1 {
@@ -1200,49 +1207,76 @@ a {
 }
 
 body {
-  background-color: #fff;
+  margin: 0;
+  padding: 0;
   font-family: "Zen Maru Gothic", sans-serif;
   color: #333333;
-  line-height: 1.8;
+  background-color: #FFFAF4;
   overflow-x: hidden;
-  background-image: radial-gradient(#A2D4FF 1px, transparent 1px);
-  background-size: 40px 40px;
+}
+
+.bg-dots {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -2;
+  background-image: radial-gradient(#e0e0e0 1.5px, transparent 1.5px);
+  background-size: 30px 30px;
+  pointer-events: none;
 }
 
 .event-header-fixed {
-  width: 100%;
-  height: 100px;
-  background: linear-gradient(to right, #333333 50%, #d00 50%);
+  width: 1000px;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 120px;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #fff;
-  margin-bottom: 60px;
+  background: linear-gradient(to right, #333333 50%, #d00 50%);
+  margin: 60px 0;
 }
 .event-header-fixed .header-content {
+  color: #fff;
   text-align: center;
+  z-index: 1;
 }
 .event-header-fixed .header-content .header-title {
   font-family: "M PLUS 1", sans-serif;
   font-size: 32px;
   font-weight: 900;
   margin: 0;
-  letter-spacing: 0.05em;
 }
 .event-header-fixed .header-content .header-sub {
-  display: block;
   font-family: "Poller One", serif;
   font-size: 14px;
+  display: block;
   letter-spacing: 0.1em;
-  transform: scaleY(0.9);
 }
 
 .container {
   max-width: 1000px;
   margin: 0 auto;
-  padding: 0 20px;
-  box-sizing: border-box;
+  padding: 40px 100px;
   position: relative;
+  overflow-x: hidden;
+}
+.container .bg-shape-orange {
+  position: absolute;
+  top: -50px;
+  right: -320px;
+  width: 600px;
+  height: 500px;
+  background-image: url("/img/ME-asirai01.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0.5;
+  z-index: -1;
+  pointer-events: none;
+  transform: rotate(-10deg);
 }
 
 .main-event-label {
@@ -1280,7 +1314,6 @@ body {
   color: #d00;
   white-space: nowrap;
   line-height: 1.2;
-  margin-bottom: 6px;
 }
 .event-title-row .number-100 {
   font-family: "Chakra Petch", sans-serif;
@@ -1307,8 +1340,17 @@ body {
   margin-bottom: 21px;
 }
 
+#display-100 .catchphrase-red {
+  font-family: "Chakra Petch", sans-serif;
+  color: #d00;
+  font-size: 20px;
+  font-weight: 700;
+  margin-top: 25px;
+  margin-bottom: 25px;
+  line-height: 1.4;
+  letter-spacing: -0.01em;
+}
 #display-100 .hero-image-box {
-  width: 100%;
   margin-bottom: 30px;
 }
 #display-100 .hero-image-box img {
@@ -1327,13 +1369,92 @@ body {
 #display-100 .gallery-three-col img {
   width: 100%;
   aspect-ratio: 3/2;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   border-radius: 4px;
 }
 #display-100 .description-block {
-  margin-top: 20px;
+  max-width: 800px;
+  margin: 40px 0;
 }
 #display-100 .description-block p {
-  margin-bottom: 1.5em;
-  line-height: 1.8;
+  font-family: "Zen Maru Gothic", sans-serif;
+  font-size: 16px;
+  line-height: 2.2;
+  color: #333333;
+  margin-bottom: 2em;
+  text-align: justify;
+  letter-spacing: 0.03em;
+}
+#display-100 .description-block .drop-cap {
+  float: left;
+  font-family: "M PLUS 1", sans-serif;
+  font-size: 48px;
+  font-weight: 800;
+  line-height: 1;
+  margin-right: 12px;
+  margin-top: 6px;
+  color: #333333;
+  display: inline-block;
+}
+
+#special-stage {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 60px 20px;
+}
+#special-stage .section-header {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 40px;
+}
+#special-stage .section-header .title-wrap {
+  display: flex;
+  align-items: baseline;
+  gap: 15px;
+}
+#special-stage .section-header .title-wrap .side-title-en {
+  font-family: "M PLUS 1", sans-serif;
+  color: #d00;
+  font-size: 32px;
+  font-weight: 800;
+  margin: 0;
+}
+#special-stage .section-header .title-wrap .side-title-jp {
+  font-family: "Zen Maru Gothic", sans-serif;
+  color: #d00;
+  font-size: 18px;
+  font-weight: 700;
+  margin: 0;
+}
+#special-stage .section-header .title-line {
+  flex: 1;
+  height: 2px;
+  background-color: #333333;
+}
+#special-stage .split-layout {
+  display: flex;
+  justify-content: space-between;
+  gap: 50px;
+}
+#special-stage .split-layout .stage-left {
+  flex: 1;
+}
+#special-stage .split-layout .stage-left .catchphrase-red-bold {
+  color: #d00;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+#special-stage .split-layout .stage-left .full-width-img {
+  width: 100%;
+  margin-bottom: 30px;
+}
+#special-stage .split-layout .stage-right {
+  width: 300px;
+}
+#special-stage .split-layout .stage-right .cast-category {
+  text-align: center;
+  color: #666;
+  margin-bottom: 30px;
 }/*# sourceMappingURL=style.css.map */
