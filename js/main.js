@@ -72,6 +72,9 @@ $(function() {
 /*==================================
 　　メインイベント背景固定
 ==================================*/
+// ScrollTrigger.matchMedia({
+//     // デスクトップ用 (1025px以上)
+//     "(min-width: 1025px)":
 $(function() {
     gsap.registerPlugin(ScrollTrigger);
 
@@ -110,5 +113,22 @@ $(function() {
     .to(".main-event__speed-line", { opacity: 0, duration: 2 }, "-=2")
     
     // ⑥ 最後に少しだけ「間」を置くことで、スクロールの終わりと同期させる
-    .to({}, { duration: 5 }); 
+    .to({}, { duration: 5 });
+  // }, 
+
+  // スマホ・タブレット用 (1024px以下)
+  // "(max-width: 1024px)": function() {
+      // スマホでは固定せず、普通にスクロールしてふわっと出るだけにする
+  //     gsap.utils.toArray(".js-event-item").forEach(item => {
+  //         gsap.to(item, {
+  //             opacity: 1,
+  //             visibility: "visible",
+  //             y: 0,
+  //             scrollTrigger: {
+  //                 trigger: item,
+  //                 start: "top 80%",
+  //             }
+  //         });
+  //     });
+  // }
 });

@@ -1,7 +1,6 @@
 @use 'variables' as *;
 
 .main-program {
-    padding-bottom: 100px;
     background-color: #f0f7ff; // 薄い水色の背景
     position: relative;
 
@@ -54,7 +53,7 @@
         // ✅ タイトルは上部に固定
     .js-title {
         position: absolute;
-        top: 100px;      
+        top: 120px;      
         left: 50%;
         transform: translateX(-50%);
         width: 100%;
@@ -66,9 +65,9 @@
     // ✅ アイテムを同じ位置に重ねる
     .js-event-item {
         position: absolute;
-        top: 220px;       
+        top: 50%;       
         left: 50%;
-        transform: translateX(-50%);
+        transform: translate(-50%, -35%);
         width: 100%;
         max-width: 1000px; // コンテナより少し小さくして余裕を持たせる
         opacity: 0;     // 最初は隠す
@@ -78,6 +77,17 @@
         // 元のマージンなどが干渉しないようにリセット
         margin: 0; 
     }
+
+    // GSAP用のjs-event-itemもスマホでは位置を調整
+    // .main-event .js-event-item {
+    //     @media screen and (max-width: 1024px) {
+    //         position: relative;  縦に並べるためにrelativeにする
+    //         left: auto;
+    //         transform: none;
+    //         opacity: 1 !important;  スマホではGSAP演出を止めるか、単純な浮き上がりに変えるのが吉
+    //         visibility: visible !important;
+    //     }
+    // }
 }
     
     .event-item {
@@ -95,6 +105,21 @@
             // 偶数番目は逆に食い込ませる
             .event-item__img-wrapper { margin-left: -80px; margin-right: 0; }
         }
+
+        @media screen and (max-width: 1024px) {
+            flex-direction: column !important; // 強制的に縦並びにする
+            height: auto;
+            position: relative;
+            top: 0 !important; // absoluteを解除するイメージ
+            transform: translateX(-50%) translateY(0) !important;
+            margin-bottom: 80px;
+
+            // 偶数番目の入れ替えも解除
+            &:nth-child(even) {
+                flex-direction: column !important;
+                .event-item__img-wrapper { margin-left: 0; }
+            }
+        }
     
         &__img-wrapper {
             position: relative;
@@ -102,6 +127,14 @@
             flex-shrink: 0; // 幅が縮まないように固定
             margin-right: -100px; // ★ここがポイント！テキストの上に重ねる（ネガティブマージン）
             z-index: 50; // ★テキスト(wrapper)より上に持ってくる
+
+            @media screen and (max-width: 1024px) {
+                width: 100%; // 画像を横幅いっぱいに
+                max-width: 500px;
+                margin-right: 0 !important; // 重なり（ネガティブマージン）を解消
+                margin-bottom: -40px; // 少しだけテキストと重ねるならアリ
+                z-index: 2;
+            }
         }
     
         &__photo {
@@ -111,6 +144,11 @@
             box-shadow: $shadow;
             transform: rotate(2deg); // 写真を少し傾ける
             z-index: 2;
+
+            @media screen and (max-width: 1024px) {
+                width: 100%;
+                transform: rotate(0); // スマホでは傾きをなくすとスッキリします
+            }
         }
     
         // テキストエリアの親
@@ -119,6 +157,13 @@
             width: 380px;
             transform: rotate(-2deg);
             z-index: 10;
+
+            @media screen and (max-width: 1024px) {
+                width: 90%; // テキストを少し内側に寄せる
+                max-width: 400px;
+                transform: rotate(0); // 傾き解除
+                z-index: 3;
+            }
         }
     
         // --- ここからが2番目（偶数番目）の個別設定 ---
@@ -175,6 +220,11 @@
             background-color: #fff;
             clip-path: polygon(20% 0%, 80% 0%, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 0% 80%, 0% 20%);
             z-index: 10; // 影より上
+
+            @media screen and (max-width: 1024px) {
+                padding: 60px 30px 40px; // パディングを狭くする
+                clip-path: none; // 形が複雑ならスマホではシンプルにしてもOK
+            }
     
             &-inner {
                 position: relative;
@@ -319,9 +369,6 @@
                 // 500px（枠の半分） + 任意のずらし量（例: 200px）
                 margin-left: 400px; 
 
-                // もしくは translate で指定する場合
-                // transform: translateX(200px); 
-
                 z-index: 3;
             }
 
@@ -340,7 +387,7 @@
                 // z-index は他のコンテンツの下（1）に設定
                 z-index: 5;
 
-                animation: yurayura 4s infinite 0.5s;
+                animation: yurayura 3s infinite 0.5s;
                 transform-origin: center; // 中心を軸に揺らす
             }
 
@@ -357,9 +404,6 @@
                 // 2. 「白い枠（max-width: 1000px）の半分」の分だけ右に移動させる
                 // 500px（枠の半分） + 任意のずらし量（例: 200px）
                 margin-left: 400px; 
-
-                // もしくは translate で指定する場合
-                // transform: translateX(200px); 
 
                 z-index: 5;
 
@@ -499,16 +543,6 @@
                 }
             }
         }
-    }
-
-    // 揺れる動きの定義
-    @keyframes yurayura {
-        0% { transform: rotate(0deg); }
-        10% { transform: rotate(5deg); }   // 少し右に傾く
-        20% { transform: rotate(-5deg); }  // 少し左に傾く
-        30% { transform: rotate(3deg); }   // 揺れが小さくなる
-        40% { transform: rotate(0deg); }   // 元に戻る
-        100% { transform: rotate(0deg); }  // 40%から100%の間は動かない（これが「間隔」になります）
     }
     
 }
