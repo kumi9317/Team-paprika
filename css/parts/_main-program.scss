@@ -339,6 +339,9 @@
 
                 // z-index は他のコンテンツの下（1）に設定
                 z-index: 5;
+
+                animation: yurayura 4s infinite 0.5s;
+                transform-origin: center; // 中心を軸に揺らす
             }
 
             // 右上の水色の大きな丸画像
@@ -359,6 +362,11 @@
                 // transform: translateX(200px); 
 
                 z-index: 5;
+
+                // アニメーションの追加
+                // 3s(3秒)ごとに、yurayuraという動きを無限に繰り返す
+                animation: yurayura 3s infinite;
+                transform-origin: center; // 中心を軸に揺らす
             }
         }
     
@@ -491,6 +499,16 @@
                 }
             }
         }
+    }
+
+    // 揺れる動きの定義
+    @keyframes yurayura {
+        0% { transform: rotate(0deg); }
+        10% { transform: rotate(5deg); }   // 少し右に傾く
+        20% { transform: rotate(-5deg); }  // 少し左に傾く
+        30% { transform: rotate(3deg); }   // 揺れが小さくなる
+        40% { transform: rotate(0deg); }   // 元に戻る
+        100% { transform: rotate(0deg); }  // 40%から100%の間は動かない（これが「間隔」になります）
     }
     
 }

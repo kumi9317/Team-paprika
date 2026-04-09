@@ -87,7 +87,7 @@ $(function() {
             // 余計な余白（padding）をGSAPが追加しないように設定
             pinSpacing: true, 
         }
-    });s
+    });
 
     // --- 演出の中身はそのまま（durationの合計を意識して微調整） ---
     tl.to(".main-event__speed-line", { width: "100%", opacity: 0.6, duration: 4 })
