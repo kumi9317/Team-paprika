@@ -12,25 +12,59 @@ body {
     padding: 0;
     font-family: $text; // variables.scssの $text を参照
     color: $black;
-    background-color: #FFFAF4;
+    background-color: #FFF;
     overflow-x: hidden;
 }
 
-// 背景ドット (bg-dots) 
-.bg-dots {
-  position: fixed; // 画面全体に固定
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -2; // 一番奥
-  background-image: radial-gradient(#e0e0e0 1.5px, transparent 1.5px);
-  background-size: 30px 30px;
-  pointer-events: none;
+.container {
+    max-width: 1000px;     // 幅を1000pxに設定
+    margin: 0 auto;        // 左右中央寄せ
+    padding: 40px 50px;    // スマホ表示などで端がくっつかないよう余白を追加
+    position: relative;    // 背景装飾などの基準点にするため
+    overflow-x: hidden;    // 1000pxからはみ出した分を隠す
+
+    // 背景ドット (bg-dots) 
+    .bg-dots {
+        position: fixed; // 画面全体に固定
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -2; // 一番奥
+        background-image: radial-gradient(#000000 2px, transparent 1.5px);
+        background-size: 30px 30px;
+        pointer-events: none;
+    }
+
+    .bg-shape-orange {
+        position: absolute;
+        // --- 位置の調整 ---
+        top: 150px;        // 上からの位置
+        right: -320px;     // 右側に突き出す量（お好みで）
+
+        // --- サイズの調整 ---
+        width: 600px;      // 画像の横幅
+        height: 500px;     // 画像の高さ
+    
+        // --- 画像の読み込み ---
+        background-image: url('/img/ME-asirai01.png'); // 画像のパスを指定
+        background-size: contain;
+        background-repeat: no-repeat;
+    
+        // --- 見た目の調整 ---
+        opacity: 0.5;      // 透明度
+        z-index: -1;       // コンテンツの背面へ
+        pointer-events: none; // クリックを邪魔しない
+
+        // --- 角度の変更 (画像そのものを回転させる) ---
+        transform: rotate(-10deg); 
+    }
 }
 
+
+
 // --- Header ---
-.event-header-fixed {
+.event-title-fixed {
   width: 1000px;           // ブラウザの横幅いっぱいに広げる
   position: relative;
   left: 50%;
@@ -63,39 +97,6 @@ body {
   }
 }
 
-// --- 全体レイアウト ---
-.container {
-    max-width: 1000px;     // 幅を1000pxに設定
-    margin: 0 auto;        // 左右中央寄せ
-    padding: 40px 100px;    // スマホ表示などで端がくっつかないよう余白を追加
-    position: relative;    // 背景装飾などの基準点にするため
-    overflow-x: hidden;    // 1000pxからはみ出した分を隠す
-
-    .bg-shape-orange {
-    position: absolute;
-    // --- 位置の調整 ---
-    top: -50px;        // 上からの位置
-    right: -320px;     // 右側に突き出す量（お好みで）
-
-    // --- サイズの調整 ---
-    width: 600px;      // 画像の横幅
-    height: 500px;     // 画像の高さ
-    
-    // --- 画像の読み込み ---
-    background-image: url('/img/ME-asirai01.png'); // 画像のパスを指定
-    background-size: contain;
-    background-repeat: no-repeat;
-    
-    // --- 見た目の調整 ---
-    opacity: 0.5;      // 透明度
-    z-index: -1;       // コンテンツの背面へ
-    pointer-events: none; // クリックを邪魔しない
-
-    // --- 角度の変更 (画像そのものを回転させる) ---
-    transform: rotate(-10deg); 
-    }
-}
-
 // --- Main Event Label (SVG装飾付き) ---
 .main-event-label {
     font-family: $h1;
@@ -117,6 +118,28 @@ body {
         background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 50"><path d="M 10 10 Q 25 5 28 20" stroke="%23d00" stroke-width="1.0" fill="none" stroke-linecap="round"/><circle cx="30" cy="25" r="2.5" fill="%23d00"/><path d="M 33 20 Q 40 0 59 10" stroke="%23d00" stroke-width="1.0" fill="none" stroke-linecap="round"/><circle cx="64" cy="13" r="2.5" fill="%23d00"/></svg>');
         background-size: contain;
         background-repeat: no-repeat;
+    }
+}
+
+.sec__title2 {
+    font-family: $h1; // 先ほど設定したフォント
+    font-size: 2.5rem;
+    color: $black;
+    text-align: left;
+    margin-bottom: 80px;
+    margin-left: 200px;
+    position: relative;
+
+    .dot {
+      position: absolute;
+      top: -10px;
+      left: 0;
+      width: 10px;
+      height: 10px;
+      background: #D11A1B;
+      border-radius: 50%;
+
+      animation: moveDot 2.5s infinite linear;
     }
 }
 
@@ -170,6 +193,7 @@ body {
     }
 }
 
+// --- 100台展示 ---
 #display-100 {
     // キャッチフレーズ全体の調整
     .catchphrase-red {
@@ -196,13 +220,13 @@ body {
 
   // メインの大きな画像ボックス
     .hero-image-box {
-        // width: 100%;
         margin-bottom: 30px; // 下のギャラリーとの間隔
 
         img {
             width: 100%;
             height: auto;
             display: block;
+            margin: 0 auto; // 画像を中央に配置
             border-radius: 4px; // デザインに合わせた微かな角丸（任意）
             box-shadow: $shadow; // variables.scssのシャドウを適用
         }
@@ -256,25 +280,31 @@ body {
 }
 }
 
-
-
-
+// --- トークショー ---
 #special-stage {
   max-width: 1000px;
   margin: 0 auto;
-  padding: 60px 20px;
+  padding: 60px 0;
 
-  // --- 100台展示(3枚目)と同じスタイルのタイトル ---
-  .section-header {
+.section-header {
     display: flex;
     align-items: center; // 文字と線を中央揃え
     gap: 20px;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
+
+    // 右側に長く伸びる黒い線
+    .title-line {
+      flex: 1; // 残りの幅をすべて埋める
+      height: 4px;
+      background-color: $black;
+    }
 
     .title-wrap {
       display: flex;
-      align-items: baseline;
-      gap: 15px;
+      flex-direction: column;
+      align-items: flex-end;
+      text-align: right;
+    //   gap: 15px;
 
       .side-title-en {
         font-family: $h2; // Chakra Petch
@@ -282,6 +312,7 @@ body {
         font-size: 32px;
         font-weight: 800;
         margin: 0;
+        line-height: 1.1;
       }
 
       .side-title-jp {
@@ -289,17 +320,17 @@ body {
         color: $red;
         font-size: 18px;
         font-weight: 700;
-        margin: 0;
+        margin: 10px 50px 0;
+        line-height: 1;
       }
     }
-
-    // 右側に長く伸びる黒い線
-    .title-line {
-      flex: 1; // 残りの幅をすべて埋める
-      height: 2px;
-      background-color: $black;
-    }
   }
+
+.catchphrase-red-bold {
+    color: $red;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
 
   // --- 下段の左右分割レイアウト ---
   .split-layout {
@@ -310,26 +341,78 @@ body {
     .stage-left {
       flex: 1; // 左側を広く
       
-      .catchphrase-red-bold {
-        color: $red;
-        font-weight: 700;
-        margin-bottom: 20px;
-      }
-      
       .full-width-img {
         width: 100%;
         margin-bottom: 30px;
       }
     }
 
-    .stage-right {
-      width: 300px; // サイドバーの幅を固定
+.stage-right {
+  width: 300px; 
+  // サイドバー全体の中央揃えを保証
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .cast-section {
+    width: 100%; // 親の幅いっぱいに広げる
+    display: flex;
+    flex-direction: column;
+    align-items: center; // ★中身のhexagon-profileを中央へ
+    margin-bottom: 40px;
+
+    .cast-category {
+      text-align: center;
+      width: 100%;
+      margin-bottom: 25px;
+    }
+  }
+
+  // 六角形プロフィールの修正
+  .hexagon-profile {
+    display: flex;
+    flex-direction: column; // 画像とテキストを縦並びに
+    align-items: center;    // ★画像とテキストを中央揃えに
+    text-align: center;     // ★テキストを中央寄せ
+    width: 100%;
+    margin-bottom: 30px;
+
+    img {
+      width: 160px; // サイズは適宜調整してください
+      height: auto;
+      margin-bottom: 10px; // 画像と下の名前の間の余白
+    }
+
+    .profile-info {
+      display: flex;
+      flex-direction: column;
+      align-items: center; // ★ランクと名前を中央揃え
       
-      .cast-category {
-        text-align: center;
+      .rank {
+        font-size: 12px;
         color: #666;
-        margin-bottom: 30px;
+      }
+      .name {
+        font-size: 18px;
+        font-weight: 700;
+        font-family: $h2; // Chakra Petchなど
+      }
+    }
+    
+    // MC用（名前が赤いパターン）
+    &.mc-profile {
+      .name-red {
+        color: $red;
+        font-weight: 700;
+        margin-top: 10px;
       }
     }
   }
+  
+  // 交互に配置する場合でも、align-items: centerなら崩れません
+  .profile-reversed {
+    align-items: center; 
+  }
+}
+}
 }

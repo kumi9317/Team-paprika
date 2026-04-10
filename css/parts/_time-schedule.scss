@@ -1,11 +1,13 @@
 @use 'variables' as *;
 
 .time-schedule {
-    padding: 100px 20px;
+    padding-block: 100px 0px;
     background-color: $base; 
    
     .enjoy {
         overflow: visible;
+        position: relative;
+        z-index: 0;
 
         &__inner {
             max-width: 1000px;
@@ -26,16 +28,16 @@
         }
 
         &__card {
-            height: 73vh;
+            height: 650px;
             border-radius: 30px;
             padding: 60px 80px;
             position: relative;
+            z-index: 0;
             color: #fff;
             box-shadow: $shadow;
             overflow: visible; // 画像をはみ出させるため
-
-            position: sticky; 
             margin-bottom: 80px;
+            position: sticky; 
 
             .enjoy__img {
                 position: absolute;
@@ -178,9 +180,67 @@
     $dot-bg: #f8f9fa;
 
     .schedule, .map {
-        padding: 100px 0;
         position: relative;
         overflow: hidden;
+
+        // あしらい画像の共通設定
+        &__deco {
+            position: absolute;
+            z-index: 1;         // コンテンツ（z-index: 2以上）の下に隠す
+            pointer-events: none; // 画像がリンクなどの邪魔をしないようにする
+            
+            // 右上の水色の大きな丸画像
+            &--right {
+                width: 700px;
+                height: auto;
+                top:0;
+                
+                // 1. 基準を「画面の右端」から「画面の中央」に変更
+                right: auto; // 既存のright指定を打ち消し
+                left: 50%;   // 一旦画面の真ん中に置く
+
+                // 2. 「白い枠（max-width: 1000px）の半分」の分だけ右に移動させる
+                // 500px（枠の半分） + 任意のずらし量（例: 200px）
+                margin-left: 400px; 
+
+            }
+
+            // 左側の大きな青い丸画像
+            &--left {
+                width: 700px;   // 画像の本来のサイズ、または表示したいサイズ
+                height: auto;
+                top: 0; // 下からのはみ出し具合
+                // 1. 基準を「画面の左端」から「画面の中央」に変更
+                right: 50%;
+                
+                // 2. 中央から左側に移動させる（マイナスの値を指定）
+                // 白い枠の半分（500px）付近を基準に調整します
+                // 枠に食い込ませたい場合は、-500px よりも絶対値を小さく（例: -450px）します
+                margin-right: 400px; 
+
+                // z-index は他のコンテンツの下（1）に設定
+                z-index: 1;
+            }
+
+            &--orange {
+                width: 700px;   // 画像の本来のサイズ、または表示したいサイズ
+                height: auto;
+                display: block;
+                transform: rotate(-20deg);
+                bottom: 0; // 下からのはみ出し具合
+                // 1. 基準を「画面の左端」から「画面の中央」に変更
+                left: 50%;
+                right: auto;
+                
+                // 2. 中央から左側に移動させる（マイナスの値を指定）
+                // 白い枠の半分（500px）付近を基準に調整します
+                // 枠に食い込ませたい場合は、-500px よりも絶対値を小さく（例: -450px）します
+                margin-left: 400px; 
+
+                // z-index は他のコンテンツの下（1）に設定
+                z-index: 1;
+            }
+        }
         
         &__inner {
             max-width: 900px;
@@ -189,14 +249,15 @@
             background-image: radial-gradient(#eee 2px, transparent 2px);
             background-size: 20px 20px;
             border-radius: 40px;
-            padding: 80px;
+            padding: 100px;
             text-align: center;
+            position: relative;
+            z-index: 2;
         }
-
         &__title {
             margin-bottom: 40px;
         }
-
+    
         &__board {
             max-width: 100%;
             padding: 0;
@@ -207,7 +268,7 @@
                 display: block;
             }
         }
-
+    
         // 赤いボタン
         &__btn {
             display: inline-flex;
@@ -222,7 +283,7 @@
             font-weight: bold;
             transition: 0.3s;
             box-shadow: 0 4px 0 #900; // ボタンの立体感
-
+    
             &:hover {
                 transform: translateY(2px);
                 box-shadow: 0 2px 0 #900;
@@ -234,4 +295,30 @@
             height: 20px;
         }
     }
+
+    .schedule {
+        padding-top: 100px;
+        padding-bottom: 0;
+    }
+
+    .map {
+        padding-top: 200px;
+        padding-bottom: 200px;
+    }
+
 }
+
+ // 帯画像の設定
+.time-schedule__bottom-obi {
+    width: 100%;
+    // height: 300px;
+    line-height: 0; // 画像の下にできる謎の隙間を消す
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; // 画面幅に合わせて綺麗に切り抜く
+        vertical-align: bottom;
+    }
+}
+

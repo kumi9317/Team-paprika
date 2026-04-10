@@ -2,7 +2,10 @@
 
 //pu共通
 .pu {
-  .sec__title {
+  .sec__title2 {
+    font-family: $h1; // 先ほど設定したフォント
+    font-size: 2.5rem;
+    color: $black;
     text-align: left;
     margin-bottom: 80px;
     margin-left: 200px;
@@ -128,6 +131,7 @@
     }
   }
 }
+
 
 //pu-1
 .pu1 {

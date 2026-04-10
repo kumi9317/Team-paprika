@@ -1,69 +1,74 @@
-@use 'variables' as *;
+@use "variables" as *;
 .access {
   font-style: normal;
   background-color: $light_blue;
   position: relative;
   padding-block: 160px;
-  
+
   &__card {
     max-width: 1000px;
     margin: 0 auto;
-    padding-inline:3%;
+    padding-inline: 3%;
     padding-top: 80px;
     padding-bottom: 160px;
     position: relative;
 
-      //背景のドット
-      &::before {
-        content: "";
-            position: absolute;
-            inset: 0;
-            width: 100%;
-            height: 100%;
-            border-radius: 50px;
-            background: #fff;
-            background-image: radial-gradient(#eee 2px, transparent 2px);
-            background-size: 20px 20px;
-      }
+    //背景のドット
+    &::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 50px;
+      background: #fff;
+      background-image: radial-gradient(#eee 2px, transparent 2px);
+      background-size: 20px 20px;
+    }
   }
 
   &__wrapper {
     position: relative;
     z-index: 10;
+
+    h3 {
+      font-size: 25px;
+    }
+    
   }
 
   &__inner {
-    display: flex;
-    gap: 20px;
+    max-width: 800px;
+    margin-inline: auto;
+  }
 
-      iframe {
-        width: 60%;
-        height: 350px;
+  iframe {
+    width: 100%;
+    height: 400px;
+    margin-block: 40px;
+  }
+
+  dl {
+    font-size: 18px;
+    font-style: normal;
+    font-family: "Zen Maru Gothic", sans-serif;
+    font-weight: medium;
+
+    dt {
+      position: relative;
+      padding-left: 20px;
+      /* dtの前に黒四角を配置 */
+      &::before {
+        position: absolute;
+        content: "■";
+        left: 0;
+        color: #333; /* 記号の色 */
       }
+    }
 
-    dl {
-      width: 40%;
-      font-size: 10px;
-      font-style: normal;
-      font-family: "Zen Maru Gothic", sans-serif;
-      font-weight: medium;
-
-        dt {
-          position: relative;
-          padding-left: 10px;
-          /* dtの前に黒四角を配置 */
-            &::before {
-              position: absolute;
-              content: '■';
-              left: 0;
-              color: #333; /* 記号の色 */
-            }
-        }
-
-          dd {
-          margin-bottom: 15px;
-        }
-      }
+    dd {
+      margin-bottom: 15px;
+    }
   }
 
   h2 {

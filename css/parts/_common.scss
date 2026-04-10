@@ -26,3 +26,19 @@ a {
 
 //SP width:425px
 //tab width:768px
+// アニメーションの定義
+@keyframes yurayura {
+    0% { transform: rotate(0deg); }
+    10% { transform: rotate(5deg); }
+    20% { transform: rotate(-5deg); }
+    30% { transform: rotate(3deg); }
+    40% { transform: rotate(0deg); }
+    100% { transform: rotate(0deg); }
+}
+
+// 呼び出し用の共通クラス
+.u-yurayura {
+    animation: yurayura 3s infinite;
+    display: inline-block; // transformを効かせるために必要
+    transform-origin: center;
+}
