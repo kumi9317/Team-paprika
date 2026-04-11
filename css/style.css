@@ -2693,7 +2693,6 @@ section,
 @media (max-width: 768px) {
   #special-stage2 .stage-right .cast-section .cast-category {
     display: block;
-    width: -moz-fit-content;
     width: fit-content;
     margin: 0 auto 30px;
     font-size: 20px;
@@ -2913,8 +2912,7 @@ section,
 #ride-experience .experience-grid .grid-left img {
   width: 100%;
   aspect-ratio: 3/2;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 #ride-experience .experience-grid .grid-right {
   display: flex;
@@ -2930,8 +2928,7 @@ section,
 #ride-experience .experience-grid .grid-right img {
   width: 100%;
   aspect-ratio: 3/2;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 @media (max-width: 768px) {
   #ride-experience .experience-grid .grid-right img {
@@ -3007,6 +3004,32 @@ section,
 .main-event__bottom-obi img {
   width: 100%;
   display: block;
+}
+
+.obi {
+  width: 100%;
+  overflow: hidden;
+}
+@media (max-width: 768px) {
+  .obi {
+    width: 100%;
+    margin-top: 40px;
+  }
+}
+@media (max-width: 425px) {
+  .obi {
+    width: 100%;
+  }
+}
+.obi img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 1.5s ease-out;
+  transform: scale(1.2);
+}
+.obi.is-zoom img {
+  transform: scale(1);
 }
 
 @media (max-width: 1024px) {
