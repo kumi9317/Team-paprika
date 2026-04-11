@@ -1,0 +1,278 @@
+@use "variables" as *;
+
+//pu共通
+.pu {
+  .sec__title2 {
+    font-family: $h1; // 先ほど設定したフォント
+    font-size: 2.5rem;
+    color: $black;
+    text-align: left;
+    margin-bottom: 80px;
+    margin-left: 200px;
+    position: relative;
+
+    .dot {
+      position: absolute;
+      top: -10px;
+      left: 0;
+      width: 10px;
+      height: 10px;
+      background: #D11A1B;
+      border-radius: 50%;
+
+      animation: moveDot 2.5s infinite linear;
+    }
+  }
+
+  @keyframes moveDot {
+    0% {
+      transform: translate(0, 0);
+    }
+    20% {
+      transform: translate(60px, -25px);
+    }
+    40% {
+      transform: translate(120px, -5px);
+    }
+    60% {
+      transform: translate(180px, -30px);
+    }
+    80% {
+      transform: translate(240px, -10px);
+    }
+    100% {
+      transform: translate(300px, 0);
+    }
+  }
+
+  &__gokan {
+    img {
+      width: 340px;
+    }
+  }
+
+  &__wrapper {
+    max-width: 1000px;
+    margin-inline: auto;
+    background-color: #b9e5ff;
+    border-radius: 40px;
+    position: relative;
+    z-index: 5;
+    margin-bottom: 250px;
+  }
+
+  &__inner {
+    max-width: 800px;
+    margin-inline: auto;
+    padding-top: 170px;
+    padding-bottom: 100px;
+
+    .inner-img {
+      width: 280px;
+      height: 210px;
+    }
+
+    .pu3-5text {
+      margin-block: 25px;
+      font-size: 20px;
+    }
+  }
+
+  h3 {
+    font-family: "M PLUS 1p", sans-serif;
+    font-size: 40px;
+    font-weight: 800;
+    color: #f8ff6c;
+    -webkit-text-stroke: 1px #909090;
+  }
+
+  .h3-content {
+    color: white;
+    font-family: "Chakra Petch", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    margin-bottom: 20px;
+    font-size: 23px;
+  }
+
+  &__gokan {
+    position: absolute;
+    z-index: 10;
+    left: 0px;
+    img {
+      border-radius: 30px;
+    }
+  }
+  &__kids {
+    position: absolute;
+    z-index: 10;
+    right: -160px;
+    top: -82px;
+    img {
+      width: 500px;
+    }
+  }
+
+  &__info {
+    position: relative;
+  }
+  &__infocontent {
+    background-color: white;
+    border-radius: 30px;
+    font-family: "Zen Maru Gothic", sans-serif;
+    font-size: 20px;
+    padding: 30px 40px;
+
+    dt {
+      float: left;
+    }
+    dd {
+      margin-left: 10px;
+    }
+  }
+}
+
+
+//pu-1
+.pu1 {
+  &__content1 {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 40px;
+
+    p {
+      font-family: "Zen Maru Gothic", sans-serif;
+      font-size: 20px;
+      letter-spacing: 1px;
+      width: 60%;
+    }
+  }
+
+  &__content2 {
+    li {
+      display: flex;
+      gap: 60px;
+      padding-bottom: 40px;
+    }
+
+    p {
+      margin-block: 15px;
+      font-family: "Zen Maru Gothic", sans-serif;
+      font-size: 20px;
+      letter-spacing: 1px;
+    }
+  }
+}
+
+.pu__infosticker {
+  &_1 {
+    position: absolute;
+    top: -150px;
+    left: -300px;
+  }
+
+  &_2 {
+    position: absolute;
+    top: 40px;
+    right: -20px;
+
+    img {
+      width: 200px;
+    }
+  }
+
+  &_3 {
+    position: absolute;
+    bottom: -70px;
+    right: -80px;
+
+    img {
+      width: 160px;
+    }
+  }
+
+  &_4 {
+    position: absolute;
+    bottom: -50px;
+    right: 100px;
+
+    img {
+      width: 400px;
+    }
+  }
+}
+
+//pu-2
+.pu2 {
+  &__content1,
+  &__content2 {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 40px;
+
+    .pu__contenttext {
+      p {
+        margin-block: 20px;
+        font-size: 19px;
+      }
+    }
+  }
+}
+
+//pu-3
+.pu3 {
+  .pu__inner {
+    padding-top: 180px;
+  }
+
+  &__content {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .pu__infosticker_2 {
+    position: absolute;
+    top: 45px;
+    right: 20px;
+  }
+}
+
+//pu-4
+.pu4 {
+  .pu__inner {
+    padding-top: 190px;
+  }
+}
+
+//pu-5
+.pu5 {
+  .pu__infosticker_2 {
+    position: absolute;
+    top: 10px;
+    right: 0px;
+  }
+}
+
+//pu-6
+.pu6 {
+  .pu__wrapper {
+    background-color: #ffcd8f;
+  }
+
+  h3 {
+    color: #a23b3c;
+    -webkit-text-stroke: 0;
+  }
+
+  .h3-content {
+    color: #706363;
+  }
+  .pu3__content {
+    margin-block: 30px;
+  }
+
+  p {
+    margin-block: 20px;
+    font-size: 19px;
+  }
+}
