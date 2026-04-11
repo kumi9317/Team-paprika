@@ -2983,31 +2983,28 @@ section,
   }
 }
 
-.obi {
-  width: 100%;
-  margin-bottom: 50px;
-  overflow: hidden;
+.main-event__bottom-obi {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 80px;
+  margin-bottom: 40px;
 }
 @media (max-width: 768px) {
-  .obi {
+  .main-event__bottom-obi {
     width: 100%;
     margin-top: 40px;
   }
 }
 @media (max-width: 425px) {
-  .obi {
+  .main-event__bottom-obi {
     width: 100%;
   }
 }
-.obi img {
+.main-event__bottom-obi img {
   width: 100%;
-  height: auto;
   display: block;
-  transition: transform 1.5s ease-out;
-  transform: scale(1.2);
-}
-.obi.is-zoom img {
-  transform: scale(1);
 }
 
 @media (max-width: 1024px) {
