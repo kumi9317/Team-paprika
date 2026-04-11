@@ -94,7 +94,7 @@
     }
   }
 
-  &__git {
+  &__inner {
     max-width: 800px;
     margin-inline: auto;
     padding-top: 170px;
@@ -139,10 +139,6 @@
         margin-block: 10px;
         padding-bottom: 10px;
       }
-    }
-
-    @media screen and (max-width: 1024px) {
-      max-width: 600px;
     }
   }
 
@@ -427,6 +423,10 @@
     justify-content: space-between;
     padding-bottom: 40px;
 
+    @media screen and (max-width: 1024px) {
+      gap: 30px;
+    }
+
     @media screen and (max-width: 768px) {
       gap: 10px;
     }
@@ -457,7 +457,9 @@
     }
   }
 
-  .pu__infosticker_2 {
+  .pu__infosticker_2_2 {
+    position: absolute;
+
     @media screen and (max-width: 1024px) {
       width: 150px;
       right: -50px;

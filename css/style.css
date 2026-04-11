@@ -595,7 +595,9 @@ body.nav-open {
     width: 80%;
   }
 }
-
+.main-program .event-item {
+  /* --- 偶数番目（2番目）の個別設定セクション --- */
+}
 .main-program .event-item:nth-child(even) {
   flex-direction: row-reverse;
 }
@@ -3104,7 +3106,7 @@ section,
     margin-bottom: 80px;
   }
 }
-.pu__git {
+.pu__inner {
   max-width: 800px;
   margin-inline: auto;
   padding-top: 170px;
@@ -3112,52 +3114,47 @@ section,
   padding-inline: 3%;
 }
 @media screen and (max-width: 1024px) {
-  .pu__git {
+  .pu__inner {
     max-width: 700px;
   }
 }
 @media screen and (max-width: 768px) {
-  .pu__git {
+  .pu__inner {
     padding-top: 130px;
     padding-bottom: 70px;
   }
 }
 @media screen and (max-width: 425px) {
-  .pu__git {
+  .pu__inner {
     padding-top: 100px;
     padding-bottom: 70px;
   }
 }
-.pu__git .inner-img {
+.pu__inner .inner-img {
   width: 280px;
   height: 210px;
 }
 @media screen and (max-width: 768px) {
-  .pu__git .inner-img {
+  .pu__inner .inner-img {
     width: 250px;
     height: auto;
   }
 }
 @media screen and (max-width: 425px) {
-  .pu__git .inner-img {
+  .pu__inner .inner-img {
     width: 100%;
     height: auto;
   }
 }
-.pu__git .pu3-5text {
+.pu__inner .pu3-5text {
   margin-block: 25px;
   font-size: 20px;
 }
 @media screen and (max-width: 768px) {
-  .pu__git .pu3-5text {
+  .pu__inner .pu3-5text {
     font-size: 15.5px;
     margin-block: 10px;
     padding-bottom: 10px;
-  }
-}
-@media screen and (max-width: 1024px) {
-  .pu__git {
-    max-width: 600px;
   }
 }
 .pu h3 {
@@ -3452,6 +3449,11 @@ section,
   justify-content: space-between;
   padding-bottom: 40px;
 }
+@media screen and (max-width: 1024px) {
+  .pu2__content1, .pu2__content2 {
+    gap: 30px;
+  }
+}
 @media screen and (max-width: 768px) {
   .pu2__content1, .pu2__content2 {
     gap: 10px;
@@ -3481,22 +3483,25 @@ section,
     font-size: 15px;
   }
 }
+.pu2 .pu__infosticker_2_2 {
+  position: absolute;
+}
 @media screen and (max-width: 1024px) {
-  .pu2 .pu__infosticker_2 {
+  .pu2 .pu__infosticker_2_2 {
     width: 150px;
     right: -50px;
     top: 130px;
   }
 }
 @media screen and (max-width: 768px) {
-  .pu2 .pu__infosticker_2 {
+  .pu2 .pu__infosticker_2_2 {
     width: 130px;
     right: 0px;
     top: 60px;
   }
 }
 @media screen and (max-width: 425px) {
-  .pu2 .pu__infosticker_2 {
+  .pu2 .pu__infosticker_2_2 {
     width: 121px;
     right: 0px;
     top: 116px;
