@@ -2267,7 +2267,7 @@ section,
 }
 @media (max-width: 425px) {
   .page-title-area .page-title-content .page-sub-title {
-    font-size: 24px;
+    font-size: 10px;
   }
 }
 
@@ -2290,26 +2290,6 @@ section,
   background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 50"><path d="M 10 10 Q 25 5 28 20" stroke="%23d00" stroke-width="1.0" fill="none" stroke-linecap="round"/><circle cx="30" cy="25" r="2.5" fill="%23d00"/><path d="M 33 20 Q 40 0 59 10" stroke="%23d00" stroke-width="1.0" fill="none" stroke-linecap="round"/><circle cx="64" cy="13" r="2.5" fill="%23d00"/></svg>');
   background-size: contain;
   background-repeat: no-repeat;
-}
-
-.sec__title2 {
-  font-family: "Poller One", serif;
-  font-size: 2.5rem;
-  color: #333333;
-  text-align: left;
-  margin-bottom: 80px;
-  margin-left: 200px;
-  position: relative;
-}
-.sec__title2 .dot {
-  position: absolute;
-  top: -10px;
-  left: 0;
-  width: 10px;
-  height: 10px;
-  background: #d11a1b;
-  border-radius: 50%;
-  animation: moveDot 2.5s infinite linear;
 }
 
 .event-title-row {
@@ -2605,8 +2585,7 @@ section,
   font-weight: 700;
   display: block;
 }
-#special-stage2 .hexagon-profile .profile-info .name,
-#special-stage2 .hexagon-profile .profile-info .name-red {
+#special-stage2 .hexagon-profile .profile-info .name {
   font-size: 18px;
   font-weight: 700;
   font-family: "Poller One", serif;
