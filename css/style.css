@@ -445,6 +445,7 @@ body.nav-open {
 .main-program .main-event__speed-line img {
   width: 100vw;
   height: 100vh;
+  -o-object-fit: cover;
      object-fit: cover;
 }
 .main-program .main-event .main-event-container {
@@ -594,6 +595,9 @@ body.nav-open {
     width: 80%;
   }
 }
+.main-program .event-item {
+  /* --- 偶数番目（2番目）の個別設定セクション --- */
+}
 .main-program .event-item:nth-child(even) {
   flex-direction: row-reverse;
 }
@@ -716,6 +720,7 @@ body.nav-open {
   transition: 0.3s;
   margin-top: 10px;
   margin-left: auto;
+  width: -moz-fit-content;
   width: fit-content;
   align-self: flex-end;
   position: relative;
@@ -1089,11 +1094,15 @@ body.nav-open {
 .obi img {
   width: 100%;
   height: auto;
+  -o-object-fit: cover;
      object-fit: cover;
   vertical-align: bottom;
   /* ★ アニメーションの設定 */
   transition: transform 1.5s ease-out;
   transform: scale(1);
+}
+.obi {
+  /* ★ このクラスがついたらズームする */
 }
 .obi.is-zoom img {
   transform: scale(1.15);
@@ -1291,6 +1300,7 @@ body.nav-open {
   border: none;
   box-shadow: none;
   width: 180px;
+  -o-object-fit: contain;
      object-fit: contain;
   z-index: 5;
 }
@@ -2046,7 +2056,6 @@ body.nav-open {
   flex-wrap: wrap;
   justify-content: space-between;
   gap: 50px;
-  border: 1px solid black;
 }
 @media screen and (max-width: 1024px) {
   .sponsor__wrapper {
