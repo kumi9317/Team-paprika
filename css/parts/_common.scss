@@ -8,10 +8,16 @@
     margin-bottom: 120px;
     span {
         display: block;
-        font-size: 14px;
+        font-size: 0.875rem;
         color: #d00;
         font-family: $h2;
         font-weight: 800;
+    }
+
+    @media screen and (max-width: 768px) {
+        font-size: 1.5rem;
+        margin-bottom: 40px;
+        span { font-size: 0.75rem;}
     }
 }
 

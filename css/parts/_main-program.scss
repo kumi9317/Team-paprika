@@ -6,6 +6,9 @@
 
     .main-event {
         height: 95vh; // スクロール量を確保
+        @media screen and (max-width: 425px) {
+            height: auto; // 高さを中身に合わせる
+        }
 
         &__sticky {
             position: sticky;
@@ -16,6 +19,11 @@
             align-items: center;
             overflow: hidden;
             z-index: 1;
+            @media screen and (max-width: 425px) {
+                position: relative; // 固定を解除
+                height: auto;
+                overflow: visible;
+            }
         }
 
         // スピードラインの土台
@@ -32,6 +40,9 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            @media screen and (max-width: 425px) {
+                display: none; // スピードラインを非表示
+            }
 
             img {
                 width: 100vw; // 中の画像は常に画面幅いっぱい
@@ -48,6 +59,12 @@
             margin: 0 auto;
             padding-top: 160px;
             z-index: 3;
+            
+            @media screen and (max-width: 425px) {
+                height: auto;
+                padding-top: 80px;
+            }
+
         }
 
         // ✅ タイトルは上部に固定
@@ -60,6 +77,15 @@
         text-align: center;
         z-index: 20;
         opacity: 0;     // 最初はGSAPで出す
+        @media screen and (max-width: 425px) {
+            position: relative;
+            top: auto;
+            left: auto;
+            transform: none;
+            opacity: 1 !important; 
+            visibility: visible !important;
+            margin-bottom: 40px;
+        }
     }
 
     // ✅ アイテムを同じ位置に重ねる
@@ -73,21 +99,33 @@
         opacity: 0;     // 最初は隠す
         visibility: hidden;
         z-index: 10;
+        align-items: center;
         
         // 元のマージンなどが干渉しないようにリセット
         margin: 0; 
-    }
 
-    // GSAP用のjs-event-itemもスマホでは位置を調整
-    // .main-event .js-event-item {
-    //     @media screen and (max-width: 1024px) {
-    //         position: relative;  縦に並べるためにrelativeにする
-    //         left: auto;
-    //         transform: none;
-    //         opacity: 1 !important;  スマホではGSAP演出を止めるか、単純な浮き上がりに変えるのが吉
-    //         visibility: visible !important;
-    //     }
-    // }
+        @media screen and (max-width: 1024px) {
+            display: flex;
+            flex-direction: column; // 上下並び
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+        }
+        @media screen and (max-width: 425px) {
+            position: relative; // 重なりを解除
+            top: auto;
+            left: auto;
+            transform: none;
+            opacity: 1 !important; 
+            visibility: visible !important;
+            margin-bottom: 80px; // アイテムごとの隙間
+            
+            // 縦並びの調整
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+        }
+    }
 }
     
     .event-item {
@@ -106,49 +144,41 @@
             .event-item__img-wrapper { margin-left: -80px; margin-right: 0; }
         }
 
-        @media screen and (max-width: 1024px) {
-            flex-direction: column !important; // 強制的に縦並びにする
-            height: auto;
-            position: relative;
-            top: 0 !important; // absoluteを解除するイメージ
-            transform: translateX(-50%) translateY(0) !important;
-            margin-bottom: 80px;
-
-            // 偶数番目の入れ替えも解除
-            &:nth-child(even) {
-                flex-direction: column !important;
-                .event-item__img-wrapper { margin-left: 0; }
-            }
-        }
-    
         &__img-wrapper {
             position: relative;
-            width: 700px;
+            width: 100%;
+            max-width: 700px;
             flex-shrink: 0; // 幅が縮まないように固定
             margin-right: -100px; // ★ここがポイント！テキストの上に重ねる（ネガティブマージン）
             z-index: 50; // ★テキスト(wrapper)より上に持ってくる
-
             @media screen and (max-width: 1024px) {
-                width: 100%; // 画像を横幅いっぱいに
-                max-width: 500px;
-                margin-right: 0 !important; // 重なり（ネガティブマージン）を解消
-                margin-bottom: -40px; // 少しだけテキストと重ねるならアリ
-                z-index: 2;
+                width: 100%;
+                max-width: 600px;
+                height: auto;          // ★ height固定を解除してautoにする
+                aspect-ratio: 3 / 2;
+                margin-left: -100px;
+                order: 1;
             }
+            @media screen and (max-width: 425px) {
+                width: 80%;
+            }
+
         }
     
         &__photo {
             position: relative;
             width: 100%;
+            height: 100%;    
+            object-fit: cover;
             border: 10px solid #fff;
             box-shadow: $shadow;
             transform: rotate(2deg); // 写真を少し傾ける
             z-index: 2;
-
-            @media screen and (max-width: 1024px) {
-                width: 100%;
-                transform: rotate(0); // スマホでは傾きをなくすとスッキリします
+             @media screen and (max-width: 1024px) {
+                transform: rotate(0); // 傾きを戻す
+                border-width: 5px;
             }
+
         }
     
         // テキストエリアの親
@@ -157,41 +187,58 @@
             width: 380px;
             transform: rotate(-2deg);
             z-index: 10;
-
             @media screen and (max-width: 1024px) {
-                width: 90%; // テキストを少し内側に寄せる
-                max-width: 400px;
-                transform: rotate(0); // 傾き解除
-                z-index: 3;
+                width: 60%;
+                margin: 0;
+                order: 2;  // テキストを下
+                transform: rotate(0);
+            }
+            @media screen and (max-width: 425px) {
+                width: 80%;
             }
         }
     
-        // --- ここからが2番目（偶数番目）の個別設定 ---
+        /* --- 偶数番目（2番目）の個別設定セクション --- */
         &:nth-child(even) {
             flex-direction: row-reverse;
-    
-            // 写真側の調整
+
+            // PC版の重なり
             .event-item__img-wrapper {
                 margin-left: -100px;
                 margin-right: 0;
+            }
+
+            // ★レスポンシブ（1024px以下）の設定
+            @media screen and (max-width: 1024px) {
+                flex-direction: column !important; // 縦並びを強制
                 
-                .event-item__photo {
-                    // ★2枚目だけ写真を「2度」に上書き
-                    transform: rotate(-2deg);
+                .event-item__img-wrapper {
+                    /* 1番目・3番目と同じ設定をここにも書く */
+                    width: 100%;
+                    max-width: 600px; // ここが他の画像とズレる原因
+                    height: auto;
+                    aspect-ratio: 3 / 2;
+                    margin: 0 auto;   // 中央寄せ（ネガティブマージンを消す）
+                    order: 1;         // 画像を上
+                }
+
+                .event-item__text-wrapper {
+                    width: 60%;
+                    margin: 0 auto;
+                    order: 2;         // テキストを下
+                    transform: rotate(0);
                 }
             }
-    
-            // テキスト側の調整
-            .event-item__text-wrapper {
-                // ★2枚目だけテキストを「-2度」に上書き
-                transform: rotate(2deg);
-            }
-    
-            // ドットの影のズレ方向を調整
-            .event-item__text-shadow {
-                left: 40px; 
-                // 影は親（wrapper）と一緒に傾くので、個別のrotateは不要なことが多いですが、
-                // もし形が崩れるならここも調整してください
+            @media screen and (max-width: 425px) {
+                .event-item__img-wrapper {
+                    /* 1番目・3番目と同じ設定をここにも書く */
+                    width: 80%;
+                }
+                .event-item__text-wrapper {
+                    width: 80%;
+                    margin: 0 auto;
+                }
+                
             }
         }
     
@@ -207,6 +254,11 @@
             background-size: 12px 12px;
             clip-path: polygon(20% 0%, 80% 0%, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 0% 80%, 0% 20%);
             z-index: 5; // 本体より下
+            @media screen and (max-width: 1024px) {
+                clip-path: none;
+                top: 15px;
+                left: -15px;
+            }
         }
     
         &__text {
@@ -220,10 +272,9 @@
             background-color: #fff;
             clip-path: polygon(20% 0%, 80% 0%, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 0% 80%, 0% 20%);
             z-index: 10; // 影より上
-
             @media screen and (max-width: 1024px) {
-                padding: 60px 30px 40px; // パディングを狭くする
-                clip-path: none; // 形が複雑ならスマホではシンプルにしてもOK
+                padding: 20px;
+                clip-path: none;
             }
     
             &-inner {
@@ -242,6 +293,9 @@
                     color: $black;
                     margin-bottom: 15px;
                     font-family: $h3;
+                    @media screen and (max-width: 1024px) {
+                        font-size: 1.25rem;
+                    }
                 }
                 p {
                     font-size: 1rem;
@@ -249,6 +303,11 @@
                     line-height: 1.8;
                     margin-bottom: 20px;
                     font-family: $text;
+                }
+                .u-sp-none {
+                    @media screen and (max-width: 1024px) {
+                        display: none; // これで改行が無視され、1行に繋がります
+                    }
                 }
             
             }
@@ -451,6 +510,11 @@
                 margin-inline: auto;
 
             }
+
+            @media screen and (max-width: 425px) {
+                flex-direction: column;
+                margin-top: 0;
+            }
         }
     
         &__item {
@@ -463,6 +527,23 @@
             position: relative;
             z-index: 10;
 
+            display: block;        // aタグをブロック要素にする
+            text-decoration: none; // 下線を消す
+            color: inherit;        // 文字色を継承（親の黒色のままにする）
+            transition: transform 0.3s ease, box-shadow 0.3s ease; // アニメーション
+
+            &:hover {
+                transform: translateY(-5px); // 少し上に浮かす
+                box-shadow: 0 10px 20px rgba(0,0,0,0.15); // 影を強くする
+                
+                .event-name {
+                    text-decoration: underline; // ホバー時にタイトルに下線（お好みで）
+                }
+            }
+
+            @media screen and (max-width: 425px) {
+                width: 100%;
+            }
         }
     
         &__img-wrapper {

@@ -83,7 +83,7 @@
 
 
             .sec__title {
-                margin-bottom: 80px;
+                margin-bottom: 20px;
             }
 
             // カッコを消して、cardの中に正しく入れ直しました
@@ -93,6 +93,9 @@
                 line-height: 1.8;
                 color: #555;
                 margin-bottom: 40px;
+                @media screen and (max-width: 768px) {
+                    font-size: 1rem;
+                }
             }
 
             // --- slickスライダー本体 ---
@@ -126,6 +129,9 @@
                     font-size: 1.5rem;
                     color: #666;
                     font-weight: bold;
+                    @media screen and (max-width: 768px) {
+                        font-size: 1rem;
+                    }
                 }
 
                 // --- slickドットナビのカスタマイズ ---
@@ -163,15 +169,27 @@
 } 
 
  // 帯画像の設定
-.after-party__bottom-obi {
+.obi {
     width: 100%;
-    // height: 300px;
     line-height: 0; // 画像の下にできる謎の隙間を消す
+    overflow: hidden;
 
     img {
         width: 100%;
-        height: 100%;
+        height: auto;
         object-fit: cover; // 画面幅に合わせて綺麗に切り抜く
         vertical-align: bottom;
+
+        /* ★ アニメーションの設定 */
+        transition: transform 1.5s ease-out; // 1.5秒かけてじわっと動く
+        transform: scale(1.0); // 初期状態は等倍
     }
+
+    /* ★ このクラスがついたらズームする */
+    &.is-zoom {
+        img {
+            transform: scale(1.15); // 1.15倍にズーム
+        }
+    }
+    
 }
