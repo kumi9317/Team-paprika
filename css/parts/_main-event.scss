@@ -36,7 +36,6 @@ body {
   padding: 40px 100px; // スマホ表示などで端がくっつかないよう余白を追加
   position: relative; // 背景装飾などの基準点にするため
   overflow-x: hidden; // 1000pxからはみ出した分を隠す
-  background-color: #fff;
   z-index: auto;
 
   // レスポンシブ：768px以下
