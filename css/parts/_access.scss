@@ -5,6 +5,10 @@
   position: relative;
   padding-block: 160px;
 
+  @media (max-width: 768px) {
+    padding-block: 100px;
+  }
+
   &__card {
     max-width: 1000px;
     margin: 0 auto;
@@ -34,7 +38,6 @@
     h3 {
       font-size: 25px;
     }
-    
   }
 
   &__inner {
@@ -157,5 +160,93 @@
     z-index: 2;
     bottom: 6%;
     right: 8%;
+  }
+
+  @media (max-width: 1024px) {
+    &__redcorn1 {
+      top: 120px;
+      left: 100px;
+      width: 136px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    // ===== 上 =====
+
+    &__redcorn1 {
+      top: 120px;
+      left: 82px;
+      width: 136px;
+    }
+
+    &__ashiraiblue {
+      top: 0;
+      right: 0px;
+      height: 300px;
+    }
+
+    &__car1 {
+      top: 40px;
+      right: -10px;
+      width: 180px;
+    }
+
+    &__redcorn2 {
+      top: 80px;
+      right: -30px;
+      width: 40px;
+    }
+
+    &__redcorn3 {
+      top: 120px;
+      right: -20px;
+      width: 70px;
+    }
+
+    // ===== 下 =====
+
+    &__car2 {
+      bottom: 130px;
+      left: -80px;
+      width: 250px;
+    }
+
+    &__car2parts1 {
+      display: none;
+    }
+
+    &__car2parts2 {
+      display: none;
+    }
+
+    &__car2parts3 {
+      display: none;
+    }
+
+    // ===== 右下 =====
+
+    &__people {
+      bottom: 130px;
+      right: 0px;
+      width: 120px;
+    }
+  }
+
+  @media (max-width: 425px) {
+    &__redcorn1 {
+      left: 30px;
+      width: 106px;
+    }
+
+    &__redcorn2 {
+      top: 45px;
+      right: 5px;
+    }
+
+    &__redcorn3 {
+      top: 120px;
+      right: -8px;
+      width: 70px;
+    }
   }
 }

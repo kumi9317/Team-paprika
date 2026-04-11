@@ -1,7 +1,12 @@
 @use "variables" as *;
 
 //pu共通
+
 .pu {
+  @media (max-width: 1024px) {
+    overflow: hidden;
+  }
+
   .sec__title2 {
     font-family: $h1; // 先ほど設定したフォント
     font-size: 2.5rem;
@@ -17,10 +22,22 @@
       left: 0;
       width: 10px;
       height: 10px;
-      background: #D11A1B;
+      background: #d11a1b;
       border-radius: 50%;
 
       animation: moveDot 2.5s infinite linear;
+    }
+
+    @media screen and (max-width: 1024px) {
+      margin-left: 100px;
+    }
+
+    @media screen and (max-width: 768px) {
+      margin-left: 40px;
+    }
+
+    @media screen and (max-width: 425px) {
+      margin-left: 10px;
     }
   }
 
@@ -59,6 +76,22 @@
     position: relative;
     z-index: 5;
     margin-bottom: 250px;
+
+    @media screen and (max-width: 1024px) {
+      max-width: 800px;
+    }
+
+    @media screen and (max-width: 768px) {
+      max-width: 680px;
+      padding-inline: 3%;
+      margin-bottom: 150px;
+    }
+
+    @media screen and (max-width: 425px) {
+      max-width: 400px;
+      padding-inline: 1%;
+      margin-bottom: 80px;
+    }
   }
 
   &__inner {
@@ -66,15 +99,46 @@
     margin-inline: auto;
     padding-top: 170px;
     padding-bottom: 100px;
+    padding-inline: 3%;
+
+    @media screen and (max-width: 768px) {
+      padding-top: 130px;
+      padding-bottom: 70px;
+    }
+
+    @media screen and (max-width: 425px) {
+      padding-top: 100px;
+      padding-bottom: 70px;
+    }
 
     .inner-img {
       width: 280px;
       height: 210px;
+
+      @media screen and (max-width: 768px) {
+        width: 250px;
+        height: auto;
+      }
+
+      @media screen and (max-width: 425px) {
+        width: 100%;
+        height: auto;
+      }
     }
 
     .pu3-5text {
       margin-block: 25px;
       font-size: 20px;
+
+      @media screen and (max-width: 768px) {
+        font-size: 15.5px;
+        margin-block: 10px;
+        padding-bottom: 10px;
+      }
+    }
+
+    @media screen and (max-width: 1024px) {
+      max-width: 600px;
     }
   }
 
@@ -84,6 +148,14 @@
     font-weight: 800;
     color: #f8ff6c;
     -webkit-text-stroke: 1px #909090;
+
+    @media screen and (max-width: 768px) {
+      font-size: 35px;
+    }
+
+    @media screen and (max-width: 425px) {
+      font-size: 26px;
+    }
   }
 
   .h3-content {
@@ -93,6 +165,14 @@
     font-style: normal;
     margin-bottom: 20px;
     font-size: 23px;
+
+    @media screen and (max-width: 768px) {
+      font-size: 20px;
+    }
+
+    @media screen and (max-width: 425px) {
+      font-size: 15px;
+    }
   }
 
   &__gokan {
@@ -101,6 +181,18 @@
     left: 0px;
     img {
       border-radius: 30px;
+
+      @media screen and (max-width: 1024px) {
+        width: 300px;
+      }
+
+      @media screen and (max-width: 768px) {
+        width: 250px;
+      }
+
+      @media screen and (max-width: 425px) {
+        width: 180px;
+      }
     }
   }
   &__kids {
@@ -110,6 +202,29 @@
     top: -82px;
     img {
       width: 500px;
+
+      @media screen and (max-width: 1024px) {
+        width: 400px;
+      }
+
+      @media screen and (max-width: 425px) {
+        width: 250px;
+      }
+    }
+
+    @media screen and (max-width: 1024px) {
+      right: -75px;
+      top: -20px;
+    }
+
+    @media screen and (max-width: 768px) {
+      right: -100px;
+      top: -40px;
+    }
+
+    @media screen and (max-width: 425px) {
+      right: -50px;
+      top: -40px;
     }
   }
 
@@ -129,22 +244,51 @@
     dd {
       margin-left: 10px;
     }
+
+    @media screen and (max-width: 768px) {
+      font-size: 16px;
+    }
+
+    @media screen and (max-width: 425px) {
+      font-size: 13px;
+    }
   }
 }
 
-
 //pu-1
 .pu1 {
+  position: relative;
+
   &__content1 {
     display: flex;
     justify-content: space-between;
     padding-bottom: 40px;
+
+    @media screen and (max-width: 768px) {
+      gap: 10px;
+    }
+
+    @media screen and (max-width: 425px) {
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+    }
 
     p {
       font-family: "Zen Maru Gothic", sans-serif;
       font-size: 20px;
       letter-spacing: 1px;
       width: 60%;
+
+      @media screen and (max-width: 768px) {
+        font-size: 15.5px;
+      }
+
+      @media screen and (max-width: 425px) {
+        font-size: 15px;
+        width: 100%;
+        padding-left: 15px;
+      }
     }
   }
 
@@ -153,6 +297,16 @@
       display: flex;
       gap: 60px;
       padding-bottom: 40px;
+
+      @media screen and (max-width: 768px) {
+        gap: 20px;
+      }
+
+      @media screen and (max-width: 425px) {
+        justify-content: center;
+        flex-direction: column-reverse;
+        align-items: center;
+      }
     }
 
     p {
@@ -160,6 +314,11 @@
       font-family: "Zen Maru Gothic", sans-serif;
       font-size: 20px;
       letter-spacing: 1px;
+
+      @media screen and (max-width: 768px) {
+        font-size: 15.5px;
+        margin-block: 10px;
+      }
     }
   }
 }
@@ -169,6 +328,23 @@
     position: absolute;
     top: -150px;
     left: -300px;
+
+    @media screen and (max-width: 1024px) {
+      width: 250px;
+      left: -80px;
+    }
+
+    @media screen and (max-width: 768px) {
+      width: 200px;
+      left: -80px;
+      top: -100px;
+    }
+
+    @media screen and (max-width: 425px) {
+      width: 160px;
+      left: -40px;
+      top: -90px;
+    }
   }
 
   &_2 {
@@ -179,15 +355,45 @@
     img {
       width: 200px;
     }
+
+    @media screen and (max-width: 1024px) {
+      width: 150px;
+      right: 0px;
+      top: 100px;
+    }
+
+    @media screen and (max-width: 768px) {
+      width: 130px;
+      right: 0px;
+      top: 60px;
+    }
+    &_1 {
+      @media screen and (max-width: 425px) {
+        display: none;
+      }
+    }
   }
 
   &_3 {
     position: absolute;
     bottom: -70px;
     right: -80px;
+    width: 160px;
+    z-index: 1;
 
-    img {
-      width: 160px;
+    @media screen and (max-width: 1024px) {
+      bottom: -80px;
+      right: -50px;
+    }
+
+    @media screen and (max-width: 768px) {
+      bottom: -60px;
+      right: -50px;
+    }
+    @media screen and (max-width: 425px) {
+      width: 100px;
+      bottom: -20px;
+      right: -30px;
     }
   }
 
@@ -195,9 +401,16 @@
     position: absolute;
     bottom: -50px;
     right: 100px;
+    width: 400px;
 
-    img {
-      width: 400px;
+    @media screen and (max-width: 768px) {
+      width: 300px;
+    }
+
+    @media screen and (max-width: 425px) {
+      width: 250px;
+      bottom: -50px;
+      right: 0px;
     }
   }
 }
@@ -210,11 +423,53 @@
     justify-content: space-between;
     padding-bottom: 40px;
 
+    @media screen and (max-width: 768px) {
+      gap: 10px;
+    }
+
+    @media screen and (max-width: 425px) {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .pu__contenttext-2-1 {
+      padding-left: 20px;
+    }
+
     .pu__contenttext {
       p {
         margin-block: 20px;
         font-size: 19px;
+
+        @media screen and (max-width: 768px) {
+          font-size: 15.5px;
+          margin-block: 10px;
+        }
+
+        @media screen and (max-width: 425px) {
+          font-size: 15px;
+        }
       }
+    }
+  }
+
+  .pu__infosticker_2 {
+    @media screen and (max-width: 1024px) {
+      width: 150px;
+      right: -50px;
+      top: 130px;
+    }
+
+    @media screen and (max-width: 768px) {
+      width: 130px;
+      right: 0px;
+      top: 60px;
+    }
+
+    @media screen and (max-width: 425px) {
+      width: 121px;
+      right: 0px;
+      top: 116px;
     }
   }
 }
@@ -223,17 +478,47 @@
 .pu3 {
   .pu__inner {
     padding-top: 180px;
+
+    @media screen and (max-width: 768px) {
+      padding-top: 130px;
+    }
+
+    @media screen and (max-width: 425px) {
+      padding-top: 104px;
+    }
   }
 
   &__content {
     display: flex;
     justify-content: space-between;
+
+    @media screen and (max-width: 425px) {
+      flex-direction: column;
+    }
   }
 
   .pu__infosticker_2 {
     position: absolute;
     top: 45px;
     right: 20px;
+
+    @media screen and (max-width: 1024px) {
+      width: 150px;
+      right: 10px;
+      top: 80px;
+    }
+
+    @media screen and (max-width: 768px) {
+      width: 130px;
+      right: 0px;
+      top: 60px;
+    }
+
+    @media screen and (max-width: 425px) {
+      width: 148px;
+      bottom: -50px;
+      right: 0px;
+    }
   }
 }
 
@@ -241,6 +526,22 @@
 .pu4 {
   .pu__inner {
     padding-top: 190px;
+
+    @media screen and (max-width: 768px) {
+      padding-top: 130px;
+    }
+
+    @media screen and (max-width: 425px) {
+      padding-top: 100px;
+    }
+  }
+
+  .pu__infosticker_2 {
+    @media screen and (max-width: 425px) {
+      width: 175px;
+      right: -32px;
+      top: 73px;
+    }
   }
 }
 
@@ -250,6 +551,12 @@
     position: absolute;
     top: 10px;
     right: 0px;
+
+    @media screen and (max-width: 425px) {
+      width: 143px;
+      right: -10px;
+      top: 147px;
+    }
   }
 }
 
@@ -262,10 +569,28 @@
   h3 {
     color: #a23b3c;
     -webkit-text-stroke: 0;
+
+    span {
+      @media screen and (max-width: 425px) {
+        font-size: 18px;
+      }
+    }
+
+    @media screen and (max-width: 768px) {
+      font-size: 29px;
+    }
+
+    @media screen and (max-width: 425px) {
+      font-size: 26px;
+    }
   }
 
   .h3-content {
     color: #706363;
+
+    @media screen and (max-width: 768px) {
+      margin-block: 0;
+    }
   }
   .pu3__content {
     margin-block: 30px;
@@ -274,5 +599,30 @@
   p {
     margin-block: 20px;
     font-size: 19px;
+  }
+
+  .pu__infosticker_2 {
+    @media screen and (max-width: 425px) {
+      right: -11px;
+      width: 100px;
+    }
+  }
+}
+
+.pu3__content {
+  display: flex; /* Flexboxを適用。これでアイテムが横並びになります */
+  align-items: stretch; /* 垂直方向の高さを、最も背の高いアイテムに合わせます（デフォルト）*/
+  height: auto;
+
+  img {
+    width: 100%; /* 2つの画像を均等な幅にする場合。適宜調整してください */
+
+    /* 重要！ 画像が歪むのを防ぐための設定 */
+    height: 100%; /* コンテナの高さいっぱいに広げます */
+    object-fit: cover; /* アスペクト比を維持し、コンテナを埋めるようにトリミングしてフィットさせます */
+  }
+
+  @media screen and (max-width: 1024px) {
+    gap: 30px;
   }
 }
