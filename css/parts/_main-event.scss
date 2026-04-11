@@ -194,6 +194,36 @@ section,
   }
 }
 
+.sec__title2 {
+  font-family: $h1; // 先ほど設定したフォント
+  font-size: 2.5rem;
+  color: $black;
+  text-align: left;
+  margin-bottom: 80px;
+  margin-left: 200px;
+  position: relative;
+
+  .dot {
+    position: absolute;
+    top: -10px;
+    left: 0;
+    width: 10px;
+    height: 10px;
+    background: #d11a1b;
+    border-radius: 50%;
+
+    animation: moveDot 2.5s infinite linear;
+  }
+
+  @media screen and (max-width: 1024px) {
+    margin-left: 20px;
+  }
+
+  @media screen and (max-width: 768px) {
+    margin-left: 0px;
+  }
+}
+
 // --- Event Title Section ---
 .event-title-row {
   display: flex;
@@ -219,6 +249,8 @@ section,
     margin: 0 4px;
     position: relative;
     display: inline-block;
+
+    // 背後の赤い影（ドット風のズレ）の再現
     &::after {
       content: "100";
       position: absolute;
@@ -228,16 +260,16 @@ section,
       z-index: -1;
     }
   }
-  .title-line {
-    flex-grow: 1;
-    height: 4px;
-    background-color: $black;
-    margin-bottom: 21px;
+}
+.title-line {
+  flex-grow: 1;
+  height: 4px;
+  background-color: $black;
+  margin-bottom: 21px;
 
-    // --- 425px以下のレスポンシブ設定 ---
-    @media (max-width: 425px) {
-      display: none; // これで非表示になります
-    }
+  // --- 425px以下のレスポンシブ設定 ---
+  @media (max-width: 425px) {
+    display: none; // これで非表示になります
   }
 }
 
@@ -696,6 +728,10 @@ section,
   }
 
   .description-block {
+    width: calc(200% + 30px);
+    max-width: none;
+    margin-top: 20px;
+
     p {
       font-family: $text;
       font-size: 16px;
