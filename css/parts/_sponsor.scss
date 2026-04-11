@@ -16,9 +16,9 @@
     /* 指定方法: 太さ 色 */
     -webkit-text-stroke: 1px #000000;
 
-      span {
-        -webkit-text-stroke: 0;
-      }
+    span {
+      -webkit-text-stroke: 0;
+    }
   }
   &__wrapper {
     max-width: 1000px;
@@ -27,5 +27,20 @@
     flex-wrap: wrap;
     justify-content: space-between;
     gap: 50px;
+    border: 1px solid black;
+
+    @media screen and (max-width: 1024px) {
+      gap: 20px;
+      max-width: 800px;
+    }
+
+    @media screen and (max-width: 425px) {
+      gap: 30px;
+      max-width: 350px;
+      flex-wrap: nowrap;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+    }
   }
 }
