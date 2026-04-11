@@ -445,7 +445,8 @@ body.nav-open {
 .main-program .main-event__speed-line img {
   width: 100vw;
   height: 100vh;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .main-program .main-event .main-event-container {
   position: relative;
@@ -718,6 +719,7 @@ body.nav-open {
   transition: 0.3s;
   margin-top: 10px;
   margin-left: auto;
+  width: -moz-fit-content;
   width: fit-content;
   align-self: flex-end;
   position: relative;
@@ -884,7 +886,8 @@ body.nav-open {
   width: 100%;
   height: 400px;
   display: block;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .main-program .pick-up .label {
   position: absolute;
@@ -1042,7 +1045,8 @@ body.nav-open {
 .after-party__card .after-party__wrapper .after-party__slider .after-party__image img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .after-party__card .after-party__wrapper .after-party__slider .after-party__caption {
   margin-top: 15px;
@@ -1215,7 +1219,8 @@ body.nav-open {
   border: none;
   box-shadow: none;
   width: 180px;
-  object-fit: contain;
+  -o-object-fit: contain;
+     object-fit: contain;
   z-index: 5;
 }
 .time-schedule .enjoy__card__01 .enjoy__img--photo1 {
@@ -1293,7 +1298,8 @@ body.nav-open {
   border: none;
   box-shadow: none;
   width: 180px;
-  object-fit: contain;
+  -o-object-fit: contain;
+     object-fit: contain;
   z-index: 5;
 }
 .time-schedule .enjoy__card__02 .enjoy__img--photo1 {
@@ -1381,7 +1387,8 @@ body.nav-open {
   border: none;
   box-shadow: none;
   width: 180px;
-  object-fit: contain;
+  -o-object-fit: contain;
+     object-fit: contain;
   z-index: 5;
 }
 .time-schedule .enjoy__card__03 .enjoy__img--photo1 {
@@ -1466,7 +1473,8 @@ body.nav-open {
   border: none;
   box-shadow: none;
   width: 180px;
-  object-fit: contain;
+  -o-object-fit: contain;
+     object-fit: contain;
   z-index: 5;
 }
 .time-schedule .enjoy__card__04 .enjoy__img--photo1 {
@@ -1755,33 +1763,36 @@ body.nav-open {
   position: relative;
   z-index: 10;
 }
+.access__wrapper h3 {
+  font-size: 25px;
+}
 .access__inner {
-  display: flex;
-  gap: 20px;
+  max-width: 800px;
+  margin-inline: auto;
 }
-.access__inner iframe {
-  width: 60%;
-  height: 350px;
+.access iframe {
+  width: 100%;
+  height: 400px;
+  margin-block: 40px;
 }
-.access__inner dl {
-  width: 40%;
-  font-size: 10px;
+.access dl {
+  font-size: 18px;
   font-style: normal;
   font-family: "Zen Maru Gothic", sans-serif;
   font-weight: medium;
 }
-.access__inner dl dt {
+.access dl dt {
   position: relative;
-  padding-left: 10px;
+  padding-left: 20px;
   /* dtの前に黒四角を配置 */
 }
-.access__inner dl dt::before {
+.access dl dt::before {
   position: absolute;
   content: "■";
   left: 0;
   color: #333; /* 記号の色 */
 }
-.access__inner dl dd {
+.access dl dd {
   margin-bottom: 15px;
 }
 .access h2 {
@@ -1875,7 +1886,7 @@ body.nav-open {
   z-index: 2;
 }
 .faq h2 {
-  padding-top: 200px;
+  padding-top: 500px;
 }
 .faq__q {
   max-width: 1000px;
@@ -1974,11 +1985,12 @@ body.nav-open {
 
 .footer {
   width: 100%;
-  min-height: 100vh;
   background-image: url(../img/footer-background.png);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  position: relative;
+  overflow: hidden;
 }
 .footer h2 {
   padding-top: 100px;
@@ -2002,13 +2014,24 @@ body.nav-open {
 .footer__innerSNS li a {
   display: flex;
   align-items: center;
-}
-.footer__innerSNS li a a {
-  display: inline-block;
+  transition: all 0.25s ease;
 }
 .footer__innerSNS li a p {
   margin-left: 20px;
   font-weight: bold;
+}
+.footer__innerSNS li a img {
+  transition: transform 0.25s ease;
+}
+.footer__innerSNS li a:hover {
+  transform: translateY(-4px);
+  opacity: 0.85;
+}
+.footer__innerSNS li a:hover img {
+  transform: scale(1.1);
+}
+.footer .line {
+  font-weight: 600;
 }
 .footer__innerLINE {
   display: flex;
@@ -2017,12 +2040,14 @@ body.nav-open {
 .footer__innerLINE a {
   display: flex;
   align-items: center;
-  border: 1px solid black;
+  border: 3px solid black;
   padding: 3px 60px;
   border-radius: 20px;
+  transition: all 0.3s ease;
 }
 .footer__innerLINE a p {
   padding-right: 100px;
+  font-weight: 550;
   position: relative;
 }
 .footer__innerLINE a p::before {
@@ -2031,12 +2056,33 @@ body.nav-open {
   right: 45px;
   top: 0px;
 }
+.footer__innerLINE a:hover {
+  background-color: #3e3e3e;
+  color: white;
+  transform: translateY(-3px);
+}
+.footer__innerLINE a:hover img {
+  filter: invert(1);
+}
 .footer__logo {
   text-align: center;
   margin-block: 80px;
 }
+.footer__logo a {
+  display: inline-block;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+.footer__logo a:hover {
+  transform: translateY(-5px);
+}
+.footer__logo a:hover img {
+  transform: scale(1.05);
+  filter: brightness(1.2) drop-shadow(0 5px 10px rgba(0, 0, 0, 0.2));
+}
 .footer__logo img {
   width: 400px;
+  transition: all 0.3s ease;
 }
 .footer__copy {
   background-color: rgba(0, 0, 0, 0.2);
@@ -2045,6 +2091,20 @@ body.nav-open {
 }
 .footer__copy small {
   color: white;
+}
+.footer__ashirai .footer-ashirai1 {
+  position: absolute;
+  top: -100px;
+  width: 700px;
+  right: 50%;
+  margin-right: 500px;
+}
+.footer__ashirai .footer-ashirai2 {
+  position: absolute;
+  width: 700px;
+  bottom: -100px;
+  left: 50%;
+  margin-left: 600px;
 }
 
 body {
@@ -2140,6 +2200,26 @@ body {
   background-repeat: no-repeat;
 }
 
+.sec__title2 {
+  font-family: "Poller One", serif;
+  font-size: 2.5rem;
+  color: #333333;
+  text-align: left;
+  margin-bottom: 80px;
+  margin-left: 200px;
+  position: relative;
+}
+.sec__title2 .dot {
+  position: absolute;
+  top: -10px;
+  left: 0;
+  width: 10px;
+  height: 10px;
+  background: #D11A1B;
+  border-radius: 50%;
+  animation: moveDot 2.5s infinite linear;
+}
+
 .event-title-row {
   display: flex;
   align-items: flex-end;
@@ -2210,7 +2290,8 @@ body {
 #display-100 .gallery-three-col img {
   width: 100%;
   aspect-ratio: 3/2;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   border-radius: 4px;
 }
 #display-100 .description-block {
@@ -2345,4 +2426,222 @@ body {
 }
 #special-stage .split-layout .stage-right .profile-reversed {
   align-items: center;
+}
+
+.pu .sec__title2 {
+  font-family: "Poller One", serif;
+  font-size: 2.5rem;
+  color: #333333;
+  text-align: left;
+  margin-bottom: 80px;
+  margin-left: 200px;
+  position: relative;
+}
+.pu .sec__title2 .dot {
+  position: absolute;
+  top: -10px;
+  left: 0;
+  width: 10px;
+  height: 10px;
+  background: #D11A1B;
+  border-radius: 50%;
+  animation: moveDot 2.5s infinite linear;
+}
+@keyframes moveDot {
+  0% {
+    transform: translate(0, 0);
+  }
+  20% {
+    transform: translate(60px, -25px);
+  }
+  40% {
+    transform: translate(120px, -5px);
+  }
+  60% {
+    transform: translate(180px, -30px);
+  }
+  80% {
+    transform: translate(240px, -10px);
+  }
+  100% {
+    transform: translate(300px, 0);
+  }
+}
+.pu__gokan img {
+  width: 340px;
+}
+.pu__wrapper {
+  max-width: 1000px;
+  margin-inline: auto;
+  background-color: #b9e5ff;
+  border-radius: 40px;
+  position: relative;
+  z-index: 5;
+  margin-bottom: 250px;
+}
+.pu__inner {
+  max-width: 800px;
+  margin-inline: auto;
+  padding-top: 170px;
+  padding-bottom: 100px;
+}
+.pu__inner .inner-img {
+  width: 280px;
+  height: 210px;
+}
+.pu__inner .pu3-5text {
+  margin-block: 25px;
+  font-size: 20px;
+}
+.pu h3 {
+  font-family: "M PLUS 1p", sans-serif;
+  font-size: 40px;
+  font-weight: 800;
+  color: #f8ff6c;
+  -webkit-text-stroke: 1px #909090;
+}
+.pu .h3-content {
+  color: white;
+  font-family: "Chakra Petch", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  margin-bottom: 20px;
+  font-size: 23px;
+}
+.pu__gokan {
+  position: absolute;
+  z-index: 10;
+  left: 0px;
+}
+.pu__gokan img {
+  border-radius: 30px;
+}
+.pu__kids {
+  position: absolute;
+  z-index: 10;
+  right: -160px;
+  top: -82px;
+}
+.pu__kids img {
+  width: 500px;
+}
+.pu__info {
+  position: relative;
+}
+.pu__infocontent {
+  background-color: white;
+  border-radius: 30px;
+  font-family: "Zen Maru Gothic", sans-serif;
+  font-size: 20px;
+  padding: 30px 40px;
+}
+.pu__infocontent dt {
+  float: left;
+}
+.pu__infocontent dd {
+  margin-left: 10px;
+}
+
+.pu1__content1 {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 40px;
+}
+.pu1__content1 p {
+  font-family: "Zen Maru Gothic", sans-serif;
+  font-size: 20px;
+  letter-spacing: 1px;
+  width: 60%;
+}
+.pu1__content2 li {
+  display: flex;
+  gap: 60px;
+  padding-bottom: 40px;
+}
+.pu1__content2 p {
+  margin-block: 15px;
+  font-family: "Zen Maru Gothic", sans-serif;
+  font-size: 20px;
+  letter-spacing: 1px;
+}
+
+.pu__infosticker_1 {
+  position: absolute;
+  top: -150px;
+  left: -300px;
+}
+.pu__infosticker_2 {
+  position: absolute;
+  top: 40px;
+  right: -20px;
+}
+.pu__infosticker_2 img {
+  width: 200px;
+}
+.pu__infosticker_3 {
+  position: absolute;
+  bottom: -70px;
+  right: -80px;
+}
+.pu__infosticker_3 img {
+  width: 160px;
+}
+.pu__infosticker_4 {
+  position: absolute;
+  bottom: -50px;
+  right: 100px;
+}
+.pu__infosticker_4 img {
+  width: 400px;
+}
+
+.pu2__content1, .pu2__content2 {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 40px;
+}
+.pu2__content1 .pu__contenttext p, .pu2__content2 .pu__contenttext p {
+  margin-block: 20px;
+  font-size: 19px;
+}
+
+.pu3 .pu__inner {
+  padding-top: 180px;
+}
+.pu3__content {
+  display: flex;
+  justify-content: space-between;
+}
+.pu3 .pu__infosticker_2 {
+  position: absolute;
+  top: 45px;
+  right: 20px;
+}
+
+.pu4 .pu__inner {
+  padding-top: 190px;
+}
+
+.pu5 .pu__infosticker_2 {
+  position: absolute;
+  top: 10px;
+  right: 0px;
+}
+
+.pu6 .pu__wrapper {
+  background-color: #ffcd8f;
+}
+.pu6 h3 {
+  color: #a23b3c;
+  -webkit-text-stroke: 0;
+}
+.pu6 .h3-content {
+  color: #706363;
+}
+.pu6 .pu3__content {
+  margin-block: 30px;
+}
+.pu6 p {
+  margin-block: 20px;
+  font-size: 19px;
 }/*# sourceMappingURL=style.css.map */
