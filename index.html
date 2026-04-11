@@ -20,15 +20,21 @@
     
     <body>
         <section class="main-visual">
-
+            
+            <img src="img/mv-logo.png" alt="logo" class="mv-logo">
+            <h1 class="mv-text">
+                走る歓び、次世代へ。<br>
+                クルマも、遊びも、ぜんぶある1日。
+            </h1>
+            
         </section>
-       <header class="header">
+        <header class="header">
             <div class="header__inner">
 
                 <!-- ロゴ -->
-                <div class="header__logo">
+                <a href="index.html" class="header__logo">
                     <img src="img/header-logo.png" alt="ロゴ">
-                </div>
+                </a>
 
                 <!-- 日時情報 -->
                 <div class="header__info">
@@ -37,91 +43,131 @@
                         8. 1<span>SAT</span> ▶ 2<span>SUN</span>
                     </div>
                     <span class="header__time">10:00 〜 20:00</span>
-                    <span class="header__place">パシフィコ横浜 展示ホール</span>
+                    <span class="header__place">〇〇会場</span>
                 </div>
 
-                <!-- 無料ボタン -->
-                <div class="header__free">
-                    <a href="#" class="btn-free">入場料 無料</a>
+            <!-- 無料ボタン -->
+            <div class="header__free">
+                <a href="#" class="btn-free">入場料 無料</a>
+            </div>
+
+            <!-- ハンバーガー -->
+            <div class="hamburger" id="js-hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <nav class="drawer-menu" id="js-drawer">
+                <ul class="drawer-menu__list">
+                    <li class="drawer-menu__item"><a href="#main-event">メインイベント</a></li>
+                    <li class="drawer-menu__item"><a href="#pick-up">ピックアップイベント</a></li>
+                    <li class="drawer-menu__item"><a href="#after-party">後夜祭</a></li>
+                    <li class="drawer-menu__item"><a href="#enjoy">1日の楽しみ方</a></li>
+                    <li class="drawer-menu__item"><a href="#schedule">タイムスケジュール</a></li>
+                    <li class="drawer-menu__item"><a href="#map">会場マップ</a></li>
+                    <li class="drawer-menu__item"><a href="#access">アクセス</a></li>
+                    <li class="drawer-menu__item"><a href="#faq">FAQ</a></li>
+                    <li class="drawer-menu__item"><a href="#sponsor">協賛企業</a></li>
+                    <li class="drawer-menu__item"><a href="#footer">インフォメーション＆お問い合わせ</a></li>
+                </ul>
+            </nav>
+
+            <div class="drawer-overlay" id="js-overlay"></div>
+
+
+        </div>
+    </header>
+
+
+    <section class="main-program">
+        <div class="main-event" id="main-event">
+
+            <div class="main-event__sticky">
+                <div class="main-event__bg"></div>
+                <div class="main-event__speed-line">
+                    <img src="img/speed-line.png" alt="">
                 </div>
 
-                <!-- ハンバーガー -->
-                <div class="hamburger">
-                    <span></span>
-                    <span></span>
-                    <span></span>
+                <div class="main-event-container">
+                    <h2 class="sec__title js-title">
+                        Main Event<span>メインイベント</span>
+                    </h2>
+
+                    <div class="event-item js-event-item">
+                        <div class="event-item__text-wrapper">
+                            <div class="event-item__text-shadow"></div>
+                            <div class="event-item__text">
+                                <div class="event-item__text-inner">
+                                    <h3>GRヤリスカー 100台展示</h3>
+                                    <p>全国から集まったカスタム＆ノーマルのヤリスが会場を埋め尽くします。</p>
+                                    <a href="event.html" class="more-btn">
+                                        <span class="more-btn__text">MORE</span>
+                                        <img src="img/morearrow.png" class="more-btn__arrow">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="event-item__img-wrapper">
+                            <img src="img/mv01.png" alt="GRヤリスカー 100台展示" class="event-item__photo">
+                        </div>
+                    </div>
+
+                        <div class="event-item js-event-item">
+                            <div class="event-item__text-wrapper">
+                                <div class="event-item__text-shadow"></div>
+                                <div class="event-item__text">
+                                    <div class="event-item__text-inner">
+                                        <h3>GR Special Stage</h3>
+                                        <p>プロドライバーによるトークショー。<br class="u-sp-none">ここだけの話を聞けるかも！？</p>
+                                        <a href="event.html" class="more-btn">
+                                            <span class="more-btn__text">MORE</span> 
+                                            <img src="img/morearrow.png" class="more-btn__arrow">
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="event-item__img-wrapper">
+                                <img src="img/mv02.png" alt="GR Special Stage" class="event-item__photo">
+                            </div>
+                        </div>
+
+                    <div class="event-item js-event-item">
+                        <div class="event-item__text-wrapper">
+                            <div class="event-item__text-shadow"></div>
+                            <div class="event-item__text">
+                                <div class="event-item__text-inner">
+                                    <h3>GR 乗車体験</h3>
+                                    <p>憧れのレーシングカーに乗ってみよう！<br>プロドライバーと一緒にサーキットの風を感じる、夢のような乗車体験。</p>
+                                    <a href="event.html" class="more-btn">
+                                        <span class="more-btn__text">MORE</span>
+                                        <img src="img/morearrow.png" class="more-btn__arrow">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="event-item__img-wrapper">
+                            <img src="img/mv03.png" alt="GR 乗車体験" class="event-item__photo">
+                        </div>
+                    </div>
                 </div>
 
             </div>
-        </header>
 
-        <section class="main-program">
-            <div class="main-event">
-               
-                <h2 class="sec__title">
-                    Main Event<span>メインイベント</span>
-                </h2>
-                
-                <div class="event-item">
-                    <div class="event-item__text-wrapper">
-                        <div class="event-item__text-shadow"></div>
-                        <div class="event-item__text">  
-                            <div class="event-item__text-inner"> 
-                                <h3>GRヤリスカー 100台展示</h3>
-                                <p>全国から集まったカスタム＆ノーマルのヤリスが会場を埋め尽くします。</p>
-                                <a href="#" class="more-btn">More</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="event-item__img-wrapper">
-                        <img src="img/mv01.png" alt="GRヤリスカー 100台展示" class="event-item__photo">
-                    </div>
-                </div>
-                
-                <div class="event-item">
-                    <div class="event-item__text-wrapper">
-                        <div class="event-item__text-shadow"></div>
-                        <div class="event-item__text">
-                            <div class="event-item__text-inner">
-                                <h3>GR Special Stage</h3>
-                                <p>プロドライバーによるトークショー。<br>ここだけの話を聞けるかも！？</p>
-                                <a href="#" class="more-btn">More</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="event-item__img-wrapper">
-                        <img src="img/mv02.png" alt="GR Special Stage" class="event-item__photo">
-                    </div>
-                </div>
+        </div>
 
-                <div class="event-item">
-                    <div class="event-item__text-wrapper">
-                        <div class="event-item__text-shadow"></div>
-                        <div class="event-item__text">
-                            <div class="event-item__text-inner">
-                                <h3>GR 乗車体験</h3>
-                                <p>憧れのレーシングカーに乗ってみよう！<br>プロドライバーと一緒にサーキットの風を感じる、夢のような乗車体験。</p>
-                                <a href="#" class="more-btn">More</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="event-item__img-wrapper">
-                        <img src="img/mv03.png" alt="GR 乗車体験" class="event-item__photo">
-                    </div>
-                </div>
-            </div>
-        
+        <div class="pick-up" id="pick-up">
+            <img src="img/asirai_lightblue.png" alt="" class="pick-up__deco pick-up__deco--right">
+            <img src="img/asirai-blue.png" alt="" class="pick-up__deco pick-up__deco--left">
+            <img src="img/sticker-pit.png" alt="" class="pick-up__deco pick-up__deco--pit u-yurayura">
+            <img src="img/sticker-mokuiku.png" alt="" class="pick-up__deco pick-up__deco--mokuiku u-yurayura">
 
-            <div class="pick-up">
-                <img src="img/asirai_lightblue.png" alt="" class="pick-up__deco pick-up__deco--right">
-                <img src="img/asirai-blue.png" alt="" class="pick-up__deco pick-up__deco--left">
+            <div class="pick-up__container">
+                <h2 class="sec__title">Pick Up event<span>注目イベント</span></h2>
 
-                <div class="pick-up__container">
-                    <h2 class="sec__title">Pick Up event<span>注目イベント</span></h2>
+                <div class="pick-up__grid">
 
-                    <div class="pick-up__grid">
-
-                        <div class="pick-up__item">
+                        <a href="event.html#pu-2" class="pick-up__item">
                             <div class="pick-up__img-wrapper">
                                 <div class="label label--blue">
                                     <div class="label__textblue">
@@ -140,9 +186,9 @@
                                 </ul>
                                 <p class="event-name event-name--blue">e-sports体験</p>
                             </div>
-                        </div>
+                        </a>
 
-                        <div class="pick-up__item">
+                        <a href="event.html#pu-1" class="pick-up__item">
                             <div class="pick-up__img-wrapper">
                                 <div class="label label--blue">
                                     <div class="label__textblue">
@@ -161,9 +207,9 @@
                                 </ul>
                                 <p class="event-name event-name--blue">キッズメカニック・ピット体験</p>
                             </div>
-                        </div>
+                        </a>
 
-                        <div class="pick-up__item">
+                        <a href="event.html#pu-3" class="pick-up__item">
                             <div class="pick-up__img-wrapper">
                                 <div class="label label--blue">
                                     <div class="label__textblue">
@@ -181,9 +227,9 @@
                                 </ul>
                                 <p class="event-name event-name--blue">木育体験</p>
                             </div>
-                        </div>
+                        </a>
 
-                        <div class="pick-up__item">
+                        <a href="event.html#pu-6" class="pick-up__item">
                             <div class="pick-up__img-wrapper">
                                 <div class="label label--orange">
                                     <div class="label__textorange">
@@ -200,18 +246,25 @@
                                 </ul>
                                 <p class="event-name event-name--orange">大集合！キッチンカー！</p>
                             </div>
-                        </div>
+                        </a>
 
-                        <a href="#" class="more-link">More &rarr;</a>
-                    </div>
+                    <a href="event.html#pickup-event" class="more-btn pickup-btn">
+                        <span class="more-btn__text">MORE</span>
+                        <img src="img/morearrow.png" class="more-btn__arrow">
+                    </a>
+
                 </div>
             </div>
-        </section>
 
-    <section class="after-party">
+        </div>
+
+
+    </section>
+
+    <section class="after-party" id="after-party">
         <img src="img/asirai_orange01.png" alt="" class="after-party__deco-bg after-party__deco-bg--right">
         <img src="img/asirai_lightblue02.png" alt="" class="after-party__deco-bg after-party__deco-bg--left">
-        <img src="img/sticker-hanabi.png" alt="" class="after-party__deco">
+        <img src="img/sticker-hanabi.png" alt="" class="after-party__deco u-yurayura">
 
         <div class="after-party__inner">
 
@@ -251,317 +304,342 @@
             </div>
         </div>
     </section>
-    <div class="after-party__bottom-obi">
-        <img src="img/obi-GR01.png" alt="GRヤリスカー">
-    </div>
 
-        <section class="time-schedule">
-            <div class="enjoy">
-                <div class="enjoy__inner">
-                    <h2 class="enjoy__title">
-                        <img src="img/enjoy-title.png" alt="HOW TO ENJOY">
-                        <span>見どころ満載！ おすすめコースをチェック！</span>
-                    </h2>
+        <div class="obi">
+            <img src="img/obi-GR01.png" alt="GRヤリスカー">
+        </div>
 
-                    <div class="enjoy__card enjoy__card__01">
-                        <div class="enjoy__header">
-                            <div class="enjoy__number">01</div>   
-                            <h3 class="enjoy__lead">親子で1日満喫！</h3>
-                        </div>
+    <section class="time-schedule">
+        <div class="enjoy">
+            <div class="enjoy__inner" id="enjoy">
+                <h2 class="enjoy__title">
+                    <img src="img/enjoy-title.png" alt="HOW TO ENJOY">
+                    <span>見どころ満載！ おすすめコースをチェック！</span>
+                </h2>
 
-                        <div class="enjoy__content">
-                            <div class="enjoy__timeline">
-                                <p class="enjoy__period">午前☀️</p>
-                                
-                                <dl class="enjoy__item">
-                                    <dt>10:00<span>|</span>まずは会場へ！100台のヤリスから「お気に入り」を見つけよう</dt>
-                                    <dd>実際に乗れる体験もあるから、最初に行くのがおすすめ◎</dd>
-                                </dl>
-    
-                                <dl class="enjoy__item">
-                                    <dt>11:00<span>|</span>目指せプロメカニック！</dt>
-                                    <dd>ピット体験＆タイヤ交換にチャレンジ</dd>
-                                </dl>
-    
-                                <dl class="enjoy__item">
-                                    <dt>12:00<span>|</span>キッチンカーでランチタイム</dt>
-                                    <dd>青空の下でひと休み。休憩スペースもあるのでゆっくり過ごせます</dd>
-                                </dl>
-                            </div>
-                        </div>
-                                 
-                        <img src="img/sticker-GR2.png" alt="" class="enjoy__img enjoy__img--sticker">
-                        <img src="img/ej01-01.png" alt="" class="enjoy__img enjoy__img--photo1">
-                        <img src="img/kids-mechanic.png" alt="" class="enjoy__img enjoy__img--photo2">
-                        <img src="img/ej01-03.png" alt="" class="enjoy__img enjoy__img--photo3">
-                        <img src="img/arrow.png" alt="" class="enjoy__arrow enjoy__arrow--1">
-                        <img src="img/arrow.png" alt="" class="enjoy__arrow enjoy__arrow--2">
-                        <img src="img/arrow.png" alt="" class="enjoy__arrow enjoy__arrow--3">                    
+                <div class="enjoy__card enjoy__card__01">
+                    <div class="enjoy__header">
+                        <div class="enjoy__number">01</div>
+                        <h3 class="enjoy__lead">親子で1日満喫！</h3>
                     </div>
-                    <div class="enjoy__card enjoy__card__02">
-                        <div class="enjoy__header">
-                            <div class="enjoy__number">02</div>   
-                            <h3 class="enjoy__lead">親子で1日満喫！</h3>
+
+                    <div class="enjoy__content">
+                        <div class="enjoy__timeline">
+                            <p class="enjoy__period">午前☀️</p>
+
+                            <dl class="enjoy__item">
+                                <dt>10:00<span>|</span>まずは会場へ！100台のヤリスから「お気に入り」を見つけよう</dt>
+                                <dd>実際に乗れる体験もあるから、最初に行くのがおすすめ◎</dd>
+                            </dl>
+
+                            <dl class="enjoy__item">
+                                <dt>11:00<span>|</span>目指せプロメカニック！</dt>
+                                <dd>ピット体験＆タイヤ交換にチャレンジ</dd>
+                            </dl>
+
+                            <dl class="enjoy__item">
+                                <dt>12:00<span>|</span>キッチンカーでランチタイム</dt>
+                                <dd>青空の下でひと休み。休憩スペースもあるのでゆっくり過ごせます</dd>
+                            </dl>
                         </div>
-
-                        <div class="enjoy__content">
-                            <div class="enjoy__timeline">
-                                <p class="enjoy__period">午後</p>
-                                
-                                <dl class="enjoy__item">
-                                    <dt>13:00<span>|</span>ダンス＆けん玉ステージを観覧！</dt>
-                                    <dd>ちょっと座って、のんびり楽しむ時間に</dd>
-                                </dl>
-    
-                                <dl class="enjoy__item">
-                                    <dt>14:30<span>|</span>eスポーツ体験 or 木育ワークショップへ</dt>
-                                    <dd>子どもが体験中は、近くでひと休みも◎</dd>
-                                </dl>
-    
-                                <dl class="enjoy__item">
-                                    <dt>16:00<span>|</span>プロドライバーとハイタッチ！ここでしかできない体験に大興奮</dt>
-                                </dl>
-
-                                <dl class="enjoy__item">
-                                    <dt>17:30<span>|</span>そのまま後夜祭へ！屋台やイベントを楽しみながら、夜までゆっくり</dt>
-                                </dl>
-
-                                <dl class="enjoy__item">
-                                    <dt>19:00<span>|</span>1日の締めくくりは花火大会     家族で楽しむ、ちょっと特別な時間</dt>
-                                </dl>
-                            </div>
-                        </div>
-                                 
-                        <img src="img/sticker-kendama.png" alt="" class="enjoy__img enjoy__img--sticker">
-                        <img src="img/ej02-01.png" alt="" class="enjoy__img enjoy__img--photo1">
-                        <img src="img/ej02-02.png" alt="" class="enjoy__img enjoy__img--photo2">
-                        <img src="img/afterparty01.png" alt="" class="enjoy__img enjoy__img--photo3">
-                        <img src="img/arrow.png" alt="" class="enjoy__arrow enjoy__arrow--1">
-                        <img src="img/arrow.png" alt="" class="enjoy__arrow enjoy__arrow--2">
-                        <img src="img/arrow.png" alt="" class="enjoy__arrow enjoy__arrow--3">                    
                     </div>
-                    <div class="enjoy__card enjoy__card__03">
-                        <div class="enjoy__header">
-                            <div class="enjoy__number">03</div>   
-                            <h3 class="enjoy__lead">車好き徹底攻略！</h3>
-                        </div>
 
-                        <div class="enjoy__content">
-                            <div class="enjoy__timeline">
-                                <p class="enjoy__period">午前☀️</p>
-                                
-                                <dl class="enjoy__item">
-                                    <dt>10:00<span>|</span>展示ゾーンへ直行</dt>
-                                    <dd>100台のGRヤリスをじっくり見比べる</dd>
-                                </dl>
-    
-                                <dl class="enjoy__item">
-                                    <dt>10:30<span>|</span>乗車体験でリアルな走りを体感</dt>
-                                    <dd>ピ気になる1台に実際に乗ってみよう</dd>
-                                </dl>
-    
-                                <dl class="enjoy__item">
-                                    <dt>11:30<span>|</span>トークショー観覧</dt>
-                                    <dd>プロドライバーのリアルな話を聞けるチャンス</dd>
-                                </dl>
-                            </div>
-                        </div>
+                    <img src="img/sticker-GR2.png" alt="" class="enjoy__img enjoy__img--sticker u-yurayura">
+                    <img src="img/ej01-01.png" alt="" class="enjoy__img enjoy__img--photo1">
+                    <img src="img/kids-mechanic.png" alt="" class="enjoy__img enjoy__img--photo2">
+                    <img src="img/ej01-03.png" alt="" class="enjoy__img enjoy__img--photo3">
+                    <img src="img/arrow.png" alt="" class="enjoy__arrow enjoy__arrow--1">
+                    <img src="img/arrow.png" alt="" class="enjoy__arrow enjoy__arrow--2">
+                    <img src="img/arrow.png" alt="" class="enjoy__arrow enjoy__arrow--3">
 
-                        <img src="img/sticker-ride.png" alt="" class="enjoy__img enjoy__img--sticker">
-                        <img src="img/ej03-01.png" alt="" class="enjoy__img enjoy__img--photo1">
-                        <img src="img/mv03.png" alt="" class="enjoy__img enjoy__img--photo2">
-                        <img src="img/mv01.png" alt="" class="enjoy__img enjoy__img--photo3">
-                        <img src="img/arrow.png" alt="" class="enjoy__arrow enjoy__arrow--1">
-                        <img src="img/arrow.png" alt="" class="enjoy__arrow enjoy__arrow--2">
-                        <img src="img/arrow.png" alt="" class="enjoy__arrow enjoy__arrow--3">                                                      
-                    </div>
-                    <div class="enjoy__card enjoy__card__04">
-                        <div class="enjoy__header">
-                            <div class="enjoy__number">04</div>   
-                            <h3 class="enjoy__lead">車好き徹底攻略！</h3>
-                        </div>
-
-                        <div class="enjoy__content">
-                            <div class="enjoy__timeline">
-                                <p class="enjoy__period">午前☀️</p>
-                                
-                                <dl class="enjoy__item">
-                                    <dt>13:00<span>|</span>じゃんけん大会＆サイン争奪戦に参加</dt>
-                                    <dd>ここでしか手に入らないチャンスも</dd>
-                                </dl>
-    
-                                <dl class="enjoy__item">
-                                    <dt>14:30<span>|</span>さらにトークショーへ    レースの裏話やここだけの話も</dt>
-                                </dl>
-    
-                                <dl class="enjoy__item">
-                                    <dt>16:00<span>|</span>ハイタッチ＆写真撮影会</dt>
-                                    <dd>推しチームとの距離が一気に縮まる</dd>
-                                </dl>
-
-                                <dl class="enjoy__item">
-                                    <dt>17:30<span>|</span>後夜祭スタート    クルマ仲間と語りながら楽しむ時間</dt>
-                                </dl>
-
-                                <dl class="enjoy__item">
-                                    <dt>19:00<span>|</span>花火を見ながら1日を締めくくり    最高の余韻でイベント終了</dt>
-                                </dl>
-                            </div>
-                        </div>
-                                 
-                        <img src="img/sticker-highfive.png" alt="" class="enjoy__img enjoy__img--sticker">
-                        <img src="img/ej01-01.png" alt="" class="enjoy__img enjoy__img--photo1">
-                        <img src="img/ej03-01.png" alt="" class="enjoy__img enjoy__img--photo2">
-                        <img src="img/ej04-03.png" alt="" class="enjoy__img enjoy__img--photo3">
-                        <img src="img/arrow.png" alt="" class="enjoy__arrow enjoy__arrow--1">
-                        <img src="img/arrow.png" alt="" class="enjoy__arrow enjoy__arrow--2">
-                        <img src="img/arrow.png" alt="" class="enjoy__arrow enjoy__arrow--3">                    
-                    </div>
                 </div>
-            </div>
 
-            <div class="schedule">
-                <div class="schedule__inner">
-                    <h2 class="sec__title schedule__title">
-                        Time Schedule<span>タイムスケジュール</span>
-                    </h2>
-                    <div class="schedule__board">
-                        <img src="img/time-table.png" alt="タイムテーブル">
+                <div class="enjoy__card enjoy__card__02">
+                    <div class="enjoy__header">
+                        <div class="enjoy__number">02</div>
+                        <h3 class="enjoy__lead">親子で1日満喫！</h3>
                     </div>
-                    <a href="img/schedule-large.jpg" class="schedule__btn" target="_blank">
-                        タイムスケジュール
-                        <img src="img/PDFicon.svg" alt="" class="schedule__icon">
-                    </a>
-                </div>
-            </div>
 
-            <div class="map">
-                <div class="map__inner">
-                    <h2 class="sec__title map__title">
-                        Venue Map<span>会場マップ</span>
-                    </h2>
-                    <div class="map__board">
-                        <img src="img/map.png" alt="会場マップ">
+                    <div class="enjoy__content">
+                        <div class="enjoy__timeline">
+                            <p class="enjoy__period">午後</p>
+
+                            <dl class="enjoy__item">
+                                <dt>13:00<span>|</span>ダンス＆けん玉ステージを観覧！</dt>
+                                <dd>ちょっと座って、のんびり楽しむ時間に</dd>
+                            </dl>
+
+                            <dl class="enjoy__item">
+                                <dt>14:30<span>|</span>eスポーツ体験 or 木育ワークショップへ</dt>
+                                <dd>子どもが体験中は、近くでひと休みも◎</dd>
+                            </dl>
+
+                            <dl class="enjoy__item">
+                                <dt>16:00<span>|</span>プロドライバーとハイタッチ！ここでしかできない体験に大興奮</dt>
+                            </dl>
+
+                            <dl class="enjoy__item">
+                                <dt>17:30<span>|</span>そのまま後夜祭へ！屋台やイベントを楽しみながら、夜までゆっくり</dt>
+                            </dl>
+
+                            <dl class="enjoy__item">
+                                <dt>19:00<span>|</span>1日の締めくくりは花火大会 家族で楽しむ、ちょっと特別な時間</dt>
+                            </dl>
+                        </div>
+
                     </div>
-                    <a href="img/map-large.jpg" class="map__btn" target="_blank">
-                        マップ
-                        <img src="img/PDFicon.svg" alt="" class="map__icon">
-                    </a>
+
+                    <img src="img/sticker-kendama.png" alt="" class="enjoy__img enjoy__img--sticker">
+                    <img src="img/ej02-01.png" alt="" class="enjoy__img enjoy__img--photo1">
+                    <img src="img/ej02-02.png" alt="" class="enjoy__img enjoy__img--photo2">
+                    <img src="img/afterparty01.png" alt="" class="enjoy__img enjoy__img--photo3">
+                    <img src="img/arrow.png" alt="" class="enjoy__arrow enjoy__arrow--1">
+                    <img src="img/arrow.png" alt="" class="enjoy__arrow enjoy__arrow--2">
+                    <img src="img/arrow.png" alt="" class="enjoy__arrow enjoy__arrow--3">
                 </div>
+
+                <div class="enjoy__card enjoy__card__03">
+                    <div class="enjoy__header">
+                        <div class="enjoy__number">03</div>
+                        <h3 class="enjoy__lead">車好き徹底攻略！</h3>
+                    </div>
+
+                    <div class="enjoy__content">
+                        <div class="enjoy__timeline">
+                            <p class="enjoy__period">午前☀️</p>
+
+                            <dl class="enjoy__item">
+                                <dt>10:00<span>|</span>展示ゾーンへ直行</dt>
+                                <dd>100台のGRヤリスをじっくり見比べる</dd>
+                            </dl>
+
+                            <dl class="enjoy__item">
+                                <dt>10:30<span>|</span>乗車体験でリアルな走りを体感</dt>
+                                <dd>ピ気になる1台に実際に乗ってみよう</dd>
+                            </dl>
+
+                            <dl class="enjoy__item">
+                                <dt>11:30<span>|</span>トークショー観覧</dt>
+                                <dd>プロドライバーのリアルな話を聞けるチャンス</dd>
+                            </dl>
+                        </div>
+                    </div>
+
+                    <img src="img/sticker-ride.png" alt="" class="enjoy__img enjoy__img--sticker">
+                    <img src="img/ej03-01.png" alt="" class="enjoy__img enjoy__img--photo1">
+                    <img src="img/mv03.png" alt="" class="enjoy__img enjoy__img--photo2">
+                    <img src="img/mv01.png" alt="" class="enjoy__img enjoy__img--photo3">
+                    <img src="img/arrow.png" alt="" class="enjoy__arrow enjoy__arrow--1">
+                    <img src="img/arrow.png" alt="" class="enjoy__arrow enjoy__arrow--2">
+                    <img src="img/arrow.png" alt="" class="enjoy__arrow enjoy__arrow--3">
+                </div>
+
+                <div class="enjoy__card enjoy__card__04">
+                    <div class="enjoy__header">
+                        <div class="enjoy__number">04</div>
+                        <h3 class="enjoy__lead">車好き徹底攻略！</h3>
+                    </div>
+
+                    <div class="enjoy__content">
+                        <div class="enjoy__timeline">
+                            <p class="enjoy__period">午後</p>
+
+                            <dl class="enjoy__item">
+                                <dt>13:00<span>|</span>じゃんけん大会＆サイン争奪戦に参加</dt>
+                                <dd>ここでしか手に入らないチャンスも</dd>
+                            </dl>
+
+                            <dl class="enjoy__item">
+                                <dt>14:30<span>|</span>さらにトークショーへ レースの裏話やここだけの話も</dt>
+                            </dl>
+
+                            <dl class="enjoy__item">
+                                <dt>16:00<span>|</span>ハイタッチ＆写真撮影会</dt>
+                                <dd>推しチームとの距離が一気に縮まる</dd>
+                            </dl>
+
+                            <dl class="enjoy__item">
+                                <dt>17:30<span>|</span>後夜祭スタート クルマ仲間と語りながら楽しむ時間</dt>
+                            </dl>
+
+                            <dl class="enjoy__item">
+                                <dt>19:00<span>|</span>花火を見ながら1日を締めくくり 最高の余韻でイベント終了</dt>
+                            </dl>
+                        </div>
+                    </div>
+
+                    <img src="img/sticker-highfive.png" alt="" class="enjoy__img enjoy__img--sticker">
+                    <img src="img/ej01-01.png" alt="" class="enjoy__img enjoy__img--photo1">
+                    <img src="img/ej03-01.png" alt="" class="enjoy__img enjoy__img--photo2">
+                    <img src="img/ej04-03.png" alt="" class="enjoy__img enjoy__img--photo3">
+                    <img src="img/arrow.png" alt="" class="enjoy__arrow enjoy__arrow--1">
+                    <img src="img/arrow.png" alt="" class="enjoy__arrow enjoy__arrow--2">
+                    <img src="img/arrow.png" alt="" class="enjoy__arrow enjoy__arrow--3">
+                </div>
+
             </div>
-        </section>
+        </div>
 
-    
 
-        <section class="access" id="access">
-            <img src="img/sticker-access0.png" alt="" class="access__ashiraiblue">
-            <img src="img/sticker-access1.png" alt="" class="access__car1">
-            <img src="img/sticker-access2.png" alt="" class="access__redcorn1">
-            <img src="img/sticker-access2.png" alt="" class="access__redcorn2">
-            <img src="img/sticker-access2.png" alt="" class="access__redcorn3">
-            <img src="img/sticker-access3.png" alt="" class="access__people">
-            <img src="img/sticker-access4.png" alt="" class="access__car2parts1">
-            <img src="img/sticker-access5.png" alt="" class="access__car2parts2">
-            <img src="img/sticker-access6.png" alt="" class="access__car2parts3">
-            <img src="img/sticker-access7.png" alt="" class="access__car2">
-            <address class="access__card">
-                <div class="access__wrapper">
-                    <h2 class="sec__title">
-                        Access<span>アクセス</span>
-                    </h2>
+        <div class="schedule">
+            <div class="schedule__inner">
+                <h2 class="sec__title schedule__title">
+                    Time Schedule<span>タイムスケジュール</span>
+                </h2>
+                <div class="schedule__board">
+                    <img src="img/time-table.png" alt="タイムテーブル">
+                </div>
+                <a href="img/schedule-large.jpg" class="schedule__btn" target="_blank">
+                    タイムスケジュール
+                    <img src="img/PDFicon.svg" alt="" class="schedule__icon">
+                </a>
+            </div>
+        </div>
+
+        <div class="map">
+            <div class="map__inner">
+                <h2 class="sec__title map__title">
+                    Venue Map<span>会場マップ</span>
+                </h2>
+                <div class="map__board">
+                    <img src="img/map.png" alt="会場マップ">
+                </div>
+                <a href="img/map-large.jpg" class="map__btn" target="_blank">
+                    マップ
+                    <img src="img/PDFicon.svg" alt="" class="map__icon">
+                </a>
+            </div>
+        </div>
+
+    </section>
+
+        <div class="obi">
+            <img src="img/obi-GR02.png" alt="GRヤリスカー">
+        </div>
+
+
+    <section class="access" id="access">
+        <img src="img/sticker-access0.png" alt="" class="access__ashiraiblue">
+        <img src="img/sticker-access1.png" alt="" class="access__car1 u-yurayura">
+        <img src="img/sticker-access2.png" alt="" class="access__redcorn1 u-yurayura">
+        <img src="img/sticker-access2.png" alt="" class="access__redcorn2">
+        <img src="img/sticker-access2.png" alt="" class="access__redcorn3">
+        <img src="img/sticker-access3.png" alt="" class="access__people">
+        <img src="img/sticker-access4.png" alt="" class="access__car2parts1">
+        <img src="img/sticker-access5.png" alt="" class="access__car2parts2">
+        <img src="img/sticker-access6.png" alt="" class="access__car2parts3">
+        <img src="img/sticker-access7.png" alt="" class="access__car2 u-yurayura">
+
+        <address class="access__card">
+            <div class="access__wrapper">
+                <h2 class="sec__title">
+                    Access<span>アクセス</span>
+                </h2>
+
+                <div class="access__inner">
+
+
 
                     <h3>詳細情報</h3>
-                    <div class="access__inner">
-                        <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3249.8218473283564!2d139.6361315!3d35.4592047!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60185c5b449dcba9%3A0x38ed3f5a7b3f327f!2z44OR44K344OV44Kj44Kz5qiq5rWc!5e0!3m2!1sja!2sjp!4v1775349197695!5m2!1sja!2sjp"
-                            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-                            referrerpolicy="no-referrer-when-downgrade"></iframe>
 
-                        <dl>
-                            <dt>会場</dt>
-                            <dd>○○会場（屋外）</dd>
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3249.8218473283564!2d139.6361315!3d35.4592047!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60185c5b449dcba9%3A0x38ed3f5a7b3f327f!2z44OR44K344OV44Kj44Kz5qiq5rWc!5e0!3m2!1sja!2sjp!4v1775349197695!5m2!1sja!2sjp"
+                        width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
 
-                            <dt>住所</dt>
-                            <dd>〒000-0000<br>○○県○○市○○町1-2-3</dd>
 
-                            <dt>お車でお越しの方</dt>
-                            <dd>会場周辺に専用駐車場をご用意しております。<br>当日は混雑が予想されるため、時間に余裕をもってお越しください。</dd>
+                    <dl>
+                        <dt>会場</dt>
+                        <dd>○○会場（屋外）</dd>
 
-                            <dt>電車でお越しの方</dt>
-                            <dd>最寄り駅：○○駅（JR○○線）<br>駅から徒歩約15分<br>または、会場行きのシャトルバスをご利用いただけます。</dd>
+                        <dt>住所</dt>
+                        <dd>〒000-0000<br>○○県○○市○○町1-2-3</dd>
 
-                            <dt>シャトルバス</dt>
-                            <dd>○○駅前より随時運行予定<br>（運行間隔：約15〜20分）</dd>
+                        <dt>お車でお越しの方</dt>
+                        <dd>会場周辺に専用駐車場をご用意しております。<br>当日は混雑が予想されるため、時間に余裕をもってお越しください。</dd>
 
-                            <dt>ご注意</dt>
-                            <dd>会場内への自転車でのご来場はご遠慮いただいております。<br>公共交通機関またはお車でのご来場にご協力ください。</dd>
-                        </dl>
-                    </div>
+                        <dt>電車でお越しの方</dt>
+                        <dd>最寄り駅：○○駅（JR○○線）<br>駅から徒歩約15分<br>または、会場行きのシャトルバスをご利用いただけます。</dd>
+
+                        <dt>シャトルバス</dt>
+                        <dd>○○駅前より随時運行予定<br>（運行間隔：約15〜20分）</dd>
+
+                        <dt>ご注意</dt>
+                        <dd>会場内への自転車でのご来場はご遠慮いただいております。<br>公共交通機関またはお車でのご来場にご協力ください。</dd>
+                    </dl>
                 </div>
-            </address>
 
-        </section>
-
-        <section class="faq" id="faq">
-            <h2 class="sec__title">FAQ<span>よくある質問</span></h2>
-
-            <dl>
-
-                <!-- Q1 -->
-                <dt class="faq__q">利用可能な交通手段を教えてください。
-                    <span class="faq__icon"></span>
-                </dt>
-                <dd class="faq__a">電車・バス・車でのご来場が可能です。<br>駐輪場はございませんので、自転車でのご来場はご容赦ください。</dd>
-
-                <!-- Q2 -->
-                <dt class="faq__q">年齢制限はありますか？
-                    <span class="faq__icon"></span>
-                </dt>
-                <dd class="faq__a">入場に年齢制限はございませんが、年齢制限のあるイベントはございます。<br>一部ピックアップイベント：小学生まで</dd>
-
-                <!-- Q3 -->
-                <dt class="faq__q">チケットはどこから購入できますか？
-                    <span class="faq__icon"></span>
-                </dt>
-                <dd class="faq__a">本イベントは入退場自由の無料イベントになりますので、チケットのご用意はございません。</dd>
-
-                <!-- Q4 -->
-                <dt class="faq__q">イベントの定員制限はありますか？
-                    <span class="faq__icon"></span>
-                </dt>
-                <dd class="faq__a">
-                    定員制限はございません。なお、各イベントは当日ご来場されてからの受付になります。<br>そのため、イベントによってはお待たせする時間が発生してしまうことがございます。<br>あらかじめご了承ください。
-                </dd>
-
-                <!-- Q5 -->
-                <dt class="faq__q">会場内の支払い方法を教えてください。
-                    <span class="faq__icon"></span>
-                </dt>
-                <dd class="faq__a">現金決済・クレジットカード決済・バーコード決済が可能です。</dd>
-
-                <!-- Q6 -->
-                <dt class="faq__q">荷物を預ける場所はありますか？
-                    <span class="faq__icon"></span>
-                </dt>
-                <dd class="faq__a">コインロッカーが場外エリアにございますので、そちらをご利用ください。<br>●コインロッカー<br>料金¥500・¥400 / 24時間利用可能 (1回毎に料金がかかります)
-                    <br>※100円玉(現金)のみ受入れ。<br>※両替機のご用意はありません。
-                </dd>
-
-            </dl>
-
-        </section>
-        <div class="fixed-img"></div>
-        <section class="sponsor" id="sponsor">
-            <h2 class="sec__title">Sponsors<span>協賛企業</span></h2>
-            <div class="sponsor__wrapper">
-                <img src="img/sponsor-logo.png" alt="">
-                <img src="img/sponsor-logo.png" alt="">
-                <img src="img/sponsor-logo.png" alt="">
-                <img src="img/sponsor-logo.png" alt="">
-                <img src="img/sponsor-logo.png" alt="">
-                <img src="img/sponsor-logo.png" alt="">
             </div>
-        </section>
+
+
+        </address>
+
+    </section>
+
+    <section class="faq" id="faq">
+        <h2 class="sec__title">FAQ<span>よくある質問</span></h2>
+
+        <dl>
+            <!-- Q1 -->
+            <dt class="faq__q">利用可能な交通手段を教えてください。
+                <span class="faq__icon"></span>
+            </dt>
+            <dd class="faq__a">電車・バス・車でのご来場が可能です。<br>駐輪場はございませんので、自転車でのご来場はご容赦ください。</dd>
+
+            <!-- Q2 -->
+            <dt class="faq__q">年齢制限はありますか？
+                <span class="faq__icon"></span>
+            </dt>
+            <dd class="faq__a">入場に年齢制限はございませんが、年齢制限のあるイベントはございます。<br>一部ピックアップイベント：小学生まで</dd>
+
+            <!-- Q3 -->
+            <dt class="faq__q">チケットはどこから購入できますか？
+                <span class="faq__icon"></span>
+            </dt>
+            <dd class="faq__a">本イベントは入退場自由の無料イベントになりますので、チケットのご用意はございません。</dd>
+
+            <!-- Q4 -->
+            <dt class="faq__q">イベントの定員制限はありますか？
+                <span class="faq__icon"></span>
+            </dt>
+            <dd class="faq__a">
+                定員制限はございません。なお、各イベントは当日ご来場されてからの受付になります。<br>そのため、イベントによってはお待たせする時間が発生してしまうことがございます。<br>あらかじめご了承ください。
+            </dd>
+
+            <!-- Q5 -->
+            <dt class="faq__q">会場内の支払い方法を教えてください。
+                <span class="faq__icon"></span>
+            </dt>
+            <dd class="faq__a">現金決済・クレジットカード決済・バーコード決済が可能です。</dd>
+
+            <!-- Q6 -->
+            <dt class="faq__q">荷物を預ける場所はありますか？
+                <span class="faq__icon"></span>
+            </dt>
+            <dd class="faq__a">コインロッカーが場外エリアにございますので、そちらをご利用ください。<br>●コインロッカー<br>料金¥500・¥400 / 24時間利用可能
+                (1回毎に料金がかかります)
+                <br>※100円玉(現金)のみ受入れ。<br>※両替機のご用意はありません。
+            </dd>
+
+        </dl>
+
+    </section>
+
+
+    <div class="fixed-img"></div>
+
+    <section class="sponsor" id="sponsor">
+        <h2 class="sec__title">Sponsors<span>協賛企業</span></h2>
+        <div class="sponsor__wrapper">
+            <img src="img/sponsor-logo.png" alt="">
+            <img src="img/sponsor-logo.png" alt="">
+            <img src="img/sponsor-logo.png" alt="">
+            <img src="img/sponsor-logo.png" alt="">
+            <img src="img/sponsor-logo.png" alt="">
+            <img src="img/sponsor-logo.png" alt="">
+        </div>
+    </section>
+
 
     <footer class="footer" id="footer">
         <h2 class="sec__title">Information&amp;contact<span>インフォメーション&amp;お問い合わせ</span></h2>
@@ -584,25 +662,40 @@
                     </a></li>
             </ul>
 
-            <p>ご質問は公式LINEからお気軽に！</p>
+            <p class="line">ご質問は公式LINEからお気軽に！</p>
 
             <div class="footer__innerLINE">
-                <a href="https://www.line.me/ja/">
-                    <p>LINEはこちら</p>
-                    <img src="img/line.png" alt="">
-                </a>
+
+                <div class="footer__innerLINE">
+                    <a href="https://www.line.me/ja/">
+                        <p>LINEはこちら</p>
+                        <img src="img/line.png" alt="">
+                    </a>
+                </div>
             </div>
+
             <div class="footer__logo">
-                <img src="img/footer-logo.png" alt="">
+                <a href="#">
+                    <img src="img/footer-logo.png" alt="">
+                </a>
+
             </div>
         </div>
         <div class="footer__copy">
             <small>&copy; 2026 XXX-XX</small>
+
         </div>
 
+        <div class="footer__ashirai">
+            <img src="img/footer-ashirai1.png" alt="" class="footer-ashirai1">
+            <img src="img/footer-ashirai2.png" alt="" class="footer-ashirai2">
+        </div>
     </footer>
 
+
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <script src="js/main.js"></script>
 </body>

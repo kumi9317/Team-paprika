@@ -194,6 +194,29 @@ section,
   }
 }
 
+.sec__title2 {
+  font-family: $h1; // 先ほど設定したフォント
+  font-size: 2.5rem;
+  color: $black;
+  text-align: left;
+  margin-bottom: 80px;
+  margin-left: 200px;
+  position: relative;
+
+  .dot {
+    position: absolute;
+    top: -10px;
+    left: 0;
+    width: 10px;
+    height: 10px;
+    background: #d11a1b;
+    border-radius: 50%;
+
+    animation: moveDot 2.5s infinite linear;
+  }
+}
+
+// --- Event Title Section ---
 .event-title-row {
   display: flex;
   align-items: flex-end;
@@ -307,7 +330,7 @@ section,
 }
 
 // --- トークショーセクション全般 ---
-#special-stage {
+#special-stage2 {
   max-width: 1000px;
   margin: 0 auto;
   padding: 60px 0;

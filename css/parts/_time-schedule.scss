@@ -1,11 +1,13 @@
 @use 'variables' as *;
 
 .time-schedule {
-    padding: 100px 20px;
+    padding-block: 100px 0px;
     background-color: $base; 
    
     .enjoy {
         overflow: visible;
+        position: relative;
+        z-index: 0;
 
         &__inner {
             max-width: 1000px;
@@ -23,19 +25,37 @@
         
             img { height: 55px; } // タイトルロゴのサイズ
             span { font-weight: bold; color: $black; font-family: $text; }
+
+            @media screen and (max-width: 768px) {
+                flex-direction: column;
+                img { height: 45px; }
+                span {font-size: 1.25rem;}
+            }
+            @media screen and (max-width: 425px) {
+                flex-direction: column;
+                img { height: 40px; }
+                span {font-size: 1rem;}
+            }
         }
 
         &__card {
-            height: 73vh;
+            height: 650px;
             border-radius: 30px;
             padding: 60px 80px;
             position: relative;
+            z-index: 0;
             color: #fff;
             box-shadow: $shadow;
             overflow: visible; // 画像をはみ出させるため
-
-            position: sticky; 
             margin-bottom: 80px;
+            position: sticky; 
+            @media screen and (max-width: 768px) {
+                padding: 30px 40px;
+            }
+            @media screen and (max-width: 425px) {
+                padding: 20px 10px;
+                height: 550px;
+            }
 
             .enjoy__img {
                 position: absolute;
@@ -45,6 +65,16 @@
                 width: 150px;
                 height: 120px;
                 z-index: 2;
+                @media screen and (max-width: 768px) {
+                    width: 130px;
+                    height: 100px;
+                    border: 3px solid #fff;
+                }
+                @media screen and (max-width: 425px) {
+                    width: 90px;
+                    height: 65px;
+                    border: 2px solid #fff;
+                }
             }
             
             .enjoy__arrow {
@@ -61,11 +91,27 @@
                     &--photo1  { top: 120px; right: 40px; transform: rotate(5deg); }
                     &--photo2  { top: 290px; right: 160px; transform: rotate(-5deg); }
                     &--photo3  { bottom: 50px; right: 50px; transform: rotate(3deg); }
+                    @media screen and (max-width: 768px) {
+                        &--photo3  { bottom: 100px; }
+                    }
+                    @media screen and (max-width: 425px) {
+                        &--sticker { top: 50px; right: 30px;}
+                        &--photo1  { display: none;}
+                        &--photo2  { display: none;}
+                        &--photo3  { bottom: 20px; right: 20px;}
+                    }
                 }
                 .enjoy__arrow {
                     &--1 { top: 200px; right: 210px; transform: rotate(-80deg); }
                     &--2 { top: 330px; right: 350px; transform: rotate(-50deg); }
                     &--3 { bottom: 50px; right: 230px; transform: rotate(-50deg);}
+                    @media screen and (max-width: 768px) {
+                        &--2 { right: 300px;}
+                        &--3 { bottom: 100px;}
+                    }
+                    @media screen and (max-width: 425px) {
+                        display: none;   
+                    }
                 }
             }
             &__02 {
@@ -77,11 +123,29 @@
                     &--photo1  { top: 100px; right: 80px; transform: rotate(5deg); }
                     &--photo2  { top: 270px; right: 160px; transform: rotate(-5deg); }
                     &--photo3  { bottom: 50px; right: 50px; transform: rotate(3deg); }
+                    @media screen and (max-width: 768px) {
+                        &--sticker { top: 100px;}
+                        &--photo3  { bottom: 100px; right: 100px;}
+                    }
+                    @media screen and (max-width: 425px) {
+                        &--sticker { top: 50px; right: 100px;}
+                        &--photo1  { top: 60px; right: 20px;}
+                        &--photo2  { display: none;}
+                        &--photo3  { display: none;}
+                    }
                 }
                 .enjoy__arrow {
                     &--1 { top: 200px; right: 250px; transform: rotate(-90deg); }
                     &--2 { top: 330px; right: 330px; transform: rotate(-50deg); }
                     &--3 { bottom: 40px; right: 220px; transform: rotate(-50deg);}
+                    @media screen and (max-width: 768px) {
+                        &--1 { top: 180px; }
+                        &--2 { top: 350px; right: 300px; transform: rotate(-100deg); }
+                        &--3 { bottom: 80px; right: 250px;}
+                    }
+                     @media screen and (max-width: 425px) {
+                        display: none;   
+                    }
                 } 
             }
             &__03 {
@@ -93,11 +157,28 @@
                     &--photo1  { top: 90px; right: 150px; transform: rotate(5deg); }
                     &--photo2  { top: 290px; right: 160px; transform: rotate(-5deg); }
                     &--photo3  { bottom: 50px; right: 50px; transform: rotate(3deg); }
+                    @media screen and (max-width: 768px) {
+                        &--sticker { top: 220px; right: 250px;}
+                        &--photo2  { top: 280px; right: 150px;  }
+                        &--photo3  { bottom: 80px; right: 80px;  }
+                    }
+                    @media screen and (max-width: 425px) {
+                        &--sticker { top: 420px; right: 200px;}
+                        &--photo1  { top: 90px; right: 30px;}
+                        &--photo2  { display: none;}
+                        &--photo3  { bottom: 30px; right: 50px; }
+                    }
                 }
                 .enjoy__arrow {
                     &--1 { top: 150px; right: 330px; transform: rotate(-90deg); }
                     &--2 { top: 330px; right: 340px; transform: rotate(-50deg); }
                     &--3 { bottom: 100px; right: 240px; transform: rotate(-50deg);}
+                    @media screen and (max-width: 768px) {
+                        &--2 { right: 300px; }
+                    }
+                     @media screen and (max-width: 425px) {
+                        display: none;   
+                    }
                 }
             }
             &__04 {
@@ -109,11 +190,20 @@
                     &--photo1  { top: 120px; right: 40px; transform: rotate(5deg); }
                     &--photo2  { top: 290px; right: 160px; transform: rotate(-5deg); }
                     &--photo3  { bottom: 50px; right: 50px; transform: rotate(3deg); }
+                    @media screen and (max-width: 425px) {
+                        &--sticker { top: 50px; right: 30px;}
+                        &--photo1  { display: none;}
+                        &--photo2  { top: auto; bottom: 220px; right: 30px;}
+                        &--photo3  { display: none; }
+                    }
                 }
                 .enjoy__arrow {
                     &--1 { top: 200px; right: 210px; transform: rotate(-80deg); }
                     &--2 { top: 330px; right: 350px; transform: rotate(-50deg); }
                     &--3 { bottom: 50px; right: 230px; transform: rotate(-50deg);}
+                    @media screen and (max-width: 425px) {
+                       display: none;   
+                   }
                 }
             }        
 
@@ -134,6 +224,10 @@
             font-weight: bold;
             padding: 50px;
             border-radius: 30px 0 90px 0; // 特徴的な角丸
+            @media screen and (max-width: 768px) {
+                padding: 20px;
+                border-radius: 20px 0 50px 0;
+            }
         }
 
         &__lead {
@@ -141,12 +235,28 @@
             font-family: $h2;
             margin-bottom: 40px;
             margin-left: 100px; // 01ラベルを避ける
+            @media screen and (max-width: 768px) {
+                font-size: 1.875rem;
+            }
+            @media screen and (max-width: 425px) {
+                font-size: 1.25rem;
+            }
         }
 
         &__timeline {
+            @media screen and (max-width: 768px) {
+                width: 60%;
+            }
+            @media screen and (max-width: 425px) {
+                width: 90%;
+                margin-inline: auto;
+            }
             .enjoy__period {
                 font-size: 1.4rem;
                 margin-bottom: 20px;
+                @media screen and (max-width: 425px) {
+                    font-size: 1rem;
+                }
             }
         }
 
@@ -156,12 +266,22 @@
             font-family: $text;
             display: flex;
             flex-direction: column;
+            @media screen and (max-width: 768px) {
+                font-size: 1rem;
+            }
             dt {
                 display: inline-block;
                 border-bottom: 1px dashed rgba(255,255,255,0.5);
                 padding-bottom: 10px;
                 margin-bottom: 10px;
-                span { margin: 0 10px; }
+                display: flex; 
+                align-items: flex-start;
+                span {
+                    margin: 0 10px;
+                    opacity: 0.7;
+                    flex-shrink: 0; // 棒が潰れないように固定
+                }
+                
             }
             dd {
                 display: inline-block;
@@ -178,9 +298,64 @@
     $dot-bg: #f8f9fa;
 
     .schedule, .map {
-        padding: 100px 0;
         position: relative;
         overflow: hidden;
+
+        // あしらい画像の共通設定
+        &__deco {
+            position: absolute;
+            z-index: 1;         // コンテンツ（z-index: 2以上）の下に隠す
+            pointer-events: none; // 画像がリンクなどの邪魔をしないようにする
+            
+            // 右上の水色の大きな丸画像
+            &--right {
+                width: 700px;
+                height: auto;
+                top:0;
+                
+                // 1. 基準を「画面の右端」から「画面の中央」に変更
+                right: auto; // 既存のright指定を打ち消し
+                left: 50%;   // 一旦画面の真ん中に置く
+
+                // 2. 「白い枠（max-width: 1000px）の半分」の分だけ右に移動させる
+                // 500px（枠の半分） + 任意のずらし量（例: 200px）
+                margin-left: 400px; 
+
+            }
+
+            // 左側の大きな青い丸画像
+            &--left {
+                width: 700px;   // 画像の本来のサイズ、または表示したいサイズ
+                height: auto;
+                top: 0; // 下からのはみ出し具合
+                // 1. 基準を「画面の左端」から「画面の中央」に変更
+                right: 50%;
+                
+                margin-right: 400px; 
+
+                // z-index は他のコンテンツの下（1）に設定
+                z-index: 1;
+            }
+
+            &--orange {
+                width: 700px;   // 画像の本来のサイズ、または表示したいサイズ
+                height: auto;
+                display: block;
+                transform: rotate(-20deg);
+                bottom: 0; // 下からのはみ出し具合
+                // 1. 基準を「画面の左端」から「画面の中央」に変更
+                left: 50%;
+                right: auto;
+                
+                // 2. 中央から左側に移動させる（マイナスの値を指定）
+                // 白い枠の半分（500px）付近を基準に調整します
+                // 枠に食い込ませたい場合は、-500px よりも絶対値を小さく（例: -450px）します
+                margin-left: 400px; 
+
+                // z-index は他のコンテンツの下（1）に設定
+                z-index: 1;
+            }
+        }
         
         &__inner {
             max-width: 900px;
@@ -189,14 +364,23 @@
             background-image: radial-gradient(#eee 2px, transparent 2px);
             background-size: 20px 20px;
             border-radius: 40px;
-            padding: 80px;
+            padding: 100px;
             text-align: center;
+            position: relative;
+            z-index: 2;
+            @media screen and (max-width: 768px) {
+                max-width: 600px;
+                padding: 40px; 
+            }
+            @media screen and (max-width: 425px) {
+                max-width: 600px;
+                padding: 40px 20px; 
+            }
         }
-
         &__title {
             margin-bottom: 40px;
         }
-
+    
         &__board {
             max-width: 100%;
             padding: 0;
@@ -207,7 +391,7 @@
                 display: block;
             }
         }
-
+    
         // 赤いボタン
         &__btn {
             display: inline-flex;
@@ -222,7 +406,7 @@
             font-weight: bold;
             transition: 0.3s;
             box-shadow: 0 4px 0 #900; // ボタンの立体感
-
+    
             &:hover {
                 transform: translateY(2px);
                 box-shadow: 0 2px 0 #900;
@@ -234,4 +418,23 @@
             height: 20px;
         }
     }
-}
+
+    .schedule {
+        padding-top: 100px;
+        padding-bottom: 0;
+        @media screen and (max-width: 425px) {
+            padding-top: 40px; 
+        }
+    }
+
+    .map {
+        padding-top: 200px;
+        padding-bottom: 200px;
+        overflow: hidden;
+        @media screen and (max-width: 425px) {
+            padding-top: 100px;
+            padding-bottom: 100px;
+        }
+    }
+    
+}    

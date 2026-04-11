@@ -1,91 +1,154 @@
-@use 'variables' as *;
+@use "variables" as *;
 
 .footer {
   width: 100%;
-  min-height: 100vh;
   background-image: url(../img/footer-background.png);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  position: relative;
+  overflow: hidden; // ← はみ出しカット
 
-    h2 {
-      padding-top: 100px;
-    }
+  h2 {
+    padding-top: 100px;
+  }
+
   img {
     width: 80px;
   }
-  
-    &__wrapper {
-      max-width: 800px;
-      margin-inline: auto;
 
-        p {
-          text-align: center;
-          margin-block: 40px;
-          font-size: 20px;
-        }
+  &__wrapper {
+    max-width: 800px;
+    margin-inline: auto;
+
+    p {
+      text-align: center;
+      margin-block: 40px;
+      font-size: 20px;
     }
+  }
 
-    &__innerSNS {
-          display: flex;
-          justify-content: space-between;
+  &__innerSNS {
+    display: flex;
+    justify-content: space-between;
 
-            li a {
-              display: flex;
-              align-items: center;
-              
-                a {
-                  display: inline-block;
-                }
-
-                p {
-                  margin-left: 20px;
-                  font-weight: bold;
-                }
-            }
-        }
-
-    &__innerLINE {
+    li a {
       display: flex;
-      justify-content: center;
+      align-items: center;
+      transition: all 0.25s ease;
 
-        a {
-        display: flex;
-        align-items: center;
-        border: 1px solid black;
-        padding: 3px 60px;
-        border-radius: 20px;
-        
-          p {
-            padding-right: 100px;
-            position: relative;
-
-              &::before {
-                position: absolute;
-                content: "→";
-                right: 45px;
-                top: 0px;
-              }
-          }
+      p {
+        margin-left: 20px;
+        font-weight: bold;
       }
-    }
 
-    &__logo {
-      text-align: center;
-      margin-block: 80px;
       img {
-        width: 400px;
+        transition: transform 0.25s ease;
       }
-      
+
+      &:hover {
+        transform: translateY(-4px);
+        opacity: 0.85;
+      }
+
+      &:hover img {
+        transform: scale(1.1);
+      }
     }
+  }
 
-    &__copy {
-      background-color: rgba(0, 0, 0, 0.2);
-      padding-block: 2px;
-      text-align: center;
+  .line {
+    font-weight: 600;
+  }
 
-      small {
+  &__innerLINE {
+    display: flex;
+    justify-content: center;
+
+    a {
+      display: flex;
+      align-items: center;
+      border: 3px solid black;
+      padding: 3px 60px;
+      border-radius: 20px;
+      transition: all 0.3s ease;
+
+      p {
+        padding-right: 100px;
+        font-weight: 550;
+        position: relative;
+
+        &::before {
+          position: absolute;
+          content: "→";
+          right: 45px;
+          top: 0px;
+        }
+      }
+
+      &:hover {
+        background-color: #3e3e3e;
         color: white;
+        transform: translateY(-3px);
+      }
+
+      &:hover img {
+        filter: invert(1);
       }
     }
+  }
+
+  &__logo {
+    text-align: center;
+    margin-block: 80px;
+
+    a {
+      display: inline-block;
+      transition: all 0.3s ease;
+      cursor: pointer;
+
+      &:hover {
+        transform: translateY(-5px);
+
+        & img {
+          transform: scale(1.05);
+          filter: brightness(1.2) drop-shadow(0 5px 10px rgba(0,0,0,0.2));
+        }
+      }
+
+    }
+
+    img {
+      width: 400px;
+      transition: all 0.3s ease;
+    }
+  }
+
+  &__copy {
+    background-color: rgba(0, 0, 0, 0.2);
+    padding-block: 2px;
+    text-align: center;
+
+    small {
+      color: white;
+    }
+  }
+
+  &__ashirai {
+    .footer-ashirai1 {
+      position: absolute;
+      top: -100px;
+      width: 700px;
+      right: 50%;
+      margin-right: 500px; // ←ここ調整
+    }
+
+    .footer-ashirai2 {
+      position: absolute;
+      width: 700px;
+      bottom: -100px;
+      left: 50%;
+      margin-left: 600px; // ←ここ調整
+    }
+  }
 }

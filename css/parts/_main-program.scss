@@ -1,15 +1,132 @@
 @use 'variables' as *;
 
 .main-program {
-    padding: 100px 0;
     background-color: #f0f7ff; // 薄い水色の背景
+    position: relative;
 
-    //メインイベント
     .main-event {
-        padding: 100px 0;
-        background-color: #f0f7ff; // 薄い水色の背景
-        overflow: hidden; // 写真の飛び出し対策 
+        height: 95vh; // スクロール量を確保
+        @media screen and (max-width: 425px) {
+            height: auto; // 高さを中身に合わせる
+        }
+
+        &__sticky {
+            position: sticky;
+            top: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column; // 上下に並べる
+            align-items: center;
+            overflow: hidden;
+            z-index: 1;
+            @media screen and (max-width: 425px) {
+                position: relative; // 固定を解除
+                height: auto;
+                overflow: visible;
+            }
+        }
+
+        // スピードラインの土台
+        &__speed-line {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 0%; // 最初は幅ゼロ
+            height: 100vh;
+            z-index: 2; // 背景より上
+            opacity: 0;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            @media screen and (max-width: 425px) {
+                display: none; // スピードラインを非表示
+            }
+
+            img {
+                width: 100vw; // 中の画像は常に画面幅いっぱい
+                height: 100vh;
+                object-fit: cover;
+            }
+        }
+
+        .main-event-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding-top: 160px;
+            z-index: 3;
+            
+            @media screen and (max-width: 425px) {
+                height: auto;
+                padding-top: 80px;
+            }
+
+        }
+
+        // ✅ タイトルは上部に固定
+    .js-title {
+        position: absolute;
+        top: 120px;      
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100%;
+        text-align: center;
+        z-index: 20;
+        opacity: 0;     // 最初はGSAPで出す
+        @media screen and (max-width: 425px) {
+            position: relative;
+            top: auto;
+            left: auto;
+            transform: none;
+            opacity: 1 !important; 
+            visibility: visible !important;
+            margin-bottom: 40px;
+        }
     }
+
+    // ✅ アイテムを同じ位置に重ねる
+    .js-event-item {
+        position: absolute;
+        top: 50%;       
+        left: 50%;
+        transform: translate(-50%, -35%);
+        width: 100%;
+        max-width: 1000px; // コンテナより少し小さくして余裕を持たせる
+        opacity: 0;     // 最初は隠す
+        visibility: hidden;
+        z-index: 10;
+        align-items: center;
+        
+        // 元のマージンなどが干渉しないようにリセット
+        margin: 0; 
+
+        @media screen and (max-width: 1024px) {
+            display: flex;
+            flex-direction: column; // 上下並び
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+        }
+        @media screen and (max-width: 425px) {
+            position: relative; // 重なりを解除
+            top: auto;
+            left: auto;
+            transform: none;
+            opacity: 1 !important; 
+            visibility: visible !important;
+            margin-bottom: 80px; // アイテムごとの隙間
+            
+            // 縦並びの調整
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+        }
+    }
+}
     
     .event-item {
         display: flex;
@@ -26,22 +143,42 @@
             // 偶数番目は逆に食い込ませる
             .event-item__img-wrapper { margin-left: -80px; margin-right: 0; }
         }
-    
+
         &__img-wrapper {
             position: relative;
-            width: 700px;
+            width: 100%;
+            max-width: 700px;
             flex-shrink: 0; // 幅が縮まないように固定
             margin-right: -100px; // ★ここがポイント！テキストの上に重ねる（ネガティブマージン）
             z-index: 50; // ★テキスト(wrapper)より上に持ってくる
+            @media screen and (max-width: 1024px) {
+                width: 100%;
+                max-width: 600px;
+                height: auto;          // ★ height固定を解除してautoにする
+                aspect-ratio: 3 / 2;
+                margin-left: -100px;
+                order: 1;
+            }
+            @media screen and (max-width: 425px) {
+                width: 80%;
+            }
+
         }
     
         &__photo {
             position: relative;
             width: 100%;
+            height: 100%;    
+            object-fit: cover;
             border: 10px solid #fff;
             box-shadow: $shadow;
             transform: rotate(2deg); // 写真を少し傾ける
             z-index: 2;
+             @media screen and (max-width: 1024px) {
+                transform: rotate(0); // 傾きを戻す
+                border-width: 5px;
+            }
+
         }
     
         // テキストエリアの親
@@ -50,34 +187,58 @@
             width: 380px;
             transform: rotate(-2deg);
             z-index: 10;
+            @media screen and (max-width: 1024px) {
+                width: 60%;
+                margin: 0;
+                order: 2;  // テキストを下
+                transform: rotate(0);
+            }
+            @media screen and (max-width: 425px) {
+                width: 80%;
+            }
         }
     
-        // --- ここからが2番目（偶数番目）の個別設定 ---
+        /* --- 偶数番目（2番目）の個別設定セクション --- */
         &:nth-child(even) {
             flex-direction: row-reverse;
-    
-            // 写真側の調整
+
+            // PC版の重なり
             .event-item__img-wrapper {
                 margin-left: -100px;
                 margin-right: 0;
+            }
+
+            // ★レスポンシブ（1024px以下）の設定
+            @media screen and (max-width: 1024px) {
+                flex-direction: column !important; // 縦並びを強制
                 
-                .event-item__photo {
-                    // ★2枚目だけ写真を「2度」に上書き
-                    transform: rotate(-2deg);
+                .event-item__img-wrapper {
+                    /* 1番目・3番目と同じ設定をここにも書く */
+                    width: 100%;
+                    max-width: 600px; // ここが他の画像とズレる原因
+                    height: auto;
+                    aspect-ratio: 3 / 2;
+                    margin: 0 auto;   // 中央寄せ（ネガティブマージンを消す）
+                    order: 1;         // 画像を上
+                }
+
+                .event-item__text-wrapper {
+                    width: 60%;
+                    margin: 0 auto;
+                    order: 2;         // テキストを下
+                    transform: rotate(0);
                 }
             }
-    
-            // テキスト側の調整
-            .event-item__text-wrapper {
-                // ★2枚目だけテキストを「-2度」に上書き
-                transform: rotate(2deg);
-            }
-    
-            // ドットの影のズレ方向を調整
-            .event-item__text-shadow {
-                left: 40px; 
-                // 影は親（wrapper）と一緒に傾くので、個別のrotateは不要なことが多いですが、
-                // もし形が崩れるならここも調整してください
+            @media screen and (max-width: 425px) {
+                .event-item__img-wrapper {
+                    /* 1番目・3番目と同じ設定をここにも書く */
+                    width: 80%;
+                }
+                .event-item__text-wrapper {
+                    width: 80%;
+                    margin: 0 auto;
+                }
+                
             }
         }
     
@@ -93,6 +254,11 @@
             background-size: 12px 12px;
             clip-path: polygon(20% 0%, 80% 0%, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 0% 80%, 0% 20%);
             z-index: 5; // 本体より下
+            @media screen and (max-width: 1024px) {
+                clip-path: none;
+                top: 15px;
+                left: -15px;
+            }
         }
     
         &__text {
@@ -106,6 +272,10 @@
             background-color: #fff;
             clip-path: polygon(20% 0%, 80% 0%, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 0% 80%, 0% 20%);
             z-index: 10; // 影より上
+            @media screen and (max-width: 1024px) {
+                padding: 20px;
+                clip-path: none;
+            }
     
             &-inner {
                 position: relative;
@@ -115,12 +285,17 @@
                 height: 100%;
                 z-index: 20;
                 text-align: left;
+                display: flex;
+                flex-direction: column; // 縦並びにする
                 
                 h3 {
                     font-size: 1.5rem;
                     color: $black;
                     margin-bottom: 15px;
                     font-family: $h3;
+                    @media screen and (max-width: 1024px) {
+                        font-size: 1.25rem;
+                    }
                 }
                 p {
                     font-size: 1rem;
@@ -129,23 +304,85 @@
                     margin-bottom: 20px;
                     font-family: $text;
                 }
+                .u-sp-none {
+                    @media screen and (max-width: 1024px) {
+                        display: none; // これで改行が無視され、1行に繋がります
+                    }
+                }
             
             }
         }
     }
     
-    // Moreボタン
     .more-btn {
-        display: inline-block;
-        padding: 5px 20px;
-        background-color: #d00;
-        color: #fff;
-        border-radius: 20px;
-        text-decoration: none;
-        font-size: 12px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: flex-end;
+        padding-bottom: 5px;
+        border-bottom: 1px solid $red;
+        gap: 8px;
+        
+        color: $red;
+        text-decoration: none; // デフォルトの下線を消す
+        font-size: 14px;
+        font-weight: bold;
         transition: 0.3s;
-        &:hover { opacity: 0.8; }
-    }
+        margin-top: 10px;
+        margin-left: auto;
+        width: fit-content; // 自分の幅に合わせる指定
+        align-self: flex-end;
+        position: relative;
+        z-index: 1;
+
+        &__text {
+            padding-inline: 5px;
+            line-height: 1;                // 線の位置を安定させる
+        }
+
+        &__arrow {
+            display: inline-block;
+            width: 25px;
+            position: relative;
+            
+        }
+
+        &:hover {
+            opacity: 0.7;
+            .more-btn__arrow {
+                transform: translateX(3px);
+            }
+        }
+
+        // 1. 最初は透明にしておく
+        &::after {
+            content: '';
+            position: absolute;
+            top: 40%;     // 💡 真ん中に配置するために変更
+            right: -15px; // 💡 位置を調整
+            transform: translate(0, -50%); // 💡 上下のズレを補正
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: $red;
+            opacity: 0;   // 最初は隠す
+            transition: 0.3s; // ふわっと表示させる
+            z-index: -1;  // 💡 テキストや矢印の後ろに配置
+        }
+
+        // 2. ✅ ホバー時の指定
+        &:hover {
+            opacity: 1; // ボタン全体の透明度ではなく、個別に指定する場合
+            
+            &::after {
+                opacity: 0.5; // ホバーした時に円を表示！
+            }
+
+            .more-btn__arrow {
+                transform: translateX(3px);
+            }
+        }
+
+    }    
     
     //Pick Up イベント
     
@@ -164,7 +401,7 @@
             &--left {
                 width: 700px;   // 画像の本来のサイズ、または表示したいサイズ
                 height: auto;
-                bottom: 0; // 下からのはみ出し具合
+                bottom: -100px; // 下からのはみ出し具合
                 // 1. 基準を「画面の左端」から「画面の中央」に変更
                 right: 50%;
                 
@@ -191,10 +428,48 @@
                 // 500px（枠の半分） + 任意のずらし量（例: 200px）
                 margin-left: 400px; 
 
-                // もしくは translate で指定する場合
-                // transform: translateX(200px); 
-
                 z-index: 3;
+            }
+
+            &--mokuiku {
+                width: 200px;   // 画像の本来のサイズ、または表示したいサイズ
+                height: auto;
+                bottom: 100px; // 下からのはみ出し具合
+                // 1. 基準を「画面の左端」から「画面の中央」に変更
+                right: 50%;
+                
+                // 2. 中央から左側に移動させる（マイナスの値を指定）
+                // 白い枠の半分（500px）付近を基準に調整します
+                // 枠に食い込ませたい場合は、-500px よりも絶対値を小さく（例: -450px）します
+                margin-right: 400px; 
+
+                // z-index は他のコンテンツの下（1）に設定
+                z-index: 5;
+
+                animation: yurayura 3s infinite 0.5s;
+                transform-origin: center; // 中心を軸に揺らす
+            }
+
+            // 右上の水色の大きな丸画像
+            &--pit {
+                width: 200px;
+                height: auto;
+                top: 200px;
+                
+                // 1. 基準を「画面の右端」から「画面の中央」に変更
+                right: auto; // 既存のright指定を打ち消し
+                left: 50%;   // 一旦画面の真ん中に置く
+
+                // 2. 「白い枠（max-width: 1000px）の半分」の分だけ右に移動させる
+                // 500px（枠の半分） + 任意のずらし量（例: 200px）
+                margin-left: 400px; 
+
+                z-index: 5;
+
+                // アニメーションの追加
+                // 3s(3秒)ごとに、yurayuraという動きを無限に繰り返す
+                animation: yurayura 3s infinite;
+                transform-origin: center; // 中心を軸に揺らす
             }
         }
     
@@ -226,10 +501,20 @@
             flex-wrap: wrap;
             gap: 40px 30px; // 縦 横の隙間
             justify-content: center;
-            padding: 50px;
+            padding: 50px 30px;
             border-radius: 100px;
             margin-top: 100px;
             position: relative;
+
+            .pickup-btn {
+                margin-inline: auto;
+
+            }
+
+            @media screen and (max-width: 425px) {
+                flex-direction: column;
+                margin-top: 0;
+            }
         }
     
         &__item {
@@ -241,6 +526,24 @@
             text-align: center;
             position: relative;
             z-index: 10;
+
+            display: block;        // aタグをブロック要素にする
+            text-decoration: none; // 下線を消す
+            color: inherit;        // 文字色を継承（親の黒色のままにする）
+            transition: transform 0.3s ease, box-shadow 0.3s ease; // アニメーション
+
+            &:hover {
+                transform: translateY(-5px); // 少し上に浮かす
+                box-shadow: 0 10px 20px rgba(0,0,0,0.15); // 影を強くする
+                
+                .event-name {
+                    text-decoration: underline; // ホバー時にタイトルに下線（お好みで）
+                }
+            }
+
+            @media screen and (max-width: 425px) {
+                width: 100%;
+            }
         }
     
         &__img-wrapper {
@@ -276,12 +579,14 @@
             box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 
             &__textblue {
+                font-weight: 700;
                 position: absolute;
                 right: 15px;
                 bottom: 25px;
             }
 
             &__textorange {
+                font-weight: 700;
                 position: absolute;
                 right: 30px;
                 bottom: 25px;
@@ -318,22 +623,6 @@
                     flex-shrink: 0;
                 }
             }
-        }
-    }
-    
-    // Moreリンク
-    .more-link {
-        display: inline-block;
-        margin-top: 50px;
-        font-weight: bold;
-        color: #333;
-        text-decoration: none;
-        position: relative;
-        z-index: 2;
-        transition: color 0.3s ease, transform 0.3s ease;
-        &:hover {
-        color: $red;             // ★フォントカラーを赤に（変数の $red を使用）
-        transform: scale(1.1);   // ★1.1倍の大きさに拡大
         }
     }
     
