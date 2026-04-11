@@ -1,298 +1,356 @@
-@use 'variables' as *;
+@use "variables" as *;
 
 // --- Mixins ---
 @mixin flex-center {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 // --- Base Styles ---
 body {
-    margin: 0;
-    padding: 0;
-    font-family: $text; // variables.scssの $text を参照
-    color: $black;
-    background-color: #FFF;
-    overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  font-family: $text; // variables.scssの $text を参照
+  color: $black;
+  background-color: #fff;
+  overflow-x: hidden;
 }
 
 .container {
-    max-width: 1000px;     // 幅を1000pxに設定
-    margin: 0 auto;        // 左右中央寄せ
-    padding: 40px 50px;    // スマホ表示などで端がくっつかないよう余白を追加
-    position: relative;    // 背景装飾などの基準点にするため
-    overflow-x: hidden;    // 1000pxからはみ出した分を隠す
+  max-width: 1000px; // 幅を1000pxに設定
+  margin: 0 auto; // 左右中央寄せ
+  padding: 40px 100px; // スマホ表示などで端がくっつかないよう余白を追加
+  position: relative; // 背景装飾などの基準点にするため
+  overflow-x: hidden; // 1000pxからはみ出した分を隠す
+  background-color: #fffaf4;
+  z-index: auto;
 
-    // 背景ドット (bg-dots) 
-    .bg-dots {
-        position: fixed; // 画面全体に固定
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        z-index: -2; // 一番奥
-        background-image: radial-gradient(#000000 2px, transparent 1.5px);
-        background-size: 30px 30px;
-        pointer-events: none;
-    }
+  // レスポンシブ：768px以下
+  @media (max-width: 769px) {
+    padding: 30px 70px; // 左右の余白を調整
+  }
 
-    .bg-shape-orange {
-        position: absolute;
-        // --- 位置の調整 ---
-        top: 150px;        // 上からの位置
-        right: -320px;     // 右側に突き出す量（お好みで）
+  @media (max-width: 425px) {
+    padding: 30px 20px; // 左右の余白をさらに調整
+  }
 
-        // --- サイズの調整 ---
-        width: 600px;      // 画像の横幅
-        height: 500px;     // 画像の高さ
-    
-        // --- 画像の読み込み ---
-        background-image: url('/img/ME-asirai01.png'); // 画像のパスを指定
-        background-size: contain;
-        background-repeat: no-repeat;
-    
-        // --- 見た目の調整 ---
-        opacity: 0.5;      // 透明度
-        z-index: -1;       // コンテンツの背面へ
-        pointer-events: none; // クリックを邪魔しない
+  // 背景ドット (bg-dots)
+  .bg-dots {
+    position: absolute; // .container の中に閉じ込めます
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0; // 親の背景色（#fffaf4）のすぐ上に乗るようにします
+    background-image: radial-gradient(#e5e5e5 1.5px, transparent 1.5px);
+    background-size: 30px 30px;
+    background-repeat: repeat;
+    pointer-events: none;
+  }
 
-        // --- 角度の変更 (画像そのものを回転させる) ---
-        transform: rotate(-10deg); 
-    }
-}
-
-
-
-// --- Header ---
-.event-title-fixed {
-  width: 1000px;           // ブラウザの横幅いっぱいに広げる
-  position: relative;
-  left: 50%;
-  transform: translateX(-50%); // 親要素(container)を無視して全幅表示
-  height: 120px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  // 黒と赤のバイカラー。中央でパッキリ分かれるように設定
-  background: linear-gradient(to right, $black 50%, $red 50%);
-  margin: 60px 0;
-
-  .header-content {
-    color: #fff;
-    text-align: center;
+  .bg-shape-orange {
+    position: absolute;
+    top: 150px;
+    right: -320px;
+    width: 600px;
+    height: 500px;
+    background-image: url("/img/ME-asirai01.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0.7;
     z-index: 1;
+    pointer-events: none;
+    transform: rotate(-10deg);
 
-    .header-title {
-      font-family: $h2;
-      font-size: 32px;
-      font-weight: 900;
-      margin: 0;
+    @media (max-width: 425px) {
+      right: -420px;
+      width: 600px;
+      height: 500px;
     }
-    .header-sub {
-      font-family: $h1;
-      font-size: 14px;
-      display: block;
-      letter-spacing: 0.1em;
+  }
+
+  .bg-shape-red {
+    position: absolute;
+    top: 1450px;
+    left: -450px;
+    width: 600px;
+    height: 500px;
+    background-image: url("/img/ME-asirai02.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0.7;
+    z-index: 1;
+    pointer-events: none;
+    transform: rotate(-10deg);
+
+    @media (max-width: 425px) {
+      top: 1250px;
+      left: -400px;
+      width: 600px;
+      height: 500px;
+    }
+  }
+
+  .bg-shape-gray {
+    position: absolute;
+    top: 2100px;
+    right: -450px;
+    width: 600px;
+    height: 800px;
+    background-image: url("/img/ME-asirai03.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0.7;
+    z-index: 1;
+    pointer-events: none;
+    transform: rotate(-0deg);
+
+    @media (max-width: 425px) {
+      top: 2450px;
+      right: -500px;
+      width: 600px;
+      height: 500px;
     }
   }
 }
 
-// --- Main Event Label (SVG装飾付き) ---
-.main-event-label {
-    font-family: $h1;
-    font-size: 32px;
-    color: $black;
-    margin-bottom: 40px;
-    display: inline-block;
-    position: relative;
-    letter-spacing: -0.05em;
-
-    &::before {
-        content: "";
-        position: absolute;
-        top: -25px;
-        left: 0;
-        width: 100px;
-        height: 50px;
-        // $red の値を反映（#d00 -> %23d00）
-        background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 50"><path d="M 10 10 Q 25 5 28 20" stroke="%23d00" stroke-width="1.0" fill="none" stroke-linecap="round"/><circle cx="30" cy="25" r="2.5" fill="%23d00"/><path d="M 33 20 Q 40 0 59 10" stroke="%23d00" stroke-width="1.0" fill="none" stroke-linecap="round"/><circle cx="64" cy="13" r="2.5" fill="%23d00"/></svg>');
-        background-size: contain;
-        background-repeat: no-repeat;
-    }
+// コンテンツを手前に出す
+header,
+section,
+.description-block {
+  position: relative;
+  z-index: 10;
 }
 
-// --- Event Title Section ---
+// --- ページタイトル ---
+.page-title-area {
+  width: 1000px;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(to right, $black 50%, $red 50%);
+  margin: 60px 0;
+
+  // --- 425px以下のレスポンシブ ---
+  @media (max-width: 425px) {
+    width: 100vw; // 画面幅いっぱいにする
+    left: 50%; // 中央起点は維持
+    transform: translateX(-50%); // 中央寄せを維持
+    height: 100px; // 少し高さを抑えてスッキリさせる
+    margin: 40px 0; // 上下の余白も調整
+  }
+
+  .page-title-content {
+    color: #fff;
+    text-align: center;
+    z-index: 1;
+    .page-main-title {
+      font-family: $h2;
+      font-size: 32px;
+      font-weight: 900;
+      margin: 0;
+
+      @media (max-width: 425px) {
+        font-size: 24px; // 文字がはみ出さないようサイズダウン
+      }
+    }
+    .page-sub-title {
+      font-family: $h1;
+      font-size: 14px;
+      display: block;
+      letter-spacing: 0.1em;
+
+      @media (max-width: 425px) {
+        font-size: 24px; // 文字がはみ出さないようサイズダウン
+      }
+    }
+  }
+}
+
+// --- Labels & Titles ---
+.main-event-label {
+  font-family: $h1;
+  font-size: 32px;
+  color: $black;
+  margin-bottom: 40px;
+  display: inline-block;
+  position: relative;
+  letter-spacing: -0.05em;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: -25px;
+    left: 0;
+    width: 100px;
+    height: 50px;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 50"><path d="M 10 10 Q 25 5 28 20" stroke="%23d00" stroke-width="1.0" fill="none" stroke-linecap="round"/><circle cx="30" cy="25" r="2.5" fill="%23d00"/><path d="M 33 20 Q 40 0 59 10" stroke="%23d00" stroke-width="1.0" fill="none" stroke-linecap="round"/><circle cx="64" cy="13" r="2.5" fill="%23d00"/></svg>');
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+}
+
 .event-title-row {
-    display: flex;
-    // 下端で揃えるための重要な設定
-    align-items: flex-end; 
-    gap: 8px;
-    width: 100%;
-    margin-bottom: 20px;
+  display: flex;
+  align-items: flex-end;
+  gap: 8px;
+  width: 100%;
+  margin-bottom: 20px;
 
-    .title-text-red {
-        font-family: $h3; // Chakra Petch
-        font-size: 28px;
-        font-weight: 700;
-        color: $red;
-        white-space: nowrap;
-        // 日本語のベースラインを数字に合わせるための微調整
-        line-height: 1.2;
+  .title-text-red {
+    font-family: $h3;
+    font-size: 28px;
+    font-weight: 700;
+    color: $red;
+    white-space: nowrap;
+    line-height: 1.2;
+  }
+  .number-100 {
+    font-family: $h3;
+    font-size: 64px;
+    font-weight: 700;
+    color: $black;
+    line-height: 0.8;
+    margin: 0 4px;
+    position: relative;
+    display: inline-block;
+    &::after {
+      content: "100";
+      position: absolute;
+      top: 2px;
+      left: 4px;
+      color: rgba($red, 0.2);
+      z-index: -1;
     }
+  }
+  .title-line {
+    flex-grow: 1;
+    height: 4px;
+    background-color: $black;
+    margin-bottom: 21px;
 
-    .number-100 {
-        font-family: $h3; // Chakra Petch
-        font-size: 64px;
-        font-weight: 700;
-        color: $black;
-        line-height: 0.8; // 数字自体の余白を削って下端を合わせやすくする
-        margin: 0 4px;
-        position: relative;
-        display: inline-block;
-
-            // 背後の赤い影（ドット風のズレ）の再現
-            &::after {
-            content: "100";
-            position: absolute;
-            top: 2px;
-            left: 4px;
-            color: rgba($red, 0.2);
-            z-index: -1;
-            }
+    // --- 425px以下のレスポンシブ設定 ---
+    @media (max-width: 425px) {
+      display: none; // これで非表示になります
     }
-
-    // 右側に伸びる直線
-    .title-line {
-        flex-grow: 1;
-        height: 4px;
-        background-color: $black;
-        // 線の高さをテキストのベースライン付近に合わせる
-        margin-bottom: 21px; 
-    }
+  }
 }
 
 // --- 100台展示 ---
 #display-100 {
-    // キャッチフレーズ全体の調整
-    .catchphrase-red {
-    // 1. フォントの設定：丸ゴシック `$text (Zen Maru Gothic)` を使用
+  .catchphrase-red {
     font-family: $h3;
-    
-    // 2. 色の設定： variables.scssの $red (#d00) を使用
-    color: $red; 
-    
-    // 3. フォントサイズ・太さの設定（画像から推測して調整）
-    font-size: 20px; // デザインに合わせた少し大きめのサイズ
-    font-weight: 700; // しっかりとした太さ
-    
-    // 4. 余白（上下）の調整
-    // 上のタイトル（100台展示）との間隔
-    margin-top: 25px; 
-    // 下のメイン画像（Hero）との間隔
-    margin-bottom: 25px; 
-    
-    // その他：視覚的な調整
-    line-height: 1.4; // 1行に収まるよう、行間を少し詰める
-    letter-spacing: -0.01em; // わずかに字間を詰めて締まりを出す
-}
-
-  // メインの大きな画像ボックス
-    .hero-image-box {
-        margin-bottom: 30px; // 下のギャラリーとの間隔
-
-        img {
-            width: 100%;
-            height: auto;
-            display: block;
-            margin: 0 auto; // 画像を中央に配置
-            border-radius: 4px; // デザインに合わせた微かな角丸（任意）
-            box-shadow: $shadow; // variables.scssのシャドウを適用
-        }
+    color: $red;
+    font-size: 20px;
+    font-weight: 700;
+    margin: 25px 0;
+    line-height: 1.4;
+    letter-spacing: -0.01em;
+    .tab-br {
+      display: none;
     }
-
-    // 下に3枚並ぶギャラリー部分
-    .gallery-three-col {
-        display: grid;
-        // 3枚を均等な幅で横並びにする
-        grid-template-columns: repeat(3, 1fr); 
-        // 画像同士の隙間 (デザインに合わせて調整)
-        gap: 20px; 
-        margin-bottom: 40px; // 本文ブロックとの間隔
-
-        img {
-            width: 100%;
-            // アスペクト比を固定（画像サイズがバラバラでも高さを揃える）
-            aspect-ratio: 3 / 2; 
-            object-fit: cover; // 枠に合わせて画像をトリミング
-            border-radius: 4px;
-        }
+    @media (max-width: 769px) {
+      .tab-br {
+        display: block;
+      }
     }
-
-    // 本文を包むブロック
-    .description-block {
-      max-width: 800px; // デザインに合わせ、少し幅を絞って可読性を高める
-      margin: 40px 0;   // ギャラリー画像との間隔
-
+  }
+  .hero-image-box {
+    margin-bottom: 30px;
+    img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 4px;
+      box-shadow: $shadow;
+    }
+  }
+  .gallery-three-col {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-bottom: 40px;
+    img {
+      width: 100%;
+      aspect-ratio: 3 / 2;
+      object-fit: cover;
+      border-radius: 4px;
+    }
+  }
+  .description-block {
+    max-width: 800px;
+    margin: 40px 0;
     p {
-        font-family: $text;      // Zen Maru Gothic (丸ゴシック)
-        font-size: 16px;         // 標準的な読みやすいサイズ
-        line-height: 2.2;        // デザイン画像のような、かなり広めの行間
-        color: $black;           // variables.scssの黒
-        margin-bottom: 2em;      // 段落同士の間隔
-        text-align: justify;     // 両端を揃えて美しく見せる
-        letter-spacing: 0.03em;  // わずかに字間を広げて高級感を出す
+      font-family: $text;
+      font-size: 16px;
+      line-height: 2.2;
+      color: $black;
+      margin-bottom: 2em;
+      text-align: justify;
+      letter-spacing: 0.03em;
     }
-
-    // 最初の一文字（イ）を大きくする設定
     .drop-cap {
-        float: left;             // 文字を左に寄せて、本文を回り込ませる
-        font-family: $h2;        // 見出し用の力強いフォント (Chakra Petchなど)
-        font-size: 48px;         // 本文2〜2.5行分に相当するサイズ
-        font-weight: 800;        // かなり太めに
-        line-height: 1;          // 行間の影響を受けないように固定
-        margin-right: 12px;      // 本文との横方向の隙間
-        margin-top: 6px;         // 1行目の上端と微調整して合わせる
-        color: $black;
-        display: inline-block;
+      float: left;
+      font-family: $h2;
+      font-size: 48px;
+      font-weight: 800;
+      line-height: 1;
+      margin-right: 12px;
+      margin-top: 6px;
+      color: $black;
     }
-}
+  }
 }
 
-// --- トークショー ---
+// --- トークショーセクション全般 ---
 #special-stage {
   max-width: 1000px;
   margin: 0 auto;
   padding: 60px 0;
 
-.section-header {
+  // --- 425px以下のレスポンシブ設定 ---
+  @media (max-width: 425px) {
+    padding: 10px 0;
+  }
+
+  // ヘッダー・キャッチコピー
+  .section-header {
     display: flex;
-    align-items: center; // 文字と線を中央揃え
+    align-items: center;
     gap: 20px;
     margin-bottom: 20px;
-
-    // 右側に長く伸びる黒い線
     .title-line {
-      flex: 1; // 残りの幅をすべて埋める
+      flex: 1;
       height: 4px;
       background-color: $black;
-    }
 
+      // --- 425px以下のレスポンシブ設定 ---
+      @media (max-width: 425px) {
+        display: none; // これで非表示になります
+      }
+    }
     .title-wrap {
       display: flex;
       flex-direction: column;
       align-items: flex-end;
       text-align: right;
-    //   gap: 15px;
-
       .side-title-en {
-        font-family: $h2; // Chakra Petch
+        font-family: $h2;
         color: $red;
         font-size: 32px;
         font-weight: 800;
-        margin: 0;
         line-height: 1.1;
-      }
+        margin: 0;
 
+        // --- 425px以下のレスポンシブ設定 ---
+        @media (max-width: 425px) {
+          color: $black;
+        }
+      }
       .side-title-jp {
         font-family: $text;
         color: $red;
@@ -300,96 +358,406 @@ body {
         font-weight: 700;
         margin: 10px 50px 0;
         line-height: 1;
+
+        // --- 425px以下のレスポンシブ設定 ---
+        @media (max-width: 425px) {
+          color: $black;
+        }
       }
     }
   }
 
-.catchphrase-red-bold {
+  .catchphrase-red-bold {
     color: $red;
+    font-size: 20px;
     font-weight: 700;
     margin-bottom: 20px;
-}
+    .sp-br {
+      display: none;
+    }
+    @media (max-width: 425px) {
+      .sp-br {
+        display: block;
+      }
+    }
+  }
 
-  // --- 下段の左右分割レイアウト ---
+  // レイアウト構造
   .split-layout {
     display: flex;
     justify-content: space-between;
     gap: 50px;
 
-    .stage-left {
-      flex: 1; // 左側を広く
-      
-      .full-width-img {
-        width: 100%;
-        margin-bottom: 30px;
-      }
-    }
-
-.stage-right {
-  width: 300px; 
-  // サイドバー全体の中央揃えを保証
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
-  .cast-section {
-    width: 100%; // 親の幅いっぱいに広げる
-    display: flex;
-    flex-direction: column;
-    align-items: center; // ★中身のhexagon-profileを中央へ
-    margin-bottom: 40px;
-
-    .cast-category {
-      text-align: center;
-      width: 100%;
-      margin-bottom: 25px;
+    @media (max-width: 768px) {
+      flex-direction: column; // スマホでは縦並び
+      gap: 40px;
     }
   }
 
-  // 六角形プロフィールの修正
-  .hexagon-profile {
-    display: flex;
-    flex-direction: column; // 画像とテキストを縦並びに
-    align-items: center;    // ★画像とテキストを中央揃えに
-    text-align: center;     // ★テキストを中央寄せ
-    width: 100%;
-    margin-bottom: 30px;
+  .stage-left {
+    flex: 1;
+    .full-width-img {
+      width: 100%;
+      display: block;
+      margin-bottom: 30px;
+    }
+  }
 
-    img {
-      width: 160px; // サイズは適宜調整してください
-      height: auto;
-      margin-bottom: 10px; // 画像と下の名前の間の余白
+  // --- サイドバー（今回のメイン修正箇所） ---
+  .stage-right {
+    width: 250px; // PCサイズ
+
+    @media (max-width: 768px) {
+      width: 100%; // スマホでは全幅に広げる
+    }
+
+    .cast-section {
+      margin-bottom: 50px;
+      text-align: center; // PC用
+
+      // スマホ時：中央寄せへの切り替え
+      @media (max-width: 768px) {
+        text-align: center; // セクション内全体を中央寄せ
+        // 左寄せにするための flex は使用しない
+      }
+
+      .cast-category {
+        font-size: 16px;
+        margin-bottom: 30px;
+        font-family: $h2;
+
+        @media (max-width: 768px) {
+          display: block; // ブロック要素として
+          width: fit-content; // 幅をテキストに合わせる
+          margin: 0 auto 30px; // 中央寄せにし、下に余白を作る
+          font-size: 20px; // 文字サイズをPCと同じに
+          font-weight: 800; // より太くしてタイトルらしさを強調
+          letter-spacing: 0.1em; // 少し文字間を広げると高級感が出ます
+
+          line-height: 1.2;
+
+          border-bottom: 2px solid $black;
+          padding-bottom: 5px;
+        }
+      }
+
+      .profile-container {
+        @media (max-width: 768px) {
+          display: flex; // スマホでは2人のプロフィールを横並び
+          justify-content: center; // 画像全体を中央に
+          gap: 15px; // 画像同士の間隔
+        }
+      }
+    }
+  }
+
+  // --- プロフィールユニット ---
+  .hexagon-profile {
+    position: relative;
+    width: 160px;
+    margin: 0 auto 40px; // PC用中央寄せ
+
+    // ★スマホ時の中央寄せ設定を追加
+    @media (max-width: 768px) {
+      margin: 0 auto; // 左寄せ (0) を解除し、中央寄せ (auto) に
+    }
+
+    .profile-box {
+      position: relative;
+      width: 130px; // PCサイズ
+      margin: 0 auto;
+      z-index: 2;
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        clip-path: polygon(
+          50% 0%,
+          100% 25%,
+          100% 75%,
+          50% 100%,
+          0% 75%,
+          0% 25%
+        );
+        transform: translate(15px, -15px);
+        z-index: -1;
+      }
+      img {
+        width: 100%;
+        display: block;
+      }
+
+      // スマホではサイズを維持（拡大はしない）
+      @media (max-width: 768px) {
+        width: 130px; // PCサイズを維持
+        &::before {
+          transform: translate(15px, -15px); // スマホ用の小さな影は使用しない
+        }
+      }
     }
 
     .profile-info {
-      display: flex;
-      flex-direction: column;
-      align-items: center; // ★ランクと名前を中央揃え
-      
+      position: absolute;
+      white-space: nowrap;
+      z-index: 3;
       .rank {
-        font-size: 12px;
-        color: #666;
+        font-size: 11px;
+        color: $black;
+        font-weight: 700;
+        display: block;
       }
-      .name {
+      .name,
+      .name-red {
         font-size: 18px;
         font-weight: 700;
-        font-family: $h2; // Chakra Petchなど
+        font-family: $h1;
+        display: block;
       }
-    }
-    
-    // MC用（名前が赤いパターン）
-    &.mc-profile {
-      .name-red {
-        color: $red;
-        font-weight: 700;
+
+      @media (max-width: 768px) {
+        position: relative; // 絶対配置解除
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0; // PCのズレをリセット
+        text-align: center;
         margin-top: 10px;
+        // 名前のサイズはPCサイズを維持
       }
     }
   }
-  
-  // 交互に配置する場合でも、align-items: centerなら崩れません
-  .profile-reversed {
-    align-items: center; 
+
+  // 影の色
+  .cast-section:first-of-type .profile-box::before {
+    background-color: rgba($red, 0.3);
+  }
+  .mc-profile .profile-box::before {
+    background-color: #b8a8a8;
+  }
+
+  // PC用個別位置調整（スマホでは profile-info の relative 化により無効化される）
+  .max-profile .profile-info {
+    top: -15px;
+    left: -40px;
+    text-align: right;
+    .name {
+      font-style: italic;
+    }
+  }
+  .lewis-profile .profile-info {
+    bottom: -10px;
+    right: -40px;
+    text-align: left;
+    .name {
+      font-style: italic;
+    }
+  }
+  .tanaka-profile .profile-info {
+    top: -5px;
+    left: -20px;
+    text-align: right;
+    color: $red;
+    .name-red {
+      font-style: italic;
+    }
+  }
+  .suzuki-profile .profile-info {
+    bottom: -5px;
+    right: -20px;
+    text-align: left;
+    color: $red;
+    .name-red {
+      font-style: italic;
+    }
+  }
+
+  // 説明文
+  .description-block {
+    margin: 40px 0;
+    p {
+      font-family: $text;
+      font-size: 16px;
+      line-height: 2;
+      margin-bottom: 2em;
+      text-align: justify;
+    }
+    .drop-cap {
+      float: left;
+      font-family: $h2;
+      font-size: 56px;
+      font-weight: 800;
+      line-height: 1;
+      margin: 4px 12px 0 0;
+      color: $black;
+    }
   }
 }
+
+// --- 乗車体験 ---
+#ride-experience {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 80px 0;
+
+  // --- 425px以下のレスポンシブ設定 ---
+  @media (max-width: 425px) {
+    padding: 40px 0;
+  }
+
+  .title-row-with-line {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 30px;
+
+    .title-text-red {
+      font-family: $h2;
+      font-size: 32px;
+      font-weight: 800;
+      color: $red;
+      white-space: nowrap;
+
+      @media (max-width: 768px) {
+        font-size: 24px; // タイトルを少し小さく
+      }
+
+      // --- 425px以下のレスポンシブ設定 ---
+      @media (max-width: 425px) {
+        color: $black;
+      }
+    }
+    .title-line {
+      flex: 1;
+      height: 4px;
+      background-color: $black;
+
+      // --- 425px以下のレスポンシブ設定 ---
+      @media (max-width: 425px) {
+        display: none; // これで非表示になります
+      }
+    }
+  }
+
+  .catchphrase-red-bold {
+    color: $red;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.6;
+    margin-bottom: 40px;
+
+    @media (max-width: 768px) {
+      font-size: 18px;
+    }
+  }
+
+  .experience-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-bottom: 60px;
+
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr; // 全体は縦積み
+      gap: 20px;
+    }
+
+    .grid-left {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      img {
+        width: 100%;
+        aspect-ratio: 3 / 2;
+        object-fit: cover;
+      }
+    }
+
+    .grid-right {
+      display: flex;
+      flex-direction: column; // PCは縦並び
+      gap: 30px;
+
+      @media (max-width: 768px) {
+        flex-direction: row; // ★スマホで横並びに変更
+        gap: 10px; // 画像の間隔を少し詰める
+      }
+
+      img {
+        width: 100%;
+        aspect-ratio: 3 / 2;
+        object-fit: cover;
+
+        @media (max-width: 768px) {
+          width: 50%; // ★横並びなので各50%幅に
+        }
+      }
+    }
+  }
+
+  .description-block {
+    p {
+      font-family: $text;
+      font-size: 16px;
+      line-height: 2;
+      color: $black;
+      margin-bottom: 1.5em;
+      text-align: justify;
+      .sp-br {
+        display: none;
+      }
+      @media (max-width: 425px) {
+        .sp-br {
+          display: block;
+        }
+      }
+    }
+    .quote-text {
+      font-size: 24px;
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: flex-start;
+
+      @media (max-width: 768px) {
+        font-size: 20px;
+      }
+    }
+    .drop-cap {
+      font-family: $h2;
+      font-size: 50px;
+      font-weight: 800;
+      line-height: 1;
+      margin: 0 4px;
+      color: $black;
+
+      @media (max-width: 768px) {
+        font-size: 40px;
+      }
+    }
+  }
+}
+
+.main-event__bottom-obi {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 80px;
+
+  @media (max-width: 768px) {
+    width: 100%;
+    margin-top: 40px;
+  }
+  @media (max-width: 425px) {
+    width: 100%;
+  }
+
+  img {
+    width: 100%;
+    display: block;
+  }
 }

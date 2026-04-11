@@ -1186,26 +1186,39 @@ body {
   padding: 0;
   font-family: "Zen Maru Gothic", sans-serif;
   color: #333333;
-  background-color: #FFF;
+  background-color: #fff;
   overflow-x: hidden;
 }
 
 .container {
   max-width: 1000px;
   margin: 0 auto;
-  padding: 40px 50px;
+  padding: 40px 100px;
   position: relative;
   overflow-x: hidden;
+  background-color: #fffaf4;
+  z-index: auto;
+}
+@media (max-width: 769px) {
+  .container {
+    padding: 30px 70px;
+  }
+}
+@media (max-width: 425px) {
+  .container {
+    padding: 30px 20px;
+  }
 }
 .container .bg-dots {
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: -2;
-  background-image: radial-gradient(#000000 2px, transparent 1.5px);
+  z-index: 0;
+  background-image: radial-gradient(#e5e5e5 1.5px, transparent 1.5px);
   background-size: 30px 30px;
+  background-repeat: repeat;
   pointer-events: none;
 }
 .container .bg-shape-orange {
@@ -1217,13 +1230,71 @@ body {
   background-image: url("/img/ME-asirai01.png");
   background-size: contain;
   background-repeat: no-repeat;
-  opacity: 0.5;
-  z-index: -1;
+  opacity: 0.7;
+  z-index: 1;
   pointer-events: none;
   transform: rotate(-10deg);
 }
+@media (max-width: 425px) {
+  .container .bg-shape-orange {
+    right: -420px;
+    width: 600px;
+    height: 500px;
+  }
+}
+.container .bg-shape-red {
+  position: absolute;
+  top: 1450px;
+  left: -450px;
+  width: 600px;
+  height: 500px;
+  background-image: url("/img/ME-asirai02.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0.7;
+  z-index: 1;
+  pointer-events: none;
+  transform: rotate(-10deg);
+}
+@media (max-width: 425px) {
+  .container .bg-shape-red {
+    top: 1250px;
+    left: -400px;
+    width: 600px;
+    height: 500px;
+  }
+}
+.container .bg-shape-gray {
+  position: absolute;
+  top: 2100px;
+  right: -450px;
+  width: 600px;
+  height: 800px;
+  background-image: url("/img/ME-asirai03.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0.7;
+  z-index: 1;
+  pointer-events: none;
+  transform: rotate(0deg);
+}
+@media (max-width: 425px) {
+  .container .bg-shape-gray {
+    top: 2450px;
+    right: -500px;
+    width: 600px;
+    height: 500px;
+  }
+}
 
-.event-title-fixed {
+header,
+section,
+.description-block {
+  position: relative;
+  z-index: 10;
+}
+
+.page-title-area {
   width: 1000px;
   position: relative;
   left: 50%;
@@ -1235,22 +1306,41 @@ body {
   background: linear-gradient(to right, #333333 50%, #d00 50%);
   margin: 60px 0;
 }
-.event-title-fixed .header-content {
+@media (max-width: 425px) {
+  .page-title-area {
+    width: 100vw;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 100px;
+    margin: 40px 0;
+  }
+}
+.page-title-area .page-title-content {
   color: #fff;
   text-align: center;
   z-index: 1;
 }
-.event-title-fixed .header-content .header-title {
+.page-title-area .page-title-content .page-main-title {
   font-family: "M PLUS 1", sans-serif;
   font-size: 32px;
   font-weight: 900;
   margin: 0;
 }
-.event-title-fixed .header-content .header-sub {
+@media (max-width: 425px) {
+  .page-title-area .page-title-content .page-main-title {
+    font-size: 24px;
+  }
+}
+.page-title-area .page-title-content .page-sub-title {
   font-family: "Poller One", serif;
   font-size: 14px;
   display: block;
   letter-spacing: 0.1em;
+}
+@media (max-width: 425px) {
+  .page-title-area .page-title-content .page-sub-title {
+    font-size: 24px;
+  }
 }
 
 .main-event-label {
@@ -1313,16 +1403,28 @@ body {
   background-color: #333333;
   margin-bottom: 21px;
 }
+@media (max-width: 425px) {
+  .event-title-row .title-line {
+    display: none;
+  }
+}
 
 #display-100 .catchphrase-red {
   font-family: "Chakra Petch", sans-serif;
   color: #d00;
   font-size: 20px;
   font-weight: 700;
-  margin-top: 25px;
-  margin-bottom: 25px;
+  margin: 25px 0;
   line-height: 1.4;
   letter-spacing: -0.01em;
+}
+#display-100 .catchphrase-red .tab-br {
+  display: none;
+}
+@media (max-width: 769px) {
+  #display-100 .catchphrase-red .tab-br {
+    display: block;
+  }
 }
 #display-100 .hero-image-box {
   margin-bottom: 30px;
@@ -1331,7 +1433,6 @@ body {
   width: 100%;
   height: auto;
   display: block;
-  margin: 0 auto;
   border-radius: 4px;
   box-shadow: 4px 4px 10px 5px rgba(51, 51, 51, 0.5);
 }
@@ -1370,13 +1471,17 @@ body {
   margin-right: 12px;
   margin-top: 6px;
   color: #333333;
-  display: inline-block;
 }
 
 #special-stage {
   max-width: 1000px;
   margin: 0 auto;
   padding: 60px 0;
+}
+@media (max-width: 425px) {
+  #special-stage {
+    padding: 10px 0;
+  }
 }
 #special-stage .section-header {
   display: flex;
@@ -1389,6 +1494,11 @@ body {
   height: 4px;
   background-color: #333333;
 }
+@media (max-width: 425px) {
+  #special-stage .section-header .title-line {
+    display: none;
+  }
+}
 #special-stage .section-header .title-wrap {
   display: flex;
   flex-direction: column;
@@ -1400,8 +1510,13 @@ body {
   color: #d00;
   font-size: 32px;
   font-weight: 800;
-  margin: 0;
   line-height: 1.1;
+  margin: 0;
+}
+@media (max-width: 425px) {
+  #special-stage .section-header .title-wrap .side-title-en {
+    color: #333333;
+  }
 }
 #special-stage .section-header .title-wrap .side-title-jp {
   font-family: "Zen Maru Gothic", sans-serif;
@@ -1411,31 +1526,377 @@ body {
   margin: 10px 50px 0;
   line-height: 1;
 }
+@media (max-width: 425px) {
+  #special-stage .section-header .title-wrap .side-title-jp {
+    color: #333333;
+  }
+}
 #special-stage .catchphrase-red-bold {
   color: #d00;
+  font-size: 20px;
   font-weight: 700;
   margin-bottom: 20px;
+}
+#special-stage .catchphrase-red-bold .sp-br {
+  display: none;
+}
+@media (max-width: 425px) {
+  #special-stage .catchphrase-red-bold .sp-br {
+    display: block;
+  }
 }
 #special-stage .split-layout {
   display: flex;
   justify-content: space-between;
   gap: 50px;
 }
-#special-stage .split-layout .stage-left {
+@media (max-width: 768px) {
+  #special-stage .split-layout {
+    flex-direction: column;
+    gap: 40px;
+  }
+}
+#special-stage .stage-left {
   flex: 1;
 }
-#special-stage .split-layout .stage-left .full-width-img {
+#special-stage .stage-left .full-width-img {
   width: 100%;
+  display: block;
   margin-bottom: 30px;
 }
-#special-stage .split-layout .stage-right {
-  width: 300px;
+#special-stage .stage-right {
+  width: 250px;
 }
-#special-stage .split-layout .stage-right .sticky-sidebar {
-  margin: 0 auto;
+@media (max-width: 768px) {
+  #special-stage .stage-right {
+    width: 100%;
+  }
 }
-#special-stage .split-layout .stage-right .cast-category {
+#special-stage .stage-right .cast-section {
+  margin-bottom: 50px;
   text-align: center;
-  color: #666;
+}
+@media (max-width: 768px) {
+  #special-stage .stage-right .cast-section {
+    text-align: center;
+  }
+}
+#special-stage .stage-right .cast-section .cast-category {
+  font-size: 16px;
   margin-bottom: 30px;
+  font-family: "M PLUS 1", sans-serif;
+}
+@media (max-width: 768px) {
+  #special-stage .stage-right .cast-section .cast-category {
+    display: block;
+    width: -moz-fit-content;
+    width: fit-content;
+    margin: 0 auto 30px;
+    font-size: 20px;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    line-height: 1.2;
+    border-bottom: 2px solid #333333;
+    padding-bottom: 5px;
+  }
+}
+@media (max-width: 768px) {
+  #special-stage .stage-right .cast-section .profile-container {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+  }
+}
+#special-stage .hexagon-profile {
+  position: relative;
+  width: 160px;
+  margin: 0 auto 40px;
+}
+@media (max-width: 768px) {
+  #special-stage .hexagon-profile {
+    margin: 0 auto;
+  }
+}
+#special-stage .hexagon-profile .profile-box {
+  position: relative;
+  width: 130px;
+  margin: 0 auto;
+  z-index: 2;
+}
+#special-stage .hexagon-profile .profile-box::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  transform: translate(15px, -15px);
+  z-index: -1;
+}
+#special-stage .hexagon-profile .profile-box img {
+  width: 100%;
+  display: block;
+}
+@media (max-width: 768px) {
+  #special-stage .hexagon-profile .profile-box {
+    width: 130px;
+  }
+  #special-stage .hexagon-profile .profile-box::before {
+    transform: translate(15px, -15px);
+  }
+}
+#special-stage .hexagon-profile .profile-info {
+  position: absolute;
+  white-space: nowrap;
+  z-index: 3;
+}
+#special-stage .hexagon-profile .profile-info .rank {
+  font-size: 11px;
+  color: #333333;
+  font-weight: 700;
+  display: block;
+}
+#special-stage .hexagon-profile .profile-info .name,
+#special-stage .hexagon-profile .profile-info .name-red {
+  font-size: 18px;
+  font-weight: 700;
+  font-family: "Poller One", serif;
+  display: block;
+}
+@media (max-width: 768px) {
+  #special-stage .hexagon-profile .profile-info {
+    position: relative;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    text-align: center;
+    margin-top: 10px;
+  }
+}
+#special-stage .cast-section:first-of-type .profile-box::before {
+  background-color: rgba(221, 0, 0, 0.3);
+}
+#special-stage .mc-profile .profile-box::before {
+  background-color: #b8a8a8;
+}
+#special-stage .max-profile .profile-info {
+  top: -15px;
+  left: -40px;
+  text-align: right;
+}
+#special-stage .max-profile .profile-info .name {
+  font-style: italic;
+}
+#special-stage .lewis-profile .profile-info {
+  bottom: -10px;
+  right: -40px;
+  text-align: left;
+}
+#special-stage .lewis-profile .profile-info .name {
+  font-style: italic;
+}
+#special-stage .tanaka-profile .profile-info {
+  top: -5px;
+  left: -20px;
+  text-align: right;
+  color: #d00;
+}
+#special-stage .tanaka-profile .profile-info .name-red {
+  font-style: italic;
+}
+#special-stage .suzuki-profile .profile-info {
+  bottom: -5px;
+  right: -20px;
+  text-align: left;
+  color: #d00;
+}
+#special-stage .suzuki-profile .profile-info .name-red {
+  font-style: italic;
+}
+#special-stage .description-block {
+  margin: 40px 0;
+}
+#special-stage .description-block p {
+  font-family: "Zen Maru Gothic", sans-serif;
+  font-size: 16px;
+  line-height: 2;
+  margin-bottom: 2em;
+  text-align: justify;
+}
+#special-stage .description-block .drop-cap {
+  float: left;
+  font-family: "M PLUS 1", sans-serif;
+  font-size: 56px;
+  font-weight: 800;
+  line-height: 1;
+  margin: 4px 12px 0 0;
+  color: #333333;
+}
+
+#ride-experience {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 80px 0;
+}
+@media (max-width: 425px) {
+  #ride-experience {
+    padding: 40px 0;
+  }
+}
+#ride-experience .title-row-with-line {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+#ride-experience .title-row-with-line .title-text-red {
+  font-family: "M PLUS 1", sans-serif;
+  font-size: 32px;
+  font-weight: 800;
+  color: #d00;
+  white-space: nowrap;
+}
+@media (max-width: 768px) {
+  #ride-experience .title-row-with-line .title-text-red {
+    font-size: 24px;
+  }
+}
+@media (max-width: 425px) {
+  #ride-experience .title-row-with-line .title-text-red {
+    color: #333333;
+  }
+}
+#ride-experience .title-row-with-line .title-line {
+  flex: 1;
+  height: 4px;
+  background-color: #333333;
+}
+@media (max-width: 425px) {
+  #ride-experience .title-row-with-line .title-line {
+    display: none;
+  }
+}
+#ride-experience .catchphrase-red-bold {
+  color: #d00;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.6;
+  margin-bottom: 40px;
+}
+@media (max-width: 768px) {
+  #ride-experience .catchphrase-red-bold {
+    font-size: 18px;
+  }
+}
+#ride-experience .experience-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  margin-bottom: 60px;
+}
+@media (max-width: 768px) {
+  #ride-experience .experience-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+#ride-experience .experience-grid .grid-left {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+#ride-experience .experience-grid .grid-left img {
+  width: 100%;
+  aspect-ratio: 3/2;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+#ride-experience .experience-grid .grid-right {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+@media (max-width: 768px) {
+  #ride-experience .experience-grid .grid-right {
+    flex-direction: row;
+    gap: 10px;
+  }
+}
+#ride-experience .experience-grid .grid-right img {
+  width: 100%;
+  aspect-ratio: 3/2;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+@media (max-width: 768px) {
+  #ride-experience .experience-grid .grid-right img {
+    width: 50%;
+  }
+}
+#ride-experience .description-block p {
+  font-family: "Zen Maru Gothic", sans-serif;
+  font-size: 16px;
+  line-height: 2;
+  color: #333333;
+  margin-bottom: 1.5em;
+  text-align: justify;
+}
+#ride-experience .description-block p .sp-br {
+  display: none;
+}
+@media (max-width: 425px) {
+  #ride-experience .description-block p .sp-br {
+    display: block;
+  }
+}
+#ride-experience .description-block .quote-text {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: flex-start;
+}
+@media (max-width: 768px) {
+  #ride-experience .description-block .quote-text {
+    font-size: 20px;
+  }
+}
+#ride-experience .description-block .drop-cap {
+  font-family: "M PLUS 1", sans-serif;
+  font-size: 50px;
+  font-weight: 800;
+  line-height: 1;
+  margin: 0 4px;
+  color: #333333;
+}
+@media (max-width: 768px) {
+  #ride-experience .description-block .drop-cap {
+    font-size: 40px;
+  }
+}
+
+.main-event__bottom-obi {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 80px;
+}
+@media (max-width: 768px) {
+  .main-event__bottom-obi {
+    width: 100%;
+    margin-top: 40px;
+  }
+}
+@media (max-width: 425px) {
+  .main-event__bottom-obi {
+    width: 100%;
+  }
+}
+.main-event__bottom-obi img {
+  width: 100%;
+  display: block;
 }/*# sourceMappingURL=style.css.map */
