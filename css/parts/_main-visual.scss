@@ -3,11 +3,68 @@
 .main-visual {
     width: 100%;             // 横幅いっぱい
     height: calc(100vh - 80px); 
-    background-image: url("../img/Gemini_Generated_Image_ejppnqejppnqejpp.png"); // 画像のパス（自分のファイル名に合わせてね）
+    background-image: url("../img/mv.png"); // 画像のパス（自分のファイル名に合わせてね）
     background-size: cover;    // 画像を隙間なく、比率を保って表示
     background-position: center; // 画像の真ん中を基準にする
     background-repeat: no-repeat; // 画像を繰り返さない
+
+    position: relative; // 子要素の基準になる
+
+    opacity: 0;
+
+    .mv-logo,
+    .mv-text {
+        position: absolute;
+        left: 50%; // 親の左から50%の位置へ
+        opacity: 0;
+        width: 100%; // テキストの折り返しなどを制御するため
+        text-align: center;
+    }
+
+    .mv-logo {
+        width: 100%; // ロゴのサイズは適宜指定
+        max-width: 650px;
+        top: 50%;
+        transform: translate(-50%, -50%) scale(0.5); // 最初は小さく
+        opacity: 0;
+        visibility: hidden;
+        @media screen and (max-width: 1024px) {
+            top: 20%;
+        }
+        
+    }
+
+    .mv-text {
+        top: 50%;
+        transform: translate(-50%, -50%); 
+        visibility: hidden;
+        color: $black;
+        font-size: 1.5rem;
+        font-weight: bold;
+        text-align: center;
+        line-height: 1.6;
+        text-shadow: 
+            0 0 8px #fff,
+            0 0 12px #fff,  
+            0 0 20px #fff, 
+            0 0 30px #fff, 
+            0 0 40px #fff;
+        @media screen and (max-width: 1024px) {
+            
+        }
+
+    }
+
+    .mv-s04 {
+        width: 500px;
+        height: auto;
+        position: absolute;
+        bottom: 0;
+        right: -40px;
+
+    }
 }
+
 
 .header {
     width: 100%;
@@ -23,6 +80,13 @@
     top: 0;           // ★ 上端にくっつく位置を指定
     z-index: 100;     // ★ 他のコンテンツ（写真など）より上に表示されるように
 
+    opacity: 0;
+    visibility: hidden;
+
+    @media screen and (max-width: 1024px) {
+        padding: 10px;
+    }
+
     &__inner {
         width: 100%; // サイトの最大幅に合わせて調整してください
         margin: 0 auto;
@@ -33,27 +97,70 @@
 
     &__logo {
         height: 60px; // ←ここでロゴの高さを決める
+        width: auto;
+        display: inline-block;
+        transition: opacity 0.3s ease;
 
         img {
         height: 100%;
         width: auto;
         display: block; // ←余白対策で入れておくと良い
         }
+
+        &:hover {
+            opacity: 0.7; 
+            transform: scale(1.05);
+        }
+
+        @media screen and (max-width: 768px) {
+            height:50px;
+        }
+        @media screen and (max-width: 425px) {
+            display: none;
+        }
     }
    
 
     // 中央の情報エリア
     &__info {
-        display: flex;
-        justify-content: space-around;
+        display: grid; // flexからgridに変更
+        // 最初は4列（1列に横並び）
+        grid-template-columns: repeat(4, auto); 
         align-items: baseline;
+        justify-content: center; // 全体を中央寄せにする場合
         gap: 30px;
         font-family: $h2;
         font-weight: bold;
 
+        @media screen and (max-width: 1024px) {
+            // 2列に変更
+            grid-template-columns: 1fr 1fr; 
+            gap: 5px 30px; // 縦の隙間を15px、横を30pxに
+            justify-items: start; // 左寄せ（お好みでcenterなど）
+
+            // 並び順の指定
+            // 1. 2026 (左上)
+            .header__year { grid-row: 1; grid-column: 1; }
+            // 2. 時間 (右上)
+            .header__time { grid-row: 1; grid-column: 2; }
+            // 3. 日付 (左下)
+            .header__date { grid-row: 2; grid-column: 1; }
+            // 4. 場所 (右下)
+            .header__place { grid-row: 2; grid-column: 2; }
+        }
+        @media screen and (max-width: 425px) {
+            font-size: 0.825rem;
+        }
+
         .header__year {
             font-size: 1.25rem;
             font-family: $h2;
+            @media screen and (max-width: 1024px) {
+                font-size: 1rem;
+            }
+            @media screen and (max-width: 425px) {
+                font-size: 0.825rem;
+            }
         }
         .header__date { 
             display: flex;
@@ -61,34 +168,38 @@
             align-items: baseline;
             gap: 15px;
             span { font-size: 1rem; margin: 0 4px; }
+            @media screen and (max-width: 1024px) {
+                font-size: 1.25rem;
+                gap: 10px;
+                span { font-size: 1rem; margin: 0 2px; }
+            }
+            @media screen and (max-width: 425px) {
+                font-size: 0.825rem;
+                gap: 3px;
+                span { font-size: 0.7rem; margin: 0 2px; }
+            }
         }
         .header__time {
             font-size: 1.5rem;
+             @media screen and (max-width: 1024px) {
+                font-size: 1.25rem;
+            }
+            @media screen and (max-width: 425px) {
+                font-size: 0.825rem;
+            }
         }
         .header__place {
             font-size: 1.5rem;
             font-family: $h2;
+             @media screen and (max-width: 1024px) {
+                font-size: 1.25rem;
+            }
+            @media screen and (max-width: 425px) {
+                font-size: 0.825rem;
+            }
         }
     }
 }
-
-// ハンバーガーメニュー（3本線）
-// .hamburger {
-//     width: 30px;
-//     height: 20px;
-//     display: flex;
-//     flex-direction: column;
-//     justify-content: space-between;
-//     cursor: pointer;
-
-//     span {
-//         display: block;
-//         width: 100%;
-//         height: 3px;
-//         background-color: #b03030; // 添付画像に近い赤色
-//         border-radius: 2px;
-//     }
-// }
 
 // 入場料無料ボタン
 .btn-free {
@@ -101,6 +212,13 @@
     font-weight: 700;
     border: 1px solid #000;
     font-family:  $h2;
+    @media screen and (max-width: 1024px) {
+        font-size: 1rem;
+    }
+    @media screen and (max-width: 425px) {
+        font-size: 0.825rem;
+        padding: 5px 10px;
+    }
 }
 
 // 変数（既存のものがあればそれに合わせてください）

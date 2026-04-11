@@ -72,63 +72,119 @@ $(function() {
 /*==================================
 　　メインイベント背景固定
 ==================================*/
-// ScrollTrigger.matchMedia({
-//     // デスクトップ用 (1025px以上)
-//     "(min-width: 1025px)":
 $(function() {
     gsap.registerPlugin(ScrollTrigger);
 
-    const tl = gsap.timeline({
-        scrollTrigger: {
-            trigger: ".main-event",
-            start: "top top",
-            // "bottom bottom" の代わりに、固定したい距離（px）を指定します
-            // +=1500 などにすると、画面1.5個分くらいスクロールしたら固定が解けます
-            end: "+=2000", 
-            scrub: 1.5, 
-            pin: true,
-            // 余計な余白（padding）をGSAPが追加しないように設定
-            pinSpacing: true, 
+    ScrollTrigger.matchMedia({
+        // 426px以上のとき：背景固定アニメーションを実行
+        "(min-width: 426px)": function() {
+            const tl = gsap.timeline({
+                scrollTrigger: {
+                    trigger: ".main-event",
+                    start: "top top",
+                    end: "+=2000", 
+                    scrub: 1.5, 
+                    pin: true,
+                    pinSpacing: true, 
+                }
+            });
+
+            // 演出の中身
+            tl.to(".main-event__speed-line", { width: "100%", opacity: 0.6, duration: 4 })
+              .to(".js-title", { opacity: 1, duration: 2 }, "-=2")
+              .to(".js-event-item:nth-of-type(1)", { opacity: 1, visibility: "visible", duration: 5 })
+              .to(".js-event-item:nth-of-type(1)", { opacity: 0, duration: 3, delay: 5 })
+              .to(".js-event-item:nth-of-type(2)", { opacity: 1, visibility: "visible", duration: 5 })
+              .to(".js-event-item:nth-of-type(2)", { opacity: 0, duration: 3, delay: 5 })
+              .to(".js-event-item:nth-of-type(3)", { opacity: 1, visibility: "visible", duration: 5 })
+              .to(".js-event-item:nth-of-type(3)", { opacity: 0, duration: 3, delay: 5 })
+              .to(".js-title", { opacity: 0, duration: 2 }, "-=1")
+              .to(".main-event__speed-line", { opacity: 0, duration: 2 }, "-=2")
+              .to({}, { duration: 5 });
+              
+            // クリーンアップ処理（画面幅を変えた時にリセットされるようにする）
+            return function() {
+                tl.kill(); 
+            };
+        },
+
+        // 425px以下のとき：アニメーションを動かさない
+        "(max-width: 425px)": function() {
+            // スマホ版では何も記述しなくてOKです。
+            // GSAPが自動的にScrollTriggerを無効化してくれます。
         }
     });
+});
 
-    // --- 演出の中身はそのまま（durationの合計を意識して微調整） ---
-    tl.to(".main-event__speed-line", { width: "100%", opacity: 0.6, duration: 4 })
-      .to(".js-title", { opacity: 1, duration: 2 }, "-=2")
+/*==================================
+　　帯画像ズーム（複数対応版）
+==================================*/
+// 1. すべての .obi 要素を取得
+const obiElements = document.querySelectorAll('.obi');
 
-    // ② アイテム1の表示・非表示
-    .to(".js-event-item:nth-of-type(1)", { opacity: 1, visibility: "visible", duration: 5 })
-    .to(".js-event-item:nth-of-type(1)", { opacity: 0, duration: 3, delay: 5 })
+// 要素が存在する場合のみ実行
+if (obiElements.length > 0) {
+    const observerOptions = {
+        root: null,
+        rootMargin: "-20% 0px",
+        threshold: 0
+    };
 
-    // ③ アイテム2の表示・非表示
-    .to(".js-event-item:nth-of-type(2)", { opacity: 1, visibility: "visible", duration: 5 })
-    .to(".js-event-item:nth-of-type(2)", { opacity: 0, duration: 3, delay: 5 })
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('is-zoom');
+            }
+        });
+    }, observerOptions);
 
-    // ④ アイテム3の表示・★ここから追加：3つ目も消す
-    .to(".js-event-item:nth-of-type(3)", { opacity: 1, visibility: "visible", duration: 5 })
-    .to(".js-event-item:nth-of-type(3)", { opacity: 0, duration: 3, delay: 5 }) // 3つ目もふわっと消す
+    // 2. 取得したすべての要素に対して監視を開始する
+    obiElements.forEach(el => {
+        observer.observe(el);
+    });
+}
 
-    // ⑤ ★締めくくり：タイトルとスピードラインも消して、背景を白に戻す準備
-    .to(".js-title", { opacity: 0, duration: 2 }, "-=1")
-    .to(".main-event__speed-line", { opacity: 0, duration: 2 }, "-=2")
-    
-    // ⑥ 最後に少しだけ「間」を置くことで、スクロールの終わりと同期させる
-    .to({}, { duration: 5 });
-  // }, 
+/*==================================
+　　ヒーローセクション表示
+==================================*/
+$(window).on('load', function() {
+    const tl = gsap.timeline();
 
-  // スマホ・タブレット用 (1024px以下)
-  // "(max-width: 1024px)": function() {
-      // スマホでは固定せず、普通にスクロールしてふわっと出るだけにする
-  //     gsap.utils.toArray(".js-event-item").forEach(item => {
-  //         gsap.to(item, {
-  //             opacity: 1,
-  //             visibility: "visible",
-  //             y: 0,
-  //             scrollTrigger: {
-  //                 trigger: item,
-  //                 start: "top 80%",
-  //             }
-  //         });
-  //     });
-  // }
+    tl
+    // ① 背景画像をふわっと表示
+    .to(".main-visual", { opacity: 1, duration: 1.5, ease: "power2.out" })
+
+    // ② H1テキストが中央にふわっと表示
+    .to(".mv-text", { 
+        autoAlpha: 1, // opacityとvisibilityを同時に制御
+        duration: 1.2, 
+        ease: "power2.out" 
+    }, "-=0.5") // 背景の終わり際にかぶせる
+
+    // ③ H1テキストが下（55%の位置）に移動
+    .to(".mv-text", { 
+        top: "65%", 
+        duration: 1.0, 
+        ease: "power3.inOut" 
+    }, "+=0.5") // 表示されてから少し間を置く
+
+    // ④ ロゴが真ん中に「ドーン」と表示（大きくして戻す）
+    .fromTo(".mv-logo", 
+        { scale: 0, autoAlpha: 0 }, 
+        { 
+            scale: 1, 
+            autoAlpha: 1, 
+            top: "40%", // 最終的な位置へ移動
+            duration: 1.2, 
+            ease: "back.out(1.7)" // 少し行き過ぎて戻る弾むような動き
+        }, 
+        "-=0.3"
+    )
+
+    // ⑤ 最後にヘッダーを表示
+    .to(".header", { 
+        autoAlpha: 1, 
+        duration: 0.8, 
+        ease: "power2.out" 
+    });
 });
