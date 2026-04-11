@@ -780,6 +780,7 @@ section,
   left: 50%;
   transform: translateX(-50%);
   margin-top: 80px;
+  margin-bottom: 40px;
 
   @media (max-width: 768px) {
     width: 100%;
@@ -795,31 +796,3 @@ section,
   }
 }
 
-.obi {
-  width: 100%;
-  margin-bottom: 50px;
-  overflow: hidden; // はみ出した画像を隠す（これがないと画面が横揺れします）
-
-  @media (max-width: 768px) {
-    width: 100%;
-    margin-top: 40px;
-  }
-  @media (max-width: 425px) {
-    width: 100%;
-  }
-
-  img {
-    width: 100%;
-    height: auto;
-    display: block;
-    transition: transform 1.5s ease-out; // 1.5秒かけてゆっくり動かす
-    transform: scale(1.2); // 最初は少し大きくしておく
-  }
-
-  // JSでこのクラスがついた瞬間に、元の大きさに戻していく
-  &.is-zoom {
-    img {
-      transform: scale(1); // じわじわと標準サイズに戻る
-    }
-  }
-}
