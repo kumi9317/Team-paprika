@@ -80,8 +80,13 @@
     top: 0;           // ★ 上端にくっつく位置を指定
     z-index: 100;     // ★ 他のコンテンツ（写真など）より上に表示されるように
 
-    opacity: 0;
-    visibility: hidden;
+    opacity: 1;           // 基本は最初から見えるようにする
+    visibility: visible;
+    // ★ トップページの時だけ初期状態を隠す設定を追加
+    .is-home & {
+        opacity: 0;
+        visibility: hidden;
+    }
 
     @media screen and (max-width: 1024px) {
         padding: 10px;
