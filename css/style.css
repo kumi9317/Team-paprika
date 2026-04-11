@@ -2283,7 +2283,6 @@ body .bg-dots {
   padding: 40px 100px;
   position: relative;
   overflow-x: hidden;
-  background-color: #fff;
   z-index: auto;
 }
 @media (max-width: 769px) {
