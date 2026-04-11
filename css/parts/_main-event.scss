@@ -12,8 +12,22 @@ body {
   padding: 0;
   font-family: $text; // variables.scssの $text を参照
   color: $black;
-  background-color: #fff;
+  position: relative; // 背景装飾の基準点にするため
   overflow-x: hidden;
+  background-color: #fffaf4;
+  // 背景ドット (bg-dots)
+  .bg-dots {
+    position: absolute; // .container の中に閉じ込めます
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    background-image: radial-gradient(#e5e5e5 1.5px, transparent 1.5px);
+    background-size: 30px 30px;
+    background-repeat: repeat;
+    pointer-events: none;
+  }
 }
 
 .container {
@@ -22,7 +36,7 @@ body {
   padding: 40px 100px; // スマホ表示などで端がくっつかないよう余白を追加
   position: relative; // 背景装飾などの基準点にするため
   overflow-x: hidden; // 1000pxからはみ出した分を隠す
-  background-color: #fffaf4;
+  background-color: #fff;
   z-index: auto;
 
   // レスポンシブ：768px以下
@@ -32,20 +46,6 @@ body {
 
   @media (max-width: 425px) {
     padding: 30px 20px; // 左右の余白をさらに調整
-  }
-
-  // 背景ドット (bg-dots)
-  .bg-dots {
-    position: absolute; // .container の中に閉じ込めます
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 0; // 親の背景色（#fffaf4）のすぐ上に乗るようにします
-    background-image: radial-gradient(#e5e5e5 1.5px, transparent 1.5px);
-    background-size: 30px 30px;
-    background-repeat: repeat;
-    pointer-events: none;
   }
 
   .bg-shape-orange {
@@ -133,7 +133,7 @@ section,
   align-items: center;
   justify-content: center;
   background: linear-gradient(to right, $black 50%, $red 50%);
-  margin: 60px 0;
+  margin-bottom: 60px;
 
   // --- 425px以下のレスポンシブ ---
   @media (max-width: 425px) {
@@ -730,7 +730,7 @@ section,
   .description-block {
     width: calc(200% + 30px);
     max-width: none;
-    margin-top: 20px;
+    margin: 20px;
 
     p {
       font-family: $text;
@@ -797,29 +797,30 @@ section,
 }
 
 .obi {
+  width: 100%;
+  margin-bottom: 50px;
+  overflow: hidden; // はみ出した画像を隠す（これがないと画面が横揺れします）
+
+  @media (max-width: 768px) {
     width: 100%;
-    overflow: hidden; // はみ出した画像を隠す（これがないと画面が横揺れします）
+    margin-top: 40px;
+  }
+  @media (max-width: 425px) {
+    width: 100%;
+  }
 
-    @media (max-width: 768px) {
-      width: 100%;
-      margin-top: 40px;
-    }
-    @media (max-width: 425px) {
-      width: 100%;
-    }
+  img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 1.5s ease-out; // 1.5秒かけてゆっくり動かす
+    transform: scale(1.2); // 最初は少し大きくしておく
+  }
 
+  // JSでこのクラスがついた瞬間に、元の大きさに戻していく
+  &.is-zoom {
     img {
-        width: 100%;
-        height: auto;
-        display: block;
-        transition: transform 1.5s ease-out; // 1.5秒かけてゆっくり動かす
-        transform: scale(1.2); // 最初は少し大きくしておく
+      transform: scale(1); // じわじわと標準サイズに戻る
     }
-
-    // JSでこのクラスがついた瞬間に、元の大きさに戻していく
-    &.is-zoom {
-        img {
-            transform: scale(1.0); // じわじわと標準サイズに戻る
-        }
-    }
+  }
 }

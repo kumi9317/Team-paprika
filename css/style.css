@@ -449,7 +449,8 @@ body.nav-open {
 .main-program .main-event__speed-line img {
   width: 100vw;
   height: 100vh;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .main-program .main-event .main-event-container {
   position: relative;
@@ -566,7 +567,8 @@ body.nav-open {
   position: relative;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   border: 10px solid #fff;
   box-shadow: 4px 4px 10px 5px rgba(51, 51, 51, 0.5);
   transform: rotate(2deg);
@@ -722,6 +724,7 @@ body.nav-open {
   transition: 0.3s;
   margin-top: 10px;
   margin-left: auto;
+  width: -moz-fit-content;
   width: fit-content;
   align-self: flex-end;
   position: relative;
@@ -888,7 +891,8 @@ body.nav-open {
   width: 100%;
   height: 400px;
   display: block;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .main-program .pick-up .label {
   position: absolute;
@@ -1046,7 +1050,8 @@ body.nav-open {
 .after-party__card .after-party__wrapper .after-party__slider .after-party__image img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .after-party__card .after-party__wrapper .after-party__slider .after-party__caption {
   margin-top: 15px;
@@ -1093,7 +1098,8 @@ body.nav-open {
 .obi img {
   width: 100%;
   height: auto;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   vertical-align: bottom;
   /* ★ アニメーションの設定 */
   transition: transform 1.5s ease-out;
@@ -1219,7 +1225,8 @@ body.nav-open {
   border: none;
   box-shadow: none;
   width: 180px;
-  object-fit: contain;
+  -o-object-fit: contain;
+     object-fit: contain;
   z-index: 5;
 }
 .time-schedule .enjoy__card__01 .enjoy__img--photo1 {
@@ -1297,7 +1304,8 @@ body.nav-open {
   border: none;
   box-shadow: none;
   width: 180px;
-  object-fit: contain;
+  -o-object-fit: contain;
+     object-fit: contain;
   z-index: 5;
 }
 .time-schedule .enjoy__card__02 .enjoy__img--photo1 {
@@ -1385,7 +1393,8 @@ body.nav-open {
   border: none;
   box-shadow: none;
   width: 180px;
-  object-fit: contain;
+  -o-object-fit: contain;
+     object-fit: contain;
   z-index: 5;
 }
 .time-schedule .enjoy__card__03 .enjoy__img--photo1 {
@@ -1470,7 +1479,8 @@ body.nav-open {
   border: none;
   box-shadow: none;
   width: 180px;
-  object-fit: contain;
+  -o-object-fit: contain;
+     object-fit: contain;
   z-index: 5;
 }
 .time-schedule .enjoy__card__04 .enjoy__img--photo1 {
@@ -2260,8 +2270,21 @@ body {
   padding: 0;
   font-family: "Zen Maru Gothic", sans-serif;
   color: #333333;
-  background-color: #fff;
+  position: relative;
   overflow-x: hidden;
+  background-color: #fffaf4;
+}
+body .bg-dots {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  background-image: radial-gradient(#e5e5e5 1.5px, transparent 1.5px);
+  background-size: 30px 30px;
+  background-repeat: repeat;
+  pointer-events: none;
 }
 
 .container {
@@ -2270,7 +2293,7 @@ body {
   padding: 40px 100px;
   position: relative;
   overflow-x: hidden;
-  background-color: #fffaf4;
+  background-color: #fff;
   z-index: auto;
 }
 @media (max-width: 769px) {
@@ -2282,18 +2305,6 @@ body {
   .container {
     padding: 30px 20px;
   }
-}
-.container .bg-dots {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 0;
-  background-image: radial-gradient(#e5e5e5 1.5px, transparent 1.5px);
-  background-size: 30px 30px;
-  background-repeat: repeat;
-  pointer-events: none;
 }
 .container .bg-shape-orange {
   position: absolute;
@@ -2378,7 +2389,7 @@ section,
   align-items: center;
   justify-content: center;
   background: linear-gradient(to right, #333333 50%, #d00 50%);
-  margin: 60px 0;
+  margin-bottom: 60px;
 }
 @media (max-width: 425px) {
   .page-title-area {
@@ -2550,7 +2561,8 @@ section,
 #display-100 .gallery-three-col img {
   width: 100%;
   aspect-ratio: 3/2;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   border-radius: 4px;
 }
 #display-100 .description-block {
@@ -2693,6 +2705,7 @@ section,
 @media (max-width: 768px) {
   #special-stage2 .stage-right .cast-section .cast-category {
     display: block;
+    width: -moz-fit-content;
     width: fit-content;
     margin: 0 auto 30px;
     font-size: 20px;
@@ -2912,7 +2925,8 @@ section,
 #ride-experience .experience-grid .grid-left img {
   width: 100%;
   aspect-ratio: 3/2;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 #ride-experience .experience-grid .grid-right {
   display: flex;
@@ -2928,7 +2942,8 @@ section,
 #ride-experience .experience-grid .grid-right img {
   width: 100%;
   aspect-ratio: 3/2;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 @media (max-width: 768px) {
   #ride-experience .experience-grid .grid-right img {
@@ -2938,7 +2953,7 @@ section,
 #ride-experience .description-block {
   width: calc(200% + 30px);
   max-width: none;
-  margin-top: 20px;
+  margin: 20px;
 }
 #ride-experience .description-block p {
   font-family: "Zen Maru Gothic", sans-serif;
@@ -3008,6 +3023,7 @@ section,
 
 .obi {
   width: 100%;
+  margin-bottom: 50px;
   overflow: hidden;
 }
 @media (max-width: 768px) {
@@ -3652,7 +3668,8 @@ section,
   width: 100%; /* 2つの画像を均等な幅にする場合。適宜調整してください */
   /* 重要！ 画像が歪むのを防ぐための設定 */
   height: 100%; /* コンテナの高さいっぱいに広げます */
-  object-fit: cover; /* アスペクト比を維持し、コンテナを埋めるようにトリミングしてフィットさせます */
+  -o-object-fit: cover;
+     object-fit: cover; /* アスペクト比を維持し、コンテナを埋めるようにトリミングしてフィットさせます */
 }
 @media screen and (max-width: 1024px) {
   .pu3__content {
