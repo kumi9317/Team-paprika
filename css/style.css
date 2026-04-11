@@ -1099,7 +1099,9 @@ body.nav-open {
   transition: transform 1.5s ease-out;
   transform: scale(1);
 }
-
+.obi {
+  /* ★ このクラスがついたらズームする */
+}
 .obi.is-zoom img {
   transform: scale(1.15);
 }
@@ -3102,54 +3104,59 @@ section,
     margin-bottom: 80px;
   }
 }
-.pu__inner {
+.pu__git {
   max-width: 800px;
   margin-inline: auto;
   padding-top: 170px;
   padding-bottom: 100px;
   padding-inline: 3%;
 }
+@media screen and (max-width: 1024px) {
+  .pu__git {
+    max-width: 700px;
+  }
+}
 @media screen and (max-width: 768px) {
-  .pu__inner {
+  .pu__git {
     padding-top: 130px;
     padding-bottom: 70px;
   }
 }
 @media screen and (max-width: 425px) {
-  .pu__inner {
+  .pu__git {
     padding-top: 100px;
     padding-bottom: 70px;
   }
 }
-.pu__inner .inner-img {
+.pu__git .inner-img {
   width: 280px;
   height: 210px;
 }
 @media screen and (max-width: 768px) {
-  .pu__inner .inner-img {
+  .pu__git .inner-img {
     width: 250px;
     height: auto;
   }
 }
 @media screen and (max-width: 425px) {
-  .pu__inner .inner-img {
+  .pu__git .inner-img {
     width: 100%;
     height: auto;
   }
 }
-.pu__inner .pu3-5text {
+.pu__git .pu3-5text {
   margin-block: 25px;
   font-size: 20px;
 }
 @media screen and (max-width: 768px) {
-  .pu__inner .pu3-5text {
+  .pu__git .pu3-5text {
     font-size: 15.5px;
     margin-block: 10px;
     padding-bottom: 10px;
   }
 }
 @media screen and (max-width: 1024px) {
-  .pu__inner {
+  .pu__git {
     max-width: 600px;
   }
 }
@@ -3494,12 +3501,6 @@ section,
     right: 0px;
     top: 116px;
   }
-}
-.pu2 .pu__infosticker_2_2 {
-  position: absolute;
-  width: 200px;
-  right: -50px;
-  top: 52px;
 }
 
 .pu3 .pu__inner {
