@@ -3476,6 +3476,8 @@ section,
 }
 .pu2 .pu__infosticker_2_2 {
   position: absolute;
+  top: 40px;
+  right: 0;
 }
 @media screen and (max-width: 1024px) {
   .pu2 .pu__infosticker_2_2 {
