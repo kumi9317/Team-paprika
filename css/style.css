@@ -1808,7 +1808,7 @@ body.nav-open {
 }
 .access h3 {
   font-style: normal;
-  margin-bottom: 10px;
+  margin-bottom: 50px;
 }
 .access__redcorn1 {
   position: absolute;
@@ -1946,6 +1946,13 @@ body.nav-open {
     right: -8px;
     width: 70px;
   }
+}
+.access h4 {
+  font-style: normal;
+  font-size: 20px;
+}
+.access li:nth-of-type(1) {
+  margin-bottom: 100px;
 }
 
 .faq {
