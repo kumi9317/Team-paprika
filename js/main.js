@@ -148,6 +148,8 @@ if (obiElements.length > 0) {
 　　ヒーローセクション表示
 ==================================*/
 $(window).on('load', function() {
+  // ページ内に .is-home がある場合（トップページの場合）のみ実行
+    if ($('.is-home').length > 0) {
     const tl = gsap.timeline();
 
     tl
@@ -187,4 +189,5 @@ $(window).on('load', function() {
         duration: 0.8, 
         ease: "power2.out" 
     });
+  }
 });
