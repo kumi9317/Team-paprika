@@ -417,70 +417,19 @@
 
 //pu-2
 .pu2 {
-  &__content1,
-  &__content2 {
-    display: flex;
-    justify-content: space-between;
-    padding-bottom: 40px;
-
-    @media screen and (max-width: 1024px) {
-      gap: 30px;
-    }
-
-    @media screen and (max-width: 768px) {
-      gap: 10px;
-    }
-
-    @media screen and (max-width: 425px) {
-      flex-direction: column;
-      align-items: center;
-    }
-
-    .pu__contenttext-2-1 {
-      padding-left: 20px;
-    }
-
-    .pu__contenttext {
-      p {
-        margin-block: 20px;
-        font-size: 19px;
-
-        @media screen and (max-width: 768px) {
-          font-size: 15.5px;
-          margin-block: 10px;
-        }
-
-        @media screen and (max-width: 425px) {
-          font-size: 15px;
-        }
-      }
-    }
-  }
-
-  .pu__infosticker_2_2 {
+  .pu__infosticker_2 {
     position: absolute;
-      top: 40px;
-      right: 0;
-
-    @media screen and (max-width: 1024px) {
-      width: 150px;
-      right: -50px;
-      top: 130px;
-    }
-
-    @media screen and (max-width: 768px) {
-      width: 130px;
-      right: 0px;
-      top: 60px;
-    }
+    top: 10px;
+    right: 0px;
 
     @media screen and (max-width: 425px) {
-      width: 121px;
-      right: 0px;
-      top: 116px;
+      width: 143px;
+      right: -10px;
+      top: 147px;
     }
   }
 }
+
 
 //pu-3
 .pu3 {
@@ -553,23 +502,143 @@
   }
 }
 
+
 //pu-5
 .pu5 {
-  .pu__infosticker_2 {
-    position: absolute;
-    top: 10px;
-    right: 0px;
+  &__content1,
+  &__content2 {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 40px;
+
+    @media screen and (max-width: 1024px) {
+      gap: 30px;
+    }
+
+    @media screen and (max-width: 768px) {
+      gap: 10px;
+    }
 
     @media screen and (max-width: 425px) {
-      width: 143px;
-      right: -10px;
-      top: 147px;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .pu__contenttext-2-1 {
+      padding-left: 20px;
+    }
+
+    .pu__contenttext {
+      p {
+        margin-block: 20px;
+        font-size: 19px;
+
+        @media screen and (max-width: 768px) {
+          font-size: 15.5px;
+          margin-block: 10px;
+        }
+
+        @media screen and (max-width: 425px) {
+          font-size: 15px;
+        }
+      }
+    }
+  }
+
+  .pu__infosticker_2_2 {
+    position: absolute;
+      top: 40px;
+      right: 0;
+
+    @media screen and (max-width: 1024px) {
+      width: 150px;
+      right: -50px;
+      top: 130px;
+    }
+
+    @media screen and (max-width: 768px) {
+      width: 130px;
+      right: 0px;
+      top: 60px;
+    }
+
+    @media screen and (max-width: 425px) {
+      width: 121px;
+      right: 0px;
+      top: 116px;
     }
   }
 }
 
 //pu-6
 .pu6 {
+  &__content1,
+  &__content2 {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 40px;
+
+    @media screen and (max-width: 1024px) {
+      gap: 30px;
+    }
+
+    @media screen and (max-width: 768px) {
+      gap: 10px;
+    }
+
+    @media screen and (max-width: 425px) {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .pu__contenttext-2-1 {
+      padding-left: 20px;
+    }
+
+    .pu__contenttext {
+      p {
+        margin-block: 20px;
+        font-size: 19px;
+
+        @media screen and (max-width: 768px) {
+          font-size: 15.5px;
+          margin-block: 10px;
+        }
+
+        @media screen and (max-width: 425px) {
+          font-size: 15px;
+        }
+      }
+    }
+  }
+
+  .pu__infosticker_2_2 {
+    position: absolute;
+      top: 40px;
+      right: 0;
+
+    @media screen and (max-width: 1024px) {
+      width: 150px;
+      right: -50px;
+      top: 130px;
+    }
+
+    @media screen and (max-width: 768px) {
+      width: 130px;
+      right: 0px;
+      top: 60px;
+    }
+
+    @media screen and (max-width: 425px) {
+      width: 121px;
+      right: 0px;
+      top: 116px;
+    }
+  }
+}
+
+//pu-7
+.pu7 {
   .pu__wrapper {
     background-color: #ffcd8f;
   }
