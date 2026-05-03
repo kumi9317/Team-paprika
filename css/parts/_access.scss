@@ -5,6 +5,7 @@
   position: relative;
   padding-block: 160px;
   overflow: hidden;
+  padding-inline: 2%;
 
   @media (max-width: 768px) {
     padding-block: 100px;
@@ -18,6 +19,9 @@
     padding-bottom: 160px;
     position: relative;
 
+    @media (max-width: 360px) {
+      padding-top: 30px;
+    }
     //背景のドット
     &::before {
       content: "";
@@ -101,22 +105,28 @@
     top: 5%;
     right: 0;
     width: auto;
-    height: 450px;
+    // height: 450px;
+
+    width: clamp(100px, calc(100px + (180 * ((100vw - 360px) / 664))), 280px);
+    height: auto;
   }
   &__car1 {
     position: absolute;
     z-index: 2;
     top: 9%;
     right: 10%;
-    width: 280px;
+    // width: 280px;
+
+    width: clamp(180px, calc(100px + (100 * ((100vw - 360px) / 664))), 280px);
   }
   &__redcorn2 {
     position: absolute;
     z-index: 2;
-    top: 12%;
+    top: 15%;
     right: 10%;
     transform: rotate(-80deg);
-    width: 60px;
+
+    width: clamp(30px, calc(30px + (30 * ((100vw - 360px) / 664))), 60px);
   }
   &__redcorn3 {
     position: absolute;
@@ -172,83 +182,90 @@
   }
 
   @media (max-width: 768px) {
-    // ===== 上 =====
+    //   // ===== 上 =====
 
-    &__redcorn1 {
-      top: 120px;
-      left: 82px;
-      width: 136px;
-    }
+    //   &__redcorn1 {
+    //     top: 120px;
+    //     left: 82px;
+    //     width: 136px;
+    //   }
 
     &__ashiraiblue {
       top: 0;
       right: 0px;
-      height: 300px;
+      //     height: 300px;
     }
 
     &__car1 {
       top: 40px;
       right: -10px;
-      width: 180px;
+      //     width: 180px;
     }
 
     &__redcorn2 {
       top: 80px;
       right: -30px;
-      width: 40px;
     }
 
-    &__redcorn3 {
-      top: 120px;
-      right: -20px;
-      width: 70px;
-    }
+    //   &__redcorn3 {
+    //     top: 120px;
+    //     right: -20px;
+    //     width: 70px;
+    //   }
 
-    // ===== 下 =====
+    //   // ===== 下 =====
 
-    &__car2 {
-      bottom: 130px;
-      left: -80px;
-      width: 250px;
-    }
+    //   &__car2 {
+    //     bottom: 130px;
+    //     left: -80px;
+    //     width: 250px;
+    //   }
 
-    &__car2parts1 {
-      display: none;
-    }
+    //   &__car2parts1 {
+    //     display: none;
+    //   }
 
-    &__car2parts2 {
-      display: none;
-    }
+    //   &__car2parts2 {
+    //     display: none;
+    //   }
 
-    &__car2parts3 {
-      display: none;
-    }
+    //   &__car2parts3 {
+    //     display: none;
+    //   }
 
-    // ===== 右下 =====
+    //   // ===== 右下 =====
 
-    &__people {
-      bottom: 130px;
-      right: 0px;
-      width: 120px;
-    }
+    //   &__people {
+    //     bottom: 130px;
+    //     right: 0px;
+    //     width: 120px;
+    //   }
   }
 
-  @media (max-width: 425px) {
-    &__redcorn1 {
-      left: 30px;
-      width: 106px;
+  @media (max-width: 360px) {
+    &__ashiraiblue {
+      top: 126px;
     }
+
+    &__car1 {
+      top: 127px;
+      right: -74px;
+    }
+    //   &__redcorn1 {
+    //     left: 30px;
+    //     width: 106px;
+    //   }
 
     &__redcorn2 {
-      top: 45px;
-      right: 5px;
+      top: 253px;
+      right: -4px;
     }
 
-    &__redcorn3 {
-      top: 120px;
-      right: -8px;
-      width: 70px;
-    }
+    //   &__redcorn3 {
+    //     top: 120px;
+    //     right: -8px;
+    //     width: 70px;
+    //   }
   }
 
   h4 {
@@ -256,9 +273,9 @@
     font-size: 20px;
   }
 
-    li {
-      &:nth-of-type(1) {
-        margin-bottom: 100px;
-      }
+  li {
+    &:nth-of-type(1) {
+      margin-bottom: 100px;
     }
+  }
 }
