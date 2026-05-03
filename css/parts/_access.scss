@@ -4,6 +4,7 @@
   background-color: $light_blue;
   position: relative;
   padding-block: 160px;
+  overflow: hidden;
 
   @media (max-width: 768px) {
     padding-block: 100px;
