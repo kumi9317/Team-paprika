@@ -117,49 +117,52 @@
             transform: scale(1.05);
         }
 
-        @media screen and (max-width: 768px) {
+        @media screen and (max-width: 769px) {
             height:50px;
         }
         @media screen and (max-width: 425px) {
-            display: none;
+            height: 30px;
         }
     }
    
 
     // 中央の情報エリア
     &__info {
-        display: grid; // flexからgridに変更
-        // 最初は4列（1列に横並び）
-        grid-template-columns: repeat(4, auto); 
-        align-items: baseline;
+        display: flex;
+        align-items: center;
         justify-content: center; // 全体を中央寄せにする場合
         gap: 30px;
         font-family: $h2;
         font-weight: bold;
 
-        @media screen and (max-width: 1024px) {
-            // 2列に変更
-            grid-template-columns: 1fr 1fr; 
-            gap: 5px 30px; // 縦の隙間を15px、横を30pxに
-            justify-items: start; // 左寄せ（お好みでcenterなど）
-
-            // 並び順の指定
-            // 1. 2026 (左上)
-            .header__year { grid-row: 1; grid-column: 1; }
-            // 2. 時間 (右上)
-            .header__time { grid-row: 1; grid-column: 2; }
-            // 3. 日付 (左下)
-            .header__date { grid-row: 2; grid-column: 1; }
-            // 4. 場所 (右下)
-            .header__place { grid-row: 2; grid-column: 2; }
-        }
         @media screen and (max-width: 425px) {
             font-size: 0.825rem;
+        }
+        .info-wrapper {
+            display: flex;
+            gap: 30px;
+            align-items: flex-end;
+            justify-content: center;
+            text-align: center;
+            @media screen and (max-width: 1024px) {
+                display: flex;
+                flex-direction: column;
+                gap: 0;
+            }
+            .flex-wrapper {
+                display: flex;
+                align-items: flex-end;
+                @media screen and (max-width: 1024px) {
+                    justify-content: center;
+                }
+
+            }
         }
 
         .header__year {
             font-size: 1.25rem;
             font-family: $h2;
+            padding-right: 15px;
             @media screen and (max-width: 1024px) {
                 font-size: 1rem;
             }
@@ -187,38 +190,131 @@
         .header__time {
             font-size: 1.5rem;
              @media screen and (max-width: 1024px) {
-                font-size: 1.25rem;
+                font-size: 1rem;
+                text-align: center;
             }
             @media screen and (max-width: 425px) {
                 font-size: 0.825rem;
             }
         }
-        .header__place {
-            font-size: 1.5rem;
-            font-family: $h2;
-             @media screen and (max-width: 1024px) {
-                font-size: 1.25rem;
+        .vertical-wrapper {
+            display: flex;
+            flex-direction: column;
+            font-size: 1rem; 
+            .place {
+                font-size: 0.8rem;
+                font-family: $h2;
+                 @media screen and (max-width: 1024px) {
+                    font-size: 0.7rem;
+                }
+                @media screen and (max-width: 425px) {
+                    font-size: 0.6rem;
+                }
             }
-            @media screen and (max-width: 425px) {
-                font-size: 0.825rem;
+        }
+    }
+
+    // スマホ用アコーディオン
+    .sp-accordion {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 100px;
+        display: none;
+
+        @media screen and (max-width: 769px) {
+            display: flex; // スマホだけ表示
+            align-items: center;
+        }
+
+        &__btn {
+            background: none;
+            border: 1px solid #000;
+            border-radius: 4px;
+            padding: 4px 10px;
+            font-size: 0.75rem;
+            font-weight: bold;
+            font-family: $h2;
+            cursor: pointer;
+            white-space: nowrap; // 折り返し防止
+            display: flex;
+            align-items: center;
+            gap: 4px;
+
+            &.is-open .sp-accordion__arrow {
+                display: inline-block;
+                transform: rotate(180deg); // ▼ → ▲
+                transition: transform 0.3s;
+            }
+        }
+
+        &__arrow {
+            font-size: 0.6rem;
+            transition: transform 0.3s;
+            color: #d00;
+        }
+
+        &__body {
+            // ヘッダーの真下にドロップダウン表示
+            display: none;
+            position: absolute;
+            top: 80px; // ヘッダーの高さに合わせる
+            // left: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            white-space: nowrap;
+            width: fit-content;
+            background: #fff;
+            border-bottom: 1px solid #ddd;
+            padding: 12px 16px;
+            font-size: 0.85rem;
+            font-family: $h2;
+            font-weight: bold;
+            z-index: 99;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+
+            &.is-open {
+                display: block;
+            }
+
+            p {
+                margin: 4px 0;
+            }
+            .pass {
+                border-top: 1px solid $red;
+                padding-top: 5px;
             }
         }
     }
 }
+
+// PC用・SP用の出し分け
+.pc-only {
+    @media screen and (max-width: 769px) {
+        display: none !important;
+    }
+}
+
 
 // 入場料無料ボタン
 .btn-free {
     display: inline-block;
     background-color: #f0e640; // 黄色
     color: #000;
-    padding: 8px 20px;
+    padding: 5px 20px;
     border-radius: 50px; // 丸み
     text-decoration: none;
     font-weight: 700;
+    font-size: 1rem;
+    text-align: center;
     border: 1px solid #000;
     font-family:  $h2;
+    span {
+        font-size: 0.75rem;
+        font-weight: 400;
+    }
     @media screen and (max-width: 1024px) {
-        font-size: 1rem;
+        font-size: 0.825rem;
     }
     @media screen and (max-width: 425px) {
         font-size: 0.825rem;
@@ -226,7 +322,7 @@
     }
 }
 
-// 変数（既存のものがあればそれに合わせてください）
+
 $red: #d00; 
 $drawer-bg: #c00; // メニュー背景用の少し濃い赤
 $text-white: #fff;

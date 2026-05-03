@@ -191,3 +191,34 @@ $(window).on('load', function() {
     });
   }
 });
+
+/*==================================
+　　スマホ用アコーディオン
+==================================*/
+$('.sp-accordion__btn').on('click', function() {
+    const targetId = $(this).data('target');
+    const $body = $('#' + targetId);
+    const $allBodies = $('.sp-accordion__body');
+    const $allBtns = $('.sp-accordion__btn');
+
+    // 他のアコーディオンが開いていたら閉じる（タブ切り替え風）
+    if ($body.hasClass('is-open')) {
+        // すでに開いていたら閉じる
+        $body.removeClass('is-open');
+        $(this).removeClass('is-open');
+    } else {
+        // 全部閉じてから開く
+        $allBodies.removeClass('is-open');
+        $allBtns.removeClass('is-open');
+        $body.addClass('is-open');
+        $(this).addClass('is-open');
+    }
+});
+
+// ヘッダー外をクリックしたら閉じる
+$(document).on('click', function(e) {
+    if (!$(e.target).closest('.sp-accordion').length) {
+        $('.sp-accordion__body').removeClass('is-open');
+        $('.sp-accordion__btn').removeClass('is-open');
+    }
+});
