@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>JAPAN GR FESTIVAL YARIS UNITE</title>
+    <title>R153 Rally Link〜阿智村 / 平谷村 / 根羽村〜</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" href="img/favicon.ico">
@@ -27,8 +27,7 @@
 
         <img src="img/mv-logo.webp" alt="logo" class="mv-logo">
         <h1 class="mv-text">
-            走る歓び、次世代へ。<br>
-            クルマも、遊びも、ぜんぶある1日。
+            R153が繋ぐ3村の森を駆け抜ける
         </h1>
 
     </section>
@@ -42,19 +41,54 @@
 
             <!-- 日時情報 -->
             <div class="header__info">
-                <span class="header__year">2026</span>
-                <div class="header__date">
-                    8. 1<span>SAT</span> ▶ 2<span>SUN</span>
+
+                <!-- PC用：既存のまま残す -->
+                <div class="info-wrapper pc-only">
+                    <div class="flex-wrapper">
+                        <div class="header__year">2026</div>
+                        <div class="header__date">
+                            8. 14<span>FRI</span>
+                        </div>
+                    </div>
+                    <div class="header__time">9:00 〜 15:00</div>
                 </div>
-                <span class="header__time">10:00 〜 20:00</span>
-                <span class="header__place">〇〇会場</span>
-            </div>
+                <div class="vertical-wrapper pc-only">
+                    <div class="place">メイン会場：治部坂高原スキー場</div>
+                    <div class="place">サブ会場　：平谷高原スキー場</div>
+                </div>
+                <!-- 無料ボタン -->
+                <div class="header__free vertical-wrapper pc-only">
+                    <div href="#" class="btn-free">
+                        入場料 500円<br>
+                        <span>２会場共通PASS</span>
+                    </div>
+                </div>
 
-            <!-- 無料ボタン -->
-            <div class="header__free">
-                <a href="#" class="btn-free">入場料 無料</a>
-            </div>
+                <!-- スマホ用：アコーディオンボタン -->
+                <div class="sp-accordion sp-only">
 
+                    <!-- 日時ボタン -->
+                    <button class="sp-accordion__btn" data-target="acc-datetime">
+                        日時<span class="sp-accordion__arrow">▼</span>
+                    </button>
+                    <div class="sp-accordion__body" id="acc-datetime">
+                        <p>2026　8.14 FRI</p>
+                        <p>9:00 〜 15:00</p>
+                    </div>
+                </div>
+            </div>
+            <!-- スマホ用：アコーディオンボタン -->
+            <div class="sp-accordion sp-only">
+                <!-- 会場・入場料ボタン -->
+                <button class="sp-accordion__btn" data-target="acc-venue">
+                    会場・入場料<span class="sp-accordion__arrow">▼</span>
+                </button>
+                <div class="sp-accordion__body" id="acc-venue">
+                    <p>メイン会場：治部坂高原スキー場</p>
+                    <p>サブ会場　：平谷高原スキー場</p>
+                    <p class="pass">入場料 500円／２会場共通PASS</p>
+                </div>
+            </div>
             <!-- ハンバーガー -->
             <div class="hamburger" id="js-hamburger">
                 <span></span>
@@ -79,9 +113,9 @@
 
             <div class="drawer-overlay" id="js-overlay"></div>
 
-
         </div>
     </header>
+
 
 
     <section class="main-program">
@@ -261,11 +295,11 @@
 
                 </div>
             </div>
-
         </div>
 
-
     </section>
+
+
 
     <section class="after-party" id="after-party">
         <img src="img/asirai_orange01.webp" alt="" class="after-party__deco-bg after-party__deco-bg--right">
@@ -707,21 +741,18 @@
             <p class="line">ご質問は公式LINEからお気軽に！</p>
 
             <div class="footer__innerLINE">
-
-                <div class="footer__innerLINE">
-                    <a href="https://www.line.me/ja/">
-                        <p>LINEはこちら</p>
-                        <img src="img/line.webp" alt="">
-                    </a>
-                </div>
-            </div>
-
-            <div class="footer__logo">
-                <a href="#">
-                    <img src="img/footer-logo.webp" alt="">
+                <a href="https://www.line.me/ja/">
+                    <p>LINEはこちら</p>
+                    <img src="img/line.webp" alt="">
                 </a>
 
             </div>
+        </div>
+
+        <div class="footer__logo">
+            <a href="#">
+                <img src="img/footer-logo.webp" alt="">
+            </a>
         </div>
         <div class="footer__copy">
             <small>&copy; 2026 XXX-XX</small>
