@@ -12,7 +12,7 @@
   z-index: 2;
 
   h2 {
-    padding-top: 500px;
+    padding-top: clamp(100px,calc(100px + (300 * ((100vw - 360px) / 920))),400px);
   }
   //Q
 
@@ -34,24 +34,39 @@
     &::after {
       content: "";
       position: absolute;
-      right: 4em;
+      right: 64px;
       top: 50%;
       width: 30px;
       height: 2px;
       background-color: #ffff;
       transform: translateY(-50%);
+      @media (max-width: 768px) {
+        right: 50px;
+      }
+
+      @media (max-width: 360px) {
+        right: 8px;
+      }
     }
 
     //縦線（＋の縦）
     span {
       position: absolute;
-      right: 4.8em;
+      right: 77px;
       top: 50%;
       width: 3px;
       height: 30px;
       background-color: #ffff;
       transform: translateY(-50%);
       transition: 0.3s;
+
+      @media (max-width: 768px) {
+        right: 63px;
+      }
+
+      @media (max-width: 360px) {
+        right: 20px;
+      }
     }
 
     // 開いたら縦線消す → −になる
