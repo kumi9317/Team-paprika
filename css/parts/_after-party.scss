@@ -4,7 +4,7 @@
 
 .after-party {
   background-color: #fff;
-  padding: 100px 20px;
+  padding-block: 100px;
   overflow: hidden;
   position: relative; // 必須：あしらいの基準
 
@@ -63,6 +63,7 @@
     margin: 0 auto;
     position: relative;
     z-index: 2; // あしらいより上に
+    padding-inline: 2%;
   }
 
   &__card {
