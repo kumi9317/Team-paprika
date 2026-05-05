@@ -13,6 +13,7 @@
             max-width: 1000px;
             margin: 0 auto;
             overflow: visible;
+            padding: 2%;
         }
 
         &__title {
@@ -358,24 +359,24 @@
         }
         
         &__inner {
-            max-width: 900px;
+            max-width: 1000px;
+            width: 100%;
             margin: 0 auto;
             background: #fff;
             background-image: radial-gradient(#eee 2px, transparent 2px);
             background-size: 20px 20px;
             border-radius: 40px;
-            padding: 100px;
+            padding: 8% 10%;
             text-align: center;
             position: relative;
             z-index: 2;
             @media screen and (max-width: 768px) {
-                max-width: 600px;
-                padding: 40px; 
+                padding: 10% 10%; 
             }
-            @media screen and (max-width: 425px) {
-                max-width: 600px;
-                padding: 40px 20px; 
-            }
+            // @media screen and (max-width: 425px) {
+            //     max-width: 600px;
+            //     padding: 40px 20px; 
+            // }
         }
         &__title {
             margin-bottom: 40px;
@@ -422,6 +423,7 @@
     .schedule {
         padding-top: 100px;
         padding-bottom: 0;
+        padding-inline: 2%;
         @media screen and (max-width: 425px) {
             padding-top: 40px; 
         }
@@ -431,6 +433,7 @@
         padding-top: 200px;
         padding-bottom: 200px;
         overflow: hidden;
+        padding-inline: 2%;
         @media screen and (max-width: 425px) {
             padding-top: 100px;
             padding-bottom: 100px;

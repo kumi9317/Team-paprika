@@ -57,6 +57,7 @@
             height: 100%;
             max-width: 1100px;
             margin: 0 auto;
+            padding-inline: 2%;
             padding-top: 160px;
             z-index: 3;
             
@@ -151,12 +152,16 @@
             flex-shrink: 0; // 幅が縮まないように固定
             margin-right: -100px; // ★ここがポイント！テキストの上に重ねる（ネガティブマージン）
             z-index: 50; // ★テキスト(wrapper)より上に持ってくる
+            @media screen and (max-width: 1280px) {
+                max-width: 550px;
+                margin-right: -60px;
+            }
             @media screen and (max-width: 1024px) {
                 width: 100%;
                 max-width: 600px;
                 height: auto;          // ★ height固定を解除してautoにする
                 aspect-ratio: 3 / 2;
-                margin-left: -100px;
+                margin: 0 auto;
                 order: 1;
             }
             @media screen and (max-width: 425px) {
@@ -303,6 +308,9 @@
                     line-height: 1.8;
                     margin-bottom: 20px;
                     font-family: $text;
+                    @media screen and (max-width: 1024px) {
+                        margin-bottom: 10px;
+                    }
                 }
                 .u-sp-none {
                     @media screen and (max-width: 1024px) {
@@ -479,6 +487,7 @@
             max-width: 1000px;
             margin: 0 auto;
             text-align: center;
+            padding-inline: 2%;
             .asirai01 {
                 width: 30%;
                 background-image: url("../img/asirai-lightblue"); // 画像のパス（自分のファイル名に合わせてね）
