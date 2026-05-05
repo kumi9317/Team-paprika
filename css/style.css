@@ -278,6 +278,22 @@ a {
     font-size: 0.6rem;
   }
 }
+.header .sp-header-initial {
+  display: none;
+}
+@media screen and (max-width: 769px) {
+  .header .sp-header-initial {
+    display: flex;
+    align-items: center;
+    font-family: "M PLUS 1", sans-serif;
+    font-weight: bold;
+    font-size: 0.85rem;
+    white-space: nowrap;
+  }
+}
+.is-scrolled .header .sp-header-initial {
+  display: none;
+}
 .header .sp-accordion {
   display: flex;
   align-items: center;
@@ -287,8 +303,10 @@ a {
 }
 @media screen and (max-width: 769px) {
   .header .sp-accordion {
+    display: none;
+  }
+  .is-scrolled .header .sp-accordion {
     display: flex;
-    align-items: center;
   }
 }
 .header .sp-accordion__btn {
