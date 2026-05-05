@@ -38,7 +38,7 @@
                 <!-- 日時情報 -->
                 <div class="header__info">
 
-                    <!-- PC用：既存のまま残す -->
+                    <!-- PC用 -->
                     <div class="info-wrapper pc-only">
                         <div class="flex-wrapper">
                             <div class="header__year">2026</div>
@@ -60,8 +60,13 @@
                         </div>
                     </div>
 
+                    <!-- スマホ用：初期表示（スクロール前） -->
+                    <div class="sp-header-initial sp-only">
+                        <span>2026　8.14 FRI　9:00〜15:00</span>
+                    </div>
+
                     <!-- スマホ用：アコーディオンボタン -->
-                    <div class="sp-accordion sp-only">
+                    <div class="sp-accordion sp-only sp-accordion--hidden">
 
                         <!-- 日時ボタン -->
                         <button class="sp-accordion__btn" data-target="acc-datetime">
@@ -72,17 +77,17 @@
                             <p>9:00 〜 15:00</p>
                         </div>
                     </div> 
-                </div>
-                <!-- スマホ用：アコーディオンボタン -->
-                <div class="sp-accordion sp-only">
-                    <!-- 会場・入場料ボタン -->
-                    <button class="sp-accordion__btn" data-target="acc-venue">
-                        会場・入場料<span class="sp-accordion__arrow">▼</span>
-                    </button>
-                    <div class="sp-accordion__body" id="acc-venue">
-                        <p>メイン会場：治部坂高原スキー場</p>
-                        <p>サブ会場　：平谷高原スキー場</p>
-                        <p class="pass">入場料 500円／２会場共通PASS</p>
+                    <!-- スマホ用：アコーディオンボタン -->
+                    <div class="sp-accordion sp-only sp-accordion--hidden">
+                        <!-- 会場・入場料ボタン -->
+                        <button class="sp-accordion__btn" data-target="acc-venue">
+                            会場・入場料<span class="sp-accordion__arrow">▼</span>
+                        </button>
+                        <div class="sp-accordion__body" id="acc-venue">
+                            <p>メイン会場：治部坂高原スキー場</p>
+                            <p>サブ会場　：平谷高原スキー場</p>
+                            <p class="pass">入場料 500円／２会場共通PASS</p>
+                        </div>
                     </div>
                 </div>
 
