@@ -4,17 +4,24 @@
   background-color: $light_blue;
   position: relative;
   padding-block: 160px;
+  overflow: hidden;
+  padding-inline: 2%;
+  font-size: 16px;
 
   @media (max-width: 768px) {
-    padding-block: 100px;
+    padding-block: 80px;
   }
 
   &__card {
     max-width: 1000px;
     margin: 0 auto;
     padding-inline: 3%;
-    padding-top: 80px;
-    padding-bottom: 160px;
+    padding-top: clamp(30px, calc(30px + (50 * ((100vw - 360px) / 920))), 80px);
+    padding-bottom: clamp(
+      40px,
+      calc(40px + (120 * ((100vw - 360px) / 920))),
+      160px
+    );
     position: relative;
 
     //背景のドット
@@ -36,7 +43,7 @@
     z-index: 10;
 
     h3 {
-      font-size: 25px;
+      font-size: clamp(20px, calc(20px + (5 * ((100vw - 360px) / 920))), 25px);
     }
   }
 
@@ -47,12 +54,12 @@
 
   iframe {
     width: 100%;
-    height: 400px;
-    margin-block: 40px;
+    height: clamp(200px, calc(200px + (200 * ((100vw - 360px) / 920))), 400px);
+    margin-block: clamp(20px, calc(20px + (20 * ((100vw - 360px) / 920))), 40px);
   }
 
   dl {
-    font-size: 18px;
+    font-size: clamp(14px, calc(14px + (2 * ((100vw - 360px) / 920))), 16px);
     font-style: normal;
     font-family: "Zen Maru Gothic", sans-serif;
     font-weight: medium;
@@ -76,12 +83,20 @@
 
   h2 {
     font-style: normal;
-    margin-bottom: 60px;
+    margin-bottom: clamp(
+      30px,
+      calc(30px + (30 * ((100vw - 360px) / 920))),
+      60px
+    );
   }
 
   h3 {
     font-style: normal;
-    margin-bottom: 50px;
+    margin-bottom: clamp(
+      30px,
+      calc(30px + (30 * ((100vw - 360px) / 920))),
+      60px
+    );
   }
 
   // 下記、あしらい
@@ -89,9 +104,10 @@
   //左上
   &__redcorn1 {
     position: absolute;
-    top: 8%;
-    left: 33%;
+    top: 4%;
+    left: 23%;
     z-index: 2;
+    width: clamp(80px, calc(80px + (80 * ((100vw - 360px) / 664))), 160px);
   }
   //右上
   &__ashiraiblue {
@@ -100,30 +116,36 @@
     top: 5%;
     right: 0;
     width: auto;
-    height: 450px;
+    // height: 450px;
+
+    width: clamp(100px, calc(100px + (180 * ((100vw - 360px) / 664))), 280px);
+    height: auto;
   }
   &__car1 {
     position: absolute;
     z-index: 2;
-    top: 9%;
+    top: 5%;
     right: 10%;
-    width: 280px;
+    // width: 280px;
+
+    width: clamp(100px, calc(100px + (180 * ((100vw - 360px) / 664))), 280px);
   }
   &__redcorn2 {
     position: absolute;
     z-index: 2;
-    top: 12%;
+    top: 6%;
     right: 10%;
     transform: rotate(-80deg);
-    width: 60px;
+
+    width: clamp(30px, calc(30px + (30 * ((100vw - 360px) / 664))), 60px);
   }
   &__redcorn3 {
     position: absolute;
     z-index: 2;
-    top: 18%;
+    top: 10%;
     right: 5%;
     transform: rotate(-10deg);
-    width: 120px;
+    width: clamp(50px, calc(50px + (90 * ((100vw - 360px) / 664))), 140px);
   }
 
   //左下
@@ -132,83 +154,133 @@
     z-index: 3;
     bottom: 2%;
     left: 9%;
-    width: 450px;
+    width: clamp(200px, calc(200px + (250 * ((100vw - 360px) / 664))), 450px);
   }
   &__car2parts1 {
     position: absolute;
     z-index: 2;
-    bottom: 120px;
+    bottom: 198px;
     left: 20px;
+    opacity: 0.8;
+    width: clamp(70px, calc(70px + (70 * ((100vw - 360px) / 664))), 140px);
   }
   &__car2parts2 {
     position: absolute;
     z-index: 2;
-    bottom: 13%;
+    bottom: 8%;
     left: 0%;
-    width: 230px;
+    opacity: 0.8;
+    width: clamp(90px, calc(90px + (140 * ((100vw - 360px) / 664))), 230px);
   }
   &__car2parts3 {
     position: absolute;
     z-index: 2;
-    bottom: 33%;
+    bottom: 16%;
     left: 3%;
+    opacity: 0.8;
+    width: clamp(20px, calc(20px + (30 * ((100vw - 360px) / 664))), 50px);
   }
 
   //右下
   &__people {
     position: absolute;
     z-index: 2;
-    bottom: 6%;
-    right: 8%;
+    bottom: 4%;
+    right: 3%;
+    width: clamp(80px, calc(80px + (120 * ((100vw - 360px) / 664))), 200px);
   }
 
   @media (max-width: 1024px) {
     &__redcorn1 {
       top: 120px;
       left: 100px;
-      width: 136px;
     }
   }
 
   @media (max-width: 768px) {
-    // ===== 上 =====
+    //   // ===== 上 =====
 
     &__redcorn1 {
-      top: 120px;
+      top: 49px;
       left: 82px;
-      width: 136px;
     }
 
     &__ashiraiblue {
-      top: 0;
-      right: 0px;
-      height: 300px;
+      top: 49px;
+      right: -5px;
     }
 
     &__car1 {
-      top: 40px;
+      top: 125px;
       right: -10px;
-      width: 180px;
     }
 
     &__redcorn2 {
+      top: 128px;
+      right: 7px;
+    }
+
+    &__redcorn3 {
+      top: 208px;
+      right: -7px;
+    }
+
+    //   // ===== 下 =====
+
+    &__car2 {
+      bottom: -12px;
+      left: -25px;
+    }
+
+    &__car2parts1 {
+      bottom: 64px;
+      left: -29px;
+    }
+
+    &__car2parts2 {
+      bottom: 3%;
+      left: -11%;
+    }
+
+    &__car2parts3 {
+      display: none;
+    }
+
+    //   // ===== 右下 =====
+
+    &__people {
+      bottom: 30px;
+      right: 0px;
+    }
+  }
+
+  @media (max-width: 360px) {
+    &__ashiraiblue {
+      top: 65px;
+    }
+
+    &__car1 {
       top: 80px;
-      right: -30px;
-      width: 40px;
+      right: 14px;
+    }
+    &__redcorn1 {
+      top: 76px;
+      left: 30px;
+    }
+
+    &__redcorn2 {
+      top: 83px;
+      right: 9px;
     }
 
     &__redcorn3 {
       top: 120px;
-      right: -20px;
-      width: 70px;
+      right: -8px;
     }
 
-    // ===== 下 =====
-
     &__car2 {
-      bottom: 130px;
-      left: -80px;
-      width: 250px;
+      bottom: -12px;
+      left: -25px;
     }
 
     &__car2parts1 {
@@ -216,48 +288,28 @@
     }
 
     &__car2parts2 {
-      display: none;
+      bottom: 2%;
+      left: -11%;
     }
 
     &__car2parts3 {
       display: none;
     }
 
-    // ===== 右下 =====
-
     &__people {
-      bottom: 130px;
+      bottom: 13px;
       right: 0px;
-      width: 120px;
-    }
-  }
-
-  @media (max-width: 425px) {
-    &__redcorn1 {
-      left: 30px;
-      width: 106px;
-    }
-
-    &__redcorn2 {
-      top: 45px;
-      right: 5px;
-    }
-
-    &__redcorn3 {
-      top: 120px;
-      right: -8px;
-      width: 70px;
     }
   }
 
   h4 {
     font-style: normal;
-    font-size: 20px;
+    font-size: clamp(18px, calc(18px + (2 * ((100vw - 360px) / 920))), 20px);
   }
 
-    li {
-      &:nth-of-type(1) {
-        margin-bottom: 100px;
-      }
+  li {
+    &:nth-of-type(1) {
+      margin-bottom: 100px;
     }
+  }
 }

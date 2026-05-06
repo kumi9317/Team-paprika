@@ -1,7 +1,7 @@
 @use "variables" as *;
 .faq {
   background-color: $base_blue;
-  background-image: url(../img/access8.png);
+  background-image: url(../img/access8.webp);
   background-position: center -10px;
   background-size: 100% auto;
   background-repeat: no-repeat;
@@ -11,63 +11,77 @@
   position: relative;
   z-index: 2;
 
-
   h2 {
-    padding-top: 500px;
+    padding-top: clamp(100px,calc(100px + (300 * ((100vw - 360px) / 920))),400px);
   }
   //Q
-  
+
   &__q {
-  max-width: 1000px;
-  margin-inline: auto;
-  background-color: #C6E1FB;
-  cursor: pointer;
-  position: relative;
-  padding: 1.5em 5em 1.5em 3em;
+    max-width: 1000px;
+    margin-inline: auto;
+    background-color: #c6e1fb;
+    cursor: pointer;
+    position: relative;
+    padding: 1.5em 5em 1.5em 3em;
 
-  &::before {
-    content: "Q";
-    position: absolute;
-    left: 1em;
+    &::before {
+      content: "Q";
+      position: absolute;
+      left: 1em;
+    }
+
+    //＋アイコン（横線）
+    &::after {
+      content: "";
+      position: absolute;
+      right: 64px;
+      top: 50%;
+      width: 30px;
+      height: 2px;
+      background-color: #ffff;
+      transform: translateY(-50%);
+      @media (max-width: 768px) {
+        right: 50px;
+      }
+
+      @media (max-width: 360px) {
+        right: 8px;
+      }
+    }
+
+    //縦線（＋の縦）
+    span {
+      position: absolute;
+      right: 77px;
+      top: 50%;
+      width: 3px;
+      height: 30px;
+      background-color: #ffff;
+      transform: translateY(-50%);
+      transition: 0.3s;
+
+      @media (max-width: 768px) {
+        right: 63px;
+      }
+
+      @media (max-width: 360px) {
+        right: 20px;
+      }
+    }
+
+    // 開いたら縦線消す → −になる
+    &.active span {
+      opacity: 0;
+      transform: translateY(-50%) rotate(90deg);
+    }
+
+    &:nth-of-type(even) {
+      border-top: 1px solid #006dcc;
+      border-bottom: 1px solid #006dcc;
+    }
   }
 
-  //＋アイコン（横線） 
-  &::after {
-    content: "";
-    position: absolute;
-    right: 4em;
-    top: 50%;
-    width: 30px;
-    height: 2px;
-    background-color: #FFFF;
-    transform: translateY(-50%);
-  }
-
-  //縦線（＋の縦）
-  span {
-    position: absolute;
-    right: 4.8em;
-    top: 50%;
-    width: 3px;
-    height: 30px;
-    background-color: #FFFF;
-    transform: translateY(-50%);
-    transition: 0.3s;
-  }
-
-  // 開いたら縦線消す → −になる 
-  &.active span {
-    opacity: 0;
-    transform: translateY(-50%) rotate(90deg);
-  }
-
-  &:nth-of-type(even) {
-    border-top: 1px solid #006DCC;
-    border-bottom: 1px solid #006DCC;
-  }
-}
-
-  //A 
+  //A
   &__a {
     max-width: 1000px;
     margin-inline: auto;
@@ -87,7 +101,7 @@
 .fixed-img {
   width: 100%;
   height: 50vh;
-  background-image: url(../img/fixed-img.png);
+  background-image: url(../img/fixed-img.webp);
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
