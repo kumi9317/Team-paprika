@@ -258,6 +258,7 @@
 //pu-1
 .pu1 {
   position: relative;
+  scroll-margin-top: 130px;
 
   &__content1 {
     display: flex;
@@ -417,6 +418,7 @@
 
 //pu-2
 .pu2 {
+  scroll-margin-top: 130px;
   &__content1,
   &__content2 {
     display: flex;
@@ -459,8 +461,8 @@
 
   .pu__infosticker_2_2 {
     position: absolute;
-      top: 40px;
-      right: 0;
+    top: 40px;
+    right: 0;
 
     @media screen and (max-width: 1024px) {
       width: 150px;
@@ -484,6 +486,7 @@
 
 //pu-3
 .pu3 {
+  scroll-margin-top: 130px;
   .pu__inner {
     padding-top: 180px;
 
@@ -532,6 +535,7 @@
 
 //pu-4
 .pu4 {
+  scroll-margin-top: 130px;
   .pu__inner {
     padding-top: 190px;
 
@@ -555,6 +559,7 @@
 
 //pu-5
 .pu5 {
+  scroll-margin-top: 130px;
   .pu__infosticker_2 {
     position: absolute;
     top: 10px;
@@ -570,6 +575,7 @@
 
 //pu-6
 .pu6 {
+  scroll-margin-top: 130px;
   .pu__wrapper {
     background-color: #ffcd8f;
   }
