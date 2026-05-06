@@ -707,9 +707,7 @@ body.nav-open {
     width: 80%;
   }
 }
-.main-program .event-item {
-  /* --- 偶数番目（2番目）の個別設定セクション --- */
-}
+
 .main-program .event-item:nth-child(even) {
   flex-direction: row-reverse;
 }
@@ -1220,9 +1218,7 @@ body.nav-open {
   transition: transform 1.5s ease-out;
   transform: scale(1);
 }
-.obi {
-  /* ★ このクラスがついたらズームする */
-}
+
 .obi.is-zoom img {
   transform: scale(1.15);
 }
