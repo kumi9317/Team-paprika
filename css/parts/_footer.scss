@@ -8,7 +8,6 @@
   background-repeat: no-repeat;
   position: relative;
   overflow: hidden; // ← はみ出しカット
-  padding-inline: 2%;
 
   h2 {
     padding-top: clamp(
@@ -120,10 +119,21 @@
     a {
       display: flex;
       align-items: center;
-      border: 3px solid black;
+      border: clamp(3px, calc(3px + (2 * ((100vw - 360px) / 920))), 5px) solid #11C300;
       padding: clamp(2px, 0.6vw, 6px) clamp(20px, 5vw, 60px);
       border-radius: 20px;
       transition: all 0.3s ease;
+
+      &:hover {
+        background-color:#11C300;
+        color: white;
+        border-color: white;
+        transform: translateY(-3px);
+
+        p {
+          color: white;
+        }
+      }
 
       @media (max-width: 360px) {
         margin-inline: 3%;
@@ -133,6 +143,7 @@
         padding-right: 100px;
         font-weight: 550;
         position: relative;
+        color: #11C300;
         font-size: clamp(
           14px,
           calc(14px + (2 * ((100vw - 360px) / 920))),
@@ -150,16 +161,6 @@
           right: 45px;
           top: 0px;
         }
-      }
-
-      &:hover {
-        background-color: #3e3e3e;
-        color: white;
-        transform: translateY(-3px);
-      }
-
-      &:hover img {
-        filter: invert(1);
       }
     }
   }

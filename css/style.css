@@ -707,7 +707,9 @@ body.nav-open {
     width: 80%;
   }
 }
-
+.main-program .event-item {
+  /* --- 偶数番目（2番目）の個別設定セクション --- */
+}
 .main-program .event-item:nth-child(even) {
   flex-direction: row-reverse;
 }
@@ -1218,7 +1220,9 @@ body.nav-open {
   transition: transform 1.5s ease-out;
   transform: scale(1);
 }
-
+.obi {
+  /* ★ このクラスがついたらズームする */
+}
 .obi.is-zoom img {
   transform: scale(1.15);
 }
@@ -1894,7 +1898,7 @@ body.nav-open {
 }
 .access iframe {
   width: 100%;
-  height: 400px;
+  height: clamp(200px, 200px + 200 * (100vw - 360px) / 920, 400px);
   margin-block: clamp(20px, 20px + 20 * (100vw - 360px) / 920, 40px);
 }
 .access dl {
@@ -2237,7 +2241,6 @@ body.nav-open {
   background-repeat: no-repeat;
   position: relative;
   overflow: hidden;
-  padding-inline: 2%;
 }
 .footer h2 {
   padding-top: clamp(60px, 60px + 40 * (100vw - 360px) / 920, 100px);
@@ -2329,10 +2332,19 @@ body.nav-open {
 .footer__innerLINE a {
   display: flex;
   align-items: center;
-  border: 3px solid black;
+  border: clamp(3px, 3px + 2 * (100vw - 360px) / 920, 5px) solid #11C300;
   padding: clamp(2px, 0.6vw, 6px) clamp(20px, 5vw, 60px);
   border-radius: 20px;
   transition: all 0.3s ease;
+}
+.footer__innerLINE a:hover {
+  background-color: #11C300;
+  color: white;
+  border-color: white;
+  transform: translateY(-3px);
+}
+.footer__innerLINE a:hover p {
+  color: white;
 }
 @media (max-width: 360px) {
   .footer__innerLINE a {
@@ -2343,6 +2355,7 @@ body.nav-open {
   padding-right: 100px;
   font-weight: 550;
   position: relative;
+  color: #11C300;
   font-size: clamp(14px, 14px + 2 * (100vw - 360px) / 920, 16px);
   margin-block: clamp(20px, 20px + 20 * (100vw - 360px) / 920, 40px);
 }
@@ -2351,14 +2364,6 @@ body.nav-open {
   content: "→";
   right: 45px;
   top: 0px;
-}
-.footer__innerLINE a:hover {
-  background-color: #3e3e3e;
-  color: white;
-  transform: translateY(-3px);
-}
-.footer__innerLINE a:hover img {
-  filter: invert(1);
 }
 .footer__logo {
   text-align: center;
@@ -3251,6 +3256,11 @@ section,
     overflow: hidden;
   }
 }
+@media (max-width: 768px) {
+  .pu {
+    padding-inline: 2%;
+  }
+}
 .pu .sec__title2 {
   font-family: "Poller One", serif;
   font-size: 2.5rem;
@@ -3318,17 +3328,29 @@ section,
   margin-bottom: clamp(80px, 80px + 170 * (100vw - 360px) / 920, 250px);
   padding-inline: 2%;
 }
+.pu__wrapper .pu__gokan-wrapper {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  border-top-left-radius: 30px;
+  pointer-events: none;
+  z-index: 10;
+}
+.pu__wrapper .pu__gokan-wrapper .pu__gokan {
+  position: absolute;
+  top: -27px;
+  left: -16px;
+  scale: 0.9;
+}
+.pu__wrapper .pu__gokan-wrapper .pu__gokan img {
+  display: block;
+}
 .pu__inner {
-  max-width: 800px;
+  max-width: clamp(300px, 300px + 500 * (100vw - 360px) / 920, 800px);
   margin-inline: auto;
   padding-top: 170px;
   padding-bottom: 100px;
   padding-inline: 3%;
-}
-@media screen and (max-width: 1024px) {
-  .pu__inner {
-    max-width: 700px;
-  }
 }
 @media screen and (max-width: 768px) {
   .pu__inner {
@@ -3343,20 +3365,11 @@ section,
   }
 }
 .pu__inner .inner-img {
-  width: 280px;
-  height: 210px;
-}
-@media screen and (max-width: 768px) {
-  .pu__inner .inner-img {
-    width: 250px;
-    height: auto;
-  }
-}
-@media screen and (max-width: 360px) {
-  .pu__inner .inner-img {
-    width: 100%;
-    height: auto;
-  }
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin-block: 10px;
+  flex-shrink: 0;
 }
 .pu__inner .pu3-5text {
   margin-block: 25px;
@@ -3434,17 +3447,7 @@ section,
   top: -82px;
 }
 .pu__kids img {
-  width: 500px;
-}
-@media screen and (max-width: 1024px) {
-  .pu__kids img {
-    width: 400px;
-  }
-}
-@media screen and (max-width: 360px) {
-  .pu__kids img {
-    width: 250px;
-  }
+  width: clamp(250px, 250px + 150 * (100vw - 360px) / 920, 400px);
 }
 @media screen and (max-width: 1024px) {
   .pu__kids {
@@ -3498,25 +3501,23 @@ section,
 .pu1__content1 {
   display: flex;
   justify-content: space-between;
-  padding-bottom: 40px;
 }
-@media screen and (max-width: 768px) {
+@media (max-width: 768px) {
   .pu1__content1 {
-    gap: 10px;
+    gap: 20px;
   }
 }
 @media screen and (max-width: 360px) {
   .pu1__content1 {
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
+    gap: 10px;
+    display: block;
   }
 }
 .pu1__content1 p {
   font-family: "Zen Maru Gothic", sans-serif;
   font-size: 20px;
   letter-spacing: 1px;
-  width: 60%;
+  flex: 1;
 }
 @media screen and (max-width: 768px) {
   .pu1__content1 p {
@@ -3535,16 +3536,12 @@ section,
   gap: 60px;
   padding-bottom: 40px;
 }
-@media screen and (max-width: 768px) {
-  .pu1__content2 li {
-    gap: 20px;
-  }
-}
 @media screen and (max-width: 360px) {
   .pu1__content2 li {
     justify-content: center;
     flex-direction: column-reverse;
-    align-items: center;
+    gap: 20px;
+    padding-bottom: 0px;
   }
 }
 .pu1__content2 p {
@@ -3746,6 +3743,9 @@ section,
   }
 }
 
+.pu5 {
+  scroll-margin-top: 130px;
+}
 .pu5__content1, .pu5__content2 {
   display: flex;
   justify-content: space-between;
@@ -3812,6 +3812,9 @@ section,
   }
 }
 
+.pu6 {
+  scroll-margin-top: 130px;
+}
 .pu6__content1, .pu6__content2 {
   display: flex;
   justify-content: space-between;
@@ -3878,6 +3881,9 @@ section,
   }
 }
 
+.pu7 {
+  scroll-margin-top: 130px;
+}
 .pu7 .pu__wrapper {
   background-color: #ffcd8f;
 }
@@ -3917,6 +3923,53 @@ section,
 }
 @media screen and (max-width: 360px) {
   .pu7 .pu__infosticker_2 {
+    right: -11px;
+    width: 100px;
+  }
+}
+
+.pu8 {
+  scroll-margin-top: 130px;
+}
+.pu8 .pu__wrapper {
+  background-color: #ffcd8f;
+}
+.pu8 h3 {
+  color: #a23b3c;
+  -webkit-text-stroke: 0;
+}
+@media screen and (max-width: 360px) {
+  .pu8 h3 span {
+    font-size: 18px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .pu8 h3 {
+    font-size: 29px;
+  }
+}
+@media screen and (max-width: 360px) {
+  .pu8 h3 {
+    font-size: 26px;
+  }
+}
+.pu8 .h3-content {
+  color: #706363;
+}
+@media screen and (max-width: 768px) {
+  .pu8 .h3-content {
+    margin-block: 0;
+  }
+}
+.pu8 .pu3__content {
+  margin-block: 30px;
+}
+.pu8 p {
+  margin-block: 20px;
+  font-size: 19px;
+}
+@media screen and (max-width: 360px) {
+  .pu8 .pu__infosticker_2 {
     right: -11px;
     width: 100px;
   }

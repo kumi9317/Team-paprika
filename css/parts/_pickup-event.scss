@@ -7,6 +7,10 @@
     overflow: hidden;
   }
 
+  @media (max-width: 768px) {
+    padding-inline: 2%;
+  }
+
   .sec__title2 {
     font-family: $h1; // 先ほど設定したフォント
     font-size: 2.5rem;
@@ -69,26 +73,55 @@
   }
 
   &__wrapper {
-    max-width: clamp(400px, calc(400px + (600 * ((100vw - 360px) / 920))), 1000px);
+    max-width: clamp(
+      400px,
+      calc(400px + (600 * ((100vw - 360px) / 920))),
+      1000px
+    );
     margin-inline: auto;
     background-color: #b9e5ff;
     border-radius: 40px;
     position: relative;
     z-index: 5;
-    margin-bottom: clamp(80px, calc(80px + (170 * ((100vw - 360px) / 920))), 250px);
+    margin-bottom: clamp(
+      80px,
+      calc(80px + (170 * ((100vw - 360px) / 920))),
+      250px
+    );
     padding-inline: 2%;
+
+    .pu__gokan-wrapper {
+      position: absolute;
+      inset: 0; // top, right, bottom, left: 0 を一括指定
+      overflow: hidden;
+      border-top-left-radius: 30px; // 親の角丸と合わせる
+      pointer-events: none; // クリック透過
+      z-index: 10;
+
+      // マスクの中にある「やすらぐ」本体
+      .pu__gokan {
+        position: absolute;
+        top: -27px;
+        left: -16px;
+        scale: 0.9;
+
+        img {
+          display: block;
+        }
+      }
+    }
   }
 
   &__inner {
-    max-width: 800px;
+    max-width: clamp(
+      300px,
+      calc(300px + (500 * ((100vw - 360px) / 920))),
+      800px
+    );
     margin-inline: auto;
     padding-top: 170px;
     padding-bottom: 100px;
     padding-inline: 3%;
-
-    @media screen and (max-width: 1024px) {
-      max-width: 700px;
-    }
 
     @media screen and (max-width: 768px) {
       padding-top: 130px;
@@ -101,18 +134,12 @@
     }
 
     .inner-img {
-      width: 280px;
-      height: 210px;
-
-      @media screen and (max-width: 768px) {
-        width: 250px;
-        height: auto;
-      }
-
-      @media screen and (max-width: 360px) {
-        width: 100%;
-        height: auto;
-      }
+      max-width: 100%;
+      height: auto;
+      display: block;
+      // object-fit: cover;
+      margin-block: 10px;
+      flex-shrink: 0;
     }
 
     .pu3-5text {
@@ -180,21 +207,19 @@
       }
     }
   }
+
   &__kids {
     position: absolute;
     z-index: 10;
     right: -160px;
     top: -82px;
     img {
-      width: 500px;
+      width: clamp(
+      250px,
+      calc(250px + (150 * ((100vw - 360px) / 920))),
+      400px
+    );
 
-      @media screen and (max-width: 1024px) {
-        width: 400px;
-      }
-
-      @media screen and (max-width: 360px) {
-        width: 250px;
-      }
     }
 
     @media screen and (max-width: 1024px) {
@@ -248,23 +273,20 @@
   &__content1 {
     display: flex;
     justify-content: space-between;
-    padding-bottom: 40px;
-
-    @media screen and (max-width: 768px) {
-      gap: 10px;
+    
+    @media (max-width: 768px) {
+      gap: 20px; // 少し詰めると綺麗
     }
-
     @media screen and (max-width: 360px) {
-      justify-content: center;
-      flex-direction: column;
-      align-items: center;
+      gap: 10px;
+      display: block;
     }
 
     p {
       font-family: "Zen Maru Gothic", sans-serif;
       font-size: 20px;
       letter-spacing: 1px;
-      width: 60%;
+      flex: 1;
 
       @media screen and (max-width: 768px) {
         font-size: 15.5px;
@@ -284,14 +306,11 @@
       gap: 60px;
       padding-bottom: 40px;
 
-      @media screen and (max-width: 768px) {
-        gap: 20px;
-      }
-
       @media screen and (max-width: 360px) {
         justify-content: center;
         flex-direction: column-reverse;
-        align-items: center;
+        gap: 20px;
+        padding-bottom: 0px;
       }
     }
 
@@ -491,6 +510,7 @@
 
 //pu-5
 .pu5 {
+  scroll-margin-top: 130px;
   &__content1,
   &__content2 {
     display: flex;
@@ -558,6 +578,7 @@
 
 //pu-6
 .pu6 {
+  scroll-margin-top: 130px;
   &__content1,
   &__content2 {
     display: flex;
@@ -625,6 +646,57 @@
 
 //pu-7
 .pu7 {
+  scroll-margin-top: 130px;
+  .pu__wrapper {
+    background-color: #ffcd8f;
+  }
+
+  h3 {
+    color: #a23b3c;
+    -webkit-text-stroke: 0;
+
+    span {
+      @media screen and (max-width: 360px) {
+        font-size: 18px;
+      }
+    }
+
+    @media screen and (max-width: 768px) {
+      font-size: 29px;
+    }
+
+    @media screen and (max-width: 360px) {
+      font-size: 26px;
+    }
+  }
+
+  .h3-content {
+    color: #706363;
+
+    @media screen and (max-width: 768px) {
+      margin-block: 0;
+    }
+  }
+  .pu3__content {
+    margin-block: 30px;
+  }
+
+  p {
+    margin-block: 20px;
+    font-size: 19px;
+  }
+
+  .pu__infosticker_2 {
+    @media screen and (max-width: 360px) {
+      right: -11px;
+      width: 100px;
+    }
+  }
+}
+
+//pu-8
+.pu8 {
+  scroll-margin-top: 130px;
   .pu__wrapper {
     background-color: #ffcd8f;
   }
