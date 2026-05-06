@@ -278,17 +278,35 @@ a {
     font-size: 0.6rem;
   }
 }
+.header .sp-header-initial {
+  display: none;
+}
+@media screen and (max-width: 769px) {
+  .header .sp-header-initial {
+    display: flex;
+    align-items: center;
+    font-family: "M PLUS 1", sans-serif;
+    font-weight: bold;
+    font-size: 0.85rem;
+    white-space: nowrap;
+  }
+}
+.is-scrolled .header .sp-header-initial {
+  display: none;
+}
 .header .sp-accordion {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 100px;
   display: none;
 }
 @media screen and (max-width: 769px) {
   .header .sp-accordion {
+    display: none;
+  }
+}
+@media screen and (max-width: 769px) {
+  .is-scrolled .header .sp-accordion {
     display: flex;
     align-items: center;
+    gap: 8px;
   }
 }
 .header .sp-accordion__btn {
@@ -2420,7 +2438,7 @@ body .bg-dots {
     padding: 30px 70px;
   }
 }
-@media (max-width: 376px) {
+@media (max-width: 361px) {
   .container {
     padding: 30px 20px 0px;
   }
@@ -2439,7 +2457,7 @@ body .bg-dots {
   pointer-events: none;
   transform: rotate(-10deg);
 }
-@media (max-width: 376px) {
+@media (max-width: 361px) {
   .container .bg-shape-orange {
     right: -420px;
     width: 600px;
@@ -2460,7 +2478,7 @@ body .bg-dots {
   pointer-events: none;
   transform: rotate(-10deg);
 }
-@media (max-width: 376px) {
+@media (max-width: 361px) {
   .container .bg-shape-red {
     top: 1250px;
     left: -400px;
@@ -2490,7 +2508,7 @@ body .bg-dots {
     height: 400px;
   }
 }
-@media (max-width: 376px) {
+@media (max-width: 361px) {
   .container .bg-shape-gray {
     top: 2400px;
     right: -350px;
@@ -2518,7 +2536,7 @@ section,
   background: linear-gradient(to right, #333333 50%, #d00 50%);
   margin-bottom: 60px;
 }
-@media (max-width: 376px) {
+@media (max-width: 361px) {
   .page-title-area {
     width: 100vw;
     left: 50%;
@@ -2538,7 +2556,7 @@ section,
   font-weight: 900;
   margin: 0;
 }
-@media (max-width: 376px) {
+@media (max-width: 361px) {
   .page-title-area .page-title-content .page-main-title {
     font-size: 1.6rem;
   }
@@ -2549,7 +2567,7 @@ section,
   display: block;
   letter-spacing: 0.1em;
 }
-@media (max-width: 376px) {
+@media (max-width: 361px) {
   .page-title-area .page-title-content .page-sub-title {
     font-size: 0.65rem;
   }
@@ -2622,7 +2640,7 @@ section,
   white-space: nowrap;
   line-height: 1.2;
 }
-@media (max-width: 376px) {
+@media (max-width: 361px) {
   .event-title-row .title-text-red {
     font-size: 1.5rem;
   }
@@ -2637,7 +2655,7 @@ section,
   position: relative;
   display: inline-block;
 }
-@media (max-width: 376px) {
+@media (max-width: 361px) {
   .event-title-row .number-100 {
     font-size: 3.5rem;
   }
@@ -2650,7 +2668,7 @@ section,
   color: rgba(221, 0, 0, 0.2);
   z-index: -1;
 }
-@media (max-width: 376px) {
+@media (max-width: 361px) {
   .event-title-row .number-100::after {
     top: 4px;
     left: 4px;
@@ -2662,7 +2680,7 @@ section,
   background-color: #333333;
   margin-bottom: 21px;
 }
-@media (max-width: 376px) {
+@media (max-width: 361px) {
   .event-title-row .title-line {
     display: none;
   }
@@ -2680,7 +2698,7 @@ section,
   line-height: 1.4;
   letter-spacing: -0.01em;
 }
-@media (max-width: 376px) {
+@media (max-width: 361px) {
   #display-100 .catchphrase-red {
     font-size: 1rem;
   }
@@ -2756,7 +2774,7 @@ section,
   height: 4px;
   background-color: #333333;
 }
-@media (max-width: 376px) {
+@media (max-width: 361px) {
   #special-stage2 .section-header .title-line {
     display: none;
   }
@@ -2775,7 +2793,7 @@ section,
   line-height: 1.1;
   margin: 0;
 }
-@media (max-width: 376px) {
+@media (max-width: 361px) {
   #special-stage2 .section-header .title-wrap .side-title-en {
     color: #333333;
   }
@@ -2786,7 +2804,7 @@ section,
   font-weight: 700;
   margin-bottom: 20px;
 }
-@media (max-width: 376px) {
+@media (max-width: 361px) {
   #special-stage2 .catchphrase-red-bold {
     font-size: 1rem;
   }
@@ -2794,7 +2812,7 @@ section,
 #special-stage2 .catchphrase-red-bold .sp-br {
   display: none;
 }
-@media (max-width: 376px) {
+@media (max-width: 361px) {
   #special-stage2 .catchphrase-red-bold .sp-br {
     display: block;
   }
@@ -2928,7 +2946,7 @@ section,
   font-family: "Poller One", serif;
   display: block;
 }
-@media (max-width: 375px) {
+@media (max-width: 361px) {
   #special-stage2 .hexagon-profile .profile-info .name,
   #special-stage2 .hexagon-profile .profile-info .name-red {
     font-size: 1rem;
@@ -3048,6 +3066,164 @@ section,
   line-height: 1;
   margin: 4px 12px 0 0;
   color: #333333;
+}
+
+#ride-experience {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 80px 0 0;
+  scroll-margin-top: 50px;
+}
+@media (max-width: 361px) {
+  #ride-experience {
+    padding: 40px 0;
+  }
+}
+#ride-experience .title-row-with-line {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+#ride-experience .title-row-with-line .title-text-red {
+  font-family: "M PLUS 1", sans-serif;
+  font-size: 2rem;
+  font-weight: 800;
+  color: #d00;
+  white-space: nowrap;
+}
+@media (max-width: 768px) {
+  #ride-experience .title-row-with-line .title-text-red {
+    font-size: 1.5rem;
+  }
+}
+@media (max-width: 361px) {
+  #ride-experience .title-row-with-line .title-text-red {
+    color: #333333;
+  }
+}
+#ride-experience .title-row-with-line .title-line {
+  flex: 1;
+  height: 4px;
+  background-color: #333333;
+}
+@media (max-width: 361px) {
+  #ride-experience .title-row-with-line .title-line {
+    display: none;
+  }
+}
+#ride-experience .catchphrase-red-bold {
+  color: #d00;
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1.6;
+  margin-bottom: 40px;
+}
+#ride-experience .catchphrase-red-bold .sp-br {
+  display: none;
+}
+@media (max-width: 768px) {
+  #ride-experience .catchphrase-red-bold {
+    font-size: 1.125rem;
+  }
+}
+@media (max-width: 768px) and (max-width: 361px) {
+  #ride-experience .catchphrase-red-bold .sp-br {
+    display: block;
+  }
+}
+#ride-experience .experience-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  margin-bottom: 60px;
+}
+@media (max-width: 768px) {
+  #ride-experience .experience-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+#ride-experience .experience-grid .grid-left {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+#ride-experience .experience-grid .grid-left img {
+  width: 100%;
+  aspect-ratio: 3/2;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+#ride-experience .experience-grid .grid-right {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+@media (max-width: 768px) {
+  #ride-experience .experience-grid .grid-right {
+    flex-direction: row;
+    gap: 10px;
+  }
+}
+#ride-experience .experience-grid .grid-right img {
+  width: 100%;
+  aspect-ratio: 3/2;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+@media (max-width: 768px) {
+  #ride-experience .experience-grid .grid-right img {
+    width: 50%;
+  }
+}
+#ride-experience .description-block {
+  max-width: 100%;
+  margin: 20px;
+}
+#ride-experience .description-block p {
+  font-family: "Zen Maru Gothic", sans-serif;
+  font-size: 1rem;
+  line-height: 2;
+  color: #333333;
+  margin-bottom: 1.5em;
+  text-align: justify;
+}
+#ride-experience .description-block .quote-text {
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: flex-start;
+}
+@media (max-width: 768px) {
+  #ride-experience .description-block .quote-text {
+    font-size: 1.25rem;
+  }
+}
+#ride-experience .description-block .drop-cap {
+  font-family: "M PLUS 1", sans-serif;
+  font-size: 3.12rem;
+  font-weight: 800;
+  line-height: 1;
+  margin: 0 4px;
+  color: #333333;
+}
+@media (max-width: 768px) {
+  #ride-experience .description-block .drop-cap {
+    font-size: 2.5rem;
+  }
+}
+#ride-experience .description-block .lead-text {
+  width: calc(200% + 30px);
+  max-width: none;
+}
+@media (max-width: 768px) {
+  #ride-experience .description-block .lead-text {
+    max-width: 100%;
+    width: 100%;
+  }
 }
 
 .main-event__bottom-obi {
@@ -3321,6 +3497,7 @@ section,
 
 .pu1 {
   position: relative;
+  scroll-margin-top: 130px;
 }
 .pu1__content1 {
   display: flex;
@@ -3497,6 +3674,9 @@ section,
   }
 }
 
+.pu3 {
+  scroll-margin-top: 130px;
+}
 .pu3 .pu__inner {
   padding-top: 180px;
 }
@@ -3546,6 +3726,9 @@ section,
   }
 }
 
+.pu4 {
+  scroll-margin-top: 130px;
+}
 .pu4 .pu__inner {
   padding-top: 190px;
 }

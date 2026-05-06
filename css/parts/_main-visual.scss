@@ -213,18 +213,47 @@
             }
         }
     }
-
-    // スマホ用アコーディオン
-    .sp-accordion {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 100px;
+    // スマホ初期表示テキスト
+    .sp-header-initial {
         display: none;
 
         @media screen and (max-width: 769px) {
-            display: flex; // スマホだけ表示
+            display: flex;
             align-items: center;
+            font-family: $h2;
+            font-weight: bold;
+            font-size: 0.85rem;
+            white-space: nowrap;
+        }
+
+        // スクロール後は非表示
+        .is-scrolled & {
+            display: none;
+        }
+    }
+
+    // スマホ用アコーディオン
+    .sp-accordion {
+        // display: flex;
+        // align-items: center;
+        // justify-content: space-between;
+        // gap: 100px;
+        display: none;
+
+        // @media screen and (max-width: 769px) {
+        //     display: flex; // スマホだけ表示
+        //     align-items: center;
+        // }
+        @media screen and (max-width: 769px) {
+            display: none; // デフォルトは非表示
+        }
+        // スクロール後に表示
+        .is-scrolled & {
+            @media screen and (max-width: 769px) {
+                display: flex;
+                align-items: center;
+                gap: 8px;
+            }
         }
 
         &__btn {

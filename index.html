@@ -42,305 +42,309 @@
             <!-- 日時情報 -->
             <div class="header__info">
 
-                <!-- PC用：既存のまま残す -->
-                <div class="info-wrapper pc-only">
-                    <div class="flex-wrapper">
-                        <div class="header__year">2026</div>
-                        <div class="header__date">
-                            8. 14<span>FRI</span>
+                
+                    <!-- PC用 -->
+                    <div class="info-wrapper pc-only">
+                        <div class="flex-wrapper">
+                            <div class="header__year">2026</div>
+                            <div class="header__date">
+                                8. 14<span>FRI</span> 
+                            </div>
+                        </div>
+                        <div class="header__time">9:00 〜 15:00</div>
+                    </div>
+                    <div class="vertical-wrapper pc-only">
+                        <div class="place">メイン会場：治部坂高原スキー場</div>
+                        <div class="place">サブ会場　：平谷高原スキー場</div>
+                    </div>
+                    <!-- 無料ボタン -->
+                    <div class="header__free vertical-wrapper pc-only">
+                        <div href="#" class="btn-free">
+                            入場料 500円<br>
+                            <span>２会場共通PASS</span>
                         </div>
                     </div>
-                    <div class="header__time">9:00 〜 15:00</div>
-                </div>
-                <div class="vertical-wrapper pc-only">
-                    <div class="place">メイン会場：治部坂高原スキー場</div>
-                    <div class="place">サブ会場　：平谷高原スキー場</div>
-                </div>
-                <!-- 無料ボタン -->
-                <div class="header__free vertical-wrapper pc-only">
-                    <div href="#" class="btn-free">
-                        入場料 500円<br>
-                        <span>２会場共通PASS</span>
+
+                    <!-- スマホ用：初期表示（スクロール前） -->
+                    <div class="sp-header-initial sp-only">
+                        <span>2026　8.14 FRI　9:00〜15:00</span>
+                    </div>
+
+                    <!-- スマホ用：アコーディオンボタン -->
+                    <div class="sp-accordion sp-only sp-accordion--hidden">
+
+                        <!-- 日時ボタン -->
+                        <button class="sp-accordion__btn" data-target="acc-datetime">
+                            日時<span class="sp-accordion__arrow">▼</span>
+                        </button>
+                        <div class="sp-accordion__body" id="acc-datetime">
+                            <p>2026　8.14 FRI</p>
+                            <p>9:00 〜 15:00</p>
+                        </div>
+                    </div> 
+                    <!-- スマホ用：アコーディオンボタン -->
+                    <div class="sp-accordion sp-only sp-accordion--hidden">
+                        <!-- 会場・入場料ボタン -->
+                        <button class="sp-accordion__btn" data-target="acc-venue">
+                            会場・入場料<span class="sp-accordion__arrow">▼</span>
+                        </button>
+                        <div class="sp-accordion__body" id="acc-venue">
+                            <p>メイン会場：治部坂高原スキー場</p>
+                            <p>サブ会場　：平谷高原スキー場</p>
+                            <p class="pass">入場料 500円／２会場共通PASS</p>
+                        </div>
                     </div>
                 </div>
 
-                <!-- スマホ用：アコーディオンボタン -->
-                <div class="sp-accordion sp-only">
-
-                    <!-- 日時ボタン -->
-                    <button class="sp-accordion__btn" data-target="acc-datetime">
-                        日時<span class="sp-accordion__arrow">▼</span>
-                    </button>
-                    <div class="sp-accordion__body" id="acc-datetime">
-                        <p>2026　8.14 FRI</p>
-                        <p>9:00 〜 15:00</p>
-                    </div>
+                <!-- ハンバーガー -->
+                <div class="hamburger" id="js-hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
                 </div>
+
+                <nav class="drawer-menu" id="js-drawer">
+                    <ul class="drawer-menu__list">
+                        <li class="drawer-menu__item"><a href="index.html#main-event">メインイベント</a></li>
+                        <li class="drawer-menu__item"><a href="index.html#pick-up">ピックアップイベント</a></li>
+                        <li class="drawer-menu__item"><a href="index.html#after-party">後夜祭</a></li>
+                        <li class="drawer-menu__item"><a href="index.html#enjoy">1日の楽しみ方</a></li>
+                        <li class="drawer-menu__item"><a href="index.html#schedule">タイムスケジュール</a></li>
+                        <li class="drawer-menu__item"><a href="index.html#map">会場マップ</a></li>
+                        <li class="drawer-menu__item"><a href="index.html#access">アクセス</a></li>
+                        <li class="drawer-menu__item"><a href="index.html#faq">FAQ</a></li>
+                        <li class="drawer-menu__item"><a href="index.html#sponsor">協賛企業</a></li>
+                        <li class="drawer-menu__item"><a href="index.html#footer">インフォメーション＆お問い合わせ</a></li>
+                    </ul>
+                </nav>
+
+                <div class="drawer-overlay" id="js-overlay"></div>
+            
             </div>
-            <!-- スマホ用：アコーディオンボタン -->
-            <div class="sp-accordion sp-only">
-                <!-- 会場・入場料ボタン -->
-                <button class="sp-accordion__btn" data-target="acc-venue">
-                    会場・入場料<span class="sp-accordion__arrow">▼</span>
-                </button>
-                <div class="sp-accordion__body" id="acc-venue">
-                    <p>メイン会場：治部坂高原スキー場</p>
-                    <p>サブ会場　：平谷高原スキー場</p>
-                    <p class="pass">入場料 500円／２会場共通PASS</p>
-                </div>
-            </div>
-            <!-- ハンバーガー -->
-            <div class="hamburger" id="js-hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
+        </header>
 
-            <nav class="drawer-menu" id="js-drawer">
-                <ul class="drawer-menu__list">
-                    <li class="drawer-menu__item"><a href="index.html#main-event">メインイベント</a></li>
-                    <li class="drawer-menu__item"><a href="index.html#pick-up">ピックアップイベント</a></li>
-                    <li class="drawer-menu__item"><a href="index.html#after-party">後夜祭</a></li>
-                    <li class="drawer-menu__item"><a href="index.html#enjoy">1日の楽しみ方</a></li>
-                    <li class="drawer-menu__item"><a href="index.html#schedule">タイムスケジュール</a></li>
-                    <li class="drawer-menu__item"><a href="index.html#map">会場マップ</a></li>
-                    <li class="drawer-menu__item"><a href="index.html#access">アクセス</a></li>
-                    <li class="drawer-menu__item"><a href="index.html#faq">FAQ</a></li>
-                    <li class="drawer-menu__item"><a href="index.html#sponsor">協賛企業</a></li>
-                    <li class="drawer-menu__item"><a href="index.html#footer">インフォメーション＆お問い合わせ</a></li>
-                </ul>
-            </nav>
+        <section class="main-program">
+            <div class="main-event" id="main-event">
 
-            <div class="drawer-overlay" id="js-overlay"></div>
-
-        </div>
-    </header>
-
-
-
-    <section class="main-program">
-        <div class="main-event" id="main-event">
-
-            <div class="main-event__sticky">
-                <div class="main-event__bg"></div>
-                <div class="main-event__speed-line">
-                    <img src="img/speed-line.webp" alt="">
-                </div>
-
-                <div class="main-event-container">
-                    <h2 class="sec__title js-title">
-                        Main Event<span>メインイベント</span>
-                    </h2>
-
-                    <div class="event-item js-event-item">
-                        <div class="event-item__text-wrapper">
-                            <div class="event-item__text-shadow"></div>
-     
-                            <div class="event-item__text">
-                                <div class="event-item__text-inner">
-                                    <h3>GRヤリスカー 100台展示</h3>
-                                    <p>全国から集まったカスタム＆ノーマルのヤリスが会場を埋め尽くします。</p>
-                                    <a href="event.html" class="more-btn">
-                                        <span class="more-btn__text">MORE</span>
-                                        <img src="img/morearrow.webp" class="more-btn__arrow">
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="event-item__img-wrapper">
-                            <img src="img/mv01.webp" alt="GRヤリスカー 100台展示" class="event-item__photo">
-                        </div>
+                <div class="main-event__sticky">
+                    <div class="main-event__bg"></div>
+                    <div class="main-event__speed-line">
+                        <img src="img/speed-line.png" alt="">
                     </div>
 
-                    <div class="event-item js-event-item">
-                        <div class="event-item__text-wrapper">
-                            <div class="event-item__text-shadow"></div>
-                            <div class="event-item__text">
-                                <div class="event-item__text-inner">
-                                    <h3>GR Special Stage</h3>
-                                    <p>プロドライバーによるトークショー。<br class="u-sp-none">ここだけの話を聞けるかも！？</p>
-                                    <a href="event.html" class="more-btn">
-                                        <span class="more-btn__text">MORE</span>
-                                        <img src="img/morearrow.webp" class="more-btn__arrow">
-                                    </a>
+                    <div class="main-event-container">
+                        <h2 class="sec__title js-title">
+                            Main Event<span>メインイベント</span>
+                        </h2>
+
+                        <div class="event-item js-event-item">
+                            <div class="event-item__text-wrapper">
+                                <div class="event-item__text-shadow"></div>
+                                <div class="event-item__text">
+                                    <div class="event-item__text-inner">
+                                        <h3>GRヤリスカー 100台展示</h3>
+                                        <p>全国から集まったカスタム＆ノーマルのヤリスが会場を埋め尽くします。</p>
+                                        <a href="event.html" class="more-btn">
+                                            <span class="more-btn__text">MORE</span>
+                                            <img src="img/morearrow.png" class="more-btn__arrow">
+                                        </a>
+                                    </div>
                                 </div>
+                            </div>
+                            <div class="event-item__img-wrapper">
+                                <img src="img/mv01.png" alt="GRヤリスカー 100台展示" class="event-item__photo">
                             </div>
                         </div>
 
-                        <div class="event-item__img-wrapper">
-                            <img src="img/mv02.webp" alt="GR Special Stage" class="event-item__photo">
-                        </div>
-                    </div>
-
-                    <div class="event-item js-event-item">
-                        <div class="event-item__text-wrapper">
-                            <div class="event-item__text-shadow"></div>
-                            <div class="event-item__text">
-                                <div class="event-item__text-inner">
-                                    <h3>GR 乗車体験</h3>
-                                    <p>憧れのレーシングカーに乗ってみよう！<br>プロドライバーと一緒にサーキットの風を感じる、夢のような乗車体験。</p>
-                                    <a href="event.html#ride-experience" class="more-btn">
-                                        <span class="more-btn__text">MORE</span>
-                                        <img src="img/morearrow.webp" class="more-btn__arrow">
-                                    </a>
+                        <div class="event-item js-event-item">
+                            <div class="event-item__text-wrapper">
+                                <div class="event-item__text-shadow"></div>
+                                <div class="event-item__text">
+                                    <div class="event-item__text-inner">
+                                        <h3>GR Special Stage</h3>
+                                        <p>プロドライバーによるトークショー。<br class="u-sp-none">ここだけの話を聞けるかも！？</p>
+                                        <a href="event.html" class="more-btn">
+                                            <span class="more-btn__text">MORE</span>
+                                            <img src="img/morearrow.png" class="more-btn__arrow">
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
+
+                            <div class="event-item__img-wrapper">
+                                <img src="img/mv02.png" alt="GR Special Stage" class="event-item__photo">
+                            </div>
                         </div>
-                        <div class="event-item__img-wrapper">
-                            <img src="img/mv03.webp" alt="GR 乗車体験" class="event-item__photo">
+
+                        <div class="event-item js-event-item">
+                            <div class="event-item__text-wrapper">
+                                <div class="event-item__text-shadow"></div>
+                                <div class="event-item__text">
+                                    <div class="event-item__text-inner">
+                                        <h3>GR 乗車体験</h3>
+                                        <p>憧れのレーシングカーに乗ってみよう！<br>プロドライバーと一緒にサーキットの風を感じる、夢のような乗車体験。</p>
+                                        <a href="event.html#ride-experience" class="more-btn">
+                                            <span class="more-btn__text">MORE</span>
+                                            <img src="img/morearrow.png" class="more-btn__arrow">
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="event-item__img-wrapper">
+                                <img src="img/mv03.png" alt="GR 乗車体験" class="event-item__photo">
+                            </div>
                         </div>
                     </div>
                 </div>
+
             </div>
 
-        </div>
 
 
+            <div class="pick-up" id="pick-up">
+                <img src="img/asirai_lightblue.png" alt="" class="pick-up__deco pick-up__deco--right">
+                <img src="img/asirai-blue.png" alt="" class="pick-up__deco pick-up__deco--left">
+                <img src="img/sticker-pit.png" alt="" class="pick-up__deco pick-up__deco--pit u-yurayura">
+                <img src="img/sticker-mokuiku.png" alt="" class="pick-up__deco pick-up__deco--mokuiku u-yurayura">
 
-        <div class="pick-up" id="pick-up">
-            <img src="img/asirai_lightblue.webp" alt="" class="pick-up__deco pick-up__deco--right">
-            <img src="img/asirai-blue.webp" alt="" class="pick-up__deco pick-up__deco--left">
-            <img src="img/sticker-pit.webp" alt="" class="pick-up__deco pick-up__deco--pit u-yurayura">
-            <img src="img/sticker-mokuiku.webp" alt="" class="pick-up__deco pick-up__deco--mokuiku u-yurayura">
+                <div class="pick-up__container">
+                    <h2 class="sec__title">Pick Up event<span>注目イベント</span></h2>
 
-            <div class="pick-up__container">
-                <h2 class="sec__title">Pick Up event<span>注目イベント</span></h2>
+                    <div class="pick-up__grid">
 
-                <div class="pick-up__grid">
+                        <a href="event.html#pu-2" class="pick-up__item">
+                            <div class="pick-up__img-wrapper">
+                                <div class="label label--blue">
+                                    <div class="label__textblue">
+                                        Experience<br><span>-体験-</span>
+                                    </div>
 
-                    <a href="event.html#pu-2" class="pick-up__item">
-                        <div class="pick-up__img-wrapper">
-                            <div class="label label--blue">
-                                <div class="label__textblue">
-                                    Experience<br><span>-体験-</span>
                                 </div>
-
+                                <img src="img/e-sports.png" alt="e-sports体験">
                             </div>
-                            <img src="img/e-sports.webp" alt="e-sports体験">
-                        </div>
-                        <div class="pick-up__content">
-                            <ul class="tag-list">
-                                <li class="tag-list__li">ダンスステージ</li>
-                                <li class="tag-list__li">木育体験</li>
-                                <li class="tag-list__li">けん玉パフォーマンス</li>
-                                <li class="tag-list__li">キッズメカニック・ピット体験</li>
-                            </ul>
-                            <p class="event-name event-name--blue">e-sports体験</p>
-                        </div>
-                    </a>
+                            <div class="pick-up__content">
+                                <ul class="tag-list">
+                                    <li class="tag-list__li">ダンスステージ</li>
+                                    <li class="tag-list__li">木育体験</li>
+                                    <li class="tag-list__li">けん玉パフォーマンス</li>
+                                    <li class="tag-list__li">キッズメカニック・ピット体験</li>
+                                </ul>
+                                <p class="event-name event-name--blue">e-sports体験</p>
+                            </div>
+                        </a>
 
-                    <a href="event.html#pu-1" class="pick-up__item">
-                        <div class="pick-up__img-wrapper">
-                            <div class="label label--blue">
-                                <div class="label__textblue">
-                                    Experience<br><span>-体験-</span>
+                        <a href="event.html#pu-1" class="pick-up__item">
+                            <div class="pick-up__img-wrapper">
+                                <div class="label label--blue">
+                                    <div class="label__textblue">
+                                        Experience<br><span>-体験-</span>
+                                    </div>
+
                                 </div>
-
+                                <img src="img/kids-mechanic.png" alt="キッズメカニック・ピット体験">
                             </div>
-                            <img src="img/kids-mechanic.webp" alt="キッズメカニック・ピット体験">
-                        </div>
-                        <div class="pick-up__content">
-                            <ul class="tag-list">
-                                <li class="tag-list__li">ダンスステージ</li>
-                                <li class="tag-list__li">木育体験</li>
-                                <li class="tag-list__li">けん玉パフォーマンス</li>
-                                <li class="tag-list__li">e-sports体験</li>
-                            </ul>
-                            <p class="event-name event-name--blue">キッズメカニック・ピット体験</p>
-                        </div>
-                    </a>
+                            <div class="pick-up__content">
+                                <ul class="tag-list">
+                                    <li class="tag-list__li">ダンスステージ</li>
+                                    <li class="tag-list__li">木育体験</li>
+                                    <li class="tag-list__li">けん玉パフォーマンス</li>
+                                    <li class="tag-list__li">e-sports体験</li>
+                                </ul>
+                                <p class="event-name event-name--blue">キッズメカニック・ピット体験</p>
+                            </div>
+                        </a>
 
-                    <a href="event.html#pu-3" class="pick-up__item">
-                        <div class="pick-up__img-wrapper">
-                            <div class="label label--blue">
-                                <div class="label__textblue">
-                                    Experience<br><span>-体験-</span>
+                        <a href="event.html#pu-3" class="pick-up__item">
+                            <div class="pick-up__img-wrapper">
+                                <div class="label label--blue">
+                                    <div class="label__textblue">
+                                        Experience<br><span>-体験-</span>
+                                    </div>
                                 </div>
+                                <img src="img/mokuiku.png" alt="木育体験">
                             </div>
-                            <img src="img/mokuiku.webp" alt="木育体験">
-                        </div>
-                        <div class="pick-up__content">
-                            <ul class="tag-list">
-                                <li class="tag-list__li">ダンスステージ</li>
-                                <li class="tag-list__li">けん玉パフォーマンス</li>
-                                <li class="tag-list__li">キッズメカニック・ピット体験</li>
-                                <li class="tag-list__li">e-sports体験</li>
-                            </ul>
-                            <p class="event-name event-name--blue">木育体験</p>
-                        </div>
-                    </a>
+                            <div class="pick-up__content">
+                                <ul class="tag-list">
+                                    <li class="tag-list__li">ダンスステージ</li>
+                                    <li class="tag-list__li">けん玉パフォーマンス</li>
+                                    <li class="tag-list__li">キッズメカニック・ピット体験</li>
+                                    <li class="tag-list__li">e-sports体験</li>
+                                </ul>
+                                <p class="event-name event-name--blue">木育体験</p>
+                            </div>
+                        </a>
 
-                    <a href="event.html#pu-6" class="pick-up__item">
-                        <div class="pick-up__img-wrapper">
-                            <div class="label label--orange">
-                                <div class="label__textorange">
-                                    Food<br><span>-フード-</span>
+                        <a href="event.html#pu-6" class="pick-up__item">
+                            <div class="pick-up__img-wrapper">
+                                <div class="label label--orange">
+                                    <div class="label__textorange">
+                                        Food<br><span>-フード-</span>
+                                    </div>
+
                                 </div>
-
+                                <img src="img/food.png" alt="フード">
                             </div>
-                            <img src="img/food.webp" alt="フード">
-                        </div>
-                        <div class="pick-up__content">
-                            <ul class="tag-list">
-                                <li class="tag-list__li">地域の採れたて野菜販売</li>
-                                <li class="tag-list__li">地域の特色のあるものの販売「五平餅」</li>
-                            </ul>
-                            <p class="event-name event-name--orange">大集合！キッチンカー！</p>
-                        </div>
-                    </a>
-
-                    <a href="event.html#pickup-event" class="more-btn pickup-btn">
-                        <span class="more-btn__text">MORE</span>
-                        <img src="img/morearrow.webp" class="more-btn__arrow">
-                    </a>
-
-                </div>
-            </div>
-        </div>
-
-    </section>
-
-
-
-    <section class="after-party" id="after-party">
-        <img src="img/asirai_orange01.webp" alt="" class="after-party__deco-bg after-party__deco-bg--right">
-        <img src="img/asirai_lightblue02.webp" alt="" class="after-party__deco-bg after-party__deco-bg--left">
-        <img src="img/sticker-hanabi.webp" alt="" class="after-party__deco u-yurayura">
-
-        <div class="after-party__inner">
-
-            <div class="after-party__card">
-
-                <div class="after-party__wrapper">
-                    <h2 class="sec__title">
-                        Sunset After Party<span>アフターイベント<span>-後夜祭-</span></span>
-                    </h2>
-
-                    <p class="after-party__lead">
-                        イベントの熱狂をそのままに。<br>
-                        夜の部でしか味わえない特別なひとときを。
-                    </p>
-
-                    <div class="after-party__slider">
-                        <div class="after-party__slide-item">
-                            <div class="after-party__image">
-                                <img src="img/afterparty01.webp" alt="花火大会を楽しむ家族">
+                            <div class="pick-up__content">
+                                <ul class="tag-list">
+                                    <li class="tag-list__li">地域の採れたて野菜販売</li>
+                                    <li class="tag-list__li">地域の特色のあるものの販売「五平餅」</li>
+                                </ul>
+                                <p class="event-name event-name--orange">大集合！キッチンカー！</p>
                             </div>
-                            <p class="after-party__caption">花火大会</p>
-                        </div>
-                        <div class="after-party__slide-item">
-                            <div class="after-party__image">
-                                <img src="img/afterparty02.webp" alt="BINGO大会">
-                            </div>
-                            <p class="after-party__caption">BINGO大会</p>
-                        </div>
-                        <div class="after-party__slide-item">
-                            <div class="after-party__image">
-                                <img src="img/afterparty03.webp" alt="HIPHOP盆踊り">
-                            </div>
-                            <p class="after-party__caption">HIPHOP盆踊り</p>
-                        </div>
+                        </a>
+
+                        <a href="event.html#pickup-event" class="more-btn pickup-btn">
+                            <span class="more-btn__text">MORE</span>
+                            <img src="img/morearrow.png" class="more-btn__arrow">
+                        </a>
+
                     </div>
+                </div>
+
+            </div>
+
+        </section>
+
+        <section class="after-party" id="after-party">
+            <img src="img/asirai_orange01.png" alt="" class="after-party__deco-bg after-party__deco-bg--right">
+            <img src="img/asirai_lightblue02.png" alt="" class="after-party__deco-bg after-party__deco-bg--left">
+            <img src="img/sticker-hanabi.png" alt="" class="after-party__deco u-yurayura">
+
+            <div class="after-party__inner">
+
+                <div class="after-party__card">
+
+                    <div class="after-party__wrapper">
+                        <h2 class="sec__title">
+                            Sunset After Party<span>アフターイベント<span>-後夜祭-</span></span>
+                        </h2>
+
+                        <p class="after-party__lead">
+                            イベントの熱狂をそのままに。<br>
+                            夜の部でしか味わえない特別なひとときを。
+                        </p>
+
+                        <div class="after-party__slider">
+                            <div class="after-party__slide-item">
+                                <div class="after-party__image">
+                                    <img src="img/afterparty01.png" alt="花火大会を楽しむ家族">
+                                </div>
+                                <p class="after-party__caption">花火大会</p>
+                            </div>
+                            <div class="after-party__slide-item">
+                                <div class="after-party__image">
+                                    <img src="img/afterparty02.png" alt="BINGO大会">
+                                </div>
+                                <p class="after-party__caption">BINGO大会</p>
+                            </div>
+                            <div class="after-party__slide-item">
+                                <div class="after-party__image">
+                                    <img src="img/afterparty03.png" alt="HIPHOP盆踊り">
+                                </div>
+                                <p class="after-party__caption">HIPHOP盆踊り</p>
+                            </div>
+                        </div>
+                    
                 </div>
             </div>
         </div>
