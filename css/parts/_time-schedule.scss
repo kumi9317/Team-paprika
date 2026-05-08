@@ -370,6 +370,9 @@
             text-align: center;
             position: relative;
             z-index: 2;
+            .sub-map {
+                padding-top: 80;
+            }
             @media screen and (max-width: 768px) {
                 padding: 10% 10%; 
             }
@@ -438,6 +441,9 @@
             padding-top: 100px;
             padding-bottom: 100px;
         }
+    }
+    .sub-map {
+        padding-top: 80px;
     }
     
 }    

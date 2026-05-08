@@ -73,13 +73,17 @@ $(function() {
 　　スマホヘッダー切り替え
 ==================================*/
 $(window).on('scroll', function() {
-    // 1pxでもスクロールしたらクラスを付与
-    if ($(window).scrollTop() > 0) {
+    const $header = $('.header');
+    const headerTop = $header[0].getBoundingClientRect().top;
+
+    // ヘッダーがページ上部にくっついたら（stickyが効いた状態）
+    if (headerTop <= 0) {
         $('body').addClass('is-scrolled');
     } else {
         $('body').removeClass('is-scrolled');
     }
 });
+
 
 /*==================================
 　　メインイベント背景固定
