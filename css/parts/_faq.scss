@@ -12,7 +12,11 @@
   z-index: 2;
 
   h2 {
-    padding-top: clamp(100px,calc(100px + (300 * ((100vw - 360px) / 920))),400px);
+    padding-top: clamp(
+      100px,
+      calc(100px + (300 * ((100vw - 360px) / 920))),
+      400px
+    );
   }
   //Q
 
@@ -44,7 +48,7 @@
         right: 50px;
       }
 
-      @media (max-width: 360px) {
+      @media (max-width: 500px) {
         right: 8px;
       }
     }
@@ -64,7 +68,7 @@
         right: 63px;
       }
 
-      @media (max-width: 360px) {
+      @media (max-width: 500px) {
         right: 20px;
       }
     }
