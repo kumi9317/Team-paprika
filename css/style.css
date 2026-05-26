@@ -340,6 +340,7 @@ a {
   left: 50%;
   transform: translateX(-50%);
   white-space: nowrap;
+  width: -moz-fit-content;
   width: fit-content;
   background: #fff;
   border-bottom: 1px solid #ddd;
@@ -549,7 +550,8 @@ body.nav-open {
 .main-program .main-event__speed-line img {
   width: 100vw;
   height: 100vh;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .main-program .main-event .main-event-container {
   position: relative;
@@ -673,7 +675,8 @@ body.nav-open {
   position: relative;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   border: 10px solid #fff;
   box-shadow: 4px 4px 10px 5px rgba(51, 51, 51, 0.5);
   transform: rotate(2deg);
@@ -834,6 +837,7 @@ body.nav-open {
   transition: 0.3s;
   margin-top: 10px;
   margin-left: auto;
+  width: -moz-fit-content;
   width: fit-content;
   align-self: flex-end;
   position: relative;
@@ -1001,7 +1005,8 @@ body.nav-open {
   width: 100%;
   height: 400px;
   display: block;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .main-program .pick-up .label {
   position: absolute;
@@ -1160,7 +1165,8 @@ body.nav-open {
 .after-party__card .after-party__wrapper .after-party__slider .after-party__image img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .after-party__card .after-party__wrapper .after-party__slider .after-party__caption {
   margin-top: 15px;
@@ -1207,7 +1213,8 @@ body.nav-open {
 .obi img {
   width: 100%;
   height: auto;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   vertical-align: bottom;
   /* ★ アニメーションの設定 */
   transition: transform 1.5s ease-out;
@@ -1334,7 +1341,8 @@ body.nav-open {
   border: none;
   box-shadow: none;
   width: 180px;
-  object-fit: contain;
+  -o-object-fit: contain;
+     object-fit: contain;
   z-index: 5;
 }
 .time-schedule .enjoy__card__01 .enjoy__img--photo1 {
@@ -1412,7 +1420,8 @@ body.nav-open {
   border: none;
   box-shadow: none;
   width: 180px;
-  object-fit: contain;
+  -o-object-fit: contain;
+     object-fit: contain;
   z-index: 5;
 }
 .time-schedule .enjoy__card__02 .enjoy__img--photo1 {
@@ -1500,7 +1509,8 @@ body.nav-open {
   border: none;
   box-shadow: none;
   width: 180px;
-  object-fit: contain;
+  -o-object-fit: contain;
+     object-fit: contain;
   z-index: 5;
 }
 .time-schedule .enjoy__card__03 .enjoy__img--photo1 {
@@ -1585,7 +1595,8 @@ body.nav-open {
   border: none;
   box-shadow: none;
   width: 180px;
-  object-fit: contain;
+  -o-object-fit: contain;
+     object-fit: contain;
   z-index: 5;
 }
 .time-schedule .enjoy__card__04 .enjoy__img--photo1 {
@@ -2726,7 +2737,8 @@ section,
 #display-100 .gallery-three-col img {
   width: 100%;
   aspect-ratio: 3/2;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   border-radius: 4px;
 }
 #display-100 .description-block {
@@ -2855,6 +2867,7 @@ section,
 @media (max-width: 769px) {
   #special-stage2 .stage-right .cast-section .cast-category {
     display: block;
+    width: -moz-fit-content;
     width: fit-content;
     padding-top: 20px;
     margin: 0 auto 30px;
@@ -2904,7 +2917,8 @@ section,
 #special-stage2 .hexagon-profile .profile-box img {
   width: 100%;
   height: 150px;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   display: block;
 }
 #special-stage2 .hexagon-profile .profile-info {
@@ -3145,7 +3159,8 @@ section,
 #ride-experience .experience-grid .grid-left img {
   width: 100%;
   aspect-ratio: 3/2;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 #ride-experience .experience-grid .grid-right {
   display: flex;
@@ -3161,7 +3176,8 @@ section,
 #ride-experience .experience-grid .grid-right img {
   width: 100%;
   aspect-ratio: 3/2;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 @media (max-width: 768px) {
   #ride-experience .experience-grid .grid-right img {
@@ -3974,10 +3990,83 @@ section,
   width: 100%; /* 2つの画像を均等な幅にする場合。適宜調整してください */
   /* 重要！ 画像が歪むのを防ぐための設定 */
   height: 100%; /* コンテナの高さいっぱいに広げます */
-  object-fit: cover; /* アスペクト比を維持し、コンテナを埋めるようにトリミングしてフィットさせます */
+  -o-object-fit: cover;
+     object-fit: cover; /* アスペクト比を維持し、コンテナを埋めるようにトリミングしてフィットさせます */
 }
 @media screen and (max-width: 1024px) {
   .pu3__content {
     gap: 30px;
+  }
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Zen Maru Gothic", sans-serif;
+  color: #333333;
+  position: relative;
+  overflow-x: hidden;
+  background-color: #fffaf4;
+}
+body .bg-dots {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  background-image: radial-gradient(#e5e5e5 1.5px, transparent 1.5px);
+  background-size: 30px 30px;
+  background-repeat: repeat;
+  pointer-events: none;
+}
+
+.page-title-area {
+  width: 1000px;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(to right, #333333 50%, #d00 50%);
+  margin-bottom: 60px;
+}
+@media (max-width: 425px) {
+  .page-title-area {
+    width: 100vw;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 100px;
+    margin: 40px 0;
+  }
+}
+.page-title-area .page-title-content {
+  color: #fff;
+  text-align: center;
+  z-index: 1;
+}
+.page-title-area .page-title-content .page-village-title {
+  font-family: "M PLUS 1", sans-serif;
+  font-size: 40px;
+  font-weight: 900;
+  margin: 0;
+  letter-spacing: 0.2em;
+}
+@media (max-width: 425px) {
+  .page-title-area .page-title-content .page-village-title {
+    font-size: 24px;
+  }
+}
+.page-title-area .page-title-content .page-sub-title {
+  font-family: "Poller One", serif;
+  font-size: 14px;
+  display: block;
+  letter-spacing: 0.1em;
+}
+@media (max-width: 425px) {
+  .page-title-area .page-title-content .page-sub-title {
+    font-size: 10px;
   }
 }/*# sourceMappingURL=style.css.map */
