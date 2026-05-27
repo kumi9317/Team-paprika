@@ -97,72 +97,36 @@
         }
       }
 
-      // --- slickスライダー本体 ---
-      .after-party__slider {
+      .after-party__video {
         width: 100%;
         max-width: 800px;
         margin: 0 auto;
-        padding-bottom: 60px; // 下のドットが入るスペース
 
-        // 各スライドアイテム
-        .after-party__slide-item {
-          text-align: left;
-          outline: none; // クリック時の枠線を消す
-        }
-
-        .after-party__image {
+        video {
           width: 100%;
-          aspect-ratio: 16 / 9;
-          overflow: hidden;
-
-          img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-          }
-        }
-
-        .after-party__caption {
-          margin-top: 15px;
-          font-family: $text;
-          font-size: 1.5rem;
-          color: #666;
-          font-weight: bold;
-          @media screen and (max-width: 768px) {
-            font-size: 1rem;
-          }
-        }
-
-        // --- slickドットナビのカスタマイズ ---
-        .slick-dots {
-          bottom: 0; // スライダーの下端からの位置
-
-          li {
-            margin: 0 5px;
-            width: 12px;
-            height: 12px;
-
-            button {
-              width: 12px;
-              height: 12px;
-              padding: 0;
-
-              &::before {
-                content: ""; // デフォルトの●を消す
-                width: 10px;
-                height: 10px;
-                background: #ccc; // 通常時のドット色
-                border-radius: 50%;
-                opacity: 1;
-              }
-            }
-
-            &.slick-active button::before {
-              background: #007bff; // アクティブな時の色（デザインの青）
-            }
-          }
+          height: auto;
+          display: block;
+          border-radius: 10px; // お好みで
+          box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+          // aspect-ratio: 12 / 14;
+          // object-fit: cover;
+          // object-position: center center; // 中心を基準にトリミング
         }
       }
+
+      .after-party__text {
+        display: flex;
+        justify-content: space-between;
+
+        p {
+          margin-top: 15px;
+          font-family: "Zen Maru Gothic",sans-serif;
+          font-size: clamp(0.75rem, 1.25vw + 0.5rem, 1.5rem);
+          color: rgb(102, 102, 102);
+          font-weight: bold;
+        }
+      }
+
     }
   }
 }
