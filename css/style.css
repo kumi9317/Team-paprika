@@ -3417,7 +3417,7 @@ section,
   font-weight: 700;
   font-style: normal;
   margin-bottom: 20px;
-  font-size: 23px;
+  font-size: 20px;
 }
 @media screen and (max-width: 768px) {
   .pu .h3-content {
@@ -3489,6 +3489,7 @@ section,
   font-family: "Zen Maru Gothic", sans-serif;
   font-size: 20px;
   padding: 30px 40px;
+  margin-top: 30px;
 }
 .pu__infocontent dt {
   float: left;
@@ -3511,8 +3512,17 @@ section,
   position: relative;
   scroll-margin-top: 130px;
 }
+.pu1 p {
+  font-family: "Zen Maru Gothic", sans-serif;
+  font-size: 16px;
+  letter-spacing: 1px;
+  flex: 1;
+}
 .pu1__content1 {
   display: flex;
+  gap: 10px;
+  flex-direction: column;
+  justify-content: center;
 }
 @media (max-width: 768px) {
   .pu1__content1 {
@@ -3526,59 +3536,95 @@ section,
     justify-content: center;
   }
 }
-.pu1__content1 p {
-  font-family: "Zen Maru Gothic", sans-serif;
-  font-size: 20px;
-  letter-spacing: 1px;
-  flex: 1;
+.pu1__content1 .after-party__image {
+  display: flex;
+  justify-content: center;
 }
-@media screen and (max-width: 768px) {
-  .pu1__content1 p {
-    font-size: 15.5px;
+.pu1__content1 .after-party__image img {
+  width: 50%;
+}
+@media (max-width: 768px) {
+  .pu1__content1 .after-party__image img {
+    width: 80%;
   }
 }
 @media screen and (max-width: 500px) {
-  .pu1__content1 p {
-    font-size: 15px;
+  .pu1__content1 .after-party__image img {
     width: 100%;
   }
 }
-.pu1__content1 .after-party__slider img {
+.pu1__content2 {
+  position: relative; /* 擬似要素を配置する基準点 */
   width: 100%;
+  display: inline-block;
+  padding: 10px 0; /* 上下の線の間隔（パディング）を確保 */
+}
+.pu1__content2::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px; /* 線の太さ */
+  background-color: white; /* 線の色 */
+}
+.pu1__content2::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px; /* 線の太さ */
+  background-color: white; /* 線の色 */
 }
 .pu1__content2 li {
   display: flex;
-  gap: 60px;
+  gap: clamp(10px, 10px + 70 * (100vw - 500px) / 760, 80px);
   padding-bottom: 40px;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 0px;
 }
-@media screen and (max-width: 500px) {
-  .pu1__content2 li img {
-    width: 30%;
-    background-color: white;
-    border-radius: 100%;
-  }
-  .pu1__content2 li {
-    justify-content: center;
-    gap: 20px;
-    padding-bottom: 0px;
-  }
+.pu1__content2 li .icon-img {
+  width: 30%;
+}
+.pu1__content2 li .icon-img img {
+  width: 100%;
 }
 .pu1__content2 li .pu__contenttext {
-  margin-block: 15px;
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
   font-family: "Zen Maru Gothic", sans-serif;
   font-size: 20px;
   letter-spacing: 1px;
-  width: 60%;
+  width: 70%;
+}
+.pu1__content2 li .pu__contenttext .blue {
+  color: #3777e4;
+  font-weight: bold;
+}
+.pu1__content2 li .pu__contenttext .contenttext-pc {
+  display: block;
 }
 @media screen and (max-width: 500px) {
-  .pu1__content2 li .pu__contenttext {
-    font-size: 15.5px;
-    margin-block: 10px;
-    width: 70%;
+  .pu1__content2 li .pu__contenttext .contenttext-pc {
+    display: none;
   }
 }
-
-.pu__infocontent .info_sched {
+.pu1__content2 li .pu__contenttext .contenttext-pc p {
+  margin-bottom: clamp(0px, 0px + 10 * (100vw - 768px) / 492, 10px);
+}
+.pu1__content2 li .pu__contenttext .contenttext-sp {
+  display: none;
+}
+@media screen and (max-width: 500px) {
+  .pu1__content2 li .pu__contenttext .contenttext-sp {
+    display: block;
+  }
+}
+.pu1 .pu__infocontent .info_sched {
   text-align: center;
   width: -moz-fit-content;
   width: fit-content;
@@ -3589,66 +3635,69 @@ section,
   background-color: #3777e4;
   color: white;
 }
-.pu__infocontent span {
-  color: #3777e4;
+.pu1 .pu__infocontent p {
+  margin-block: 10px;
 }
-.pu__infocontent br {
+.pu1 .pu__infocontent span {
+  color: #3777e4;
+  font-weight: 550;
+}
+.pu1 .pu__infocontent br {
   display: inline;
 }
-
-.pu__infosticker_1 {
+.pu1 .pu__infosticker_1 {
   position: absolute;
   top: -150px;
   left: -300px;
 }
 @media screen and (max-width: 1024px) {
-  .pu__infosticker_1 {
+  .pu1 .pu__infosticker_1 {
     width: 250px;
     left: -80px;
   }
 }
 @media screen and (max-width: 768px) {
-  .pu__infosticker_1 {
+  .pu1 .pu__infosticker_1 {
     width: 200px;
     left: -80px;
     top: -100px;
   }
 }
 @media screen and (max-width: 500px) {
-  .pu__infosticker_1 {
+  .pu1 .pu__infosticker_1 {
     width: 160px;
     left: -40px;
     top: -90px;
   }
 }
-.pu__infosticker_2 {
+.pu1 .pu__infosticker_2 {
   position: absolute;
   top: 40px;
   right: -20px;
 }
-.pu__infosticker_2 img {
+.pu1 .pu__infosticker_2 img {
   width: 200px;
 }
 @media screen and (max-width: 1024px) {
-  .pu__infosticker_2 {
+  .pu1 .pu__infosticker_2 {
     width: 150px;
     right: 0px;
     top: 100px;
   }
 }
 @media screen and (max-width: 768px) {
-  .pu__infosticker_2 {
+  .pu1 .pu__infosticker_2 {
     width: 130px;
     right: 0px;
     top: 60px;
   }
 }
 @media screen and (max-width: 500px) {
-  .pu__infosticker_2_1 {
+  .pu1 .pu__infosticker_2_1 {
     display: none;
   }
 }
-.pu__infosticker_3 {
+.pu1 .pu__infosticker_3 {
   position: absolute;
   bottom: -70px;
   right: -80px;
@@ -3656,370 +3705,362 @@ section,
   z-index: 1;
 }
 @media screen and (max-width: 1024px) {
-  .pu__infosticker_3 {
+  .pu1 .pu__infosticker_3 {
     bottom: -80px;
     right: -50px;
   }
 }
 @media screen and (max-width: 768px) {
-  .pu__infosticker_3 {
+  .pu1 .pu__infosticker_3 {
     bottom: -60px;
     right: -50px;
   }
 }
 @media screen and (max-width: 500px) {
-  .pu__infosticker_3 {
+  .pu1 .pu__infosticker_3 {
     width: 100px;
     bottom: -20px;
     right: -30px;
   }
 }
-.pu__infosticker_4 {
+.pu1 .pu__infosticker_4 {
   position: absolute;
   bottom: -50px;
   right: 100px;
   width: 400px;
 }
 @media screen and (max-width: 768px) {
-  .pu__infosticker_4 {
+  .pu1 .pu__infosticker_4 {
     width: 300px;
   }
 }
 @media screen and (max-width: 500px) {
-  .pu__infosticker_4 {
+  .pu1 .pu__infosticker_4 {
     width: 250px;
     bottom: -50px;
     right: 0px;
   }
 }
-
-.pu2 .pu__infosticker_2 {
+.pu1 .pu2 .pu__infosticker_2 {
   position: absolute;
   top: 10px;
   right: 0px;
 }
 @media screen and (max-width: 500px) {
-  .pu2 .pu__infosticker_2 {
+  .pu1 .pu2 .pu__infosticker_2 {
     width: 143px;
     right: -10px;
     top: 147px;
   }
 }
-
-.pu3 {
+.pu1 .pu3 {
   scroll-margin-top: 130px;
 }
-.pu3 .pu__inner {
+.pu1 .pu3 .pu__inner {
   padding-top: 180px;
 }
 @media screen and (max-width: 768px) {
-  .pu3 .pu__inner {
+  .pu1 .pu3 .pu__inner {
     padding-top: 130px;
   }
 }
 @media screen and (max-width: 500px) {
-  .pu3 .pu__inner {
+  .pu1 .pu3 .pu__inner {
     padding-top: 104px;
   }
 }
-.pu3__content {
+.pu1 .pu3__content {
   display: flex;
   justify-content: space-between;
 }
 @media screen and (max-width: 500px) {
-  .pu3__content {
+  .pu1 .pu3__content {
     flex-direction: column;
   }
 }
-.pu3 .pu__infosticker_2 {
+.pu1 .pu3 .pu__infosticker_2 {
   position: absolute;
   top: 45px;
   right: 20px;
 }
 @media screen and (max-width: 1024px) {
-  .pu3 .pu__infosticker_2 {
+  .pu1 .pu3 .pu__infosticker_2 {
     width: 150px;
     right: 10px;
     top: 80px;
   }
 }
 @media screen and (max-width: 768px) {
-  .pu3 .pu__infosticker_2 {
+  .pu1 .pu3 .pu__infosticker_2 {
     width: 130px;
     right: 0px;
     top: 60px;
   }
 }
 @media screen and (max-width: 500px) {
-  .pu3 .pu__infosticker_2 {
+  .pu1 .pu3 .pu__infosticker_2 {
     width: 148px;
     bottom: -50px;
     right: 0px;
   }
 }
-
-.pu4 {
+.pu1 .pu4 {
   scroll-margin-top: 130px;
 }
-.pu4 .pu__inner {
+.pu1 .pu4 .pu__inner {
   padding-top: 190px;
 }
 @media screen and (max-width: 768px) {
-  .pu4 .pu__inner {
+  .pu1 .pu4 .pu__inner {
     padding-top: 130px;
   }
 }
 @media screen and (max-width: 500px) {
-  .pu4 .pu__inner {
+  .pu1 .pu4 .pu__inner {
     padding-top: 100px;
   }
 }
 @media screen and (max-width: 500px) {
-  .pu4 .pu__infosticker_2 {
+  .pu1 .pu4 .pu__infosticker_2 {
     width: 175px;
     right: -32px;
     top: 73px;
   }
 }
-
-.pu5 {
+.pu1 .pu5 {
   scroll-margin-top: 130px;
 }
-.pu5__content1, .pu5__content2 {
+.pu1 .pu5__content1, .pu1 .pu5__content2 {
   display: flex;
   justify-content: space-between;
   padding-bottom: 40px;
 }
 @media screen and (max-width: 1024px) {
-  .pu5__content1, .pu5__content2 {
+  .pu1 .pu5__content1, .pu1 .pu5__content2 {
     gap: 30px;
   }
 }
 @media screen and (max-width: 768px) {
-  .pu5__content1, .pu5__content2 {
+  .pu1 .pu5__content1, .pu1 .pu5__content2 {
     gap: 10px;
   }
 }
 @media screen and (max-width: 500px) {
-  .pu5__content1, .pu5__content2 {
+  .pu1 .pu5__content1, .pu1 .pu5__content2 {
     flex-direction: column;
     align-items: center;
   }
 }
-.pu5__content1 .pu__contenttext-2-1, .pu5__content2 .pu__contenttext-2-1 {
+.pu1 .pu5__content1 .pu__contenttext-2-1, .pu1 .pu5__content2 .pu__contenttext-2-1 {
   padding-left: 20px;
 }
-.pu5__content1 .pu__contenttext p, .pu5__content2 .pu__contenttext p {
+.pu1 .pu5__content1 .pu__contenttext p, .pu1 .pu5__content2 .pu__contenttext p {
   margin-block: 20px;
   font-size: 19px;
 }
 @media screen and (max-width: 768px) {
-  .pu5__content1 .pu__contenttext p, .pu5__content2 .pu__contenttext p {
+  .pu1 .pu5__content1 .pu__contenttext p, .pu1 .pu5__content2 .pu__contenttext p {
     font-size: 15.5px;
     margin-block: 10px;
   }
 }
 @media screen and (max-width: 500px) {
-  .pu5__content1 .pu__contenttext p, .pu5__content2 .pu__contenttext p {
+  .pu1 .pu5__content1 .pu__contenttext p, .pu1 .pu5__content2 .pu__contenttext p {
     font-size: 15px;
   }
 }
-.pu5 .pu__infosticker_2_2 {
+.pu1 .pu5 .pu__infosticker_2_2 {
   position: absolute;
   top: 40px;
   right: 0;
 }
 @media screen and (max-width: 1024px) {
-  .pu5 .pu__infosticker_2_2 {
+  .pu1 .pu5 .pu__infosticker_2_2 {
     width: 150px;
     right: -50px;
     top: 130px;
   }
 }
 @media screen and (max-width: 768px) {
-  .pu5 .pu__infosticker_2_2 {
+  .pu1 .pu5 .pu__infosticker_2_2 {
     width: 130px;
     right: 0px;
     top: 60px;
   }
 }
 @media screen and (max-width: 500px) {
-  .pu5 .pu__infosticker_2_2 {
+  .pu1 .pu5 .pu__infosticker_2_2 {
     width: 121px;
     right: 0px;
     top: 116px;
   }
 }
-
-.pu6 {
+.pu1 .pu6 {
   scroll-margin-top: 130px;
 }
-.pu6__content1, .pu6__content2 {
+.pu1 .pu6__content1, .pu1 .pu6__content2 {
   display: flex;
   justify-content: space-between;
   padding-bottom: 40px;
 }
 @media screen and (max-width: 1024px) {
-  .pu6__content1, .pu6__content2 {
+  .pu1 .pu6__content1, .pu1 .pu6__content2 {
     gap: 30px;
   }
 }
 @media screen and (max-width: 768px) {
-  .pu6__content1, .pu6__content2 {
+  .pu1 .pu6__content1, .pu1 .pu6__content2 {
     gap: 10px;
   }
 }
 @media screen and (max-width: 500px) {
-  .pu6__content1, .pu6__content2 {
+  .pu1 .pu6__content1, .pu1 .pu6__content2 {
     flex-direction: column;
     align-items: center;
   }
 }
-.pu6__content1 .pu__contenttext-2-1, .pu6__content2 .pu__contenttext-2-1 {
+.pu1 .pu6__content1 .pu__contenttext-2-1, .pu1 .pu6__content2 .pu__contenttext-2-1 {
   padding-left: 20px;
 }
-.pu6__content1 .pu__contenttext p, .pu6__content2 .pu__contenttext p {
+.pu1 .pu6__content1 .pu__contenttext p, .pu1 .pu6__content2 .pu__contenttext p {
   margin-block: 20px;
   font-size: 19px;
 }
 @media screen and (max-width: 768px) {
-  .pu6__content1 .pu__contenttext p, .pu6__content2 .pu__contenttext p {
+  .pu1 .pu6__content1 .pu__contenttext p, .pu1 .pu6__content2 .pu__contenttext p {
     font-size: 15.5px;
     margin-block: 10px;
   }
 }
 @media screen and (max-width: 500px) {
-  .pu6__content1 .pu__contenttext p, .pu6__content2 .pu__contenttext p {
+  .pu1 .pu6__content1 .pu__contenttext p, .pu1 .pu6__content2 .pu__contenttext p {
     font-size: 15px;
   }
 }
-.pu6 .pu__infosticker_2_2 {
+.pu1 .pu6 .pu__infosticker_2_2 {
   position: absolute;
   top: 40px;
   right: 0;
 }
 @media screen and (max-width: 1024px) {
-  .pu6 .pu__infosticker_2_2 {
+  .pu1 .pu6 .pu__infosticker_2_2 {
     width: 150px;
     right: -50px;
     top: 130px;
   }
 }
 @media screen and (max-width: 768px) {
-  .pu6 .pu__infosticker_2_2 {
+  .pu1 .pu6 .pu__infosticker_2_2 {
     width: 130px;
     right: 0px;
     top: 60px;
   }
 }
 @media screen and (max-width: 500px) {
-  .pu6 .pu__infosticker_2_2 {
+  .pu1 .pu6 .pu__infosticker_2_2 {
     width: 121px;
     right: 0px;
     top: 116px;
   }
 }
-
-.pu7 {
+.pu1 .pu7 {
   scroll-margin-top: 130px;
 }
-.pu7 .pu__wrapper {
+.pu1 .pu7 .pu__wrapper {
   background-color: #ffcd8f;
 }
-.pu7 h3 {
+.pu1 .pu7 h3 {
   color: #a23b3c;
   -webkit-text-stroke: 0;
 }
 @media screen and (max-width: 500px) {
-  .pu7 h3 span {
+  .pu1 .pu7 h3 span {
     font-size: 18px;
   }
 }
 @media screen and (max-width: 768px) {
-  .pu7 h3 {
+  .pu1 .pu7 h3 {
     font-size: 29px;
   }
 }
 @media screen and (max-width: 500px) {
-  .pu7 h3 {
+  .pu1 .pu7 h3 {
     font-size: 26px;
   }
 }
-.pu7 .h3-content {
+.pu1 .pu7 .h3-content {
   color: #706363;
 }
 @media screen and (max-width: 768px) {
-  .pu7 .h3-content {
+  .pu1 .pu7 .h3-content {
     margin-block: 0;
   }
 }
-.pu7 .pu3__content {
+.pu1 .pu7 .pu3__content {
   margin-block: 30px;
 }
-.pu7 p {
+.pu1 .pu7 p {
   margin-block: 20px;
   font-size: 19px;
 }
 @media screen and (max-width: 500px) {
-  .pu7 .pu__infosticker_2 {
+  .pu1 .pu7 .pu__infosticker_2 {
     right: -11px;
     width: 100px;
   }
 }
-
-.pu8 {
+.pu1 .pu8 {
   scroll-margin-top: 130px;
 }
-.pu8 .pu__wrapper {
+.pu1 .pu8 .pu__wrapper {
   background-color: #ffcd8f;
 }
-.pu8 h3 {
+.pu1 .pu8 h3 {
   color: #a23b3c;
   -webkit-text-stroke: 0;
 }
 @media screen and (max-width: 500px) {
-  .pu8 h3 span {
+  .pu1 .pu8 h3 span {
     font-size: 18px;
   }
 }
 @media screen and (max-width: 768px) {
-  .pu8 h3 {
+  .pu1 .pu8 h3 {
     font-size: 29px;
   }
 }
 @media screen and (max-width: 500px) {
-  .pu8 h3 {
+  .pu1 .pu8 h3 {
     font-size: 26px;
   }
 }
-.pu8 .h3-content {
+.pu1 .pu8 .h3-content {
   color: #706363;
 }
 @media screen and (max-width: 768px) {
-  .pu8 .h3-content {
+  .pu1 .pu8 .h3-content {
     margin-block: 0;
   }
 }
-.pu8 .pu3__content {
+.pu1 .pu8 .pu3__content {
   margin-block: 30px;
 }
-.pu8 p {
+.pu1 .pu8 p {
   margin-block: 20px;
   font-size: 19px;
 }
 @media screen and (max-width: 500px) {
-  .pu8 .pu__infosticker_2 {
+  .pu1 .pu8 .pu__infosticker_2 {
     right: -11px;
     width: 100px;
   }
 }
-
-.pu3__content {
+.pu1 .pu3__content {
   display: flex; /* Flexboxを適用。これでアイテムが横並びになります */
   align-items: stretch; /* 垂直方向の高さを、最も背の高いアイテムに合わせます（デフォルト）*/
   height: auto;
 }
-.pu3__content img {
+.pu1 .pu3__content img {
   width: 100%; /* 2つの画像を均等な幅にする場合。適宜調整してください */
   /* 重要！ 画像が歪むのを防ぐための設定 */
   height: 100%; /* コンテナの高さいっぱいに広げます */
@@ -4027,7 +4068,7 @@ section,
      object-fit: cover; /* アスペクト比を維持し、コンテナを埋めるようにトリミングしてフィットさせます */
 }
 @media screen and (max-width: 1024px) {
-  .pu3__content {
+  .pu1 .pu3__content {
     gap: 30px;
   }
 }/*# sourceMappingURL=style.css.map */
