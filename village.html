@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="utf-8">
+    <title>R153 Rally Link〜阿智村 / 平谷村 / 根羽村〜</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="img/favicon.ico">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;700&family=M+PLUS+1:wght@100..900&family=Poller+One&family=Zen+Maru+Gothic:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Crimson+Text&family=M+PLUS+1p:wght@400;800&family=Raleway:ital,wght@0,100..900;1,100..900&family=SN+Pro:ital,wght@0,200..900;1,200..900&family=Zen+Maru+Gothic&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Crimson+Text&family=M+PLUS+1p:wght@400;700&family=Raleway:ital,wght@0,100..900;1,100..900&family=SN+Pro:ital,wght@0,200..900;1,200..900&family=Zen+Maru+Gothic&display=swap"
+        rel="stylesheet">
+    <!-- CSS読み込み -->
+    <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <!-- slick読み込み -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <link rel="stylesheet" type="text/css"
+        href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
+</head>
+
+<body>
+    <header class="header">
+        <div class="header__inner">
+
+            <!-- ロゴ -->
+            <a href="index.html" class="header__logo">
+                <img src="img/mv-logo4.webp" alt="ロゴ">
+            </a>
+
+            <!-- 日時情報 -->
+            <div class="header__info">
+
+                <!-- PC用 -->
+                <div class="info-wrapper pc-only">
+                    <div class="flex-wrapper">
+                        <div class="header__year">2026</div>
+                        <div class="header__date">
+                            8. 14<span>FRI</span>
+                        </div>
+                    </div>
+                    <div class="header__time">9:00 〜 15:00</div>
+                </div>
+                <div class="vertical-wrapper pc-only">
+                    <div class="place">メイン会場：治部坂高原スキー場</div>
+                    <div class="place">サブ会場　：平谷高原スキー場</div>
+                </div>
+                <!-- 無料ボタン -->
+                <div class="header__free vertical-wrapper pc-only">
+                    <div href="#" class="btn-free">
+                        入場料 1000円<br>
+                        <span>２会場共通PASS</span>
+                        <span>※年齢問わず一律</span>
+                    </div>
+                </div>
+
+                <!-- スマホ用：初期表示（スクロール前） -->
+                <div class="sp-header-initial sp-only">
+                    <span>2026　8.14 FRI　9:00〜15:00</span>
+                </div>
+
+                <!-- スマホ用：アコーディオンボタン -->
+                <div class="sp-accordion sp-only">
+
+                    <!-- 日時ボタン -->
+                    <button class="sp-accordion__btn" data-target="acc-datetime">
+                        日時<span class="sp-accordion__arrow">▼</span>
+                    </button>
+                    <div class="sp-accordion__body" id="acc-datetime">
+                        <p>2026　8.14 FRI</p>
+                        <p>9:00 〜 15:00</p>
+                    </div>
+                </div>
+            </div>
+            <!-- スマホ用：アコーディオンボタン -->
+            <div class="sp-accordion sp-only">
+                <!-- 会場・入場料ボタン -->
+                <button class="sp-accordion__btn" data-target="acc-venue">
+                    会場・入場料<span class="sp-accordion__arrow">▼</span>
+                </button>
+                <div class="sp-accordion__body" id="acc-venue">
+                    <p>メイン会場：治部坂高原スキー場</p>
+                    <p>サブ会場　：平谷高原スキー場</p>
+                    <p class="pass">
+                        入場料 1000円/２会場共通PASS<br>
+                        <span>※年齢問わず一律</span>
+                    </p>
+                </div>
+            </div>
+
+
+            <!-- ハンバーガー -->
+            <div class="hamburger" id="js-hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <nav class="drawer-menu" id="js-drawer">
+                <ul class="drawer-menu__list">
+                    <li class="drawer-menu__item"><a href="event.html#display-100">GRヤリスオーナーズクラブ300台</a></li>
+                    <li class="drawer-menu__item"><a href="event.html#special-stage2">トークショー /Show</a></li>
+                    <li class="drawer-menu__item"><a href="event.html#ride-experience">パレード</a></li>
+                    <li class="drawer-menu__item"><a href="event.html#pu-1">ダンス披露会 /Show</a></li>
+                    <li class="drawer-menu__item"><a href="event.html#pu-2">地元出展屋台 /Food</a></li>
+                    <li class="drawer-menu__item"><a href="event.html#pu-3">TOYOTAプレゼンツイベント（未定） /Experience</a></li>
+                    <li class="drawer-menu__item"><a href="event.html#pu-4">木育体験</a></li>
+                    <li class="drawer-menu__item"><a href="event.html#pu-5">けん玉体験</a></li>
+                    <li class="drawer-menu__item"><a href="event.html#pu-6">耳つぼ体験</a></li>
+                    <li class="drawer-menu__item"><a href="event.html#pu-6">各種キッチンカー</a></li>
+                    <li class="drawer-menu__item"><a href="event.html#pu-6">交通安全教室イベント</a></li>
+                    <li class="drawer-menu__item"><a href="index.html">Topページ</a></li>
+                </ul>
+            </nav>
+
+            <div class="drawer-overlay" id="js-overlay"></div>
+
+        </div>
+    </header>
+
+    <main>
+        <div class="bg-dots"></div>
+        <div class="container">
+
+            <div class="page-title-area">
+                <div class="page-title-content">
+                    <h1 class="page-main-title">三村の魅力</h1>
+                    <span class="page-sub-title">～阿智村・平谷村・根羽村～</span>
+                </div>
+            </div>
+
+            <article id="pickup-event" class="pu">
+                <h2 class="sec__title2">
+                    三村の魅力を紹介します！
+                </h2>
+
+
+                <section class="pu1" id="pu-1">
+                    <div class="pu__wrapper">
+                        <ul>
+                            <li class="pu__gokan"><img src="img/pu-1-8.webp" alt=""></li>
+                            <li class="pu__kids"><img src="img/pu-kids.webp" alt="" class="u-yurayura"></li>
+                        </ul>
+                        <div class="pu__inner">
+                            <h3>TOYOTAプレゼンツイベント</h3>
+                            <p class="h3-content">今日から君もプロメカニック！<br>
+                                本物のマシンに触れる、キッズピット体験。</p>
+                            <div class="pu1__content1">
+                                <p>いつもは外から眺めるだけの憧れのクルマ。<br>
+                                    今日は、専用のメカニックウェアに身を包んで、<br>
+                                    プロの道具を手に取ってみよう！</p>
+                                <img src="img/pu-1-1.webp" alt="" class="inner-img">
+                            </div>
+                            <ul class="pu1__content2">
+                                <li>
+                                    <img src="img/pu-1-2.webp" alt="" class="inner-img">
+                                    <div class="pu__contenttext">
+                                        <p>現役のプロメカニックがサポートするので、<br>
+                                            小さなお子様でも安全に体験いただけます。
+                                        </p>
+                                        <p>全ての作業を終えたら、<br>
+                                            「マスターメカニック認定証」をプレゼント。</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <img src="img/pu-1-3.webp" alt="" class="inner-img">
+                                    <div class="pu__contenttext">
+                                        <p>必要な道具やつなぎはすべて<br>
+                                            こちらで用意しています。<br>
+                                            汚れても大丈夫な靴でお越しください。</p>
+                                        <p>
+                                            ピットのすぐ横には、地元の野菜マルシェや<br>
+                                            キッチンカーが並ぶ休憩ゾーンも。<br>
+                                            ママと下のお子様はゆっくり過ごせます。</p>
+                                    </div>
+                                </li>
+                            </ul>
+                            <div class="pu__info">
+                                <dl class="pu__infocontent">
+                                    <dt>開催時間:</dt>
+                                    <dd>①11:30〜 ②13:30〜 ③15:00〜（各回30分）</dd>
+
+                                    <dt>スペシャルイベント時間：</dt>
+                                    <dd>10:30〜11:30（プロメカニック解説ショー）</dd>
+
+                                    <dt>対象:</dt>
+                                    <dd>小学生以下のお子様（保護者同伴）</dd>
+
+                                    <dt>参加方法:</dt>
+                                    <dd>各回30分前〜受付ブースにて受付開始</dd>
+                                </dl>
+
+                                <div class="pu__infosticker">
+                                    <img class="pu__infosticker_1 u-yurayura" src="img/sticker-access1.webp" alt="">
+                                    <img class="pu__infosticker_2 pu__infosticker_2_1" src="img/pu-1-5.webp" alt="">
+                                    <img class="pu__infosticker_3 u-yurayura" src="img/pu-1-6.webp" alt="">
+                                    <img class="pu__infosticker_4" src="img/pu-1-7.webp" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+
+                <section class="pu7" id="pu-7">
+                    <div class="pu__wrapper">
+                        <ul>
+                            <li class="pu__gokan"><img src="img/pu-6-1.webp" alt=""></li>
+                            <li class="pu__kids"><img src="img/pu-6-2.webp" alt="" class="u-yurayura"></li>
+                        </ul>
+
+                        <div class="pu__inner">
+                            <h3>地元出店屋台</h3>
+                            <p class="h3-content">心とお腹を満たす、笑顔の広場。<br>
+                                地元の『おいしい』と『学び』が集まる地域マルシェ開催！
+                            </p>
+                            <ul class="pu3__content">
+                                <li><img src="img/pu-6-3.webp" alt=""></li>
+                                <li><img src="img/pu-6-4.webp" alt=""></li>
+                            </ul>
+
+                            <p class="pu3-5text">かっこいい車をたくさん見た後は、<br>
+                                ふわっと漂う香ばしい香りに誘われてみませんか？
+                            </p>
+                            <p class="pu3-5text">会場の一角に広がるのは、<br>
+                                地元の「おいしい」と「楽しい」がギュッと詰まった地域マルシェ。<br>
+                                採れたての新鮮な野菜、地域のソウルフード、<br>
+                                そしてお子様の好奇心を刺激する知育体験まで。
+                            </p>
+                            <p class="pu3-5text">車を楽しんだ後に、ゆっくりと過ごしたい方にも。<br>
+                                思い思いの時間を楽しめる、心地よい空間が広がっています。</p>
+                            <div class="pu__info">
+                                <dl class="pu__infocontent">
+                                    <dt>開催場所:</dt>
+                                    <dd>フードゾーン</dd>
+
+                                    <dt>OPEN:</dt>
+                                    <dd>10:00</dd>
+
+                                    <dt>CLOSE:</dt>
+                                    <dd>17:00</dd>
+
+                                    <dt>【キッチンカーのみ】OPEN:</dt>
+                                    <dd>11:00</dd>
+
+                                    <dt>CLOSE:</dt>
+                                    <dd>17:00（売り切れ次第終了）</dd>
+
+                                    <dt>決済方法：</dt>
+                                    <dd>現金・カード・QRコード決済</dd>
+
+                                </dl>
+                                <div class="pu__infosticker">
+                                    <img src="img/pu-6-5.webp" alt="" class="pu__infosticker_2 u-yurayura">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="pu8" id="pu-8">
+                    <div class="pu__wrapper">
+                        <ul>
+                            <li class="pu__gokan"><img src="img/pu-6-1.webp" alt=""></li>
+                            <li class="pu__kids"><img src="img/pu-6-2.webp" alt="" class="u-yurayura"></li>
+                        </ul>
+
+                        <div class="pu__inner">
+                            <h3>各種キッチンカー</h3>
+                            <p class="h3-content">心とお腹を満たす、笑顔の広場。<br>
+                                地元の『おいしい』と『学び』が集まる地域マルシェ開催！
+                            </p>
+                            <ul class="pu3__content">
+                                <li><img src="img/pu-6-3.webp" alt=""></li>
+                                <li><img src="img/pu-6-4.webp" alt=""></li>
+                            </ul>
+
+                            <p class="pu3-5text">かっこいい車をたくさん見た後は、<br>
+                                ふわっと漂う香ばしい香りに誘われてみませんか？
+                            </p>
+                            <p class="pu3-5text">会場の一角に広がるのは、<br>
+                                地元の「おいしい」と「楽しい」がギュッと詰まった地域マルシェ。<br>
+                                採れたての新鮮な野菜、地域のソウルフード、<br>
+                                そしてお子様の好奇心を刺激する知育体験まで。
+                            </p>
+                            <p class="pu3-5text">車を楽しんだ後に、ゆっくりと過ごしたい方にも。<br>
+                                思い思いの時間を楽しめる、心地よい空間が広がっています。</p>
+                            <div class="pu__info">
+                                <dl class="pu__infocontent">
+                                    <dt>開催場所:</dt>
+                                    <dd>フードゾーン</dd>
+
+                                    <dt>OPEN:</dt>
+                                    <dd>10:00</dd>
+
+                                    <dt>CLOSE:</dt>
+                                    <dd>17:00</dd>
+
+                                    <dt>【キッチンカーのみ】OPEN:</dt>
+                                    <dd>11:00</dd>
+
+                                    <dt>CLOSE:</dt>
+                                    <dd>17:00（売り切れ次第終了）</dd>
+
+                                    <dt>決済方法：</dt>
+                                    <dd>現金・カード・QRコード決済</dd>
+
+                                </dl>
+                                <div class="pu__infosticker">
+                                    <img src="img/pu-6-5.webp" alt="" class="pu__infosticker_2 u-yurayura">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </article>
+        </div>
+
+    </main>
+
+    <footer class="footer" id="footer">
+        <h2 class="sec__title">Information&amp;contact<span>インフォメーション&amp;お問い合わせ</span></h2>
+
+        <div class="footer__wrapper">
+            <h3>公式SNS</h3>
+
+            <ul class="footer__innerSNS">
+                <li>
+                    <a href="https://www.instagram.com/?hl=ja">
+                        <img src="img/instagram.webp" alt="">
+                        <p>Instagram</p>
+                    </a>
+                </li>
+                <li><a href="https://x.com/?lang=ja"><img src="img/twitter.webp" alt="">
+                        <p>X(旧twitter)</p>
+                    </a></li>
+                <li><a href="https://www.youtube.com/?app=desktop&hl=ja"><img src="img/youtube.webp" alt="">
+                        <p>Youtube</p>
+                    </a></li>
+            </ul>
+
+            <p class="line">ご質問は公式LINEからお気軽に！</p>
+
+            <div class="footer__innerLINE">
+                <a href="https://www.line.me/ja/">
+                    <p>LINEはこちら</p>
+                    <img src="img/line-me.webp" alt="">
+                </a>
+
+            </div>
+        </div>
+
+        <div class="footer__logo">
+            <a href="#">
+                <img src="img/footer-logo.webp" alt="">
+            </a>
+        </div>
+        <div class="footer__copy">
+            <small>&copy; 2026 XXX-XX</small>
+
+        </div>
+
+        <div class="footer__ashirai">
+            <img src="img/footer-ashirai1.webp" alt="" class="footer-ashirai1">
+            <img src="img/footer-ashirai2.webp" alt="" class="footer-ashirai2">
+        </div>
+    </footer>
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

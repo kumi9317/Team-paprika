@@ -50,6 +50,12 @@
   &__inner {
     max-width: 800px;
     margin-inline: auto;
+
+    li {
+      &:nth-of-type(3) {
+        margin-top: 90px;
+      }
+    }
   }
 
   iframe {

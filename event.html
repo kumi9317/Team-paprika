@@ -21,11 +21,14 @@
         rel="stylesheet">
     <!-- CSS読み込み -->
     <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.css">
     <link rel="stylesheet" href="css/style.css">
     <!-- slick読み込み -->
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <!-- <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
     <link rel="stylesheet" type="text/css"
-        href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
+        href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" /> -->
 </head>
 
 <body>
@@ -34,7 +37,7 @@
 
             <!-- ロゴ -->
             <a href="index.html" class="header__logo">
-                <img src="img/header-logo.webp" alt="ロゴ">
+                <img src="img/mv-logo4.webp" alt="ロゴ">
             </a>
 
             <!-- 日時情報 -->
@@ -57,8 +60,9 @@
                 <!-- 無料ボタン -->
                 <div class="header__free vertical-wrapper pc-only">
                     <div href="#" class="btn-free">
-                        入場料 500円<br>
+                        入場料 1000円<br>
                         <span>２会場共通PASS</span>
+                        <span>※年齢問わず一律</span>
                     </div>
                 </div>
 
@@ -89,7 +93,10 @@
                 <div class="sp-accordion__body" id="acc-venue">
                     <p>メイン会場：治部坂高原スキー場</p>
                     <p>サブ会場　：平谷高原スキー場</p>
-                    <p class="pass">入場料 500円／２会場共通PASS</p>
+                    <p class="pass">
+                        入場料 1000円/２会場共通PASS<br>
+                        <span>※年齢問わず一律</span>
+                    </p>
                 </div>
             </div>
 
@@ -310,24 +317,17 @@
                                 今日は専用のメカニックウェアに身を包んで、
                                 プロの道具を手に取ってみよう！</p>
 
-                            <div class="after-party__slider">
-                                <div class="after-party__slide-item">
-                                    <div class="after-party__image">
+                            <ul class="pu__slider__items">                                
+                                    <li>
                                         <img src="img/pu-1-1.webp" alt="">
-                                    </div>
-                                </div>
-                                <div class="after-party__slide-item">
-                                    <div class="after-party__image">
+                                    </li>                              
+                                    <li>
                                         <img src="img/pu-1-2.webp" alt="">
-                                    </div>
-                                </div>
-                                <div class="after-party__slide-item">
-                                    <div class="after-party__image">
+                                    </li>                 
+                                    <li>
                                         <img src="img/pu-1-3.webp" alt="">
-                                    </div>
-                                </div>
-
-                            </div>
+                                    </li>
+                            </ul>
 
                         </div>
                         <ul class="pu1__content2">
@@ -885,9 +885,8 @@
     </footer>
 
 
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <!-- js -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <script src="js/main.js"></script>
 </body>

@@ -1,0 +1,120 @@
+@use "variables" as *;
+
+.village-main {
+  background-color: #fcfcfc;
+  padding: clamp(
+    30px,
+    calc(30px + (120 * ((100vw - 360px) / 920))),
+    150px
+  );
+  .sec__title {
+    /* 1. 文字色を白にする */
+    color: #ffffff;
+
+    /* 2. 文字の縁取り（外の線）を黒にする */
+    /* 指定方法: 太さ 色 */
+    -webkit-text-stroke: 1px #000000;
+
+    span {
+      -webkit-text-stroke: 0;
+    }
+  }
+  .village-main-wrapper {
+    img {
+      width: 100%;
+      object-fit: cover;
+      vertical-align: bottom;
+    }
+
+    max-width: clamp(
+      300px,
+      calc(300px + (600 * ((100vw - 360px) / 920))),
+      1000px
+    );
+    margin-inline: auto;
+    display: flex;
+    gap: 20px;
+
+    .vil-m-container {
+      width: calc(50% - 15px);
+      box-shadow: rgba(51, 51, 51, 0.5) 4px 4px 10px 5px;
+      text-align: center;
+      position: relative;
+      z-index: 10;
+      display: block;
+      color: inherit;
+      background: rgb(255, 255, 255);
+      border-radius: 5px;
+      overflow: hidden;
+      text-decoration: none;
+      transition:
+        transform 0.3s,
+        box-shadow 0.3s;
+
+      &:hover {
+        transform: translateY(-5px); // 少し上に浮かす
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15); // 影を強くする
+        .vil-name {
+          text-decoration: underline; // ホバー時にタイトルに下線（お好みで）
+        }
+      }
+      a {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        .vil-img {
+          padding: 15px 15px 0;
+        }
+        .vil-m-content {
+          padding: 20px;
+          flex: 1;
+          display: flex;
+          flex-direction: column;
+
+          .tag-list {
+            display: flex;
+            gap: 10px;
+            font-size: 10px;
+            color: #999;
+            flex-wrap: wrap;
+            padding-block: 15px;
+            height: 80%;
+          }
+          .vil-name {
+            margin-top: auto;
+          }
+        }
+      }
+    }
+  }
+  .more-btn {
+    margin-top: 60px;
+    text-align: center;
+
+    a {
+      .more-btn__text {
+        padding-inline: 5px;
+        line-height: 1;
+      }
+      .more-btn__arrow {
+        display: inline-block;
+        width: 25px;
+        position: relative;
+      }
+      &::after {
+        content: "";
+        position: absolute;
+        top: 40%;
+        right: -15px;
+        transform: translate(0, -50%);
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background-color: #d00;
+        opacity: 0;
+        transition: 0.3s;
+        z-index: -1;
+      }
+    }
+  }
+}
