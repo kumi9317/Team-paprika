@@ -50,12 +50,22 @@
   &__inner {
     max-width: 800px;
     margin-inline: auto;
+
+    li {
+      &:nth-of-type(3) {
+        margin-top: 90px;
+      }
+    }
   }
 
   iframe {
     width: 100%;
     height: clamp(200px, calc(200px + (200 * ((100vw - 360px) / 920))), 400px);
-    margin-block: clamp(20px, calc(20px + (20 * ((100vw - 360px) / 920))), 40px);
+    margin-block: clamp(
+      20px,
+      calc(20px + (20 * ((100vw - 360px) / 920))),
+      40px
+    );
   }
 
   dl {
@@ -254,7 +264,7 @@
     }
   }
 
-  @media (max-width: 360px) {
+  @media (max-width: 500px) {
     &__ashiraiblue {
       top: 65px;
     }

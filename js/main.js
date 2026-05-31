@@ -222,3 +222,14 @@ $(document).on('click', function(e) {
         $('.sp-accordion__btn').removeClass('is-open');
     }
 });
+
+/*==================================
+　　pu__slick
+==================================*/
+$(".pu__slider__items").slick({
+  autoplay: true, // 自動再生
+  autoplaySpeed: 4000, // 再生速度（ミリ秒設定） 1000ミリ秒=1秒
+  infinite: true, // 無限スライド
+  arrows: true, // 矢印
+  dots: true, // インジケーター
+});
