@@ -40,7 +40,11 @@ body {
   z-index: auto;
 
   @media (max-width: 769px) {
-    padding: 30px 70px;
+    padding: 30px 40px;
+  }
+
+  @media (max-width: 426px) {
+    padding: 30px 10px 0px;
   }
 
   @media (max-width: 361px) {
@@ -217,7 +221,6 @@ section,
     height: 10px;
     background: #d11a1b;
     border-radius: 50%;
-
     animation: moveDot 2.5s infinite linear;
   }
 
@@ -230,92 +233,132 @@ section,
   }
 }
 
-// --- Event Title Section ---
-.event-title-row {
-  display: flex;
-  align-items: flex-end;
-  gap: 8px;
-  width: 100%;
-  margin: 20px 0;
-  flex-wrap: wrap;
+//------------------------------  
+//治部坂・平谷セクション
+//------------------------------
+#jibuzaka.event-section,
+#hiraya.event-section {
+  padding-bottom: 50px;
+  margin: 0 auto;
 
-  .title-text-red {
-    font-family: $h3;
-    font-size: 1.75rem;
-    font-weight: 700;
-    color: $red;
-    white-space: nowrap;
-    line-height: 1.2;
+  .event-title {
+    display: flex;
+    align-items: flex-end;
+    gap: 8px;
+    width: 100%;
+    margin: 20px 0;
+    flex-wrap: wrap;
 
-    @media (max-width: 361px) {
-      font-size: 1.5rem;
-    }
-  }
+    .title-text {
+      font-family: $h3;
+      font-size: 1.75rem;
+      font-weight: 700;
+      color: $red;
+      white-space: nowrap;
+      line-height: 1.2;
 
-  .number-100 {
-    font-family: $h3;
-    font-size: 5rem;
-    font-weight: 700;
-    color: $black;
-    line-height: 0.8;
-    margin: 0 4px;
-    position: relative;
-    display: inline-block;
+      @media (max-width: 769px) {
+        font-size: 1.5rem;
+      }
 
-    @media (max-width: 361px) {
-      font-size: 3.5rem;
-    }
-
-    // 背後の赤い影
-    &::after {
-      content: "300";
-      position: absolute;
-      top: 6px;
-      left: 6px;
-      color: rgba($red, 0.2);
-      z-index: -1;
+      @media (max-width: 426px) {
+        font-size: 1.25rem;
+      }
 
       @media (max-width: 361px) {
-        top: 4px;
-        left: 4px;
+        font-size: 1rem;
+      }
+
+      .tab-br {
+        display: none;
+
+        @media (max-width: 769px) {
+          display: block;
+        }
+      }
+    }
+
+    .main-title {
+      font-family: $h3;
+      font-size: 5rem;
+      font-weight: 700;
+      color: $black;
+      line-height: 0.8;
+      margin: 0 4px;
+
+      @media (max-width: 769px) {
+        font-size: 4.5rem;
+      }
+
+      @media (max-width: 426px) {
+        font-size: 3rem;
+      }
+
+      @media (max-width: 361px) {
+        font-size: 2.25rem;
+      }
+
+      .main-title-red {
+        position: relative;
+
+        // 背後の赤い影
+        &::after {
+          content: "MIX";
+          position: absolute;
+          top: 26px;
+          left: 8px;
+          color: rgba($red, 0.2);
+          z-index: -1;
+
+          @media (max-width: 769px) {
+            top: 22px;
+            left: 6px;
+          }
+
+          @media (max-width: 426px) {
+            top: 15px;
+            left: 6px;
+          }
+
+          @media (max-width: 361px) {
+            top: 12px;
+            left: 5px;
+          }
+        }
       }
     }
   }
 
-  .title-line {
-    flex-grow: 1;
-    height: 4px;
-    background-color: $black;
-    margin-bottom: 21px;
-
-    @media (max-width: 361px) {
-      display: none;
-    }
-  }
-}
-
-// --- 100台展示 ---
-#display-100 {
-  margin: 0 auto;
-
-  .catchphrase-red {
+  .catchphrase {
     font-family: $h3;
-    color: $red;
     font-size: 1.25rem;
     font-weight: 700;
-    margin: 25px 0;
+    margin: 40px 0;
     line-height: 1.4;
     letter-spacing: -0.01em;
 
-    @media (max-width: 361px) {
-      font-size: 1rem;
+    .catchphrase-highlight {
+      font-size: 1.5rem;
+      display: block;
     }
 
-    .tab-br {
+    .sp-br {
       display: none;
+    }
 
-      @media (max-width: 769px) {
+    @media (max-width: 426px) {
+      font-size: 1rem;
+
+      .sp-br {
         display: block;
+      }
+    }
+
+    @media (max-width: 361px) {
+      font-size: 0.9rem;
+
+      .catchphrase-highlight {
+        font-size: 1.25rem;
       }
     }
   }
@@ -329,20 +372,6 @@ section,
       display: block;
       border-radius: 4px;
       box-shadow: $shadow;
-    }
-  }
-
-  .gallery-three-col {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-    margin-bottom: 40px;
-
-    img {
-      width: 100%;
-      aspect-ratio: 3 / 2;
-      object-fit: cover;
-      border-radius: 4px;
     }
   }
 
@@ -369,11 +398,25 @@ section,
       margin-right: 12px;
       margin-top: 6px;
       color: $black;
+
+      @media (max-width: 769px) {
+        font-size: 2.5rem;
+      }
+
+      @media (max-width: 426px) {
+        font-size: 2rem;
+      }
+
+      @media (max-width: 361px) {
+        font-size: 1.5rem;
+      }
     }
   }
 }
 
-// --- トークショーセクション全般 ---
+//------------------------------  
+//トークショーセクション
+//------------------------------
 #special-stage2 {
   max-width: 1000px;
   margin: 0 auto;
@@ -401,10 +444,10 @@ section,
       align-items: flex-end;
       text-align: right;
 
-      .side-title-en {
+      .side-title{
         font-family: $h2;
         color: $red;
-        font-size: 2rem;
+        font-size: 3rem;
         font-weight: 800;
         line-height: 1.1;
         margin: 0;
@@ -710,26 +753,28 @@ section,
   }
 }
 
-// --- 乗車体験 ---
-#ride-experience {
+//------------------------------
+//撮影ツアーセクション
+//------------------------------
+#tour.event-section {
   max-width: 1000px;
   margin: 0 auto;
-  padding: 80px 0 0;
+  padding: 40px 0 0;
   scroll-margin-top: 50px;
 
   @media (max-width: 361px) {
     padding: 40px 0;
   }
 
-  .title-row-with-line {
+  .event-title {
     display: flex;
     align-items: center;
     gap: 20px;
     margin-bottom: 30px;
 
-    .title-text-red {
+    .main-title {
       font-family: $h2;
-      font-size: 2rem;
+      font-size: 3rem;
       font-weight: 800;
       color: $red;
       white-space: nowrap;
@@ -754,7 +799,7 @@ section,
     }
   }
 
-  .catchphrase-red-bold {
+  .catchphrase {
     color: $red;
     font-size: 1.25rem;
     font-weight: 700;
@@ -776,7 +821,7 @@ section,
     }
   }
 
-  .experience-grid {
+  .tour-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 30px;
@@ -821,9 +866,8 @@ section,
   }
 
   .description-block {
-    // width: calc(200% + 30px);
     max-width: 100%;
-    margin: 20px;
+    margin: 5px;
 
     p {
       font-family: $text;
@@ -834,24 +878,12 @@ section,
       text-align: justify;
     }
 
-    .quote-text {
-      font-size: 1.5rem;
-      font-weight: 700;
-      line-height: 1.2;
-      margin-bottom: 20px;
-      display: flex;
-      align-items: flex-start;
-
-      @media (max-width: 768px) {
-        font-size: 1.25rem;
-      }
-    }
     .drop-cap {
       font-family: $h2;
       font-size: 3.12rem;
       font-weight: 800;
       line-height: 1;
-      margin: 0 4px;
+      margin: 0;
       color: $black;
 
       @media (max-width: 768px) {
