@@ -82,7 +82,7 @@ $(function() {
                 scrollTrigger: {
                     trigger: ".main-event",
                     start: "top top",
-                    end: "+=2000", 
+                    end: "+=2600", 
                     scrub: 1.5, 
                     pin: true,
                     pinSpacing: true, 
@@ -98,6 +98,8 @@ $(function() {
               .to(".js-event-item:nth-of-type(2)", { opacity: 0, duration: 3, delay: 5 })
               .to(".js-event-item:nth-of-type(3)", { opacity: 1, visibility: "visible", duration: 5 })
               .to(".js-event-item:nth-of-type(3)", { opacity: 0, duration: 3, delay: 5 })
+              .to(".js-event-item:nth-of-type(4)", { opacity: 1, visibility: "visible", duration: 5 })
+              .to(".js-event-item:nth-of-type(4)", { opacity: 0, duration: 3, delay: 5 })
               .to(".js-title", { opacity: 0, duration: 2 }, "-=1")
               .to(".main-event__speed-line", { opacity: 0, duration: 2 }, "-=2")
               .to({}, { duration: 5 });

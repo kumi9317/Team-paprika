@@ -510,7 +510,7 @@ body.nav-open {
   position: relative;
 }
 .main-program .main-event {
-  height: 95vh;
+  height: 100vh;
 }
 @media screen and (max-width: 425px) {
   .main-program .main-event {
@@ -654,6 +654,7 @@ body.nav-open {
   flex-shrink: 0;
   margin-right: -100px;
   z-index: 50;
+  aspect-ratio: 3/2;
 }
 @media screen and (max-width: 1280px) {
   .main-program .event-item__img-wrapper {
@@ -798,6 +799,9 @@ body.nav-open {
   text-align: left;
   display: flex;
   flex-direction: column;
+}
+.main-program .event-item__text-inner h3 span {
+  font-size: 1.23rem;
 }
 .main-program .event-item__text-inner h3 {
   font-size: 1.5rem;
