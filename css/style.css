@@ -347,7 +347,6 @@ a {
   left: 50%;
   transform: translateX(-50%);
   white-space: nowrap;
-  width: -moz-fit-content;
   width: fit-content;
   background: #fff;
   border-bottom: 1px solid #ddd;
@@ -557,8 +556,7 @@ body.nav-open {
 .main-program .main-event__speed-line img {
   width: 100vw;
   height: 100vh;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 .main-program .main-event .main-event-container {
   position: relative;
@@ -682,8 +680,7 @@ body.nav-open {
   position: relative;
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   border: 10px solid #fff;
   box-shadow: 4px 4px 10px 5px rgba(51, 51, 51, 0.5);
   transform: rotate(2deg);
@@ -844,7 +841,6 @@ body.nav-open {
   transition: 0.3s;
   margin-top: 10px;
   margin-left: auto;
-  width: -moz-fit-content;
   width: fit-content;
   align-self: flex-end;
   position: relative;
@@ -1012,8 +1008,7 @@ body.nav-open {
   width: 100%;
   height: 400px;
   display: block;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 .main-program .pick-up .label {
   position: absolute;
@@ -1186,8 +1181,7 @@ body.nav-open {
 .obi img {
   width: 100%;
   height: auto;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   vertical-align: bottom;
   /* ★ アニメーションの設定 */
   transition: transform 1.5s ease-out;
@@ -1215,6 +1209,10 @@ body.nav-open {
   overflow: visible;
   padding: 2%;
 }
+.time-schedule .enjoy__cards-wrap {
+  overflow: visible;
+  position: relative;
+}
 .time-schedule .enjoy__title {
   display: flex;
   align-items: center;
@@ -1230,6 +1228,7 @@ body.nav-open {
   font-weight: bold;
   color: #333333;
   font-family: "Zen Maru Gothic", sans-serif;
+  font-size: 1.4rem;
 }
 @media screen and (max-width: 768px) {
   .time-schedule .enjoy__title {
@@ -1242,10 +1241,7 @@ body.nav-open {
     font-size: 1.25rem;
   }
 }
-@media screen and (max-width: 425px) {
-  .time-schedule .enjoy__title {
-    flex-direction: column;
-  }
+@media screen and (max-width: 655px) {
   .time-schedule .enjoy__title img {
     height: 40px;
   }
@@ -1254,54 +1250,118 @@ body.nav-open {
   }
 }
 .time-schedule .enjoy__card {
-  height: 650px;
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  grid-template-rows: auto 1fr;
   border-radius: 30px;
-  padding: 60px 80px;
-  position: relative;
-  z-index: 0;
+  padding: 60px 0 60px 80px;
   color: #fff;
   box-shadow: 4px 4px 10px 5px rgba(51, 51, 51, 0.5);
   overflow: visible;
   margin-bottom: 80px;
   position: sticky;
 }
-@media screen and (max-width: 768px) {
+.time-schedule .enjoy__card .enjoy__header {
+  display: contents;
+}
+.time-schedule .enjoy__card .enjoy__content {
+  grid-column: 1;
+  grid-row: 2;
+}
+.time-schedule .enjoy__card .enjoy__photos {
+  grid-column: 2;
+  grid-row: 1/3;
+  position: relative;
+}
+@media screen and (max-width: 1000px) and (min-width: 656px) {
   .time-schedule .enjoy__card {
-    padding: 30px 40px;
+    grid-template-columns: 1fr 220px;
+    padding: 40px 0 40px 30px;
+    overflow: hidden;
+  }
+  .time-schedule .enjoy__card .enjoy__lead {
+    font-size: 1.4rem;
+    margin-left: 70px;
+    margin-bottom: 20px;
   }
 }
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 655px) {
   .time-schedule .enjoy__card {
-    padding: 20px 10px;
-    height: 550px;
+    display: flex;
+    flex-direction: column;
+    padding: 20px 15px 0;
+    overflow: hidden;
+  }
+  .time-schedule .enjoy__card .enjoy__lead {
+    grid-column: unset;
+    font-size: 1.2rem;
+    margin-left: 70px;
+    margin-bottom: 15px;
+  }
+  .time-schedule .enjoy__card .enjoy__content {
+    grid-column: unset;
+    grid-row: unset;
+    width: 100%;
+  }
+  .time-schedule .enjoy__card .enjoy__photos {
+    grid-column: unset;
+    grid-row: unset;
+    display: flex;
+    flex-direction: row;
+    position: static;
+    margin-top: 15px;
+    gap: 2%;
   }
 }
-.time-schedule .enjoy__card .enjoy__img {
+.time-schedule .enjoy .enjoy__img {
   position: absolute;
   border: 5px solid #fff;
   border-radius: 15px;
   box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
-  width: 150px;
-  height: 120px;
+  width: clamp(140px, 55%, 200px);
+  height: auto;
+  aspect-ratio: 3/2;
+  object-fit: cover;
   z-index: 2;
 }
-@media screen and (max-width: 768px) {
-  .time-schedule .enjoy__card .enjoy__img {
-    width: 130px;
-    height: 100px;
-    border: 3px solid #fff;
-  }
+.time-schedule .enjoy .enjoy__img--big {
+  width: clamp(190px, 82%, 280px);
 }
-@media screen and (max-width: 425px) {
-  .time-schedule .enjoy__card .enjoy__img {
-    width: 90px;
-    height: 65px;
+.time-schedule .enjoy .enjoy__img--sticker {
+  border: none;
+  box-shadow: none;
+  width: clamp(120px, 50%, 180px);
+  object-fit: contain;
+  z-index: 5;
+  aspect-ratio: unset;
+}
+@media screen and (max-width: 655px) {
+  .time-schedule .enjoy .enjoy__img {
+    position: static;
+    transform: none !important;
+    width: 50%;
+    border: none;
+    box-shadow: none;
     border: 2px solid #fff;
+    border-radius: 10px;
+    aspect-ratio: 3/2;
+    object-fit: cover;
+  }
+  .time-schedule .enjoy .enjoy__img--big {
+    width: 50%;
+  }
+  .time-schedule .enjoy .enjoy__img--sticker {
+    display: none;
   }
 }
-.time-schedule .enjoy__card .enjoy__arrow {
+.time-schedule .enjoy .enjoy__arrow {
   position: absolute;
-  width: 40px;
+  width: clamp(28px, 10%, 40px);
+}
+@media screen and (max-width: 1000px) {
+  .time-schedule .enjoy .enjoy__arrow {
+    display: none;
+  }
 }
 .time-schedule .enjoy__card__01 {
   background-color: #329CF8;
@@ -1309,324 +1369,92 @@ body.nav-open {
   top: 200px;
 }
 .time-schedule .enjoy__card__01 .enjoy__img--sticker {
-  top: 50px;
-  right: 200px;
-  border: none;
-  box-shadow: none;
-  width: 180px;
-  -o-object-fit: contain;
-     object-fit: contain;
-  z-index: 5;
+  top: 0;
+  left: 0;
 }
 .time-schedule .enjoy__card__01 .enjoy__img--photo1 {
-  top: 120px;
-  right: 40px;
+  top: 20%;
+  right: 4%;
   transform: rotate(5deg);
 }
 .time-schedule .enjoy__card__01 .enjoy__img--photo2 {
-  top: 290px;
-  right: 160px;
-  transform: rotate(-5deg);
-}
-.time-schedule .enjoy__card__01 .enjoy__img--photo3 {
-  bottom: 50px;
-  right: 50px;
-  transform: rotate(3deg);
-}
-@media screen and (max-width: 768px) {
-  .time-schedule .enjoy__card__01 .enjoy__img--photo3 {
-    bottom: 100px;
-  }
-}
-@media screen and (max-width: 425px) {
-  .time-schedule .enjoy__card__01 .enjoy__img--sticker {
-    top: 50px;
-    right: 30px;
-  }
-  .time-schedule .enjoy__card__01 .enjoy__img--photo1 {
-    display: none;
-  }
-  .time-schedule .enjoy__card__01 .enjoy__img--photo2 {
-    display: none;
-  }
-  .time-schedule .enjoy__card__01 .enjoy__img--photo3 {
-    bottom: 20px;
-    right: 20px;
-  }
+  bottom: 8%;
+  left: 25%;
+  transform: rotate(-3deg);
 }
 .time-schedule .enjoy__card__01 .enjoy__arrow--1 {
-  top: 200px;
-  right: 210px;
-  transform: rotate(-80deg);
+  top: 30%;
+  left: 0;
+  transform: rotate(-30deg);
 }
 .time-schedule .enjoy__card__01 .enjoy__arrow--2 {
-  top: 330px;
-  right: 350px;
-  transform: rotate(-50deg);
-}
-.time-schedule .enjoy__card__01 .enjoy__arrow--3 {
-  bottom: 50px;
-  right: 230px;
-  transform: rotate(-50deg);
-}
-@media screen and (max-width: 768px) {
-  .time-schedule .enjoy__card__01 .enjoy__arrow--2 {
-    right: 300px;
-  }
-  .time-schedule .enjoy__card__01 .enjoy__arrow--3 {
-    bottom: 100px;
-  }
-}
-@media screen and (max-width: 425px) {
-  .time-schedule .enjoy__card__01 .enjoy__arrow {
-    display: none;
-  }
+  bottom: 20%;
+  left: 8%;
+  transform: rotate(-20deg);
 }
 .time-schedule .enjoy__card__02 {
-  background-color: #329CF8;
-  border: 4px solid #329CF8;
+  background-color: #FFBB8D;
+  border: 4px solid #FFBB8D;
   top: 210px;
 }
 .time-schedule .enjoy__card__02 .enjoy__img--sticker {
-  top: 150px;
-  right: 300px;
-  border: none;
-  box-shadow: none;
-  width: 180px;
-  -o-object-fit: contain;
-     object-fit: contain;
-  z-index: 5;
+  top: 50%;
+  right: 10%;
+  transform: rotate(-5deg);
 }
 .time-schedule .enjoy__card__02 .enjoy__img--photo1 {
-  top: 100px;
-  right: 80px;
+  top: 15%;
+  right: 4%;
   transform: rotate(5deg);
 }
 .time-schedule .enjoy__card__02 .enjoy__img--photo2 {
-  top: 270px;
-  right: 160px;
-  transform: rotate(-5deg);
-}
-.time-schedule .enjoy__card__02 .enjoy__img--photo3 {
-  bottom: 50px;
-  right: 50px;
-  transform: rotate(3deg);
-}
-@media screen and (max-width: 768px) {
-  .time-schedule .enjoy__card__02 .enjoy__img--sticker {
-    top: 100px;
-  }
-  .time-schedule .enjoy__card__02 .enjoy__img--photo3 {
-    bottom: 100px;
-    right: 100px;
-  }
-}
-@media screen and (max-width: 425px) {
-  .time-schedule .enjoy__card__02 .enjoy__img--sticker {
-    top: 50px;
-    right: 100px;
-  }
-  .time-schedule .enjoy__card__02 .enjoy__img--photo1 {
-    top: 60px;
-    right: 20px;
-  }
-  .time-schedule .enjoy__card__02 .enjoy__img--photo2 {
-    display: none;
-  }
-  .time-schedule .enjoy__card__02 .enjoy__img--photo3 {
-    display: none;
-  }
+  bottom: 5%;
+  left: 20%;
+  transform: rotate(-3deg);
 }
 .time-schedule .enjoy__card__02 .enjoy__arrow--1 {
-  top: 200px;
-  right: 250px;
-  transform: rotate(-90deg);
+  top: 50%;
+  left: 10%;
+  transform: rotate(-110deg);
 }
 .time-schedule .enjoy__card__02 .enjoy__arrow--2 {
-  top: 330px;
-  right: 330px;
+  bottom: 10%;
+  left: 0;
   transform: rotate(-50deg);
-}
-.time-schedule .enjoy__card__02 .enjoy__arrow--3 {
-  bottom: 40px;
-  right: 220px;
-  transform: rotate(-50deg);
-}
-@media screen and (max-width: 768px) {
-  .time-schedule .enjoy__card__02 .enjoy__arrow--1 {
-    top: 180px;
-  }
-  .time-schedule .enjoy__card__02 .enjoy__arrow--2 {
-    top: 350px;
-    right: 300px;
-    transform: rotate(-100deg);
-  }
-  .time-schedule .enjoy__card__02 .enjoy__arrow--3 {
-    bottom: 80px;
-    right: 250px;
-  }
-}
-@media screen and (max-width: 425px) {
-  .time-schedule .enjoy__card__02 .enjoy__arrow {
-    display: none;
-  }
 }
 .time-schedule .enjoy__card__03 {
-  background-color: #FFBB8D;
-  border: 4px solid #FFBB8D;
+  background-color: #FF8737;
+  border: 4px solid #FF8737;
   top: 220px;
+  margin-bottom: 0;
 }
 .time-schedule .enjoy__card__03 .enjoy__img--sticker {
-  top: 250px;
-  right: 340px;
-  border: none;
-  box-shadow: none;
-  width: 180px;
-  -o-object-fit: contain;
-     object-fit: contain;
-  z-index: 5;
+  top: 55%;
+  right: 15%;
+  transform: rotate(-5deg);
 }
 .time-schedule .enjoy__card__03 .enjoy__img--photo1 {
-  top: 90px;
-  right: 150px;
+  top: 20%;
+  right: 10%;
   transform: rotate(5deg);
 }
 .time-schedule .enjoy__card__03 .enjoy__img--photo2 {
-  top: 290px;
-  right: 160px;
-  transform: rotate(-5deg);
-}
-.time-schedule .enjoy__card__03 .enjoy__img--photo3 {
-  bottom: 50px;
-  right: 50px;
-  transform: rotate(3deg);
-}
-@media screen and (max-width: 768px) {
-  .time-schedule .enjoy__card__03 .enjoy__img--sticker {
-    top: 220px;
-    right: 250px;
-  }
-  .time-schedule .enjoy__card__03 .enjoy__img--photo2 {
-    top: 280px;
-    right: 150px;
-  }
-  .time-schedule .enjoy__card__03 .enjoy__img--photo3 {
-    bottom: 80px;
-    right: 80px;
-  }
-}
-@media screen and (max-width: 425px) {
-  .time-schedule .enjoy__card__03 .enjoy__img--sticker {
-    top: 420px;
-    right: 200px;
-  }
-  .time-schedule .enjoy__card__03 .enjoy__img--photo1 {
-    top: 90px;
-    right: 30px;
-  }
-  .time-schedule .enjoy__card__03 .enjoy__img--photo2 {
-    display: none;
-  }
-  .time-schedule .enjoy__card__03 .enjoy__img--photo3 {
-    bottom: 30px;
-    right: 50px;
-  }
+  bottom: 5%;
+  left: 20%;
+  transform: rotate(-2deg);
 }
 .time-schedule .enjoy__card__03 .enjoy__arrow--1 {
-  top: 150px;
-  right: 330px;
-  transform: rotate(-90deg);
+  top: 52%;
+  left: 0;
+  transform: rotate(-100deg);
 }
 .time-schedule .enjoy__card__03 .enjoy__arrow--2 {
-  top: 330px;
-  right: 340px;
-  transform: rotate(-50deg);
+  bottom: 15%;
+  left: 2%;
+  transform: rotate(-40deg);
 }
-.time-schedule .enjoy__card__03 .enjoy__arrow--3 {
-  bottom: 100px;
-  right: 240px;
-  transform: rotate(-50deg);
-}
-@media screen and (max-width: 768px) {
-  .time-schedule .enjoy__card__03 .enjoy__arrow--2 {
-    right: 300px;
-  }
-}
-@media screen and (max-width: 425px) {
-  .time-schedule .enjoy__card__03 .enjoy__arrow {
-    display: none;
-  }
-}
-.time-schedule .enjoy__card__04 {
-  background-color: #FFBB8D;
-  border: 4px solid #FFBB8D;
-  top: 230px;
-}
-.time-schedule .enjoy__card__04 .enjoy__img--sticker {
-  top: 80px;
-  right: 250px;
-  border: none;
-  box-shadow: none;
-  width: 180px;
-  -o-object-fit: contain;
-     object-fit: contain;
-  z-index: 5;
-}
-.time-schedule .enjoy__card__04 .enjoy__img--photo1 {
-  top: 120px;
-  right: 40px;
-  transform: rotate(5deg);
-}
-.time-schedule .enjoy__card__04 .enjoy__img--photo2 {
-  top: 290px;
-  right: 160px;
-  transform: rotate(-5deg);
-}
-.time-schedule .enjoy__card__04 .enjoy__img--photo3 {
-  bottom: 50px;
-  right: 50px;
-  transform: rotate(3deg);
-}
-@media screen and (max-width: 425px) {
-  .time-schedule .enjoy__card__04 .enjoy__img--sticker {
-    top: 50px;
-    right: 30px;
-  }
-  .time-schedule .enjoy__card__04 .enjoy__img--photo1 {
-    display: none;
-  }
-  .time-schedule .enjoy__card__04 .enjoy__img--photo2 {
-    top: auto;
-    bottom: 220px;
-    right: 30px;
-  }
-  .time-schedule .enjoy__card__04 .enjoy__img--photo3 {
-    display: none;
-  }
-}
-.time-schedule .enjoy__card__04 .enjoy__arrow--1 {
-  top: 200px;
-  right: 210px;
-  transform: rotate(-80deg);
-}
-.time-schedule .enjoy__card__04 .enjoy__arrow--2 {
-  top: 330px;
-  right: 350px;
-  transform: rotate(-50deg);
-}
-.time-schedule .enjoy__card__04 .enjoy__arrow--3 {
-  bottom: 50px;
-  right: 230px;
-  transform: rotate(-50deg);
-}
-@media screen and (max-width: 425px) {
-  .time-schedule .enjoy__card__04 .enjoy__arrow {
-    display: none;
-  }
-}
-.time-schedule .enjoy__card__header {
-  display: flex;
-  position: relative;
+.time-schedule .enjoy__header {
+  display: contents;
 }
 .time-schedule .enjoy__number {
   position: absolute;
@@ -1639,46 +1467,36 @@ body.nav-open {
   padding: 50px;
   border-radius: 30px 0 90px 0;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1000px) {
   .time-schedule .enjoy__number {
-    padding: 20px;
+    padding: 25px;
+    font-size: 1.5rem;
     border-radius: 20px 0 50px 0;
   }
 }
+@media screen and (max-width: 655px) {
+  .time-schedule .enjoy__number {
+    padding: 20px;
+    font-size: 1.25rem;
+  }
+}
 .time-schedule .enjoy__lead {
+  grid-column: 1/-1;
+  grid-row: 1;
   font-size: 2.2rem;
   font-family: "M PLUS 1", sans-serif;
   margin-bottom: 40px;
   margin-left: 100px;
+  align-self: end;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1000px) and (min-width: 656px) {
   .time-schedule .enjoy__lead {
-    font-size: 1.875rem;
+    font-size: 1.4rem;
   }
 }
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 655px) {
   .time-schedule .enjoy__lead {
-    font-size: 1.25rem;
-  }
-}
-@media screen and (max-width: 768px) {
-  .time-schedule .enjoy__timeline {
-    width: 60%;
-  }
-}
-@media screen and (max-width: 425px) {
-  .time-schedule .enjoy__timeline {
-    width: 90%;
-    margin-inline: auto;
-  }
-}
-.time-schedule .enjoy__timeline .enjoy__period {
-  font-size: 1.4rem;
-  margin-bottom: 20px;
-}
-@media screen and (max-width: 425px) {
-  .time-schedule .enjoy__timeline .enjoy__period {
-    font-size: 1rem;
+    font-size: 1.2rem;
   }
 }
 .time-schedule .enjoy__item {
@@ -1688,18 +1506,22 @@ body.nav-open {
   display: flex;
   flex-direction: column;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1000px) {
   .time-schedule .enjoy__item {
-    font-size: 1rem;
+    font-size: 0.9rem;
+  }
+}
+@media screen and (max-width: 425px) {
+  .time-schedule .enjoy__item {
+    font-size: 0.625rem;
   }
 }
 .time-schedule .enjoy__item dt {
-  display: inline-block;
+  display: flex;
+  align-items: flex-start;
   border-bottom: 1px dashed rgba(255, 255, 255, 0.5);
   padding-bottom: 10px;
   margin-bottom: 10px;
-  display: flex;
-  align-items: flex-start;
 }
 .time-schedule .enjoy__item dt span {
   margin: 0 10px;
@@ -1711,6 +1533,16 @@ body.nav-open {
   border-bottom: 1px dashed rgba(255, 255, 255, 0.5);
   padding-left: 50px;
   padding-bottom: 10px;
+}
+@media screen and (max-width: 1000px) {
+  .time-schedule .enjoy__item dd {
+    padding-left: 30px;
+  }
+}
+@media screen and (max-width: 655px) {
+  .time-schedule .enjoy__item dd {
+    padding-left: 20px;
+  }
 }
 .time-schedule .schedule, .time-schedule .map {
   position: relative;
@@ -2921,7 +2753,6 @@ section,
 @media (max-width: 769px) {
   #special-stage2 .stage-right .cast-section .cast-category {
     display: block;
-    width: -moz-fit-content;
     width: fit-content;
     padding-top: 20px;
     margin: 0 auto 30px;
@@ -2971,8 +2802,7 @@ section,
 #special-stage2 .hexagon-profile .profile-box img {
   width: 100%;
   height: 150px;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   display: block;
 }
 #special-stage2 .hexagon-profile .profile-info {
@@ -3213,8 +3043,7 @@ section,
 #tour.event-section .tour-grid .grid-left img {
   width: 100%;
   aspect-ratio: 3/2;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 #tour.event-section .tour-grid .grid-right {
   display: flex;
@@ -3230,8 +3059,7 @@ section,
 #tour.event-section .tour-grid .grid-right img {
   width: 100%;
   aspect-ratio: 3/2;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 @media (max-width: 768px) {
   #tour.event-section .tour-grid .grid-right img {
@@ -3312,8 +3140,7 @@ section,
   }
 }
 .pu img {
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   vertical-align: bottom;
 }
 .pu .sec__title2 {
@@ -3672,7 +3499,6 @@ section,
 }
 .pu1 .pu__infocontent .info_sched {
   text-align: center;
-  width: -moz-fit-content;
   width: fit-content;
   margin-inline: auto;
   border: 1px solid #3777e4;
@@ -4110,8 +3936,7 @@ section,
   width: 100%; /* 2つの画像を均等な幅にする場合。適宜調整してください */
   /* 重要！ 画像が歪むのを防ぐための設定 */
   height: 100%; /* コンテナの高さいっぱいに広げます */
-  -o-object-fit: cover;
-     object-fit: cover; /* アスペクト比を維持し、コンテナを埋めるようにトリミングしてフィットさせます */
+  object-fit: cover; /* アスペクト比を維持し、コンテナを埋めるようにトリミングしてフィットさせます */
 }
 @media screen and (max-width: 1024px) {
   .pu1 .pu3__content {
@@ -4135,8 +3960,7 @@ section,
 }
 .village-main .village-main-wrapper img {
   width: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   vertical-align: bottom;
 }
 .village-main .village-main-wrapper {
