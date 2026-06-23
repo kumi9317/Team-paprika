@@ -225,6 +225,48 @@ $(document).on('click', function(e) {
     }
 });
 
+
+/*==================================
+　　pu__tab
+==================================*/
+function getHashId(hashIdName) {
+    if (!hashIdName) {
+        return;
+    }
+
+    const $pickupEvent = $('#pickup-event');
+    const $targetTab = $pickupEvent.find('.tab a[href="' + hashIdName + '"]');
+    const $targetArea = $pickupEvent.find(hashIdName);
+
+    if (!$targetTab.length || !$targetArea.length) {
+        return;
+    }
+
+    $pickupEvent.find('.tab li').removeClass('active');
+    $targetTab.parent('li').addClass('active');
+
+    $pickupEvent.find('.area').removeClass('is-active');
+    $targetArea.addClass('is-active');
+}
+
+$('.tab a').on('click', function (event) {
+    event.preventDefault();
+
+    const idName = $(this).attr('href');
+    getHashId(idName);
+});
+
+$(window).on('load', function () {
+    const hashName = location.hash;
+
+    if (hashName) {
+        getHashId(hashName);
+        return;
+    }
+
+    getHashId('#pu-botharea');
+});
+
 /*==================================
 　　pu__slick
 ==================================*/
