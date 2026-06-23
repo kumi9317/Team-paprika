@@ -82,7 +82,7 @@ $(function() {
                 scrollTrigger: {
                     trigger: ".main-event",
                     start: "top top",
-                    end: "+=2000", 
+                    end: "+=2600", 
                     scrub: 1.5, 
                     pin: true,
                     pinSpacing: true, 
@@ -98,6 +98,8 @@ $(function() {
               .to(".js-event-item:nth-of-type(2)", { opacity: 0, duration: 3, delay: 5 })
               .to(".js-event-item:nth-of-type(3)", { opacity: 1, visibility: "visible", duration: 5 })
               .to(".js-event-item:nth-of-type(3)", { opacity: 0, duration: 3, delay: 5 })
+              .to(".js-event-item:nth-of-type(4)", { opacity: 1, visibility: "visible", duration: 5 })
+              .to(".js-event-item:nth-of-type(4)", { opacity: 0, duration: 3, delay: 5 })
               .to(".js-title", { opacity: 0, duration: 2 }, "-=1")
               .to(".main-event__speed-line", { opacity: 0, duration: 2 }, "-=2")
               .to({}, { duration: 5 });
@@ -221,6 +223,48 @@ $(document).on('click', function(e) {
         $('.sp-accordion__body').removeClass('is-open');
         $('.sp-accordion__btn').removeClass('is-open');
     }
+});
+
+
+/*==================================
+　　pu__tab
+==================================*/
+function getHashId(hashIdName) {
+    if (!hashIdName) {
+        return;
+    }
+
+    const $pickupEvent = $('#pickup-event');
+    const $targetTab = $pickupEvent.find('.tab a[href="' + hashIdName + '"]');
+    const $targetArea = $pickupEvent.find(hashIdName);
+
+    if (!$targetTab.length || !$targetArea.length) {
+        return;
+    }
+
+    $pickupEvent.find('.tab li').removeClass('active');
+    $targetTab.parent('li').addClass('active');
+
+    $pickupEvent.find('.area').removeClass('is-active');
+    $targetArea.addClass('is-active');
+}
+
+$('.tab a').on('click', function (event) {
+    event.preventDefault();
+
+    const idName = $(this).attr('href');
+    getHashId(idName);
+});
+
+$(window).on('load', function () {
+    const hashName = location.hash;
+
+    if (hashName) {
+        getHashId(hashName);
+        return;
+    }
+
+    getHashId('#pu-botharea');
 });
 
 /*==================================

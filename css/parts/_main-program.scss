@@ -5,7 +5,7 @@
     position: relative;
 
     .main-event {
-        height: 95vh; // スクロール量を確保
+        height: 100vh; // スクロール量を確保
         @media screen and (max-width: 425px) {
             height: auto; // 高さを中身に合わせる
         }
@@ -152,6 +152,7 @@
             flex-shrink: 0; // 幅が縮まないように固定
             margin-right: -100px; // ★ここがポイント！テキストの上に重ねる（ネガティブマージン）
             z-index: 50; // ★テキスト(wrapper)より上に持ってくる
+            aspect-ratio: 3 / 2;
             @media screen and (max-width: 1280px) {
                 max-width: 550px;
                 margin-right: -60px;
@@ -294,6 +295,9 @@
                 flex-direction: column; // 縦並びにする
                 
                 h3 {
+                    span {
+                        font-size: 1.23rem;
+                    }
                     font-size: 1.5rem;
                     color: $black;
                     margin-bottom: 15px;
