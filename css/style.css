@@ -3684,15 +3684,12 @@ section,
 }
 
 #pu-jibuzaka .pu__wrapper {
-  background: #b9e5ff;
+  background: #ff9e5e;
 }
 
 .pu-eventarea {
   position: relative;
   scroll-margin-top: 130px;
-}
-.pu-eventarea .pu__wrapper {
-  background: #b9e5ff;
 }
 .pu-eventarea h3 {
   padding-top: clamp(130px, 130px + 40 * (100vw - 500px) / 780, 170px);
@@ -3878,7 +3875,7 @@ section,
 }
 
 #pu-hiraya .pu__wrapper {
-  background: #ff9e5e;
+  background: #b9e5ff;
 }
 
 .village-main {
