@@ -540,24 +540,50 @@
             position: relative;
             z-index: 10;
 
-            display: block;        // aタグをブロック要素にする
-            text-decoration: none; // 下線を消す
-            color: inherit;        // 文字色を継承（親の黒色のままにする）
             transition: transform 0.3s ease, box-shadow 0.3s ease; // アニメーション
 
             &:hover {
                 transform: translateY(-5px); // 少し上に浮かす
                 box-shadow: 0 10px 20px rgba(0,0,0,0.15); // 影を強くする
-                
-                .event-name {
-                    text-decoration: underline; // ホバー時にタイトルに下線（お好みで）
-                }
             }
 
             @media screen and (max-width: 425px) {
                 width: 100%;
             }
         }
+                
+        .event-name {
+            display: block;
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin: 10px 0;
+            text-decoration: none;
+            cursor: pointer; 
+
+            &--blue   { color: $blue; }
+            &--orange { color: $accent_orange; }
+
+            &:hover { 
+                text-decoration: underline;
+                
+             }
+        }
+
+        .tag-list {
+            &__li {
+                a {
+                    color: #999;
+                    text-decoration: none;
+                    font-size: 0.875rem;
+                    white-space: nowrap;
+
+                    &:hover {
+                        color: $blue;
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }        
     
         &__img-wrapper {
             position: relative;
