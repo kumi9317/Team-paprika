@@ -347,7 +347,6 @@ a {
   left: 50%;
   transform: translateX(-50%);
   white-space: nowrap;
-  width: -moz-fit-content;
   width: fit-content;
   background: #fff;
   border-bottom: 1px solid #ddd;
@@ -557,8 +556,7 @@ body.nav-open {
 .main-program .main-event__speed-line img {
   width: 100vw;
   height: 100vh;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 .main-program .main-event .main-event-container {
   position: relative;
@@ -683,8 +681,7 @@ body.nav-open {
   position: relative;
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   border: 10px solid #fff;
   box-shadow: 4px 4px 10px 5px rgba(51, 51, 51, 0.5);
   transform: rotate(2deg);
@@ -848,7 +845,6 @@ body.nav-open {
   transition: 0.3s;
   margin-top: 10px;
   margin-left: auto;
-  width: -moz-fit-content;
   width: fit-content;
   align-self: flex-end;
   position: relative;
@@ -991,22 +987,43 @@ body.nav-open {
   text-align: center;
   position: relative;
   z-index: 10;
-  display: block;
-  text-decoration: none;
-  color: inherit;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 .main-program .pick-up__item:hover {
   transform: translateY(-5px);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
 }
-.main-program .pick-up__item:hover .event-name {
-  text-decoration: underline;
-}
 @media screen and (max-width: 425px) {
   .main-program .pick-up__item {
     width: 100%;
   }
+}
+.main-program .pick-up .event-name {
+  display: block;
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin: 10px 0;
+  text-decoration: none;
+  cursor: pointer;
+}
+.main-program .pick-up .event-name--blue {
+  color: #329CF8;
+}
+.main-program .pick-up .event-name--orange {
+  color: #FF8737;
+}
+.main-program .pick-up .event-name:hover {
+  text-decoration: underline;
+}
+.main-program .pick-up .tag-list__li a {
+  color: #999;
+  text-decoration: none;
+  font-size: 0.875rem;
+  white-space: nowrap;
+}
+.main-program .pick-up .tag-list__li a:hover {
+  color: #329CF8;
+  text-decoration: underline;
 }
 .main-program .pick-up__img-wrapper {
   position: relative;
@@ -1016,8 +1033,7 @@ body.nav-open {
   width: 100%;
   height: 400px;
   display: block;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 .main-program .pick-up .label {
   position: absolute;
@@ -1190,8 +1206,7 @@ body.nav-open {
 .obi img {
   width: 100%;
   height: auto;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   vertical-align: bottom;
   /* ★ アニメーションの設定 */
   transition: transform 1.5s ease-out;
@@ -1331,8 +1346,7 @@ body.nav-open {
   width: clamp(140px, 55%, 200px);
   height: auto;
   aspect-ratio: 3/2;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   z-index: 2;
 }
 .time-schedule .enjoy .enjoy__img--big {
@@ -1342,8 +1356,7 @@ body.nav-open {
   border: none;
   box-shadow: none;
   width: clamp(120px, 50%, 180px);
-  -o-object-fit: contain;
-     object-fit: contain;
+  object-fit: contain;
   z-index: 5;
   aspect-ratio: unset;
 }
@@ -1357,8 +1370,7 @@ body.nav-open {
     border: 2px solid #fff;
     border-radius: 10px;
     aspect-ratio: 3/2;
-    -o-object-fit: cover;
-       object-fit: cover;
+    object-fit: cover;
   }
   .time-schedule .enjoy .enjoy__img--big {
     width: 50%;
@@ -2071,7 +2083,7 @@ body.nav-open {
 }
 .footer h2 {
   padding-top: clamp(60px, 60px + 40 * (100vw - 360px) / 920, 100px);
-  margin-bottom: clamp(50px, 50px + 50 * (100vw - 360px) / 920, 100px);
+  margin-bottom: clamp(25px, 25px + 25 * (100vw - 360px) / 920, 50px);
   z-index: 5;
   position: relative;
 }
@@ -2087,6 +2099,7 @@ body.nav-open {
   z-index: 5;
   margin-bottom: 30px;
   position: relative;
+  text-align: center;
 }
 @media screen and (max-width: 768px) {
   .footer__wrapper h3 {
@@ -2096,7 +2109,7 @@ body.nav-open {
 }
 .footer__wrapper p {
   text-align: center;
-  margin-block: 40px;
+  margin-block: 20px;
 }
 .footer__innerSNS {
   display: flex;
@@ -2193,28 +2206,54 @@ body.nav-open {
   top: 0px;
 }
 .footer__logo {
-  text-align: center;
-  margin-block: clamp(20px, 20px + 60 * (100vw - 360px) / 920, 80px);
+  margin-block: clamp(10px, 10px + 20 * (100vw - 360px) / 920, 40px);
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: end;
+  position: relative;
+  z-index: 1;
+  padding-inline: 5%;
+  padding-top: clamp(20px, 20px + 20 * (100vw - 360px) / 920, 60px);
+}
+@media (max-width: 500px) {
+  .footer__logo {
+    padding-inline: 2%;
+  }
 }
 .footer__logo a {
+  grid-column: 2;
   display: inline-block;
   transition: all 0.3s ease;
   cursor: pointer;
 }
 .footer__logo a img {
-  width: clamp(200px, 200px + 200 * (100vw - 360px) / 920, 400px);
+  width: clamp(50px, 50px + 50 * (100vw - 360px) / 920, 100px);
+  display: block;
 }
 .footer__logo a:hover {
   transform: translateY(-5px) scale(1.05);
   filter: brightness(1.2) drop-shadow(0 5px 10px rgba(0, 0, 0, 0.2));
+}
+.footer__logo .syusai {
+  grid-column: 3;
+  text-align: right;
+  font-weight: 700;
+  font-size: clamp(10px, 10px + 2 * (100vw - 360px) / 920, 16px);
+  color: #666;
 }
 .footer__copy {
   background-color: rgba(0, 0, 0, 0.2);
   padding-block: 2px;
   text-align: center;
 }
+@media (max-width: 500px) {
+  .footer__copy {
+    padding-block: 1px;
+  }
+}
 .footer__copy small {
   color: white;
+  font-size: clamp(10px, 10px + 2 * (100vw - 360px) / 920, 16px);
 }
 .footer__ashirai .footer-ashirai1 {
   position: absolute;
@@ -2222,6 +2261,7 @@ body.nav-open {
   width: clamp(300px, 50vw, 700px);
   right: 50%;
   margin-right: clamp(100px, 20vw, 500px);
+  z-index: 0;
 }
 .footer__ashirai .footer-ashirai2 {
   position: absolute;
@@ -2229,6 +2269,7 @@ body.nav-open {
   bottom: -100px;
   left: 50%;
   margin-left: clamp(100px, 20vw, 600px);
+  z-index: 0;
 }
 
 body {
@@ -2766,7 +2807,6 @@ section,
 @media (max-width: 769px) {
   #special-stage2 .stage-right .cast-section .cast-category {
     display: block;
-    width: -moz-fit-content;
     width: fit-content;
     padding-top: 20px;
     margin: 0 auto 30px;
@@ -2816,8 +2856,7 @@ section,
 #special-stage2 .hexagon-profile .profile-box img {
   width: 100%;
   height: 150px;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   display: block;
 }
 #special-stage2 .hexagon-profile .profile-info {
@@ -3058,8 +3097,7 @@ section,
 #tour.event-section .tour-grid .grid-left img {
   width: 100%;
   aspect-ratio: 3/2;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 #tour.event-section .tour-grid .grid-right {
   display: flex;
@@ -3075,8 +3113,7 @@ section,
 #tour.event-section .tour-grid .grid-right img {
   width: 100%;
   aspect-ratio: 3/2;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 @media (max-width: 768px) {
   #tour.event-section .tour-grid .grid-right img {
@@ -3205,8 +3242,7 @@ section,
   }
 }
 .pu img {
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   vertical-align: bottom;
 }
 .pu .sec__title2 {
@@ -3567,7 +3603,6 @@ section,
 }
 .pu-botharea .pu__infocontent .info_sched {
   text-align: center;
-  width: -moz-fit-content;
   width: fit-content;
   margin-inline: auto;
   border: 1px solid #3777e4;
@@ -3757,7 +3792,6 @@ section,
 }
 .pu-eventarea .pu__infocontent .info_sched {
   text-align: center;
-  width: -moz-fit-content;
   width: fit-content;
   margin-inline: auto;
   border: 1px solid #3777e4;
@@ -3894,8 +3928,7 @@ section,
 }
 .village-main .village-main-wrapper img {
   width: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   vertical-align: bottom;
 }
 .village-main .village-main-wrapper {
