@@ -2457,13 +2457,14 @@ section,
   }
 }
 
-#jibuzaka.event-section,
-#hiraya.event-section {
+#mix-bowl.event-section,
+#garage-shokudo.event-section {
   padding-bottom: 50px;
   margin: 0 auto;
+  scroll-margin-top: 100px;
 }
-#jibuzaka.event-section .event-title,
-#hiraya.event-section .event-title {
+#mix-bowl.event-section .event-title,
+#garage-shokudo.event-section .event-title {
   display: flex;
   align-items: flex-end;
   gap: 8px;
@@ -2471,9 +2472,9 @@ section,
   margin: 20px 0;
   flex-wrap: wrap;
 }
-#jibuzaka.event-section .event-title .title-text,
-#hiraya.event-section .event-title .title-text {
-  font-family: "Chakra Petch", sans-serif;
+#mix-bowl.event-section .event-title .title-text,
+#garage-shokudo.event-section .event-title .title-text {
+  font-family: "Zen Maru Gothic", sans-serif;
   font-size: 1.75rem;
   font-weight: 700;
   color: #d00;
@@ -2481,36 +2482,36 @@ section,
   line-height: 1.2;
 }
 @media (max-width: 769px) {
-  #jibuzaka.event-section .event-title .title-text,
-  #hiraya.event-section .event-title .title-text {
+  #mix-bowl.event-section .event-title .title-text,
+  #garage-shokudo.event-section .event-title .title-text {
     font-size: 1.5rem;
   }
 }
 @media (max-width: 426px) {
-  #jibuzaka.event-section .event-title .title-text,
-  #hiraya.event-section .event-title .title-text {
+  #mix-bowl.event-section .event-title .title-text,
+  #garage-shokudo.event-section .event-title .title-text {
     font-size: 1.25rem;
   }
 }
 @media (max-width: 361px) {
-  #jibuzaka.event-section .event-title .title-text,
-  #hiraya.event-section .event-title .title-text {
+  #mix-bowl.event-section .event-title .title-text,
+  #garage-shokudo.event-section .event-title .title-text {
     font-size: 1rem;
   }
 }
-#jibuzaka.event-section .event-title .title-text .tab-br,
-#hiraya.event-section .event-title .title-text .tab-br {
+#mix-bowl.event-section .event-title .title-text .tab-br,
+#garage-shokudo.event-section .event-title .title-text .tab-br {
   display: none;
 }
 @media (max-width: 769px) {
-  #jibuzaka.event-section .event-title .title-text .tab-br,
-  #hiraya.event-section .event-title .title-text .tab-br {
+  #mix-bowl.event-section .event-title .title-text .tab-br,
+  #garage-shokudo.event-section .event-title .title-text .tab-br {
     display: block;
   }
 }
-#jibuzaka.event-section .event-title .main-title,
-#hiraya.event-section .event-title .main-title {
-  font-family: "Chakra Petch", sans-serif;
+#mix-bowl.event-section .event-title .main-title,
+#garage-shokudo.event-section .event-title .main-title {
+  font-family: "M PLUS 1", sans-serif;
   font-size: 5rem;
   font-weight: 700;
   color: #333333;
@@ -2518,29 +2519,29 @@ section,
   margin: 0 4px;
 }
 @media (max-width: 769px) {
-  #jibuzaka.event-section .event-title .main-title,
-  #hiraya.event-section .event-title .main-title {
+  #mix-bowl.event-section .event-title .main-title,
+  #garage-shokudo.event-section .event-title .main-title {
     font-size: 4.5rem;
   }
 }
 @media (max-width: 426px) {
-  #jibuzaka.event-section .event-title .main-title,
-  #hiraya.event-section .event-title .main-title {
+  #mix-bowl.event-section .event-title .main-title,
+  #garage-shokudo.event-section .event-title .main-title {
     font-size: 3rem;
   }
 }
 @media (max-width: 361px) {
-  #jibuzaka.event-section .event-title .main-title,
-  #hiraya.event-section .event-title .main-title {
+  #mix-bowl.event-section .event-title .main-title,
+  #garage-shokudo.event-section .event-title .main-title {
     font-size: 2.25rem;
   }
 }
-#jibuzaka.event-section .event-title .main-title .main-title-red,
-#hiraya.event-section .event-title .main-title .main-title-red {
+#mix-bowl.event-section .event-title .main-title .main-title-red,
+#garage-shokudo.event-section .event-title .main-title .main-title-red {
   position: relative;
 }
-#jibuzaka.event-section .event-title .main-title .main-title-red::after,
-#hiraya.event-section .event-title .main-title .main-title-red::after {
+#mix-bowl.event-section .event-title .main-title .main-title-red::after,
+#garage-shokudo.event-section .event-title .main-title .main-title-red::after {
   content: "MIX";
   position: absolute;
   top: 26px;
@@ -2549,83 +2550,83 @@ section,
   z-index: -1;
 }
 @media (max-width: 769px) {
-  #jibuzaka.event-section .event-title .main-title .main-title-red::after,
-  #hiraya.event-section .event-title .main-title .main-title-red::after {
+  #mix-bowl.event-section .event-title .main-title .main-title-red::after,
+  #garage-shokudo.event-section .event-title .main-title .main-title-red::after {
     top: 22px;
     left: 6px;
   }
 }
 @media (max-width: 426px) {
-  #jibuzaka.event-section .event-title .main-title .main-title-red::after,
-  #hiraya.event-section .event-title .main-title .main-title-red::after {
+  #mix-bowl.event-section .event-title .main-title .main-title-red::after,
+  #garage-shokudo.event-section .event-title .main-title .main-title-red::after {
     top: 15px;
     left: 6px;
   }
 }
 @media (max-width: 361px) {
-  #jibuzaka.event-section .event-title .main-title .main-title-red::after,
-  #hiraya.event-section .event-title .main-title .main-title-red::after {
+  #mix-bowl.event-section .event-title .main-title .main-title-red::after,
+  #garage-shokudo.event-section .event-title .main-title .main-title-red::after {
     top: 12px;
     left: 5px;
   }
 }
-#jibuzaka.event-section .catchphrase,
-#hiraya.event-section .catchphrase {
-  font-family: "Chakra Petch", sans-serif;
+#mix-bowl.event-section .catchphrase,
+#garage-shokudo.event-section .catchphrase {
+  font-family: "Zen Maru Gothic", sans-serif;
   font-size: 1.25rem;
   font-weight: 700;
   margin: 40px 0;
   line-height: 1.4;
   letter-spacing: -0.01em;
 }
-#jibuzaka.event-section .catchphrase .catchphrase-highlight,
-#hiraya.event-section .catchphrase .catchphrase-highlight {
+#mix-bowl.event-section .catchphrase .catchphrase-highlight,
+#garage-shokudo.event-section .catchphrase .catchphrase-highlight {
   font-size: 1.5rem;
   display: block;
 }
-#jibuzaka.event-section .catchphrase .sp-br,
-#hiraya.event-section .catchphrase .sp-br {
+#mix-bowl.event-section .catchphrase .sp-br,
+#garage-shokudo.event-section .catchphrase .sp-br {
   display: none;
 }
 @media (max-width: 426px) {
-  #jibuzaka.event-section .catchphrase,
-  #hiraya.event-section .catchphrase {
+  #mix-bowl.event-section .catchphrase,
+  #garage-shokudo.event-section .catchphrase {
     font-size: 1rem;
   }
-  #jibuzaka.event-section .catchphrase .sp-br,
-  #hiraya.event-section .catchphrase .sp-br {
+  #mix-bowl.event-section .catchphrase .sp-br,
+  #garage-shokudo.event-section .catchphrase .sp-br {
     display: block;
   }
 }
 @media (max-width: 361px) {
-  #jibuzaka.event-section .catchphrase,
-  #hiraya.event-section .catchphrase {
+  #mix-bowl.event-section .catchphrase,
+  #garage-shokudo.event-section .catchphrase {
     font-size: 0.9rem;
   }
-  #jibuzaka.event-section .catchphrase .catchphrase-highlight,
-  #hiraya.event-section .catchphrase .catchphrase-highlight {
+  #mix-bowl.event-section .catchphrase .catchphrase-highlight,
+  #garage-shokudo.event-section .catchphrase .catchphrase-highlight {
     font-size: 1.25rem;
   }
 }
-#jibuzaka.event-section .hero-image-box,
-#hiraya.event-section .hero-image-box {
+#mix-bowl.event-section .hero-image-box,
+#garage-shokudo.event-section .hero-image-box {
   margin-bottom: 30px;
 }
-#jibuzaka.event-section .hero-image-box img,
-#hiraya.event-section .hero-image-box img {
+#mix-bowl.event-section .hero-image-box img,
+#garage-shokudo.event-section .hero-image-box img {
   width: 100%;
   height: auto;
   display: block;
   border-radius: 4px;
   box-shadow: 4px 4px 10px 5px rgba(51, 51, 51, 0.5);
 }
-#jibuzaka.event-section .description-block,
-#hiraya.event-section .description-block {
+#mix-bowl.event-section .description-block,
+#garage-shokudo.event-section .description-block {
   max-width: 800px;
   margin: 40px 0;
 }
-#jibuzaka.event-section .description-block p,
-#hiraya.event-section .description-block p {
+#mix-bowl.event-section .description-block p,
+#garage-shokudo.event-section .description-block p {
   font-family: "Zen Maru Gothic", sans-serif;
   font-size: 1rem;
   line-height: 2.2;
@@ -2634,8 +2635,8 @@ section,
   text-align: justify;
   letter-spacing: 0.03em;
 }
-#jibuzaka.event-section .description-block .drop-cap,
-#hiraya.event-section .description-block .drop-cap {
+#mix-bowl.event-section .description-block .drop-cap,
+#garage-shokudo.event-section .description-block .drop-cap {
   float: left;
   font-family: "M PLUS 1", sans-serif;
   font-size: 3rem;
@@ -2646,52 +2647,87 @@ section,
   color: #333333;
 }
 @media (max-width: 769px) {
-  #jibuzaka.event-section .description-block .drop-cap,
-  #hiraya.event-section .description-block .drop-cap {
+  #mix-bowl.event-section .description-block .drop-cap,
+  #garage-shokudo.event-section .description-block .drop-cap {
     font-size: 2.5rem;
   }
 }
 @media (max-width: 426px) {
-  #jibuzaka.event-section .description-block .drop-cap,
-  #hiraya.event-section .description-block .drop-cap {
+  #mix-bowl.event-section .description-block .drop-cap,
+  #garage-shokudo.event-section .description-block .drop-cap {
     font-size: 2rem;
   }
 }
 @media (max-width: 361px) {
-  #jibuzaka.event-section .description-block .drop-cap,
-  #hiraya.event-section .description-block .drop-cap {
+  #mix-bowl.event-section .description-block .drop-cap,
+  #garage-shokudo.event-section .description-block .drop-cap {
     font-size: 1.5rem;
   }
 }
+#mix-bowl.event-section .description-block .description-box,
+#garage-shokudo.event-section .description-block .description-box {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  margin: 30px 0;
+}
+#mix-bowl.event-section .description-block .description-box .description-left,
+#garage-shokudo.event-section .description-block .description-box .description-left {
+  width: 50%;
+}
+#mix-bowl.event-section .description-block .description-box .description-right,
+#garage-shokudo.event-section .description-block .description-box .description-right {
+  width: 50%;
+}
+#mix-bowl.event-section .description-block .description-box .description-right img,
+#garage-shokudo.event-section .description-block .description-box .description-right img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 4px;
+  box-shadow: 4px 4px 10px 5px rgba(51, 51, 51, 0.5);
+}
+@media (max-width: 769px) {
+  #mix-bowl.event-section .description-block .description-box,
+  #garage-shokudo.event-section .description-block .description-box {
+    flex-direction: column;
+  }
+  #mix-bowl.event-section .description-block .description-box .description-left,
+  #mix-bowl.event-section .description-block .description-box .description-right,
+  #garage-shokudo.event-section .description-block .description-box .description-left,
+  #garage-shokudo.event-section .description-block .description-box .description-right {
+    width: 100%;
+  }
+}
 
-#special-stage2 {
+#talkshow {
   max-width: 1000px;
   margin: 0 auto;
   scroll-margin-top: 100px;
 }
-#special-stage2 .section-header {
+#talkshow .section-header {
   display: flex;
   align-items: center;
   gap: 20px;
   margin-bottom: 20px;
 }
-#special-stage2 .section-header .title-line {
+#talkshow .section-header .title-line {
   flex: 1;
   height: 4px;
   background-color: #333333;
 }
 @media (max-width: 361px) {
-  #special-stage2 .section-header .title-line {
+  #talkshow .section-header .title-line {
     display: none;
   }
 }
-#special-stage2 .section-header .title-wrap {
+#talkshow .section-header .title-wrap {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
   text-align: right;
 }
-#special-stage2 .section-header .title-wrap .side-title {
+#talkshow .section-header .title-wrap .side-title {
   font-family: "M PLUS 1", sans-serif;
   color: #d00;
   font-size: 3rem;
@@ -2700,271 +2736,51 @@ section,
   margin: 0;
 }
 @media (max-width: 361px) {
-  #special-stage2 .section-header .title-wrap .side-title {
+  #talkshow .section-header .title-wrap .side-title {
     color: #333333;
   }
 }
-#special-stage2 .catchphrase-red-bold {
+#talkshow .catchphrase-red-bold {
   color: #d00;
   font-size: 1.25rem;
   font-weight: 700;
   margin-bottom: 20px;
 }
 @media (max-width: 361px) {
-  #special-stage2 .catchphrase-red-bold {
+  #talkshow .catchphrase-red-bold {
     font-size: 1rem;
   }
 }
-#special-stage2 .catchphrase-red-bold .sp-br {
+#talkshow .catchphrase-red-bold .sp-br {
   display: none;
 }
 @media (max-width: 361px) {
-  #special-stage2 .catchphrase-red-bold .sp-br {
+  #talkshow .catchphrase-red-bold .sp-br {
     display: block;
   }
 }
-#special-stage2 .split-layout {
-  display: flex;
+#talkshow .split-layout {
   justify-content: space-between;
   gap: 50px;
 }
 @media (max-width: 769px) {
-  #special-stage2 .split-layout {
+  #talkshow .split-layout {
     flex-direction: column;
     gap: 40px;
   }
 }
-#special-stage2 .stage-left {
-  flex: 1;
-}
-#special-stage2 .stage-left .full-width-img {
-  width: 100%;
-  display: block;
-  margin-bottom: 30px;
-}
-#special-stage2 .stage-right {
-  width: 250px;
-}
-@media (max-width: 769px) {
-  #special-stage2 .stage-right {
-    width: 100%;
-  }
-}
-#special-stage2 .stage-right .cast-section {
-  text-align: center;
-}
-@media (max-width: 769px) {
-  #special-stage2 .stage-right .cast-section {
-    text-align: center;
-  }
-}
-#special-stage2 .stage-right .cast-section .cast-category {
-  font-size: 1.25rem;
-  margin-bottom: 30px;
-  font-family: "M PLUS 1", sans-serif;
-}
-@media (max-width: 769px) {
-  #special-stage2 .stage-right .cast-section .cast-category {
-    display: block;
-    width: -moz-fit-content;
-    width: fit-content;
-    padding-top: 20px;
-    margin: 0 auto 30px;
-    font-size: 1.25rem;
-    font-weight: 800;
-    letter-spacing: 0.1em;
-    line-height: 1.2;
-    border-bottom: 2px solid #333333;
-    padding-bottom: 5px;
-  }
-}
-@media (max-width: 769px) {
-  #special-stage2 .stage-right .cast-section .profile-container {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-  }
-}
-#special-stage2 .hexagon-profile {
-  position: relative;
-  width: 160px;
-  margin: 0 auto 40px;
-}
-@media (max-width: 769px) {
-  #special-stage2 .hexagon-profile {
-    margin: 0 auto;
-    width: 130px;
-  }
-}
-#special-stage2 .hexagon-profile .profile-box {
-  position: relative;
-  width: 130px;
-  margin: 0 auto;
-  z-index: 2;
-}
-#special-stage2 .hexagon-profile .profile-box::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-  transform: translate(15px, -15px);
-  z-index: -1;
-}
-#special-stage2 .hexagon-profile .profile-box img {
-  width: 100%;
-  height: 150px;
-  -o-object-fit: cover;
-     object-fit: cover;
-  display: block;
-}
-#special-stage2 .hexagon-profile .profile-info {
-  position: absolute;
-  white-space: nowrap;
-  z-index: 3;
-}
-@media (max-width: 769px) {
-  #special-stage2 .hexagon-profile .profile-info {
-    position: relative !important;
-    top: 0 !important;
-    bottom: 0 !important;
-    left: 0 !important;
-    right: 0 !important;
-    transform: none !important;
-    width: 100%;
-    text-align: center;
-    margin-top: 15px;
-    white-space: normal;
-  }
-}
-#special-stage2 .hexagon-profile .profile-info .rank {
-  font-size: 0.65rem;
-  color: #333333;
-  font-weight: 700;
-  display: block;
-}
-#special-stage2 .hexagon-profile .profile-info .name,
-#special-stage2 .hexagon-profile .profile-info .name-red {
-  font-size: 1.12rem;
-  font-weight: 700;
-  font-family: "Poller One", serif;
-  display: block;
-}
-@media (max-width: 361px) {
-  #special-stage2 .hexagon-profile .profile-info .name,
-  #special-stage2 .hexagon-profile .profile-info .name-red {
-    font-size: 1rem;
-  }
-}
-#special-stage2 .cast-section:first-of-type .profile-box::before {
-  background-color: rgba(221, 0, 0, 0.3);
-}
-#special-stage2 .mc-profile .profile-box::before {
-  background-color: #b8a8a8;
-}
-#special-stage2 .max-profile .profile-info {
-  top: -15px;
-  left: -40px;
-  text-align: right;
-}
-@media (max-width: 769px) {
-  #special-stage2 .max-profile .profile-info {
-    text-align: center;
-  }
-}
-#special-stage2 .max-profile .profile-info .name {
-  font-style: italic;
-}
-@media (max-width: 769px) {
-  #special-stage2 .max-profile .profile-info .name {
-    display: block;
-    width: 100%;
-    font-size: 1.1rem;
-  }
-}
-#special-stage2 .lewis-profile .profile-info {
-  bottom: -10px;
-  right: -40px;
-  text-align: left;
-}
-@media (max-width: 769px) {
-  #special-stage2 .lewis-profile .profile-info {
-    text-align: center;
-  }
-}
-#special-stage2 .lewis-profile .profile-info .name {
-  font-style: italic;
-}
-@media (max-width: 769px) {
-  #special-stage2 .lewis-profile .profile-info .name {
-    display: block;
-    width: 100%;
-    font-size: 1.1rem;
-  }
-}
-#special-stage2 .tanaka-profile .profile-info {
-  top: -5px;
-  left: -20px;
-  text-align: right;
-  color: #d00;
-}
-@media (max-width: 769px) {
-  #special-stage2 .tanaka-profile .profile-info {
-    top: 0 !important;
-    bottom: 0 !important;
-    margin-top: 10px;
-    transform: none;
-    text-align: center;
-  }
-}
-#special-stage2 .tanaka-profile .profile-info .name-red {
-  font-style: italic;
-}
-@media (max-width: 769px) {
-  #special-stage2 .tanaka-profile .profile-info .name-red {
-    display: block;
-    width: 100%;
-    font-size: 1.1rem;
-  }
-}
-#special-stage2 .suzuki-profile .profile-info {
-  bottom: -5px;
-  right: -40px;
-  text-align: left;
-  color: #d00;
-}
-@media (max-width: 769px) {
-  #special-stage2 .suzuki-profile .profile-info {
-    top: 0 !important;
-    bottom: 0 !important;
-    margin-top: 10px;
-    transform: none;
-    text-align: center;
-  }
-}
-#special-stage2 .suzuki-profile .profile-info .name-red {
-  font-style: italic;
-}
-@media (max-width: 769px) {
-  #special-stage2 .suzuki-profile .profile-info .name-red {
-    display: block;
-    width: 100%;
-    font-size: 1.1rem;
-  }
-}
-#special-stage2 .description-block {
+
+.description-block {
   margin: 40px 0;
 }
-#special-stage2 .description-block p {
+.description-block p {
   font-family: "Zen Maru Gothic", sans-serif;
   font-size: 1rem;
   line-height: 2;
   margin-bottom: 2em;
   text-align: justify;
 }
-#special-stage2 .description-block .drop-cap {
+.description-block .drop-cap {
   float: left;
   font-family: "M PLUS 1", sans-serif;
   font-size: 3.5rem;
