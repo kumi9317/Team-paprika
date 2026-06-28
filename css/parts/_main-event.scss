@@ -380,7 +380,7 @@ section,
           box-shadow: $shadow;
         }
       }
-      @media (max-width: 769px) {
+      @media (max-width: 426px) {
         flex-direction: column;
         .description-left,
         .description-right {
@@ -446,15 +446,45 @@ section,
       }
     }
   }
-  // レイアウト構造
-  .split-layout {
-    // display: flex;
-    justify-content: space-between;
-    gap: 50px;
-    @media (max-width: 769px) {
-      flex-direction: column;
-      gap: 40px;
+  .carousel-container {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    overflow: hidden; // はみ出しを隠す
+    margin-bottom: 30px;
+    border-radius: 10px;
+    box-shadow: $shadow;
+    position: relative;
+  }
+  .carousel-inner {
+    display: flex;
+    width: 300%; // 画像3枚分
+    height: 100%;
+    animation: slide-right-to-left 10s infinite linear; // 10秒かけてループ
+    img {
+      width: 100%; // 枠の半分ずつ使用
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
     }
+  }
+}
+// スライドのアニメーション定義
+@keyframes slide-right-to-left {
+  /* 0-3秒：1枚目を表示 */
+  0%,
+  35% {
+    transform: translateX(0);
+  }
+
+  /* 4-7秒：2枚目を表示 */
+  45%,
+  80% {
+    transform: translateX(-33.33%);
+  }
+
+  /* 8秒：瞬間的に1枚目（の最後）に戻る */
+  100% {
+    transform: translateX(-66.66%);
   }
 }
 // 説明文
@@ -486,58 +516,47 @@ section,
   margin: 0 auto;
   padding: 40px 0 0;
   scroll-margin-top: 50px;
-
   @media (max-width: 361px) {
     padding: 40px 0;
   }
-
   .event-title {
     display: flex;
     align-items: center;
     gap: 20px;
     margin-bottom: 30px;
-
     .main-title {
       font-family: $h2;
       font-size: 3rem;
       font-weight: 800;
       color: $red;
       white-space: nowrap;
-
       @media (max-width: 768px) {
         font-size: 1.5rem;
       }
-
       @media (max-width: 361px) {
         color: $black;
       }
     }
-
     .title-line {
       flex: 1;
       height: 4px;
       background-color: $black;
-
       @media (max-width: 361px) {
         display: none;
       }
     }
   }
-
   .catchphrase {
     color: $red;
     font-size: 1.25rem;
     font-weight: 700;
     line-height: 1.6;
     margin-bottom: 40px;
-
     .sp-br {
       display: none;
     }
-
     @media (max-width: 768px) {
       font-size: 1.125rem;
-
       @media (max-width: 361px) {
         .sp-br {
           display: block;
@@ -545,54 +564,31 @@ section,
       }
     }
   }
-
-  .tour-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 30px;
-    margin-bottom: 60px;
-
-    @media (max-width: 768px) {
-      grid-template-columns: 1fr; // 全体は縦積み
-      gap: 20px;
-    }
-
-    .grid-left {
-      display: flex;
-      flex-direction: column;
-      gap: 30px;
-      img {
-        width: 100%;
-        aspect-ratio: 3 / 2;
-        object-fit: cover;
-      }
-    }
-
-    .grid-right {
-      display: flex;
-      flex-direction: column;
-      gap: 30px;
-
-      @media (max-width: 768px) {
-        flex-direction: row;
-        gap: 10px;
-      }
-
-      img {
-        width: 100%;
-        aspect-ratio: 3 / 2;
-        object-fit: cover;
-
-        @media (max-width: 768px) {
-          width: 50%;
-        }
-      }
+  // 1. 全幅画像エリア
+  .tour-mv {
+    width: 100%;
+    margin-bottom: 40px;
+    img {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: cover;
     }
   }
+  // 2. 詳細＋サブ画像エリア
+  .tour-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; // 文章を広め、右側を固定幅または比率に
+    gap: 40px;
 
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr; // スマホでは縦積み
+      gap: 30px;
+    }
+  }
   .description-block {
-    max-width: 100%;
-    margin: 5px;
+    // max-width: 100%;
+    // margin: 5px;
 
     p {
       font-family: $text;
@@ -608,14 +604,13 @@ section,
       font-size: 3.12rem;
       font-weight: 800;
       line-height: 1;
-      margin: 0;
+      // margin: 0;
       color: $black;
 
       @media (max-width: 768px) {
         font-size: 2.5rem;
       }
     }
-
     .lead-text {
       width: calc(200% + 30px);
       max-width: none;
@@ -623,6 +618,26 @@ section,
       @media (max-width: 768px) {
         max-width: 100%;
         width: 100%;
+      }
+    }
+  }
+  .tour-sub-images {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-self: start;
+    align-items: center;
+
+    img {
+      width: 100%;
+      aspect-ratio: 3 / 2;
+      object-fit: cover;
+      display: block;
+    }
+
+    @media (max-width: 768px) {
+      img {
+        width: 80%;
       }
     }
   }
