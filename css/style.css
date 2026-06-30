@@ -715,7 +715,6 @@ body.nav-open {
     width: 80%;
   }
 }
-
 .main-program .event-item:nth-child(even) {
   flex-direction: row-reverse;
 }
