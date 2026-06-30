@@ -51,6 +51,8 @@ $(function() {
         $overlay.removeClass('is-visible');
         $('body').removeClass('nav-open');
     });
+
+    
 });
 
 /*==================================
@@ -229,6 +231,11 @@ $(document).on('click', function(e) {
 /*==================================
 　　pu__tab
 ==================================*/
+/*==================================
+　　pu__tab
+==================================*/
+
+// タブ切り替え関数
 function getHashId(hashIdName) {
     if (!hashIdName) {
         return;
@@ -242,13 +249,17 @@ function getHashId(hashIdName) {
         return;
     }
 
+    // タブのactive切り替え
     $pickupEvent.find('.tab li').removeClass('active');
     $targetTab.parent('li').addClass('active');
 
+    // コンテンツの表示切り替え
     $pickupEvent.find('.area').removeClass('is-active');
     $targetArea.addClass('is-active');
 }
 
+
+// タブをクリックしたとき
 $('.tab a').on('click', function (event) {
     event.preventDefault();
 
@@ -256,16 +267,53 @@ $('.tab a').on('click', function (event) {
     getHashId(idName);
 });
 
+
+// ページ読み込み時
 $(window).on('load', function () {
+
+    console.log('LOAD');
+    console.log(location.hash);
+
     const hashName = location.hash;
 
+    // 治部坂のイベント群
+    const jibuzakaIds = [
+        '#toyotajibuzaka',
+        '#dance',
+        '#mokuiku',
+        '#kendama'
+    ];
+
+    // 平谷のイベント群
+    const hirayaIds = [
+        '#toyotahiraya',
+        '#auction',
+        '#yaris300'
+    ];
+
+    // 治部坂の個別イベントに飛ぶ場合
+    if (jibuzakaIds.includes(hashName)) {
+        getHashId('#pu-jibuzaka');
+        return;
+    }
+
+    // 平谷の個別イベントに飛ぶ場合
+    if (hirayaIds.includes(hashName)) {
+        getHashId('#pu-hiraya');
+        return;
+    }
+
+    // 通常のタブ切り替え
     if (hashName) {
         getHashId(hashName);
         return;
     }
 
+    // デフォルト
     getHashId('#pu-botharea');
 });
+
+
 
 /*==================================
 　　pu__slick
