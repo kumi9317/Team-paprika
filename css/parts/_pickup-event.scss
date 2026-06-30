@@ -63,6 +63,11 @@
       animation-duration: 0.6s;
       animation-fill-mode: forwards;
     }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 80px;
+    }
   }
 }
 
@@ -150,10 +155,15 @@
     }
   }
 
+  .u-yurayura {
+    display: block;
+  }
+
   &__gokan {
     img {
       width: 340px;
     }
+    z-index: -1;
   }
 
   &__wrapper {
@@ -168,40 +178,116 @@
     z-index: 5;
     margin-bottom: clamp(
       80px,
-      calc(80px + (170 * ((100vw - 360px) / 920))),
-      250px
+      calc(70px + (20 * ((100vw - 360px) / 920))),
+      150px
     );
-    padding-inline: 2%;
     padding-bottom: 60px;
 
-    .pu__gokan-wrapper {
+    .pu-sticker.u-yurayura {
       position: absolute;
-      inset: 0; // top, right, bottom, left: 0 を一括指定
-      overflow: hidden;
-      border-top-left-radius: 30px; // 親の角丸と合わせる
-      pointer-events: none; // クリック透過
       z-index: 10;
+      right: -160px;
+      top: -82px;
 
-      // マスクの中にある「やすらぐ」本体
-      .pu__gokan {
+      img {
+        width: clamp(
+          250px,
+          calc(250px + (150 * ((100vw - 360px) / 920))),
+          400px
+        );
+        display: block;
+      }
+
+      @media screen and (max-width: 1024px) {
+        right: -75px;
+        top: -20px;
+      }
+
+      @media screen and (max-width: 768px) {
+        right: -100px;
+        top: -40px;
+      }
+
+      @media screen and (max-width: 500px) {
+        right: -50px;
+        top: -40px;
+      }
+    }
+
+    .pu__infosticker.u-yurayura,
+    .pu__infosticker.kitchen.u-yurayura {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      z-index: 20;
+
+      li {
         position: absolute;
-        top: -27px;
-        left: -16px;
-        scale: 0.9;
 
         img {
           display: block;
+          width: 100%;
+        }
+
+        &:nth-of-type(1) {
+          bottom: 265px;
+          left: -186px;
+          width: 240px;
+
+          @media screen and (max-width: 1024px) {
+            width: 250px;
+            left: -80px;
+            bottom: 282px;
+          }
+
+          @media screen and (max-width: 768px) {
+            width: 180px;
+            left: -49px;
+            bottom: 398px;
+          }
+
+          @media screen and (max-width: 500px) {
+            width: 180px;
+            left: -39px;
+            bottom: 480px;
+          }
+        }
+
+        &:nth-of-type(2) {
+          right: -24px;
+          bottom: 71px;
+          width: 143px;
+          z-index: 1;
+          @media screen and (max-width: 1024px) {
+            right: -24px;
+            bottom: 88px;
+            width: 110px;
+            z-index: 1;
+          }
+
+          @media screen and (max-width: 768px) {
+            right: -10px;
+            bottom: 147px;
+            width: 107px;
+          }
+
+          @media screen and (max-width: 500px) {
+            right: -40px;
+            bottom: 125px;
+            width: 91px;
+          }
         }
       }
     }
   }
-
   &__inner {
     max-width: 1000px;
     margin-inline: auto;
-    padding-top: 170px;
-    padding-bottom: 100px;
+    padding-top: 140px;
     padding-inline: 3%;
+    position: relative;
+    overflow: hidden;
+    border-radius: 40px;
 
     @media screen and (max-width: 768px) {
       padding-top: 130px;
@@ -229,97 +315,99 @@
         padding-bottom: 10px;
       }
     }
-  }
-
-  h3 {
-    font-family: "M PLUS 1p", sans-serif;
-    font-size: 40px;
-    font-weight: 800;
-    color: #f8ff6c;
-    -webkit-text-stroke: 1px #909090;
-
-    @media screen and (max-width: 768px) {
-      font-size: 35px;
-    }
-
-    @media screen and (max-width: 500px) {
-      font-size: 26px;
-    }
-  }
-
-  h2 {
-    text-align: center;
-    margin-bottom: 100px;
-  }
-
-  .h3-content {
-    color: white;
-    font-family: "Chakra Petch", sans-serif;
-    font-weight: 700;
-    font-style: normal;
-    margin-bottom: 20px;
-    font-size: 20px;
-
-    @media screen and (max-width: 768px) {
-      font-size: 20px;
-    }
-
-    @media screen and (max-width: 500px) {
-      font-size: 15px;
-    }
-  }
-
-  &__gokan {
-    position: absolute;
-    z-index: 10;
-    left: 0px;
-    img {
-      border-radius: 30px;
-
-      @media screen and (max-width: 1024px) {
-        width: 300px;
+    .pu__gokan {
+      position: absolute;
+      top: -3%;
+      left: -15%;
+      &.gokan__1 {
+        top: -3%;
+        left: -15%;
+      }
+      &.gokan__2 {
+        top: -4%;
+        left: -11%;
+      }
+      &.gokan__3 {
+        top: -3%;
+        left: -15%;
+      }
+      &.gokan__4 {
+        top: -3%;
+        left: -13%;
+      }
+      &.gokan__5 {
+        top: -5%;
+        left: -10%;
+      }
+      &.gokan__6 {
+        top: -5%;
+        left: -10%;
+      }
+      &.gokan__8 {
+        top: -5%;
+        left: -10%;
+      }
+      &.gokan__9 {
+        top: -5%;
+        left: -10%;
       }
 
+      img {
+        border-radius: 30px;
+
+        @media screen and (max-width: 1024px) {
+          width: 300px;
+        }
+
+        @media screen and (max-width: 768px) {
+          width: 250px;
+        }
+
+        @media screen and (max-width: 500px) {
+          width: 180px;
+        }
+      }
+    }
+
+    h3 {
+      font-family: "M PLUS 1p", sans-serif;
+      font-size: 40px;
+      font-weight: 800;
+      color: #f8ff6c;
+      -webkit-text-stroke: 1px #909090;
+
       @media screen and (max-width: 768px) {
-        width: 250px;
+        font-size: 35px;
       }
 
       @media screen and (max-width: 500px) {
-        width: 180px;
+        font-size: 26px;
+      }
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 100px;
+    }
+
+    .h3-content {
+      color: white;
+      font-family: "Chakra Petch", sans-serif;
+      font-weight: 700;
+      font-style: normal;
+      margin-bottom: 20px;
+      font-size: 20px;
+
+      @media screen and (max-width: 768px) {
+        font-size: 20px;
+      }
+
+      @media screen and (max-width: 500px) {
+        font-size: 15px;
       }
     }
   }
 
-  &__kids {
-    position: absolute;
-    z-index: 10;
-    right: -160px;
-    top: -82px;
-
-    img {
-      width: clamp(250px, calc(250px + (150 * ((100vw - 360px) / 920))), 400px);
-      display: block;
-    }
-
-    @media screen and (max-width: 1024px) {
-      right: -75px;
-      top: -20px;
-    }
-
-    @media screen and (max-width: 768px) {
-      right: -100px;
-      top: -40px;
-    }
-
-    @media screen and (max-width: 500px) {
-      right: -50px;
-      top: -40px;
-    }
-  }
-
-  &__info {
-    position: relative;
-  }
   &__infocontent {
     background-color: white;
     border-radius: 30px;
@@ -349,6 +437,7 @@
     width: 100%;
     max-width: 80%;
     margin: 0 auto;
+    text-align: center;
 
     img {
       width: 100%;
@@ -392,15 +481,11 @@
   .h3-content {
     color: #333;
   }
+
   &__content1 {
     display: flex;
     flex-direction: column;
-    align-items: center;
     gap: clamp(16px, calc(16px + (16 * ((100vw - 500px) / 780))), 32px);
-
-    img {
-      width: clamp(280px, calc(280px + (240 * ((100vw - 500px) / 780))), 520px);
-    }
   }
 
   &__content2 {
@@ -461,21 +546,12 @@
 
         .contenttext-pc {
           display: block;
-          @media screen and (max-width: 500px) {
-            display: none;
-          }
           p {
             margin-bottom: clamp(
               0px,
               calc(0px + (10 * ((100vw - 768px) / 492))),
               10px
             );
-          }
-        }
-        .contenttext-sp {
-          display: none;
-          @media screen and (max-width: 500px) {
-            display: block;
           }
         }
       }
@@ -504,114 +580,28 @@
       display: inline;
     }
   }
-  .pu__infosticker {
-    &_1 {
-      position: absolute;
-      top: -150px;
-      left: -300px;
-
-      @media screen and (max-width: 1024px) {
-        width: 250px;
-        left: -80px;
-      }
-
-      @media screen and (max-width: 768px) {
-        width: 200px;
-        left: -80px;
-        top: -100px;
-      }
-
-      @media screen and (max-width: 500px) {
-        width: 160px;
-        left: -40px;
-        top: -90px;
-      }
-    }
-
-    &_2 {
-      position: absolute;
-      top: 40px;
-      right: -20px;
-
-      img {
-        width: 200px;
-      }
-
-      @media screen and (max-width: 1024px) {
-        width: 150px;
-        right: 0px;
-        top: 100px;
-      }
-
-      @media screen and (max-width: 768px) {
-        width: 130px;
-        right: 0px;
-        top: 60px;
-      }
-      &_1 {
-        @media screen and (max-width: 500px) {
-          display: none;
-        }
-      }
-    }
-
-    &_3 {
-      position: absolute;
-      bottom: -70px;
-      right: -80px;
-      width: 160px;
-      z-index: 1;
-
-      @media screen and (max-width: 1024px) {
-        bottom: -80px;
-        right: -50px;
-      }
-
-      @media screen and (max-width: 768px) {
-        bottom: -60px;
-        right: -50px;
-      }
-      @media screen and (max-width: 500px) {
-        width: 100px;
-        bottom: -20px;
-        right: -30px;
-      }
-    }
-
-    &_4 {
-      position: absolute;
-      bottom: -50px;
-      right: 100px;
-      width: 400px;
-
-      @media screen and (max-width: 768px) {
-        width: 300px;
-      }
-
-      @media screen and (max-width: 500px) {
-        width: 250px;
-        bottom: -50px;
-        right: 0px;
-      }
-    }
-  }
 }
 
 //治部坂会場
 #pu-jibuzaka {
   .pu__wrapper {
-    background: #ff9e5e;
+    background: $orange;
   }
 }
 .pu-eventarea {
   position: relative;
   scroll-margin-top: 130px;
-
+  &:nth-of-type(1) {
+    .pu__gokan {
+      top: -4%;
+      left: -11%;
+    }
+  }
   h3 {
     padding-top: clamp(
-      130px,
-      calc(130px + ((170 - 130) * ((100vw - 500px) / 780))),
-      170px
+      20px,
+      calc(20px + ((60 - 20) * ((100vw - 500px) / 780))),
+      60px
     );
   }
 

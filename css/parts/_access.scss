@@ -72,22 +72,34 @@
     font-size: clamp(14px, calc(14px + (2 * ((100vw - 360px) / 920))), 16px);
     font-style: normal;
     font-family: "Zen Maru Gothic", sans-serif;
-    font-weight: medium;
+    font-weight: 500;
 
     dt {
       position: relative;
       padding-left: 20px;
-      /* dtの前に黒四角を配置 */
+
       &::before {
         position: absolute;
         content: "■";
         left: 0;
-        color: #333; /* 記号の色 */
+        color: #333;
       }
     }
 
     dd {
       margin-bottom: 15px;
+    }
+
+    .route {
+      position: relative;
+      padding-left: 1.2em;
+
+      &::before {
+        position: absolute;
+        content: "●";
+        left: 0;
+        color: #333;
+      }
     }
   }
 
