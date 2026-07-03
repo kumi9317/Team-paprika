@@ -158,6 +158,28 @@
   .u-yurayura {
     display: block;
   }
+  &__infocontent {
+    .info_sched {
+      text-align: center;
+      width: fit-content;
+      margin-inline: auto;
+      border: 1px solid #3777e4;
+      border-radius: 10px;
+      padding-inline: 16%;
+      background-color: #3777e4;
+      color: white;
+    }
+    p {
+      margin-block: 10px;
+    }
+    span {
+      color: #3777e4;
+      font-weight: 550;
+    }
+    br {
+      display: inline;
+    }
+  }
 
   &__gokan {
     img {
@@ -214,15 +236,21 @@
       }
     }
 
-    .pu__infosticker.u-yurayura,
-    .pu__infosticker.kitchen.u-yurayura {
+    
+    .pu__infosticker.u-yurayura {
       position: absolute;
       inset: 0;
       pointer-events: none;
       z-index: 20;
+      animation: none;
 
       li {
         position: absolute;
+        display: inline-block;
+        transform-origin: center;
+        animation-name: yurayura;
+        animation-iteration-count: infinite;
+        animation-timing-function: ease-in-out;
 
         img {
           display: block;
@@ -233,23 +261,25 @@
           bottom: 265px;
           left: -186px;
           width: 240px;
+          animation-duration: 3.8s;
+          animation-delay: -0.4s;
 
           @media screen and (max-width: 1024px) {
-            width: 250px;
-            left: -80px;
-            bottom: 282px;
+            width: 212px;
+            left: -61px;
+            bottom: 338px;
           }
 
           @media screen and (max-width: 768px) {
             width: 180px;
             left: -49px;
-            bottom: 398px;
+            bottom: 400px;
           }
 
           @media screen and (max-width: 500px) {
-            width: 180px;
+            width: 151px;
             left: -39px;
-            bottom: 480px;
+            bottom: 496px;
           }
         }
 
@@ -258,16 +288,97 @@
           bottom: 71px;
           width: 143px;
           z-index: 1;
+          animation-duration: 2.7s;
+          animation-delay: -1.1s;
+          animation-direction: reverse;
+
           @media screen and (max-width: 1024px) {
             right: -24px;
-            bottom: 88px;
+            bottom: 0px;
             width: 110px;
             z-index: 1;
           }
 
           @media screen and (max-width: 768px) {
             right: -10px;
-            bottom: 147px;
+            bottom: 69px;
+            width: 107px;
+          }
+
+          @media screen and (max-width: 500px) {
+            right: -40px;
+            bottom: 125px;
+            width: 91px;
+          }
+        }
+      }
+    }
+
+    .pu__infosticker.kitchen.u-yurayura {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      z-index: 20;
+      animation: none;
+
+      li {
+        position: absolute;
+        display: inline-block;
+        transform-origin: center;
+        animation-name: yurayura;
+        animation-iteration-count: infinite;
+        animation-timing-function: ease-in-out;
+
+        img {
+          display: block;
+          width: 100%;
+        }
+
+        &:nth-of-type(1) {
+          bottom: 197px;
+          left: -127px;
+          width: 240px;
+          animation-duration: 3.8s;
+          animation-delay: -0.4s;
+
+          @media screen and (max-width: 1024px) {
+            width: 174px;
+            left: -61px;
+            bottom: 244px;
+          }
+
+          @media screen and (max-width: 768px) {
+            width: 180px;
+            left: -49px;
+            bottom: 291px;
+          }
+
+          @media screen and (max-width: 500px) {
+            width: 129px;
+            left: -39px;
+            bottom: 362px;
+          }
+        }
+
+        &:nth-of-type(2) {
+          right: -24px;
+          bottom: 71px;
+          width: 143px;
+          z-index: 1;
+          animation-duration: 2.7s;
+          animation-delay: -1.1s;
+          animation-direction: reverse;
+
+          @media screen and (max-width: 1024px) {
+            right: -24px;
+            bottom: 0px;
+            width: 110px;
+            z-index: 1;
+          }
+
+          @media screen and (max-width: 768px) {
+            right: -10px;
+            bottom: 69px;
             width: 107px;
           }
 
@@ -350,6 +461,10 @@
       &.gokan__9 {
         top: -5%;
         left: -10%;
+      }
+      &.gokan__10 {
+        top: -4%;
+        left: -11%;
       }
 
       img {
@@ -463,7 +578,16 @@
 }
 
 //pu-治部坂平谷共通イベント
-.pu-botharea {
+
+.pu-bothparade {
+  .pu__wrapper {
+    background: #e5ffb8;
+  }
+  .h3-content {
+    color: black;
+  }
+}
+.pu-bothkitchen {
   position: relative;
   scroll-margin-top: 130px;
 
@@ -600,8 +724,8 @@
   h3 {
     padding-top: clamp(
       20px,
-      calc(20px + ((60 - 20) * ((100vw - 500px) / 780))),
-      60px
+      calc(20px + ((40 - 20) * ((100vw - 500px) / 780))),
+      40px
     );
   }
 
@@ -613,10 +737,24 @@
   }
 
   .pu-img {
-    text-align: center;
+    display: flex;
+    justify-content: center;
     padding-block: 30px;
+
     img {
       width: clamp(280px, calc(280px + (240 * ((100vw - 500px) / 780))), 520px);
+      height: clamp(
+        210px,
+        calc(210px + (180 * ((100vw - 500px) / 780))),
+        390px
+      );
+      object-fit: cover;
+    }
+
+    &.mokuiku-img {
+      img {
+        object-position: -24px 40px;
+      }
     }
   }
 
