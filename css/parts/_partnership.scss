@@ -1,0 +1,153 @@
+@use "variables" as *;
+
+.partnership {
+  background-color: #fcfcfc;
+  padding-block: clamp(
+    30px,
+    calc(30px + (120 * ((100vw - 360px) / 920))),
+    150px
+  );
+  border-radius: 50px 50px 0 0;
+  overflow: hidden;
+  position: relative;
+  z-index: 2;
+
+  .sec__title {
+    /* 1. 文字色を白にする */
+    color: #ffffff;
+
+    /* 2. 文字の縁取り（外の線）を黒にする */
+    /* 指定方法: 太さ 色 */
+    -webkit-text-stroke: 1px #000000;
+
+    span {
+      -webkit-text-stroke: 0;
+    }
+  }
+
+  &__wrapper {
+        max-width: clamp(300px, calc(300px + (600 * ((100vw - 360px) / 920))), 1000px);
+        margin-inline: auto;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 30px; 
+        justify-items: center;
+
+        ul {
+            max-width: clamp(300px, calc(300px + (600 * ((100vw - 360px) / 920))), 1000px);
+            margin-inline: auto;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 24px; /* スマホ時の縦の隙間（お好みで調整してください） */
+            justify-items: center;
+
+            li {
+                font-size: clamp(1rem, 0.9rem + 0.7vw, 1.25rem);
+                font-weight: 600;
+                white-space: nowrap; /* テキストの折り返しを防止 */
+            }
+
+            @media (min-width: 768px) {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 40px 20px; /* PC時の隙間（縦 40px / 横 20px） */
+            }
+        }
+        .more-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding-bottom: 5px;
+            border-bottom: 1px solid $red;
+            gap: 8px;
+            
+            color: $red;
+            text-decoration: none; // デフォルトの下線を消す
+            font-size: 14px;
+            font-weight: bold;
+            transition: 0.3s;
+            margin-top: 10px;
+            margin-inline: auto;
+            width: fit-content; // 自分の幅に合わせる指定
+            align-self: flex-end;
+            position: relative;
+            z-index: 1;
+            
+            &__text {
+                padding-inline: 5px;
+                line-height: 1;                // 線の位置を安定させる
+            }
+            
+            &__arrow {
+                display: inline-block;
+                width: 25px;
+                position: relative;
+                
+            }
+            
+            &:hover {
+                opacity: 0.7;
+                .more-btn__arrow {
+                    transform: translateX(3px);
+                }
+            }
+            
+            // 1. 最初は透明にしておく
+            &::after {
+                content: '';
+                position: absolute;
+                top: 40%;     // 💡 真ん中に配置するために変更
+                right: -15px; // 💡 位置を調整
+                transform: translate(0, -50%); // 💡 上下のズレを補正
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+                background-color: $red;
+                opacity: 0;   // 最初は隠す
+                transition: 0.3s; // ふわっと表示させる
+                z-index: -1;  // 💡 テキストや矢印の後ろに配置
+            }
+            
+            // 2. ✅ ホバー時の指定
+            &:hover {
+                opacity: 1; // ボタン全体の透明度ではなく、個別に指定する場合
+                
+                &::after {
+                    opacity: 0.5; // ホバーした時に円を表示！
+                }
+                
+                .more-btn__arrow {
+                    transform: translateX(3px);
+                }
+            }
+        }
+    }
+}
+
+.partnership-title{
+    font-family: $h2;
+    font-size: 2.5rem;
+    font-weight: 900;
+    margin: 0;
+    @media (max-width: 425px) {
+        font-size: 1.5rem;
+    
+    }
+
+}
+
+.partnership-list {
+    margin-bottom: 120px;
+    ul{
+        width: max-content;
+        max-width: clamp(300px, calc(300px + (600 * ((100vw - 360px) / 920))), 1000px);
+        margin-inline: auto;
+
+        li{
+            font-size: clamp(1rem, 0.9rem + 0.7vw, 1.25rem);
+            font-weight: 600;
+            white-space: nowrap;
+            padding-block: 10px;
+
+        }
+    }
+}
