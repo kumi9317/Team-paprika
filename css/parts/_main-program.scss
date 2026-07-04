@@ -567,23 +567,7 @@
                 text-decoration: underline;
                 
              }
-        }
-
-        .tag-list {
-            &__li {
-                a {
-                    color: #999;
-                    text-decoration: none;
-                    font-size: 0.875rem;
-                    white-space: nowrap;
-
-                    &:hover {
-                        color: $blue;
-                        text-decoration: underline;
-                    }
-                }
-            }
-        }        
+        } 
     
         &__img-wrapper {
             position: relative;

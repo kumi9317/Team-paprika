@@ -43,13 +43,25 @@ $(function() {
         $('body').removeClass('nav-open');
     });
 
-    // メニュー内のリンク（aタグ）をクリックした時も閉じる
-    // ページ内リンクで移動した後にメニューが開きっぱなしになるのを防ぎます
-    $('.drawer-menu__item a').on('click', function() {
+    $('.drawer-menu__item a').on('click', function(e) {
+
+        const href = $(this).attr('href');
+
+        // メニューを閉じる（共通処理）
         $hamburger.removeClass('is-active');
         $drawer.removeClass('is-open');
         $overlay.removeClass('is-visible');
         $('body').removeClass('nav-open');
+
+        // #main-event 宛のリンク かつ「今いるページに .main-event が実在する場合」だけ特別扱い
+        // （＝index.html上でクリックされた時だけ。他ページからは普通に遷移させる）
+        if (href && href.indexOf('#main-event') !== -1 && $('.main-event').length) {
+            e.preventDefault();
+            setTimeout(function() {
+                ScrollTrigger.refresh();
+                scrollToMainEvent();
+            }, 300);
+        }
     });
 
     
@@ -82,6 +94,7 @@ $(function() {
         "(min-width: 426px)": function() {
             const tl = gsap.timeline({
                 scrollTrigger: {
+                    id: "mainEventPin",
                     trigger: ".main-event",
                     start: "top top",
                     end: "+=2600", 
@@ -325,3 +338,64 @@ $(".pu__slider__items").slick({
   arrows: true, // 矢印
   dots: true, // インジケーター
 });
+
+/*==================================
+  他ページからの遷移時にGSAPのズレを補正するスクロール制御
+==================================*/
+$(window).on('load', function() {
+  // URLに「#」が含まれているかチェック
+  if (location.hash) {
+    const targetHash = location.hash;
+    
+    // pu__tab（タブ切り替え）で処理するハッシュ群は除外する
+    const tabIds = [
+      '#toyotajibuzaka', '#dance', '#mokuiku', '#kendama',
+      '#toyotahiraya', '#auction', '#yaris300',
+      '#pu-jibuzaka', '#pu-hiraya', '#pu-botharea'
+    ];
+
+    if (tabIds.includes(targetHash)) {
+      return; // タブ切り替え用のハッシュならここで処理を抜ける
+    }
+
+    // ターゲットとなる要素が存在するか確認
+    const $targetElement = $(targetHash);
+    if ($targetElement.length) {
+      setTimeout(function() {
+        ScrollTrigger.refresh();
+
+        if (targetHash === '#main-event') {
+          scrollToMainEvent();
+        } else {
+          const targetPosition = $targetElement.offset().top;
+          $('html, body').animate({
+            scrollTop: targetPosition
+          }, 0);
+        }
+      }, 200);
+    }
+  }
+});
+
+/*==================================
+
+　　main-event へ正確にスクロールする関数
+
+==================================*/
+function scrollToMainEvent() {
+    const st = ScrollTrigger.getById("mainEventPin");
+
+    if (st) {
+        // PC幅（ピン留め有効）→ ScrollTriggerの開始位置へ
+        window.scrollTo({ top: st.start, behavior: "auto" });
+    } else {
+        // スマホ幅（ピン留め無効）→ 通常の要素位置へ
+        const target = document.getElementById('main-event');
+        if (target) {
+            window.scrollTo({
+                top: target.getBoundingClientRect().top + window.scrollY,
+                behavior: "auto"
+            });
+        }
+    }
+}
