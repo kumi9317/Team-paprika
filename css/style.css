@@ -2086,8 +2086,8 @@ body.nav-open {
   gap: 30px 20px;
   justify-items: center;
 }
-.sponsor__wrapper img {
-  width: clamp(70px, 70px + 210 * (100vw - 360px) / 920, 280px);
+.sponsor__wrapper p {
+  font-size: 1rem;
 }
 
 .footer {
