@@ -446,47 +446,26 @@ section,
       }
     }
   }
-  .carousel-container {
+  .tour-single-image {
     width: 100%;
-    aspect-ratio: 16 / 9;
-    overflow: hidden; // はみ出しを隠す
+    aspect-ratio: 208 / 261; // 指定の縦横比を維持
+    overflow: hidden; // 画像の角丸からはみ出さないように
     margin-bottom: 30px;
     border-radius: 10px;
     box-shadow: $shadow;
-    position: relative;
-  }
-  .carousel-inner {
-    display: flex;
-    width: 300%; // 画像3枚分
-    height: 100%;
-    animation: slide-right-to-left 10s infinite linear; // 10秒かけてループ
+    @media (max-width: 769px) {
+      width: 70%;
+      margin: 0 auto 30px;
+    }
     img {
-      width: 100%; // 枠の半分ずつ使用
+      width: 100%;
       height: 100%;
       object-fit: cover;
       object-position: center;
     }
   }
 }
-// スライドのアニメーション定義
-@keyframes slide-right-to-left {
-  /* 0-3秒：1枚目を表示 */
-  0%,
-  35% {
-    transform: translateX(0);
-  }
 
-  /* 4-7秒：2枚目を表示 */
-  45%,
-  80% {
-    transform: translateX(-33.33%);
-  }
-
-  /* 8秒：瞬間的に1枚目（の最後）に戻る */
-  100% {
-    transform: translateX(-66.66%);
-  }
-}
 // 説明文
 .description-block {
   margin: 40px 0;
@@ -530,9 +509,6 @@ section,
       font-weight: 800;
       color: $red;
       white-space: nowrap;
-      @media (max-width: 768px) {
-        font-size: 1.5rem;
-      }
       @media (max-width: 361px) {
         color: $black;
       }
@@ -546,21 +522,53 @@ section,
       }
     }
   }
-  .catchphrase {
-    color: $red;
-    font-size: 1.25rem;
-    font-weight: 700;
-    line-height: 1.6;
-    margin-bottom: 40px;
-    .sp-br {
-      display: none;
+  .tour-catch-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; // 横並びの時に上下中央に揃える
+    gap: 24px; // 文字とQRの間に適度な隙間を作る
+    margin-bottom: 40px; // box全体の下に余白（元はcatchphraseについていたもの）
+    // スマホ対応：426px以下は縦並び、中央揃えにする
+    @media (max-width: 426px) {
+      flex-direction: column;
+      // text-align: center;
+      gap: 16px;
     }
-    @media (max-width: 768px) {
-      font-size: 1.125rem;
-      @media (max-width: 361px) {
+    .catchphrase {
+      color: $red;
+      font-size: 1.25rem;
+      font-weight: 700;
+      line-height: 1.6;
+      .tb-br,
+      .sp-br {
+        display: none;
+      }
+      @media (max-width: 769px) {
+        .tb-br {
+          display: block;
+        }
+      }
+      @media (max-width: 426px) {
         .sp-br {
           display: block;
         }
+      }
+    }
+    .tour-qr-wrapper {
+      width: 150px;
+      flex-shrink: 0; // 横幅150pxがFlexboxによって潰されるのを防ぐ
+      text-align: center; // 中身（テキストや画像）を中央に揃える
+      // 追加したテキストのスタイル
+      .qr-label {
+        font-size: 0.875rem; // 少し小さめにして上品に
+        font-weight: 700; // 太字で目立たせる
+        color: $black; // 見やすい濃いめの色（または$redなどでも◎）
+        margin-bottom: 8px; // QRコードとの間のスキマ
+      }
+      img {
+        width: 70%;
+        height: auto;
+        object-fit: cover;
       }
     }
   }
