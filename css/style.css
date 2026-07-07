@@ -3166,7 +3166,7 @@ section,
   position: relative;
   z-index: 5;
   margin-bottom: clamp(80px, 70px + 20 * (100vw - 360px) / 920, 150px);
-  padding-bottom: 60px;
+  padding-bottom: clamp(5px, 5px + 55 * (100vw - 360px) / 920, 60px);
 }
 .pu__wrapper .pu-sticker.u-yurayura {
   position: absolute;
@@ -3392,7 +3392,7 @@ section,
 .pu__inner .pu__gokan {
   position: absolute;
   top: -3%;
-  left: -15%;
+  left: -11%;
 }
 .pu__inner .pu__gokan.gokan__1 {
   top: -3%;
@@ -3402,19 +3402,7 @@ section,
   top: -4%;
   left: -11%;
 }
-.pu__inner .pu__gokan.gokan__3 {
-  top: -3%;
-  left: -15%;
-}
-.pu__inner .pu__gokan.gokan__4 {
-  top: -3%;
-  left: -13%;
-}
 .pu__inner .pu__gokan.gokan__5 {
-  top: -5%;
-  left: -10%;
-}
-.pu__inner .pu__gokan.gokan__6 {
   top: -5%;
   left: -10%;
 }
@@ -3652,10 +3640,6 @@ section,
   position: relative;
   scroll-margin-top: 130px;
 }
-.pu-eventarea:nth-of-type(1) .pu__gokan {
-  top: -4%;
-  left: -11%;
-}
 .pu-eventarea h3 {
   padding-top: clamp(20px, 20px + 20 * (100vw - 500px) / 780, 40px);
 }
@@ -3679,6 +3663,11 @@ section,
 .pu-eventarea .pu-img.mokuiku-img img {
   -o-object-position: -24px 40px;
      object-position: -24px 40px;
+}
+.pu-eventarea .pu-img.auction-img img {
+  -o-object-fit: contain;
+     object-fit: contain;
+  height: auto;
 }
 .pu-eventarea__icon {
   position: relative;
@@ -3728,7 +3717,8 @@ section,
   font-weight: bold;
   font-size: 1.4rem;
 }
-.pu-eventarea .pu__infocontent .info_sched {
+
+.pu__infocontent .info_sched {
   text-align: center;
   width: -moz-fit-content;
   width: fit-content;
@@ -3740,69 +3730,69 @@ section,
   color: white;
   font-size: 1.2rem;
 }
-.pu-eventarea .pu__infocontent p {
+.pu__infocontent p {
   margin-block: 10px;
 }
-.pu-eventarea .pu__infocontent span {
+.pu__infocontent span {
   color: #3777e4;
   font-weight: 550;
 }
-.pu-eventarea .pu__infocontent br {
+.pu__infocontent br {
   display: inline;
 }
-.pu-eventarea .pu__infosticker_1 {
+.pu__infocontent .pu__infosticker_1 {
   position: absolute;
   top: -150px;
   left: -300px;
 }
 @media screen and (max-width: 1024px) {
-  .pu-eventarea .pu__infosticker_1 {
+  .pu__infocontent .pu__infosticker_1 {
     width: 250px;
     left: -80px;
   }
 }
 @media screen and (max-width: 768px) {
-  .pu-eventarea .pu__infosticker_1 {
+  .pu__infocontent .pu__infosticker_1 {
     width: 200px;
     left: -80px;
     top: -100px;
   }
 }
 @media screen and (max-width: 500px) {
-  .pu-eventarea .pu__infosticker_1 {
+  .pu__infocontent .pu__infosticker_1 {
     width: 160px;
     left: -40px;
     top: -90px;
   }
 }
-.pu-eventarea .pu__infosticker_2 {
+.pu__infocontent .pu__infosticker_2 {
   position: absolute;
   top: 40px;
   right: -20px;
 }
-.pu-eventarea .pu__infosticker_2 img {
+.pu__infocontent .pu__infosticker_2 img {
   width: 200px;
 }
 @media screen and (max-width: 1024px) {
-  .pu-eventarea .pu__infosticker_2 {
+  .pu__infocontent .pu__infosticker_2 {
     width: 150px;
     right: 0px;
     top: 100px;
   }
 }
 @media screen and (max-width: 768px) {
-  .pu-eventarea .pu__infosticker_2 {
+  .pu__infocontent .pu__infosticker_2 {
     width: 130px;
     right: 0px;
     top: 60px;
   }
 }
 @media screen and (max-width: 500px) {
-  .pu-eventarea .pu__infosticker_2_1 {
+  .pu__infocontent .pu__infosticker_2_1 {
     display: none;
   }
 }
-.pu-eventarea .pu__infosticker_3 {
+.pu__infocontent .pu__infosticker_3 {
   position: absolute;
   bottom: -70px;
   right: -80px;
@@ -3810,37 +3800,37 @@ section,
   z-index: 1;
 }
 @media screen and (max-width: 1024px) {
-  .pu-eventarea .pu__infosticker_3 {
+  .pu__infocontent .pu__infosticker_3 {
     bottom: -80px;
     right: -50px;
   }
 }
 @media screen and (max-width: 768px) {
-  .pu-eventarea .pu__infosticker_3 {
+  .pu__infocontent .pu__infosticker_3 {
     bottom: -60px;
     right: -50px;
   }
 }
 @media screen and (max-width: 500px) {
-  .pu-eventarea .pu__infosticker_3 {
+  .pu__infocontent .pu__infosticker_3 {
     width: 100px;
     bottom: -20px;
     right: -30px;
   }
 }
-.pu-eventarea .pu__infosticker_4 {
+.pu__infocontent .pu__infosticker_4 {
   position: absolute;
   bottom: -50px;
   right: 100px;
   width: 400px;
 }
 @media screen and (max-width: 768px) {
-  .pu-eventarea .pu__infosticker_4 {
+  .pu__infocontent .pu__infosticker_4 {
     width: 300px;
   }
 }
 @media screen and (max-width: 500px) {
-  .pu-eventarea .pu__infosticker_4 {
+  .pu__infocontent .pu__infosticker_4 {
     width: 250px;
     bottom: -50px;
     right: 0px;

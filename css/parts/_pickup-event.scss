@@ -203,7 +203,11 @@
       calc(70px + (20 * ((100vw - 360px) / 920))),
       150px
     );
-    padding-bottom: 60px;
+    padding-bottom: clamp(
+      5px,
+      calc(5px + (55 * ((100vw - 360px) / 920))),
+      60px
+    );
 
     .pu-sticker.u-yurayura {
       position: absolute;
@@ -236,7 +240,6 @@
       }
     }
 
-    
     .pu__infosticker.u-yurayura {
       position: absolute;
       inset: 0;
@@ -429,7 +432,7 @@
     .pu__gokan {
       position: absolute;
       top: -3%;
-      left: -15%;
+      left: -11%;
       &.gokan__1 {
         top: -3%;
         left: -15%;
@@ -438,22 +441,12 @@
         top: -4%;
         left: -11%;
       }
-      &.gokan__3 {
-        top: -3%;
-        left: -15%;
-      }
-      &.gokan__4 {
-        top: -3%;
-        left: -13%;
-      }
+
       &.gokan__5 {
         top: -5%;
         left: -10%;
       }
-      &.gokan__6 {
-        top: -5%;
-        left: -10%;
-      }
+
       &.gokan__8 {
         top: -5%;
         left: -10%;
@@ -715,12 +708,7 @@
 .pu-eventarea {
   position: relative;
   scroll-margin-top: 130px;
-  &:nth-of-type(1) {
-    .pu__gokan {
-      top: -4%;
-      left: -11%;
-    }
-  }
+
   h3 {
     padding-top: clamp(
       20px,
@@ -756,8 +744,13 @@
         object-position: -24px 40px;
       }
     }
+    &.auction-img {
+      img {
+        object-fit: contain;
+        height: auto;
+      }
+    }
   }
-
   &__icon {
     position: relative;
     width: 100%;
@@ -810,30 +803,30 @@
       }
     }
   }
-
-  .pu__infocontent {
-    .info_sched {
-      text-align: center;
-      width: fit-content;
-      margin-inline: auto;
-      border: 1px solid #3777e4;
-      border-radius: 10px;
-      padding-inline: 16%;
-      background-color: #3777e4;
-      color: white;
-      font-size: 1.2rem;
-    }
-    p {
-      margin-block: 10px;
-    }
-    span {
-      color: #3777e4;
-      font-weight: 550;
-    }
-    br {
-      display: inline;
-    }
+}
+.pu__infocontent {
+  .info_sched {
+    text-align: center;
+    width: fit-content;
+    margin-inline: auto;
+    border: 1px solid #3777e4;
+    border-radius: 10px;
+    padding-inline: 16%;
+    background-color: #3777e4;
+    color: white;
+    font-size: 1.2rem;
   }
+  p {
+    margin-block: 10px;
+  }
+  span {
+    color: #3777e4;
+    font-weight: 550;
+  }
+  br {
+    display: inline;
+  }
+
   .pu__infosticker {
     &_1 {
       position: absolute;
