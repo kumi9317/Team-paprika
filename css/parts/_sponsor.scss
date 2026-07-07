@@ -30,10 +30,22 @@
     grid-template-columns: repeat(3, 1fr);
     gap: 30px 20px;
     justify-items: center;
-
+    /* ▼ 縦方向の揃えを中央にする（テキストと画像の高さを揃える） */
+    align-items: center;
 
     p {
-      font-size: 1rem;
+      font-size: 1.25rem;
+      font-weight: 600;
+      /* ▼ 長い社名が折り返した際、中央揃えで見やすくなるようにする */
+      text-align: center; 
+      margin: 0;
+    }
+    /* ▼ 追加：画像のサイズ調整 */
+    img {
+      width: 100%;        /* グリッドの幅いっぱいに広げる */
+      max-width: 180px;   /* ロゴが大きくなりすぎないように制限（お好みで調整してください） */
+      height: auto;       /* 比率を保つ */
+      object-fit: contain;/* 枠内に綺麗に収める */
     }
   }
 }
