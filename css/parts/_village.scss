@@ -1,7 +1,0 @@
-@use "variables" as *;
-
-// --- Mixins ---
-@mixin flex-center {
-  display: flex;
-  align-items: center;
-}
