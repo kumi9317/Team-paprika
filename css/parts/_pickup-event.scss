@@ -750,6 +750,12 @@
         height: auto;
       }
     }
+    &.specialcar-img {
+      img {
+        object-fit: contain;
+        height: auto;
+      }
+    }
   }
   &__icon {
     position: relative;
