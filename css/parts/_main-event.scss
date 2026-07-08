@@ -434,13 +434,13 @@ section,
     font-size: 1.25rem;
     font-weight: 700;
     margin-bottom: 20px;
-    @media (max-width: 361px) {
+    @media (max-width: 426px) {
       font-size: 1rem;
     }
     .sp-br {
       display: none;
     }
-    @media (max-width: 361px) {
+    @media (max-width: 426px) {
       .sp-br {
         display: block;
       }
