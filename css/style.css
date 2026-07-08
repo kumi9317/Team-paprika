@@ -3665,6 +3665,11 @@ section,
      object-fit: contain;
   height: auto;
 }
+.pu-eventarea .pu-img.specialcar-img img {
+  -o-object-fit: contain;
+     object-fit: contain;
+  height: auto;
+}
 .pu-eventarea__icon {
   position: relative;
   width: 100%;
