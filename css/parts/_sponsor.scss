@@ -23,6 +23,15 @@
       -webkit-text-stroke: 0;
     }
   }
+
+  // ▼ 追加：h2下の大きいスポンサー名のスタイル
+  &__name--large {
+    font-size: 2rem; // 通常の1.25remより大きめに（お好みで調整してください）
+    font-weight: 700;
+    text-align: center;
+    letter-spacing: 0.3em; // 文字間隔を少し広げる（お好みで調整してください）
+    margin-bottom: 40px; // ラッパー（下のロゴ群）との間隔を開ける
+  }
   &__wrapper {
     max-width: clamp(300px, calc(300px + (600 * ((100vw - 360px) / 920))), 1000px);
     margin-inline: auto;
