@@ -1,0 +1,62 @@
+@use "variables" as *;
+
+.rallyteam {
+  background-color: #fcfcfc;
+  padding-bottom: clamp(30px, 30px + 120 * (100vw - 360px) / 920, 150px);
+
+      @media (max-width: 500px) {
+      padding-top: 80px;
+    }
+
+  .wrapper {
+    max-width: clamp(
+      300px,
+      calc(300px + (600 * ((100vw - 360px) / 920))),
+      1000px
+    );
+    margin-inline: auto;
+
+    p {
+      font-size: 1.25rem;
+      font-weight: 600;
+      /* ▼ 長い社名が折り返した際、中央揃えで見やすくなるようにする */
+      margin: 0;
+    }
+    /* ▼ 追加：画像のサイズ調整 */
+    img {
+      width: 100%; /* グリッドの幅いっぱいに広げる */
+      max-width: 180px; /* ロゴが大きくなりすぎないように制限（お好みで調整してください） */
+      height: auto; /* 比率を保つ */
+      object-fit: contain; /* 枠内に綺麗に収める */
+    }
+  }
+
+  .sec__title {
+    /* 1. 文字色を白にする */
+    color: #ffffff;
+
+    /* 2. 文字の縁取り（外の線）を黒にする */
+    /* 指定方法: 太さ 色 */
+    -webkit-text-stroke: 1px #000000;
+
+    span {
+      -webkit-text-stroke: 0;
+    }
+  }
+
+  ul {
+    grid-template-columns: 1fr 1fr 1fr;
+    display: grid;
+    gap: 30px 20px;
+
+    li {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    @media (max-width: 500px) {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+}

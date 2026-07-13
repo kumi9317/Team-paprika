@@ -4119,4 +4119,60 @@ section,
 }
 .partnership-list ul li.partnership-list__logo--gotogumi img {
   max-height: 5em;
+}
+
+.rallyteam {
+  background-color: #fcfcfc;
+  padding-bottom: clamp(30px, 30px + 120 * (100vw - 360px) / 920, 150px);
+}
+@media (max-width: 500px) {
+  .rallyteam {
+    padding-top: 80px;
+  }
+}
+.rallyteam .wrapper {
+  max-width: clamp(300px, 300px + 600 * (100vw - 360px) / 920, 1000px);
+  margin-inline: auto;
+}
+.rallyteam .wrapper p {
+  font-size: 1.25rem;
+  font-weight: 600;
+  /* ▼ 長い社名が折り返した際、中央揃えで見やすくなるようにする */
+  margin: 0;
+}
+.rallyteam .wrapper {
+  /* ▼ 追加：画像のサイズ調整 */
+}
+.rallyteam .wrapper img {
+  width: 100%; /* グリッドの幅いっぱいに広げる */
+  max-width: 180px; /* ロゴが大きくなりすぎないように制限（お好みで調整してください） */
+  height: auto; /* 比率を保つ */
+  -o-object-fit: contain;
+     object-fit: contain; /* 枠内に綺麗に収める */
+}
+.rallyteam .sec__title {
+  /* 1. 文字色を白にする */
+  color: #ffffff;
+  /* 2. 文字の縁取り（外の線）を黒にする */
+  /* 指定方法: 太さ 色 */
+  -webkit-text-stroke: 1px #000000;
+}
+.rallyteam .sec__title span {
+  -webkit-text-stroke: 0;
+}
+.rallyteam ul {
+  grid-template-columns: 1fr 1fr 1fr;
+  display: grid;
+  gap: 30px 20px;
+}
+.rallyteam ul li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+@media (max-width: 500px) {
+  .rallyteam ul {
+    display: flex;
+    flex-direction: column;
+  }
 }/*# sourceMappingURL=style.css.map */
