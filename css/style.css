@@ -347,6 +347,7 @@ a {
   left: 50%;
   transform: translateX(-50%);
   white-space: nowrap;
+  width: -moz-fit-content;
   width: fit-content;
   background: #fff;
   border-bottom: 1px solid #ddd;
@@ -556,7 +557,8 @@ body.nav-open {
 .main-program .main-event__speed-line img {
   width: 100vw;
   height: 100vh;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .main-program .main-event .main-event-container {
   position: relative;
@@ -681,7 +683,8 @@ body.nav-open {
   position: relative;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   border: 10px solid #fff;
   box-shadow: 4px 4px 10px 5px rgba(51, 51, 51, 0.5);
   transform: rotate(2deg);
@@ -845,6 +848,7 @@ body.nav-open {
   transition: 0.3s;
   margin-top: 10px;
   margin-left: auto;
+  width: -moz-fit-content;
   width: fit-content;
   align-self: flex-end;
   position: relative;
@@ -1023,7 +1027,8 @@ body.nav-open {
   width: 100%;
   height: 400px;
   display: block;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .main-program .pick-up .label {
   position: absolute;
@@ -1196,7 +1201,8 @@ body.nav-open {
 .obi img {
   width: 100%;
   height: auto;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   vertical-align: bottom;
   /* ★ アニメーションの設定 */
   transition: transform 1.5s ease-out;
@@ -1336,7 +1342,8 @@ body.nav-open {
   width: clamp(140px, 55%, 200px);
   height: auto;
   aspect-ratio: 3/2;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   z-index: 2;
 }
 .time-schedule .enjoy .enjoy__img--big {
@@ -1346,7 +1353,8 @@ body.nav-open {
   border: none;
   box-shadow: none;
   width: clamp(120px, 50%, 180px);
-  object-fit: contain;
+  -o-object-fit: contain;
+     object-fit: contain;
   z-index: 5;
   aspect-ratio: unset;
 }
@@ -1360,7 +1368,8 @@ body.nav-open {
     border: 2px solid #fff;
     border-radius: 10px;
     aspect-ratio: 3/2;
-    object-fit: cover;
+    -o-object-fit: cover;
+       object-fit: cover;
   }
   .time-schedule .enjoy .enjoy__img--big {
     width: 50%;
@@ -2050,6 +2059,7 @@ body.nav-open {
   z-index: 2;
 }
 .sponsor .sec__title {
+  margin-bottom: 80px;
   /* 1. 文字色を白にする */
   color: #ffffff;
   /* 2. 文字の縁取り（外の線）を黒にする */
@@ -2060,7 +2070,7 @@ body.nav-open {
   -webkit-text-stroke: 0;
 }
 .sponsor__name--large {
-  font-size: 2rem;
+  font-size: 3rem;
   font-weight: 700;
   text-align: center;
   letter-spacing: 0.3em;
@@ -2090,7 +2100,8 @@ body.nav-open {
   width: 100%; /* グリッドの幅いっぱいに広げる */
   max-width: 180px; /* ロゴが大きくなりすぎないように制限（お好みで調整してください） */
   height: auto; /* 比率を保つ */
-  object-fit: contain; /* 枠内に綺麗に収める */
+  -o-object-fit: contain;
+     object-fit: contain; /* 枠内に綺麗に収める */
 }
 
 .footer {
@@ -2787,8 +2798,10 @@ section,
 #talkshow .tour-single-image img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  object-position: center;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
 }
 
 .description-block {
@@ -2897,7 +2910,8 @@ section,
 #tour.event-section .tour-catch-box .tour-qr-wrapper img {
   width: 70%;
   height: auto;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 #tour.event-section .tour-mv {
   width: 100%;
@@ -2907,7 +2921,8 @@ section,
   width: 100%;
   height: auto;
   display: block;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 #tour.event-section .tour-grid {
   display: grid;
@@ -2960,7 +2975,8 @@ section,
 #tour.event-section .tour-sub-images img {
   width: 100%;
   aspect-ratio: 3/2;
-  object-fit: cover;
+  -o-object-fit: fit;
+     object-fit: fit;
   display: block;
 }
 @media (max-width: 768px) {
@@ -3059,7 +3075,8 @@ section,
   }
 }
 .pu img {
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   vertical-align: bottom;
 }
 .pu .sec__title2 {
@@ -3121,6 +3138,7 @@ section,
 }
 .pu__infocontent .info_sched {
   text-align: center;
+  width: -moz-fit-content;
   width: fit-content;
   margin-inline: auto;
   border: 1px solid #3777e4;
@@ -3598,6 +3616,7 @@ section,
 }
 .pu-bothkitchen .pu__infocontent .info_sched {
   text-align: center;
+  width: -moz-fit-content;
   width: fit-content;
   margin-inline: auto;
   border: 1px solid #3777e4;
@@ -3642,17 +3661,21 @@ section,
 .pu-eventarea .pu-img img {
   width: clamp(280px, 280px + 240 * (100vw - 500px) / 780, 520px);
   height: clamp(210px, 210px + 180 * (100vw - 500px) / 780, 390px);
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .pu-eventarea .pu-img.mokuiku-img img {
-  object-position: -24px 40px;
+  -o-object-position: -24px 40px;
+     object-position: -24px 40px;
 }
 .pu-eventarea .pu-img.auction-img img {
-  object-fit: contain;
+  -o-object-fit: contain;
+     object-fit: contain;
   height: auto;
 }
 .pu-eventarea .pu-img.specialcar-img img {
-  object-fit: contain;
+  -o-object-fit: contain;
+     object-fit: contain;
   height: auto;
 }
 .pu-eventarea__icon {
@@ -3706,6 +3729,7 @@ section,
 
 .pu__infocontent .info_sched {
   text-align: center;
+  width: -moz-fit-content;
   width: fit-content;
   margin-inline: auto;
   border: 1px solid #3777e4;
@@ -3873,7 +3897,8 @@ section,
   text-decoration: underline;
 }
 .village-main ul li:nth-child(1) .pct img {
-  object-fit: contain;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 @media (max-width: 500px) {
   .village-main ul li {
@@ -3893,7 +3918,8 @@ section,
 .village-main ul li a .pct img {
   display: block;
   aspect-ratio: 4/3;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   width: 100%;
 }
 .village-main ul li a .name {
@@ -3977,7 +4003,8 @@ section,
   width: auto;
   height: auto;
   max-height: 2.5em; /* テキストの行の高さに合わせて調整 */
-  object-fit: contain;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 @media (min-width: 768px) {
   .partnership__wrapper ul {
@@ -3999,6 +4026,7 @@ section,
   transition: 0.3s;
   margin-top: 10px;
   margin-inline: auto;
+  width: -moz-fit-content;
   width: fit-content;
   align-self: flex-end;
   position: relative;
@@ -4059,6 +4087,7 @@ section,
   margin-bottom: 120px;
 }
 .partnership-list ul {
+  width: -moz-max-content;
   width: max-content;
   max-width: clamp(300px, 300px + 600 * (100vw - 360px) / 920, 1000px);
   margin-inline: auto;
@@ -4077,7 +4106,8 @@ section,
   width: auto;
   height: auto;
   max-height: 2.5em;
-  object-fit: contain;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 .partnership-list ul li.partnership-list__logo--jibuzaka img {
   max-height: 1.5em;
@@ -4124,7 +4154,8 @@ section,
   width: 100%; /* グリッドの幅いっぱいに広げる */
   max-width: 180px; /* ロゴが大きくなりすぎないように制限（お好みで調整してください） */
   height: auto; /* 比率を保つ */
-  object-fit: contain; /* 枠内に綺麗に収める */
+  -o-object-fit: contain;
+     object-fit: contain; /* 枠内に綺麗に収める */
 }
 .rallyteam .sec__title {
   /* 1. 文字色を白にする */
