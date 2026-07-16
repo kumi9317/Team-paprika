@@ -2109,6 +2109,12 @@ body.nav-open {
   text-align: center;
   margin: 0;
 }
+@media (max-width: 426px) {
+  .sponsor__wrapper p {
+    font-size: 0.9rem;
+    font-weight: 600;
+  }
+}
 .sponsor__wrapper {
   /* ▼ 追加：画像のサイズ調整 */
 }
@@ -2531,7 +2537,7 @@ section,
     font-size: 1.25rem;
   }
 }
-@media (max-width: 361px) {
+@media (max-width: 376px) {
   #mix-bowl.event-section .event-title .title-text,
   #garage-shokudo.event-section .event-title .title-text {
     font-size: 1rem;
@@ -2568,7 +2574,7 @@ section,
     font-size: 3rem;
   }
 }
-@media (max-width: 361px) {
+@media (max-width: 376px) {
   #mix-bowl.event-section .event-title .main-title,
   #garage-shokudo.event-section .event-title .main-title {
     font-size: 2.25rem;
@@ -2636,7 +2642,7 @@ section,
     display: block;
   }
 }
-@media (max-width: 361px) {
+@media (max-width: 376px) {
   #mix-bowl.event-section .catchphrase,
   #garage-shokudo.event-section .catchphrase {
     font-size: 0.9rem;
@@ -2754,7 +2760,7 @@ section,
   height: 4px;
   background-color: #333333;
 }
-@media (max-width: 361px) {
+@media (max-width: 376px) {
   #talkshow .section-header .title-line {
     display: none;
   }
@@ -2874,7 +2880,7 @@ section,
   height: 4px;
   background-color: #333333;
 }
-@media (max-width: 361px) {
+@media (max-width: 376px) {
   #tour.event-section .event-title .title-line {
     display: none;
   }
