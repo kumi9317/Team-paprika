@@ -100,17 +100,33 @@
       color: #ff8d8d;
     }
   }
+
+  position: relative;
+  z-index: 1;
+  background-color: #fff;
+}
+
+.faq {
+  position: relative;
+  z-index: 1;
+  background-color: #fff;
 }
 
 .fixed-img {
-  width: 100%;
-  height: 50vh;
-  background-image: url(../img/fixed-img.webp);
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  margin-top: -50px; // ←角丸の分くらい
   position: relative;
-  z-index: 1;
+  z-index: 0;
+  height: clamp(360px, calc(360px + ((800 - 360) * ((100vw - 500px) / 780))), 800px);
+  margin-top: -120px;
   margin-bottom: -50px;
+  overflow: hidden;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url("../img/fixed-img.webp");
+    background-size: cover;
+    background-position: center;
+    transform: scale(1.05);
+  }
 }

@@ -217,8 +217,8 @@
 
       img {
         width: clamp(
-          250px,
-          calc(250px + (150 * ((100vw - 360px) / 920))),
+          200px,
+          calc(200px + (200 * ((100vw - 360px) / 920))),
           400px
         );
         display: block;
@@ -282,7 +282,7 @@
           @media screen and (max-width: 500px) {
             width: 151px;
             left: -39px;
-            bottom: 496px;
+            bottom: 484px;
           }
         }
 
@@ -359,7 +359,7 @@
           @media screen and (max-width: 500px) {
             width: 129px;
             left: -39px;
-            bottom: 362px;
+            bottom: 312px;
           }
         }
 
@@ -677,24 +677,20 @@
 
   .pu__infocontent {
     .info_sched {
-      text-align: center;
       width: fit-content;
+      max-width: 100%;
       margin-inline: auto;
+      padding-inline: clamp(
+        20px,
+        calc(20px + ((80 - 20) * ((100vw - 500px) / 780))),
+        80px
+      );
       border: 1px solid #3777e4;
       border-radius: 10px;
-      padding-inline: 16%;
       background-color: #3777e4;
       color: white;
-    }
-    p {
-      margin-block: 10px;
-    }
-    span {
-      color: #3777e4;
-      font-weight: 550;
-    }
-    br {
-      display: inline;
+      text-align: center;
+      white-space: nowrap;
     }
   }
 }
@@ -703,6 +699,10 @@
 #pu-jibuzaka {
   .pu__wrapper {
     background: $orange;
+  }
+
+  .icontext-blue {
+    color: white;
   }
 }
 .pu-eventarea {
@@ -805,22 +805,27 @@
       .icontext-blue {
         color: #3777e4;
         font-weight: bold;
-        font-size: 1.4rem;
+        font-size: 1.2rem;
       }
     }
   }
 }
 .pu__infocontent {
   .info_sched {
-    text-align: center;
     width: fit-content;
+    max-width: 100%;
     margin-inline: auto;
+    padding-inline: clamp(
+      20px,
+      calc(20px + ((80 - 20) * ((100vw - 500px) / 780))),
+      80px
+    );
     border: 1px solid #3777e4;
     border-radius: 10px;
-    padding-inline: 16%;
     background-color: #3777e4;
     color: white;
-    font-size: 1.2rem;
+    text-align: center;
+    white-space: nowrap;
   }
   p {
     margin-block: 10px;
