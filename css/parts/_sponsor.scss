@@ -34,7 +34,11 @@
     margin-bottom: 40px; // ラッパー（下のロゴ群）との間隔を開ける
   }
   &__wrapper {
-    max-width: clamp(300px, calc(300px + (600 * ((100vw - 360px) / 920))), 1000px);
+    max-width: clamp(
+      300px,
+      calc(300px + (600 * ((100vw - 360px) / 920))),
+      1000px
+    );
     margin-inline: auto;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -47,15 +51,19 @@
       font-size: 1.25rem;
       font-weight: 600;
       /* ▼ 長い社名が折り返した際、中央揃えで見やすくなるようにする */
-      text-align: center; 
+      text-align: center;
       margin: 0;
+      @media (max-width: 426px) {
+        font-size: 0.9rem;
+        font-weight: 600;
+      }
     }
     /* ▼ 追加：画像のサイズ調整 */
     img {
-      width: 100%;        /* グリッドの幅いっぱいに広げる */
-      max-width: 180px;   /* ロゴが大きくなりすぎないように制限（お好みで調整してください） */
-      height: auto;       /* 比率を保つ */
-      object-fit: contain;/* 枠内に綺麗に収める */
+      width: 100%; /* グリッドの幅いっぱいに広げる */
+      max-width: 180px; /* ロゴが大きくなりすぎないように制限（お好みで調整してください） */
+      height: auto; /* 比率を保つ */
+      object-fit: contain; /* 枠内に綺麗に収める */
     }
   }
 }
