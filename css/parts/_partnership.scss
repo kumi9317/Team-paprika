@@ -49,6 +49,7 @@
                 display: flex;
                 align-items: center;
                 justify-content: center;
+                gap: 10px;
 
                 img {
                     max-width: 100%;
@@ -56,6 +57,9 @@
                     height: auto;
                     max-height: 2.5em; /* テキストの行の高さに合わせて調整 */
                     object-fit: contain;
+                }
+                &.partnership-list__logo--akkun img {
+                    max-height: 4em;
                 }
             }
 
@@ -158,11 +162,12 @@
             font-size: clamp(1rem, 0.9rem + 0.7vw, 1.25rem);
             font-weight: 600;
             white-space: nowrap;
-            padding-block: 20px;
+            padding-block: 30px;
 
             display: flex;
             align-items: center;
             justify-content: center;
+            gap: 10px;
 
             img {
                 max-width: 100%;
@@ -172,6 +177,12 @@
                 object-fit: contain;
             }
 
+            &.partnership-list__logo--akkun img {
+                max-height: 4em;
+            }
+            &.partnership-list__logo--scale img {
+                max-height: 3em;
+            }
             &.partnership-list__logo--jibuzaka img {
                 max-height: 1.5em;
             }
