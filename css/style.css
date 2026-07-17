@@ -2086,12 +2086,24 @@ body.nav-open {
   -webkit-text-stroke: 0;
 }
 .sponsor__name--large {
-  width: 150%; /* グリッドの幅いっぱいに広げる */
+  display: block; /* 左右マージンでの中央寄せを有効にするためにブロック化 */
+  margin-inline: auto; /* 左右のマージンを auto にして中央寄せ */
+  width: 100%; /* グリッドの幅いっぱいに広げる */
   max-width: 360px; /* ロゴが大きくなりすぎないように制限（お好みで調整してください） */
   height: auto; /* 比率を保つ */
   -o-object-fit: contain;
      object-fit: contain; /* 枠内に綺麗に収める */
   margin-bottom: 40px;
+}
+@media (max-width: 769px) {
+  .sponsor__name--large {
+    max-width: 300px;
+  }
+}
+@media (max-width: 426px) {
+  .sponsor__name--large {
+    max-width: 200px;
+  }
 }
 .sponsor__wrapper {
   max-width: clamp(300px, 300px + 600 * (100vw - 360px) / 920, 1000px);
