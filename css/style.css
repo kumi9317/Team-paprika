@@ -2086,10 +2086,11 @@ body.nav-open {
   -webkit-text-stroke: 0;
 }
 .sponsor__name--large {
-  font-size: 2rem;
-  font-weight: 700;
-  text-align: center;
-  letter-spacing: 0.3em;
+  width: 150%; /* グリッドの幅いっぱいに広げる */
+  max-width: 360px; /* ロゴが大きくなりすぎないように制限（お好みで調整してください） */
+  height: auto; /* 比率を保つ */
+  -o-object-fit: contain;
+     object-fit: contain; /* 枠内に綺麗に収める */
   margin-bottom: 40px;
 }
 .sponsor__wrapper {

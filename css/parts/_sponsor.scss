@@ -27,10 +27,10 @@
 
   // ▼ 追加：h2下の大きいスポンサー名のスタイル
   &__name--large {
-    font-size: 2rem; // 通常の1.25remより大きめに（お好みで調整してください）
-    font-weight: 700;
-    text-align: center;
-    letter-spacing: 0.3em; // 文字間隔を少し広げる（お好みで調整してください）
+    width: 150%; /* グリッドの幅いっぱいに広げる */
+    max-width: 360px; /* ロゴが大きくなりすぎないように制限（お好みで調整してください） */
+    height: auto; /* 比率を保つ */
+    object-fit: contain; /* 枠内に綺麗に収める */
     margin-bottom: 40px; // ラッパー（下のロゴ群）との間隔を開ける
   }
   &__wrapper {
