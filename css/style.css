@@ -2094,6 +2094,7 @@ body.nav-open {
   height: auto; /* 比率を保つ */
   -o-object-fit: contain;
      object-fit: contain; /* 枠内に綺麗に収める */
+  margin-bottom: 40px;
 }
 @media (max-width: 769px) {
   .sponsor__name--large {
