@@ -2088,7 +2088,8 @@ body.nav-open {
 .sponsor__name--large {
   display: block; /* 左右マージンでの中央寄せを有効にするためにブロック化 */
   margin-inline: auto; /* 左右のマージンを auto にして中央寄せ */
-  width: 100%; /* グリッドの幅いっぱいに広げる */
+  margin-bottom: 40px;
+  width: auto; /* グリッドの幅いっぱいに広げる */
   max-width: 360px; /* ロゴが大きくなりすぎないように制限（お好みで調整してください） */
   height: auto; /* 比率を保つ */
   -o-object-fit: contain;
