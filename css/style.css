@@ -2085,7 +2085,7 @@ body.nav-open {
 .sponsor .sec__title span {
   -webkit-text-stroke: 0;
 }
-.sponsor__name--large {
+.sponsor__image--large {
   display: block; /* 左右マージンでの中央寄せを有効にするためにブロック化 */
   margin-inline: auto; /* 左右のマージンを auto にして中央寄せ */
   margin-bottom: 40px;
@@ -2094,16 +2094,34 @@ body.nav-open {
   height: auto; /* 比率を保つ */
   -o-object-fit: contain;
      object-fit: contain; /* 枠内に綺麗に収める */
-  margin-bottom: 40px;
 }
 @media (max-width: 769px) {
-  .sponsor__name--large {
+  .sponsor__image--large {
     max-width: 300px;
   }
 }
 @media (max-width: 426px) {
-  .sponsor__name--large {
+  .sponsor__image--large {
     max-width: 200px;
+  }
+}
+.sponsor__name--large {
+  display: block; /* 左右マージンでの中央寄せを有効にするためにブロック化 */
+  margin-inline: auto; /* 左右のマージンを auto にして中央寄せ */
+  margin-bottom: 40px;
+  font-size: 2rem;
+  font-weight: 600;
+  text-align: center;
+  letter-spacing: 0.2em;
+}
+@media (max-width: 769px) {
+  .sponsor__name--large {
+    font-size: 1.75rem;
+  }
+}
+@media (max-width: 426px) {
+  .sponsor__name--large {
+    font-size: 1.5rem;
   }
 }
 .sponsor__wrapper {
