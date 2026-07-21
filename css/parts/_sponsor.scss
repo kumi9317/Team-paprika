@@ -26,7 +26,7 @@
   }
 
   // ▼ 追加：h2下の大きいスポンサー名のスタイル
-  &__name--large {
+  &__image--large {
     display: block; /* 左右マージンでの中央寄せを有効にするためにブロック化 */
     margin-inline: auto; /* 左右のマージンを auto にして中央寄せ */
     margin-bottom: 40px; // ラッパー（下のロゴ群）との間隔を開ける
@@ -39,6 +39,21 @@
     }
     @media (max-width: 426px) {
       max-width: 200px;
+    }
+  }
+  &__name--large {
+    display: block; /* 左右マージンでの中央寄せを有効にするためにブロック化 */
+    margin-inline: auto; /* 左右のマージンを auto にして中央寄せ */
+    margin-bottom: 40px; // ラッパー（下のロゴ群）との間隔を開ける
+    font-size: 2rem;
+    font-weight: 600;
+    text-align: center;
+    letter-spacing: 0.2em;
+    @media (max-width: 769px) {
+      font-size: 1.75rem;
+    }
+    @media (max-width: 426px) {
+      font-size: 1.5rem;
     }
   }
   &__wrapper {
