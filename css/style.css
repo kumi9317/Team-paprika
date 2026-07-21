@@ -2088,7 +2088,7 @@ body.nav-open {
 .sponsor__image--large {
   display: block; /* 左右マージンでの中央寄せを有効にするためにブロック化 */
   margin-inline: auto; /* 左右のマージンを auto にして中央寄せ */
-  margin-bottom: 40px;
+  margin-bottom: 50px;
   width: auto; /* グリッドの幅いっぱいに広げる */
   max-width: 360px; /* ロゴが大きくなりすぎないように制限（お好みで調整してください） */
   height: auto; /* 比率を保つ */
@@ -2105,18 +2105,38 @@ body.nav-open {
     max-width: 200px;
   }
 }
+.sponsor__image--large2 {
+  display: block; /* 左右マージンでの中央寄せを有効にするためにブロック化 */
+  margin-inline: auto; /* 左右のマージンを auto にして中央寄せ */
+  margin-bottom: 40px;
+  width: auto; /* グリッドの幅いっぱいに広げる */
+  max-width: 200px; /* ロゴが大きくなりすぎないように制限（お好みで調整してください） */
+  height: auto; /* 比率を保つ */
+  -o-object-fit: contain;
+     object-fit: contain; /* 枠内に綺麗に収める */
+}
+@media (max-width: 769px) {
+  .sponsor__image--large2 {
+    max-width: 160px;
+  }
+}
+@media (max-width: 426px) {
+  .sponsor__image--large2 {
+    max-width: 80px;
+  }
+}
 .sponsor__name--large {
   display: block; /* 左右マージンでの中央寄せを有効にするためにブロック化 */
   margin-inline: auto; /* 左右のマージンを auto にして中央寄せ */
   margin-bottom: 40px;
-  font-size: 2rem;
+  font-size: 2.5rem;
   font-weight: 600;
   text-align: center;
   letter-spacing: 0.2em;
 }
 @media (max-width: 769px) {
   .sponsor__name--large {
-    font-size: 1.75rem;
+    font-size: 2rem;
   }
 }
 @media (max-width: 426px) {
