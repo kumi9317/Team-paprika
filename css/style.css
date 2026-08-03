@@ -2060,7 +2060,7 @@ body.nav-open {
   content: "";
   position: absolute;
   inset: 0;
-  background-image: url("../img/fixed-img.webp");
+  background-image: url("../img/fixed-background.webp");
   background-size: cover;
   background-position: center;
   transform: scale(1.05);
