@@ -2623,13 +2623,13 @@ section,
 @media (max-width: 426px) {
   #mix-bowl.event-section .event-title .main-title,
   #garage-shokudo.event-section .event-title .main-title {
-    font-size: 3rem;
+    font-size: 2.25rem;
   }
 }
 @media (max-width: 376px) {
   #mix-bowl.event-section .event-title .main-title,
   #garage-shokudo.event-section .event-title .main-title {
-    font-size: 2.25rem;
+    font-size: 2rem;
   }
 }
 #mix-bowl.event-section .event-title .main-title .main-title-red,
