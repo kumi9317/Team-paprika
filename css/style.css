@@ -4258,6 +4258,14 @@ section,
   align-items: center;
   justify-content: center;
 }
+.rallyteam ul li:nth-of-type(10) div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.rallyteam ul li:nth-of-type(10) div img {
+  width: 47%;
+}
 @media (max-width: 500px) {
   .rallyteam ul {
     display: flex;

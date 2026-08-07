@@ -55,6 +55,18 @@
       align-items: center;
       justify-content: center;
 
+      &:nth-of-type(10) {
+        div {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+
+          img {
+            width: 47%;
+          }
+        }
+      }
+
     }
     @media (max-width: 500px) {
       display: flex;
